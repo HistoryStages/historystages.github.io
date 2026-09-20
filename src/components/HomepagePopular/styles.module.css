@@ -1,0 +1,90 @@
+/* Sits under the feature cards, which already carry the top padding for this half of the
+   page — so this section only pays for its own bottom margin. */
+.popular {
+  padding: 0 0 4rem;
+  width: 100%;
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Same 240px track as the feature grid above, so the two sections line up their columns
+   at most window widths instead of drifting apart. */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-card-background-color, var(--ifm-background-surface-color));
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.item:hover {
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.itemSection {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.15rem;
+}
+
+.itemTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.arrow {
+  flex: none;
+  color: var(--ifm-color-primary);
+  transition: transform 0.15s ease;
+}
+
+.item:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* A pointer nudge is decoration; someone who asked for less motion gets none. */
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .arrow {
+    transition: none;
+  }
+  .item:hover {
+    transform: none;
+  }
+  .item:hover .arrow {
+    transform: none;
+  }
+}

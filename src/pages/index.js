@@ -2,6 +2,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageHero from '@site/src/components/HomepageHero';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepagePopular from '@site/src/components/HomepagePopular';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -14,6 +15,7 @@ export default function Home() {
       <HomepageHero />
       <main>
         <HomepageFeatures />
+        <HomepagePopular />
       </main>
     </Layout>
   );
