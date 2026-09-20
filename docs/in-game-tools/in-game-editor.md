@@ -231,6 +231,10 @@ A zone is the union of its shapes, so an awkward area is built by dropping sever
 
 Every zone screen carries a small map; clicking it opens the large one. It can be read flat from above or tilted into a **3D** view, dragged to turn and scrolled to zoom, and it has buttons to jump to the player (**to me**) or to frame the whole zone (**to zone**). A readout under it names the coordinates the cursor is over. A zone in a world the player is not currently in is drawn without terrain — the shapes are still positioned correctly, there is simply nothing to draw them on.
 
+:::note[Forge 1.20.1]
+The 1.20.1 build has the top-down view only; the tilted 3D view is not part of it. Everything else on this page is the same on both loaders.
+:::
+
 ## The Spawn Rule Dialog
 
 A spawn lock entry is a rule rather than a checkbox, and the editor opens it as a dialog. The lock **phase** sits at the top — *while locked* or *after unlock* — and the rest is four tabs, each with a count badge saying how much of it is set:

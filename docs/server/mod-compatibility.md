@@ -99,4 +99,4 @@ Writing a mod rather than a pack? Two starting points:
   it changes. This is what you want if your mod only needs to *know* about stages.
 - **[Addon Development](/api/addon-development)** — register your own gated content, requirements,
   auto-triggers, per-stage settings and config sections, each with a native tab in the in-game
-  editor. NeoForge, 6.0.0 and up.
+  editor. NeoForge and Forge, 6.0.0 and up.

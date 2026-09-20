@@ -5,8 +5,8 @@ sidebar_position: 4
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**.
-The addon platform does not exist on Fabric or Forge 1.20 yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
+The addon platform does not exist on Fabric yet.
 :::
 
 **A lock category answers the question "what can be gated?" — and the sixteen things History Stages ships with are themselves categories, registered through the same path an addon uses.**
@@ -46,7 +46,7 @@ A section whose category does not serve the stage you are editing is greyed on t
 
 ## Registering a category
 
-Registration happens in `RegisterLockCategoriesEvent` on the NeoForge mod bus, and only there. The event fires once and the registry freezes when dispatch ends, so everything that walks the list afterwards — editor tabs, dual-phase detection, config sync — may assume it never changes again, and a server and a client can never end up disagreeing about which categories exist. Registering after the freeze throws `IllegalStateException`; a duplicate id throws `IllegalArgumentException`, whether the id is taken by a built-in or by another addon.
+Registration happens in `RegisterLockCategoriesEvent` on the mod bus, and only there. The event fires once and the registry freezes when dispatch ends, so everything that walks the list afterwards — editor tabs, dual-phase detection, config sync — may assume it never changes again, and a server and a client can never end up disagreeing about which categories exist. Registering after the freeze throws `IllegalStateException`; a duplicate id throws `IllegalArgumentException`, whether the id is taken by a built-in or by another addon.
 
 The mod ships a stand-in addon under `net.bananemdnsa.historystages.demo` that exercises the whole addon path and is held to the public API by a test. Its entire category registration:
 

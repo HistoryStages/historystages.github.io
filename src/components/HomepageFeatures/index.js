@@ -60,7 +60,7 @@ const FeatureList = [
     description: (
       <>
         Other mods register their own lock categories, requirements, and editor
-        tabs through NeoForge events — no fork, no mixin, same widgets the
+        tabs through mod-bus events — no fork, no mixin, same widgets the
         built-in tabs are made of.
       </>
     ),

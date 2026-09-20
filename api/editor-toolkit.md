@@ -5,8 +5,8 @@ sidebar_position: 9
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**.
-The addon platform does not exist on Fabric or Forge 1.20 yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
+The addon platform does not exist on Fabric yet.
 :::
 
 **The same toolkit serves all five extension points, and that is the whole reason an addon's tab looks like a built-in one — it is built from the same widgets.**

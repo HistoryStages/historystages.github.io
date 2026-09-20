@@ -5,8 +5,8 @@ sidebar_position: 3
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**.
-The addon platform does not exist on Fabric or Forge 1.20 yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
+The addon platform does not exist on Fabric yet.
 :::
 
 **History Stages 6.0.0** is an addon platform: another mod can register its own kind of gated content, its own way to earn a stage, and its own tabs in the in-game editor, without a fork and without a mixin.
@@ -23,11 +23,11 @@ The addon platform does not exist on Fabric or Forge 1.20 yet.
 
 Two smaller windows sit beside them, both about recipes and both optional: → [Recipe types](#recipe-types).
 
-Each one is a NeoForge mod-bus event named `Register…Event`, fired once during mod loading. There is no static facade beside them and no registration method on `HistoryStagesAPI` — the events are the whole entry point.
+Each one is a mod-bus event named `Register…Event`, fired once during mod loading. There is no static facade beside them and no registration method on `HistoryStagesAPI` — the events are the whole entry point.
 
 Reading which stages a player has unlocked, and reacting when that changes, is not an extension point: it is a plain API surface any mod can call, addon or not. → [Stage State & Events](./stage-state-and-events.md).
 
-What you write to plug in is plain Java. A lock category, a requirement, a trigger condition or a settings group names no loader at all — of everything under `api`, only the eleven `Register…Event` classes, `StageEvent` and `StageStates` mention NeoForge, and `ApiLoaderLeakGuardTest` fails if a fourteenth appears.
+What you write to plug in is plain Java. A lock category, a requirement, a trigger condition or a settings group names no loader at all — of everything under `api`, only the eleven `Register…Event` classes, `StageEvent` and `StageStates` name a loader at all, and `ApiLoaderLeakGuardTest` fails if a fourteenth appears. That is also why the same addon code compiles against the NeoForge 1.21 and the Forge 1.20.1 build — those thirteen classes are what differs between them.
 
 ## Two layers
 
@@ -47,11 +47,13 @@ dependencies {
 }
 ```
 
-The version string is the Modrinth version, and 6.0.0 is not published on Modrinth yet, so this exact coordinate is confirmed at release.
+The version string is the Modrinth version, so it carries the loader: `6.0.0-1.21.1` is the NeoForge build, `6.0.0-1.20.1` the Forge one.
 
 History Stages has **Lootr** as a required dependency, so your dev environment needs it too — History Stages will not load without it. See [Mod Compatibility](/wiki/server/mod-compatibility) for why.
 
 ## Declaring it in your mods.toml
+
+On NeoForge 1.21 that file is `META-INF/neoforge.mods.toml`:
 
 ```toml
 [[dependencies.yourmodid]]
@@ -62,7 +64,16 @@ ordering="AFTER"
 side="BOTH"
 ```
 
-On NeoForge 1.21 that file is `META-INF/neoforge.mods.toml`.
+On Forge 1.20.1 it is `META-INF/mods.toml`, and the required flag is spelled differently:
+
+```toml
+[[dependencies.yourmodid]]
+modId="historystages"
+mandatory=true
+versionRange="[6.0,7.0)"
+ordering="AFTER"
+side="BOTH"
+```
 
 The API generation equals the mod's major version: 6.x is generation 6, and a breaking change to anything under the `api` package waits for 7.0. That is what makes this `versionRange` the API check. The loader performs it at load time, before any addon code runs, so a mismatch is refused with a loader error the player can read instead of a `NoSuchMethodError` at the first call.
 

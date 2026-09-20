@@ -5,8 +5,8 @@ sidebar_position: 6
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**.
-The addon platform does not exist on Fabric or Forge 1.20 yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
+The addon platform does not exist on Fabric yet.
 :::
 
 An **auto-trigger** answers "what unlocks this stage by itself?" — no pedestal, no command, no quest reward.

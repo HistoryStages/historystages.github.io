@@ -5,8 +5,8 @@ sidebar_position: 2
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**.
-The addon platform does not exist on Fabric or Forge 1.20 yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
+The addon platform does not exist on Fabric yet.
 :::
 
 **Reading stages, changing them, and reacting when they change — the part of the API a mod needs even if it registers no extension point at all.**
@@ -73,7 +73,7 @@ The point for an addon author: **unlocking a stage is not "set a flag".** It is 
 
 ## Reacting to changes
 
-`StageEvent` is a NeoForge `Event` with four concrete subclasses:
+`StageEvent` is a loader `Event` — NeoForge's on 1.21, Forge's on 1.20.1 — with four concrete subclasses:
 
 | Event | Fired after |
 | :--- | :--- |
@@ -132,6 +132,8 @@ A lambda listener works just as well when you have no natural place for a subscr
 NeoForge.EVENT_BUS.addListener((StageEvent.Unlocked event) ->
         HistoryStageTask.onGlobalStageChanged(event.getStageId(), true));
 ```
+
+On Forge 1.20.1 the bus is `MinecraftForge.EVENT_BUS`; the listener itself is unchanged.
 
 ### They fire from every path
 
@@ -195,7 +197,8 @@ There is no "is stage X unlocked for player Y" method under `api`. The classes t
 
 ## Older versions and Fabric
 
-The rest of this page describes 6.0.0 on NeoForge. Two things differ elsewhere.
+The rest of this page describes 6.0.0, which is what NeoForge 1.21.1 and Forge 1.20.1 both run. Two
+things differ elsewhere.
 
 ### The class moved in 6.0.0
 
@@ -203,8 +206,8 @@ Use the path that matches the version you target:
 
 | Version | Class |
 | :--- | :--- |
-| **6.0.0+ (NeoForge)** | `net.bananemdnsa.historystages.api.stage.StageEvent` |
-| **5.6.x and Forge 1.20** | `net.bananemdnsa.historystages.events.StageEvent` |
+| **6.0.0+ (NeoForge and Forge)** | `net.bananemdnsa.historystages.api.stage.StageEvent` |
+| **5.6.x and older** | `net.bananemdnsa.historystages.events.StageEvent` |
 
 Nothing else changed: the same four variants and the same accessors exist on both. Only the import
 line — or, if you name the class as a string from a script, that string.
