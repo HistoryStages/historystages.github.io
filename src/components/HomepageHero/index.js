@@ -37,10 +37,12 @@ export default function HomepageHero() {
         </Heading>
         <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className={clsx('button button--lg', styles.heroButton)}
-            to="/wiki/start-here/installation">
-            Getting Started
+          {/* Points at the wiki's own landing page rather than straight at the install steps:
+              someone arriving here has to be told what a stage is before being told where to
+              drop the jar. "Start Here" is what the sidebar calls that section too, so the
+              button and the page it opens agree on their name. */}
+          <Link className={clsx('button button--lg', styles.heroButton)} to="/wiki/">
+            Start Here
           </Link>
         </div>
       </div>

@@ -325,8 +325,10 @@ const config = {
             title: 'Wiki',
             items: [
               {
-                label: 'Getting Started',
-                to: '/wiki/start-here/installation',
+                // Same name and same target as the button on the front page. Two links to
+                // the same section that call themselves different things read as two places.
+                label: 'Start Here',
+                to: '/wiki/',
               },
               {
                 label: 'Addon API',
