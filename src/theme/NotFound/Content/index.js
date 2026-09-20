@@ -34,6 +34,7 @@ export default function NotFoundContent({className}) {
       <HomepagePopular
         title="Try one of these instead"
         subtitle="The pages most readers are after."
+        last
       />
     </>
   );

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -50,13 +51,16 @@ const PopularPages = [
 ];
 
 // The 404 page shows the same list under its own wording, which is why the copy is a prop:
-// a dead end needs to say "try one of these", the front page does not.
+// a dead end needs to say "try one of these", the front page does not. There it is also the
+// last thing before the footer, where the front page has the feature cards to follow —
+// hence `last`, which pays for the bottom margin the cards otherwise bring.
 export default function HomepagePopular({
   title = 'Popular pages',
   subtitle = 'Where most readers go first — setting a pack up, and building against it.',
+  last = false,
 }) {
   return (
-    <section className={styles.popular}>
+    <section className={clsx(styles.popular, last && styles.popularLast)}>
       <div className="container">
         <Heading as="h2" className={styles.heading}>
           {title}

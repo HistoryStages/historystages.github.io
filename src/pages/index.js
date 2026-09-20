@@ -14,8 +14,8 @@ export default function Home() {
       description={`${siteConfig.tagline}. Stages, locks, research and the in-game editor, for every version.`}>
       <HomepageHero />
       <main>
-        <HomepageFeatures />
         <HomepagePopular />
+        <HomepageFeatures />
       </main>
     </Layout>
   );

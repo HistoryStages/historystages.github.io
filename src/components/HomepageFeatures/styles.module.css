@@ -1,5 +1,7 @@
+/* Less room at the top than the cards used to need: the popular-pages list now sits between
+   them and the hero, and two full gaps stacked read as a break in the page. */
 .features {
-  padding: 3.5rem 0 4rem;
+  padding: 2.5rem 0 4rem;
   width: 100%;
 }
 

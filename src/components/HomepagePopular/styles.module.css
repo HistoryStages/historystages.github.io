@@ -1,8 +1,14 @@
-/* Sits under the feature cards, which already carry the top padding for this half of the
-   page — so this section only pays for its own bottom margin. */
+/* First thing under the hero, so it carries the top padding; the feature cards below bring
+   their own, which is why there is nothing at the bottom. */
 .popular {
-  padding: 0 0 4rem;
+  padding: 3rem 0 0;
   width: 100%;
+}
+
+/* Nothing follows the list on the 404 page, so it cannot lean on the next section's padding
+   and would otherwise sit right on the footer. */
+.popularLast {
+  padding-bottom: 4rem;
 }
 
 .heading {
