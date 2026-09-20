@@ -4,49 +4,43 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 // Chosen from what GoatCounter actually recorded, not from what we would like people to
-// read: installation, global vs individual, the config files and the API pages are the
-// ones visitors keep landing on. The traffic splits into setting-up and building-against,
-// so the list carries both paths — plus the pages each of those questions leads to next.
-const PopularPages = [
+// read: installation, global vs individual, the config files and the API pages are the ones
+// visitors keep landing on. The traffic splits into setting-up and building-against, so both
+// paths are here — plus the pages each of those questions leads to next.
+//
+// Plain text links in columns, deliberately not cards. Boxed rows sat directly above the
+// feature grid and read as more of the same grid, which cost the cards their job; nothing
+// about a column of links can be mistaken for a screenshot card.
+const PopularGroups = [
   {
     section: 'Start here',
-    title: 'Installation & Your First Stage',
-    to: '/wiki/start-here/installation',
-  },
-  {
-    section: 'Start here',
-    title: 'Global vs Individual Stages',
-    to: '/wiki/start-here/global-vs-individual',
-  },
-  {
-    section: 'Start here',
-    title: 'Where Stage Files Live',
-    to: '/wiki/start-here/where-stage-files-live',
+    pages: [
+      {title: 'Installation & Your First Stage', to: '/wiki/start-here/installation'},
+      {title: 'Global vs Individual Stages', to: '/wiki/start-here/global-vs-individual'},
+      {title: 'Where Stage Files Live', to: '/wiki/start-here/where-stage-files-live'},
+    ],
   },
   {
     section: 'Locking',
-    title: 'Recipes',
-    to: '/wiki/locking/items-and-recipes/recipes',
+    pages: [
+      {title: 'Recipes', to: '/wiki/locking/items-and-recipes/recipes'},
+      {title: 'Items, Tags & Mods', to: '/wiki/locking/items-and-recipes/items-tags-mods'},
+    ],
   },
   {
     section: 'Server',
-    title: 'Config Files',
-    to: '/wiki/server/config-files',
-  },
-  {
-    section: 'Server',
-    title: 'Commands & Permissions',
-    to: '/wiki/server/commands',
-  },
-  {
-    section: 'Server',
-    title: 'Mod Compatibility',
-    to: '/wiki/server/mod-compatibility',
+    pages: [
+      {title: 'Config Files', to: '/wiki/server/config-files'},
+      {title: 'Commands & Permissions', to: '/wiki/server/commands'},
+      {title: 'Mod Compatibility', to: '/wiki/server/mod-compatibility'},
+    ],
   },
   {
     section: 'API',
-    title: 'Addon Development',
-    to: '/api/addon-development',
+    pages: [
+      {title: 'Addon Development', to: '/api/addon-development'},
+      {title: 'API Overview', to: '/api/'},
+    ],
   },
 ];
 
@@ -56,28 +50,31 @@ const PopularPages = [
 // hence `last`, which pays for the bottom margin the cards otherwise bring.
 export default function HomepagePopular({
   title = 'Popular pages',
-  subtitle = 'Where most readers go first — setting a pack up, and building against it.',
+  subtitle = 'Where most readers go first.',
   last = false,
 }) {
   return (
     <section className={clsx(styles.popular, last && styles.popularLast)}>
       <div className="container">
-        <Heading as="h2" className={styles.heading}>
-          {title}
-        </Heading>
-        <p className={styles.subtitle}>{subtitle}</p>
-        <div className={styles.list}>
-          {PopularPages.map((page) => (
-            <Link key={page.to} to={page.to} className={styles.item}>
-              <span className={styles.itemText}>
-                <span className={styles.itemSection}>{page.section}</span>
-                <span className={styles.itemTitle}>{page.title}</span>
-              </span>
-              <span className={styles.arrow} aria-hidden="true">
-                →
-              </span>
-            </Link>
-          ))}
+        <div className={styles.block}>
+          <div className={styles.header}>
+            <Heading as="h2" className={styles.heading}>
+              {title}
+            </Heading>
+            <span className={styles.subtitle}>{subtitle}</span>
+          </div>
+          <div className={styles.columns}>
+            {PopularGroups.map((group) => (
+              <div key={group.section} className={styles.column}>
+                <h3 className={styles.columnTitle}>{group.section}</h3>
+                {group.pages.map((page) => (
+                  <Link key={page.to} to={page.to} className={styles.pageLink}>
+                    {page.title}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
