@@ -16,6 +16,8 @@ each player their own view of a container, which is what makes [per-player loot
 filtering](/wiki/locking/items-and-recipes/loot) possible at all. History Stages does not load
 without it.
 
+**On Fabric, Fabric API is required too**, as it is for nearly every Fabric mod.
+
 **Recommended, not required:**
 
 | | |

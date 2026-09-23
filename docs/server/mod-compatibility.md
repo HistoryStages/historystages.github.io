@@ -78,6 +78,9 @@ covers vanilla armour slots rendered through its own container UI.
 Scripts can read stage state, change it, and react when it changes. They cannot *define* stages or
 decide what a stage locks — that stays in the editor and the stage files.
 
+This works on NeoForge and Forge only. Neither mod has a Fabric build for 1.21.1, so the Fabric
+build of History Stages has no script bridge.
+
 Big enough to have their own pages: → [Scripting](/wiki/server/scripting)
 
 ## Fluid locks and other mods' tanks
@@ -99,4 +102,4 @@ Writing a mod rather than a pack? Two starting points:
   it changes. This is what you want if your mod only needs to *know* about stages.
 - **[Addon Development](/api/addon-development)** — register your own gated content, requirements,
   auto-triggers, per-stage settings and config sections, each with a native tab in the in-game
-  editor. NeoForge and Forge, 6.0.0 and up.
+  editor. All three loaders, 6.0.0 and up.

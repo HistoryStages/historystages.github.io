@@ -5,8 +5,8 @@ sidebar_position: 9
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
-The addon platform does not exist on Fabric yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
+or **Fabric 1.21.1**.
 :::
 
 **The same toolkit serves all five extension points, and that is the whole reason an addon's tab looks like a built-in one — it is built from the same widgets.**
@@ -189,6 +189,8 @@ Two things about that.
 @EventBusSubscriber(modid = HistoryStages.MOD_ID, value = Dist.CLIENT,
         bus = EventBusSubscriber.Bus.MOD)
 ```
+
+On Fabric the same split is the `historystages:client` entrypoint and its `HistoryStagesClientPlugin`. → [On Fabric](./addon-development.md#on-fabric)
 
 `RegisterCategoryEditorsEvent` and `RegisterTriggerEditorsEvent` fire once on the client only, deliberately separate from the common-side events that register the category or the trigger type itself — the server gates with those, while a tab is pure UI. Registering a category and giving it no editor is legal and means exactly what it looks like: the category loads, stores and gates, it just cannot be edited in game.
 

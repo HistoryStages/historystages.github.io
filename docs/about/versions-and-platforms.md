@@ -6,14 +6,14 @@ sidebar_position: 1
 
 # Versions & Platforms
 
-History Stages runs on three mod loaders, and they are **not** all at the same version. New
-features land on NeoForge first; the other two follow when they follow.
+History Stages runs on three mod loaders, and all three are on the same line. New features land on
+NeoForge first; the other two follow when they follow.
 
 | Loader | Minecraft | Line it is on |
 | :--- | :--- | :--- |
 | **NeoForge** | 1.21.1 | 6.0.x |
 | **Forge** | 1.20.1 | 6.0.x — everything from 6.0.0 and 6.0.1, with the differences below |
-| **Fabric** | 1.21.1 | 5.2.x |
+| **Fabric** | 1.21.1 | 6.0.x — everything from 6.0.0 and 6.0.1, with the differences below |
 
 The 1.19.X builds are no longer updated.
 
@@ -24,12 +24,8 @@ where it would quietly go stale; the download pages have it:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub Releases](https://github.com/Flix100000/History-Stages/releases).
 
-:::warning[Read the pages that match what you run]
-**Check the version you have installed, then pick it in the version picker in the top bar.** These
-pages describe 6.0.x, which is what NeoForge and Forge both run. Reading them on **Fabric** will
-describe features that are not there — zones, merchant trades, fluid locks, the script integration
-and the addon API are all 6.0 additions, and Fabric is still on 5.2.x.
-:::
+These pages describe 6.0.x. Still running an older build? Pick its line in the version picker in
+the top bar.
 
 ## What Forge 1.20.1 does differently
 
@@ -46,6 +42,25 @@ itself does:
 - **MixinExtras is bundled inside the jar**, because Forge 1.20.1 does not ship it. There is
   nothing extra to install.
 
+## What Fabric 1.21.1 does differently
+
+The Fabric build carries the whole 6.0 feature set too. Same Minecraft version as NeoForge, so the
+differences come from the loader and from which mods exist for it:
+
+- **The zone map is the top-down view only**, as on Forge. The rest of the zone editor is the same.
+- **There is no scripting.** KubeJS has no Fabric build for 1.21.1 and CraftTweaker has none at
+  all, so there is nothing for a script to talk to. Reading, changing and reacting to stage state
+  from code goes through the [API](/api/) instead. → [Scripting](/wiki/server/scripting)
+- **Equip locks cover Accessories instead of Curios.** Curios does not exist on Fabric. →
+  [Mod Compatibility](/wiki/server/mod-compatibility#curios-and-accessories)
+- **An addon registers through entrypoints in its `fabric.mod.json`**, not through a mod bus. What
+  it can register is the same. → [Addon Development](/api/addon-development#on-fabric)
+- **Settings from 5.2 are not carried over.** The Fabric 5.2 build kept them in a `config.json`
+  that 6.0 does not read. → [Upgrading from 5.x](/wiki/server/upgrading-from-5x#coming-from-fabric-52)
+
+One thing works better here than on Forge 1.20.1: a gated fluid is refused at modded cauldrons as
+well, not only at the vanilla water and lava ones.
+
 ## How this wiki is versioned
 
 The version picker cuts by **mod version, not by Minecraft version**. Seven stands exist: the living
@@ -60,8 +75,8 @@ out: the claim that the wiki is "always aligned with the latest version", which 
 archive, and the addon API pages in 5.6.x, which described an interface that did not exist yet on
 that version.
 
-The **API** tab is not versioned. It describes the current addon interface, which exists on
-NeoForge and Forge from 6.0.0 onwards, and not on Fabric.
+The **API** tab is not versioned. It describes the current addon interface, which exists on all
+three loaders from 6.0.0 onwards.
 
 ## Porting to a loader or version that is not listed
 

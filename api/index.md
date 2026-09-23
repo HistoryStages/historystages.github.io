@@ -8,8 +8,8 @@ sidebar_position: 1
 # API Overview
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
-The addon platform does not exist on Fabric yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
+or **Fabric 1.21.1**.
 :::
 
 These pages are for people writing a **mod**. If you are building a pack, you want the

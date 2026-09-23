@@ -5,8 +5,8 @@ sidebar_position: 2
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21** or **Forge 1.20.1**.
-The addon platform does not exist on Fabric yet.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
+or **Fabric 1.21.1**.
 :::
 
 **Reading stages, changing them, and reacting when they change — the part of the API a mod needs even if it registers no extension point at all.**
@@ -73,7 +73,7 @@ The point for an addon author: **unlocking a stage is not "set a flag".** It is 
 
 ## Reacting to changes
 
-`StageEvent` is a loader `Event` — NeoForge's on 1.21, Forge's on 1.20.1 — with four concrete subclasses:
+`StageEvent` is a loader `Event` — NeoForge's on 1.21, Forge's on 1.20.1, History Stages' own on Fabric — with four concrete subclasses:
 
 | Event | Fired after |
 | :--- | :--- |
@@ -135,6 +135,36 @@ NeoForge.EVENT_BUS.addListener((StageEvent.Unlocked event) ->
 
 On Forge 1.20.1 the bus is `MinecraftForge.EVENT_BUS`; the listener itself is unchanged.
 
+### Subscribing on Fabric
+
+Fabric has no game bus. History Stages posts `StageEvent` on a small bus of its own,
+`net.bananemdnsa.historystages.platform.bus.EventBus`, and a listener goes there. Your mod
+initializer is a fine place to add it — nothing fires before a world is running:
+
+```java
+import net.bananemdnsa.historystages.api.stage.StageEvent;
+import net.bananemdnsa.historystages.platform.bus.EventBus;
+
+EventBus.addListener(StageEvent.Unlocked.class,
+        event -> LOGGER.info("Stage unlocked: {}", event.getStageId()));
+
+EventBus.addListener(StageEvent.IndividualUnlocked.class, event -> {
+    // A UUID, not a player: look it up in your server's player list, and expect null
+    // when the player is offline.
+});
+```
+
+Two differences from the other loaders:
+
+- **Subscribe to the concrete class.** The bus dispatches by the event's own class, not its
+  supertypes, so a listener on `StageEvent` itself receives nothing. Add one per variant you need.
+- **The bus class sits outside `api`.** It is the bus `StageEvent` is posted on, and the event's own
+  javadoc points to it, but the API generation promise covers the `api` package only.
+
+There is also `EventBus.register(...)`, which takes a class with static methods (or an object) and
+subscribes every method marked with `platform.bus.SubscribeEvent` — the same shape as
+`@EventBusSubscriber` on the other loaders, without the annotation on the class.
+
 ### They fire from every path
 
 Every way a stage can change posts the matching event: the research pedestal, every `/history stage` and `/history individual` subcommand, the in-game editor, an auto-trigger firing, an FTB Quests reward, a temporary stage's timer running out, a `lose_on_death` relock, and any mod calling `StageStates` itself. **A listener therefore runs regardless of what caused the change, and never has to know what caused it.**
@@ -195,43 +225,37 @@ There is no "is stage X unlocked for player Y" method under `api`. The classes t
 
 ---
 
-## Older versions and Fabric
+## Older versions
 
-The rest of this page describes 6.0.0, which is what NeoForge 1.21.1 and Forge 1.20.1 both run. Two
-things differ elsewhere.
+The rest of this page describes 6.0.0, which all three loaders run. Code written against 5.x needs
+one change, and which one depends on the loader.
 
-### The class moved in 6.0.0
-
-Use the path that matches the version you target:
+### NeoForge and Forge: the class moved
 
 | Version | Class |
 | :--- | :--- |
-| **6.0.0+ (NeoForge and Forge)** | `net.bananemdnsa.historystages.api.stage.StageEvent` |
+| **6.0.0+** | `net.bananemdnsa.historystages.api.stage.StageEvent` |
 | **5.6.x and older** | `net.bananemdnsa.historystages.events.StageEvent` |
 
 Nothing else changed: the same four variants and the same accessors exist on both. Only the import
 line — or, if you name the class as a string from a script, that string.
 
-### Fabric
+### Fabric: `StageEvents` is gone
 
-Fabric has no addon API and no `StageEvent` bus class. The same four changes are exposed as Fabric
-`Event<>` listeners under `net.bananemdnsa.historystages.api.StageEvents`. Register them in your
-mod initializer:
+Fabric 5.2 exposed the four changes as Fabric `Event<>` fields on
+`net.bananemdnsa.historystages.api.StageEvents`. That class no longer exists in 6.0.0. Each field
+maps to one `StageEvent` variant, registered as shown in
+[Subscribing on Fabric](#subscribing-on-fabric):
 
-```java
-import net.bananemdnsa.historystages.api.StageEvents;
+| 5.2 | 6.0.0 |
+| :--- | :--- |
+| `StageEvents.UNLOCKED` | `StageEvent.Unlocked` |
+| `StageEvents.LOCKED` | `StageEvent.Locked` |
+| `StageEvents.INDIVIDUAL_UNLOCKED` | `StageEvent.IndividualUnlocked` |
+| `StageEvents.INDIVIDUAL_LOCKED` | `StageEvent.IndividualLocked` |
 
-StageEvents.UNLOCKED.register((stageId, displayName) ->
-        System.out.println("History Stages: Stage Unlocked: " + stageId));
-
-StageEvents.LOCKED.register((stageId, displayName) -> { /* ... */ });
-
-StageEvents.INDIVIDUAL_UNLOCKED.register((stageId, displayName, playerUuid) -> { /* ... */ });
-StageEvents.INDIVIDUAL_LOCKED.register((stageId, displayName, playerUuid) -> { /* ... */ });
-```
-
-They fire from the same central path, so a listener runs regardless of what caused the change —
-admin command, Research Pedestal, FTB Quests reward, or another mod's API call.
+The callback's `(stageId, displayName)` and `playerUuid` arguments are now the event's
+`getStageId()`, `getDisplayName()` and `getPlayerUUID()`.
 
 ---
 

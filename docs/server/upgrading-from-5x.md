@@ -32,6 +32,23 @@ It is kept until **6.3**. A pack skipping straight from 5.x to a later version t
 to set its options again.
 :::
 
+### Coming from Fabric 5.2
+
+The carry-over above reads the two old NeoForge and Forge files. **The Fabric 5.2 build kept its
+settings somewhere else**, in `config/historystages/config.json`, and 6.0 does not read that file.
+On Fabric every setting starts from its default after the update, and the old values have to be set
+again — in the config editor, or in `visual.toml` and `gameplay.toml`.
+
+`config.json` is left where it is, so the old values can still be looked up. Nothing reads it any
+more, and it can be deleted once the new files say what it said.
+
+Stage files and the world's unlock records are not affected: they live in the same place and in the
+same format as on 5.2.
+
+Fabric also jumps straight from 5.2 to 6.0, past the 5.3 to 5.6 releases the other loaders had in
+between. Their changes arrive at the same time; the
+[release notes](https://github.com/Flix100000/History-Stages/releases) have them.
+
 ## `trade` is a new action, and it applies to old files
 
 [`unlock_actions`](/wiki/locking/items-and-recipes/unlock-actions) stores the actions that stay
@@ -101,7 +118,7 @@ that did not exist in 5.x, so you know what is now worth reading:
 | [Merchant Trades](/wiki/locking/creatures-and-trade/merchant-trades) | Single offers, professions and merchant levels. |
 | [Zones](/wiki/locking/world/zones) | Areas drawn out of shapes, with a barrier and an overlay. **Beta.** |
 | [Spawn rules](/wiki/locking/creatures-and-trade/entities-and-spawns) | A spawn entry carries a phase, eight conditions and extra biomes. |
-| [Scripting](/wiki/server/scripting) | KubeJS and CraftTweaker can read and change stage state. |
+| [Scripting](/wiki/server/scripting) | KubeJS and CraftTweaker can read and change stage state. Not on Fabric. |
 | [Addon API](/api/) | Other mods can register their own locks, requirements and editor tabs. |
 | [Recipes](/wiki/locking/items-and-recipes/recipes) | Per-player recipe locks at the stations that know who is standing there. |
 | [Dependencies](/wiki/stage-file/dependencies) | Item-tag deposits, and requirements on the researcher's own individual stages. |

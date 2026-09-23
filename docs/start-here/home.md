@@ -16,10 +16,10 @@ Nothing is locked out of the box. An installed History Stages with no stage file
 about the game.
 
 :::note[Which version is this?]
-These pages describe **6.0.x**, which runs on NeoForge 1.21.1 and Forge 1.20.1. The Fabric build is
-older and does not have everything described here — check the version you have installed and pick it
-in the version picker in the top bar. See
-[Versions & Platforms](/wiki/about/versions-and-platforms).
+These pages describe **6.0.x**, which runs on NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1.
+Where a loader does something differently, [Versions &
+Platforms](/wiki/about/versions-and-platforms) lists it. On an older build, pick its line in the
+version picker in the top bar.
 :::
 
 ## Two kinds of stage

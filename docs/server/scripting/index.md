@@ -8,6 +8,13 @@ History Stages talks to both scripting mods. A script can **read** stage state, 
 **react** when it changes — in JavaScript through KubeJS, in ZenScript through CraftTweaker, with
 the same capabilities on both sides.
 
+:::note[Not on Fabric]
+Everything under Scripting is NeoForge and Forge only. KubeJS has no Fabric build for 1.21.1 and
+CraftTweaker has none at all, so the Fabric build of History Stages has no script bridge. Reading,
+changing and reacting to stage state from code is still possible from a mod, through the
+[API](/api/).
+:::
+
 A script cannot **define** stages or decide what a stage locks — which items, tags, mods, recipes,
 dimensions, structures, biomes and mobs belong to a stage is set in the in-game editor, and only
 there.
