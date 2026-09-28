@@ -12,7 +12,7 @@ NeoForge first; the other two follow when they follow.
 | Loader | Minecraft | Line it is on |
 | :--- | :--- | :--- |
 | **NeoForge** | 1.21.1 | 6.0.x |
-| **Forge** | 1.20.1 | 6.0.x — everything from 6.0.0 and 6.0.1, with the differences below |
+| **Forge** | 1.20.1 | 6.0.x — everything up to 6.0.2, with the differences below |
 | **Fabric** | 1.21.1 | 6.0.x — everything from 6.0.0 and 6.0.1, with the differences below |
 
 The 1.19.X builds are no longer updated.
@@ -27,10 +27,10 @@ where it would quietly go stale; the download pages have it:
 These pages describe 6.0.x. Still running an older build? Pick its line in the version picker in
 the top bar.
 
-## Not on Forge and Fabric yet
+## Not on Fabric yet
 
-6.0.2 is out on NeoForge only so far. Until Forge and Fabric follow, two things from it are
-missing there:
+6.0.2 is out on NeoForge and Forge so far. Until Fabric follows, two things from it are missing
+there:
 
 - **EMI does not hide locked items and recipes.** `hideLockedItemsInJei` and
   `hideLockedRecipesInJei` reach JEI only; EMI keeps the padlock overlay. →

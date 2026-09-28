@@ -113,8 +113,8 @@ Off by default, unlike the dimension and mob switches. Those answer "why can I n
 
 → Explained on [Recipes](/wiki/locking/items-and-recipes/recipes#what-players-see).
 
-The section and the keys are named after JEI, but they drive EMI too (NeoForge 6.0.2 and later;
-on Forge and Fabric JEI only).
+The section and the keys are named after JEI, but they drive EMI too (6.0.2 and later on NeoForge
+and Forge; on Fabric JEI only).
 
 | Setting | Default | Description |
 | :--- | :--- | :--- |

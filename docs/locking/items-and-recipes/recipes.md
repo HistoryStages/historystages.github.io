@@ -78,8 +78,8 @@ that players can see progression exists. Two settings change that:
 | `lockedItemMultiStagePolicy` | `STRICT` | For items in several stages: `STRICT` keeps them locked while any assigned stage is; `LENIENT` frees them as soon as any one is. |
 
 The names still say JEI because they predate EMI support, and renaming them would break existing
-configs. Hiding in EMI needs NeoForge 6.0.2 or later; on Forge and Fabric the two settings reach
-JEI only. → [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
+configs. Hiding in EMI needs 6.0.2 or later on NeoForge or Forge; on Fabric the two settings
+reach JEI only. → [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
 
 → [visual.toml](/wiki/server/config-files/visual-toml#jei_hiding)
 

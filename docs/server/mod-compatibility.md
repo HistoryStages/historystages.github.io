@@ -31,9 +31,9 @@ only by their output. EMI hides every recipe the padlock overlay would mark: a l
 recipe id named on a stage, and a recipe that makes or uses a gated fluid. JER's drop and loot
 pages stay visible in EMI, even when a drop on them is locked.
 
-:::note[EMI hiding needs NeoForge 6.0.2]
-Hiding in EMI arrived in 6.0.2 on NeoForge. On the Forge and Fabric builds the two settings reach
-JEI only, and EMI keeps the padlock overlay. → [Versions & Platforms](/wiki/about/versions-and-platforms#not-on-forge-and-fabric-yet)
+:::note[EMI hiding needs 6.0.2]
+Hiding in EMI arrived in 6.0.2 on NeoForge and Forge. On the Fabric build the two settings reach
+JEI only, and EMI keeps the padlock overlay. → [Versions & Platforms](/wiki/about/versions-and-platforms#not-on-fabric-yet)
 :::
 
 [Research Booster](/wiki/in-game-tools/research/pedestal#boosters) blocks are registered as their
