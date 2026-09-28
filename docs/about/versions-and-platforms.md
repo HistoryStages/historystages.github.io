@@ -27,6 +27,16 @@ where it would quietly go stale; the download pages have it:
 These pages describe 6.0.x. Still running an older build? Pick its line in the version picker in
 the top bar.
 
+## Not on Forge and Fabric yet
+
+6.0.2 is out on NeoForge only so far. Until Forge and Fabric follow, two things from it are
+missing there:
+
+- **EMI does not hide locked items and recipes.** `hideLockedItemsInJei` and
+  `hideLockedRecipesInJei` reach JEI only; EMI keeps the padlock overlay. →
+  [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
+- **There is no Simplified Chinese translation.** English, German and Russian are there.
+
 ## What Forge 1.20.1 does differently
 
 The 1.20.1 build carries the whole 6.0 feature set. Four things behave differently, because 1.20.1

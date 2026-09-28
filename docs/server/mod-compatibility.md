@@ -15,15 +15,26 @@ and History Stages will not load without it. →
 
 ## Recipe viewers — JEI and EMI
 
-The two are at feature parity; install either.
+Install either; both get the padlock overlay and both can hide.
 
 Locked recipes get a padlock overlay rather than disappearing, so players can see that progression
 exists rather than wondering where a recipe went. Locked items carry the same padlock in
 inventories and in the ingredient panel.
 
 Two settings change that to outright hiding: `hideLockedItemsInJei` removes locked items from the
-ingredient panel, `hideLockedRecipesInJei` hides recipes whose output is locked. →
+ingredient panel, `hideLockedRecipesInJei` hides locked recipes. Despite the names, both apply to
+EMI as well. →
 [Recipes](/wiki/locking/items-and-recipes/recipes#what-players-see)
+
+The two viewers do not hide quite the same recipes. JEI only catches vanilla recipe types, and
+only by their output. EMI hides every recipe the padlock overlay would mark: a locked output, a
+recipe id named on a stage, and a recipe that makes or uses a gated fluid. JER's drop and loot
+pages stay visible in EMI, even when a drop on them is locked.
+
+:::note[EMI hiding needs NeoForge 6.0.2]
+Hiding in EMI arrived in 6.0.2 on NeoForge. On the Forge and Fabric builds the two settings reach
+JEI only, and EMI keeps the padlock overlay. → [Versions & Platforms](/wiki/about/versions-and-platforms#not-on-forge-and-fabric-yet)
+:::
 
 [Research Booster](/wiki/in-game-tools/research/pedestal#boosters) blocks are registered as their
 own recipe category, so players can look up which blocks speed research up and by how much.

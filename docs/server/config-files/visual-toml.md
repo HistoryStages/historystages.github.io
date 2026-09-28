@@ -113,10 +113,13 @@ Off by default, unlike the dimension and mob switches. Those answer "why can I n
 
 → Explained on [Recipes](/wiki/locking/items-and-recipes/recipes#what-players-see).
 
+The section and the keys are named after JEI, but they drive EMI too (NeoForge 6.0.2 and later;
+on Forge and Fabric JEI only).
+
 | Setting | Default | Description |
 | :--- | :--- | :--- |
-| `hideLockedItemsInJei` | `false` | Remove locked items from the JEI ingredient panel entirely instead of marking them with a lock overlay. |
-| `hideLockedRecipesInJei` | `false` | Hide recipes whose output is a locked item. |
+| `hideLockedItemsInJei` | `false` | Remove locked items from the JEI and EMI ingredient panels entirely instead of marking them with a lock overlay. |
+| `hideLockedRecipesInJei` | `false` | Hide locked recipes. JEI only catches vanilla recipe types by their output; EMI hides every recipe the lock overlay would mark. |
 | `lockedItemMultiStagePolicy` | `STRICT` | How items assigned to several stages behave. `STRICT` = locked while any assigned stage is still locked. `LENIENT` = unlocked as soon as any assigned stage is. |
 
 ## `[notifications]`

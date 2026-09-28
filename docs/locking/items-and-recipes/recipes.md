@@ -73,9 +73,13 @@ that players can see progression exists. Two settings change that:
 
 | Setting | Default | Effect |
 | :--- | :--- | :--- |
-| `hideLockedItemsInJei` | `false` | Removes locked items from the ingredient panel entirely. |
-| `hideLockedRecipesInJei` | `false` | Hides recipes whose output is locked. |
+| `hideLockedItemsInJei` | `false` | Removes locked items from the ingredient panel entirely, in JEI and EMI. |
+| `hideLockedRecipesInJei` | `false` | Hides locked recipes. JEI catches vanilla recipe types by their output; EMI hides every recipe that would carry the padlock, including ones locked by id or by a gated fluid. |
 | `lockedItemMultiStagePolicy` | `STRICT` | For items in several stages: `STRICT` keeps them locked while any assigned stage is; `LENIENT` frees them as soon as any one is. |
+
+The names still say JEI because they predate EMI support, and renaming them would break existing
+configs. Hiding in EMI needs NeoForge 6.0.2 or later; on Forge and Fabric the two settings reach
+JEI only. → [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
 
 → [visual.toml](/wiki/server/config-files/visual-toml#jei_hiding)
 

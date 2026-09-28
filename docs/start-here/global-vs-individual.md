@@ -69,7 +69,8 @@ While the stage is locked, every recipe whose output is the locked item is filte
 - Custom recipe types from KubeJS, CraftTweaker, and other mods
 
 The item cannot be produced. No one on the server can craft it. JEI and EMI show a lock overlay, or
-hide the recipe entirely if `hideLockedItemsInJei` or `hideLockedRecipesInJei` is on. The `recipes`
+hide the recipe entirely if `hideLockedItemsInJei` or `hideLockedRecipesInJei` is on (in EMI from
+NeoForge 6.0.2). The `recipes`
 field works as a more surgical tool on top of this, removing specific recipe ids by hand when you
 only want one of several variants gone.
 

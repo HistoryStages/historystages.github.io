@@ -13,9 +13,13 @@ Everyone else who has helped is named in
 — code contributors, translators, and the people whose bug reports and compatibility findings
 shaped the mod without a line of code changing hands.
 
-Translations beyond German and English come from the community. The German and English language
-files are maintained in the repository; every other language is contributed, and corrections to
-them are welcome as pull requests — translators are credited in the same file.
+Translations beyond German and English come from the community: Russian and, since 6.0.2,
+Simplified Chinese. They are done on **[Crowdin](https://crowdin.com/project/history-stages)**,
+in the browser, with no JSON files and no pull request. New texts show up there on their own after
+every update. A language that is not on Crowdin yet can be asked for, or sent in as a file; the
+[translations section of CONTRIBUTING.md](https://github.com/Flix100000/History-Stages/blob/neoforge-1.21.X/CONTRIBUTING.md#translations)
+explains both. German and English are kept up to date in the repository. Translators are credited
+in CONTRIBUTORS.md as well.
 
 ## The mod
 
