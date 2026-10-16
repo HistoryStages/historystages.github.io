@@ -109,6 +109,12 @@ A mod id gates **every item that mod registers**:
 This is the widest net there is, and it is resolved from the registry rather than from a list, so it
 also covers items added by a later update of that mod.
 
+Since 6.1.0 it also covers **enchanted books and potions whose enchantment or effect comes from
+that mod**, and while the entry locks the `recipe` action the enchanting table, the anvil and the
+brewing stand refuse that mod's enchantments and effects. Gear is still judged by its own id: a
+vanilla sword with a modded enchantment is not caught by the mod lock. Lock the enchantment itself
+for that. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
+
 ## Mod exceptions
 
 `mod_exceptions` carves items back out of a `mods` lock — the usual shape of "gate the whole tech
@@ -132,9 +138,12 @@ because it carves holes rather than locking.
 
 ## Enchantments
 
-**There is no enchantment field.** An enchantment is gated by writing an `items` entry for
-`minecraft:enchanted_book` whose NBT carries `StoredEnchantments` — and the mod then reads that same
-entry when deciding whether an anvil or an enchanting table may apply the enchantment at all:
+Since 6.1.0 enchantments have their own field, which also covers gear and the stations. →
+[Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
+
+The older way still works and keeps doing what it did: an `items` entry for
+`minecraft:enchanted_book` whose NBT carries `StoredEnchantments`. The mod reads that same entry
+when deciding whether an anvil or an enchanting table may apply the enchantment at all:
 
 ```json
 "items": [

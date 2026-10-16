@@ -101,6 +101,7 @@ was clustered from. → [Commands](/wiki/server/commands#debug-subcommands-clien
 | `messageEnabled` / `messageFormat` / `showInChat` | on | A message on entry. `{stage}` and `{structure}` are replaced. |
 | `damageEnabled` / `damageAmount` / `damageInterval` | off / `1.0` / `20` | Periodic damage while inside. |
 | `blockRightClick` / `blockLeftClick` / `blockProjectiles` | all on | Interactions cancelled inside the zone. |
+| `blockExplosions` | on | Explosions do not destroy blocks inside. |
 | `checkInterval` | `10` | Ticks between position checks. |
 
 The visible side — the force-field wall as you approach and the red screen tint while inside — is in

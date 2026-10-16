@@ -18,14 +18,20 @@ A bug raised on Discord does not get lost; it ends up as an issue if it needs on
 
 ## Before reporting: check the load report
 
-Every startup writes a `debug-*.log` into `config/historystages/logs/`. It lists both stage trees
-and every problem found while loading them:
+Every startup, and every `/history reload`, writes a `debug-*.log` into `config/historystages/logs/`.
+Its header names the History Stages, Minecraft and NeoForge versions, the compat mods that are
+loaded and every addon that uses the API. Below that come the problems found while loading, grouped
+by the stage file they belong to, errors first:
 
 - duplicate stage ids across a folder tree
 - item, recipe, entity or structure ids that do not exist
 - recipe ids that were in a stage but are not in the game any more — the KubeJS renumbering trap
 - per-player conditions written into a global stage, which are skipped rather than checked
 - lock types used in a scope that cannot support them
+
+Repeated notes of one kind are folded after five, and the config section lists only settings that
+differ from their default. Errors and warnings also go to `latest.log`, with the path of the
+report. Addons can add their own checks and sections. → [Diagnostics](/api/diagnostics)
 
 A surprising share of "the lock does not work" turns out to be one line in that file. It is also the
 first thing worth attaching to a report.

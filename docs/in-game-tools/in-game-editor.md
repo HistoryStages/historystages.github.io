@@ -29,12 +29,25 @@ asks for its display name up front.
 **Stage Settings** is a screen of its own for the stage's metadata — id, display name, research
 time — kept apart from the lock entries so the two do not crowd each other. It also holds
 [pedestal tier gating](/wiki/in-game-tools/research/pedestal#tier-gating-per-stage)
-(`min_pedestal_tier`, `pedestal_tier_mode`) and the
-[Lose on Death](/wiki/start-here/global-vs-individual#lose-on-death) switch for individual stages.
+(`min_pedestal_tier`, `pedestal_tier_mode`), the mode with its
+[lock triggers](/wiki/stage-file/relocking), and the cards below:
+
+- **Locks** — the [Interchangeable](/wiki/stage-file/interchangeable-stages) switch, and the rows
+  that [fix lock actions for the whole stage](/wiki/locking/items-and-recipes/unlock-actions#fixing-actions-for-a-whole-stage).
+- **Individual** — [Lose on Death](/wiki/start-here/global-vs-individual#lose-on-death) and
+  [Share with team](/wiki/start-here/global-vs-individual#sharing-with-a-team), on individual
+  stages only.
+
+**Logic**, the button next to Settings and Dependencies, opens the stage's
+[logic blocks](/wiki/stage-file/logic-blocks). Its label counts them: `Logic (2)`.
 
 **Organise mode**, also on the overview, is for large packs: tick several stages and
 [folders](/wiki/start-here/where-stage-files-live#folders) and drag them onto a target folder in one
 move. Moving a folder brings its contents along.
+
+**Disguises**, in the overview's header menu, lists every
+[disguise rule](/wiki/locking/items-and-recipes/disguises) in the pack, with what it looks like,
+how it drops and which stages lock it.
 
 **Per-player unlocking** sits there too — unlock or relock an individual stage for one online
 player, or for everyone online at once, without typing
@@ -60,7 +73,10 @@ on the tab:
 | Menu entry | Where it appears |
 | :--- | :--- |
 | **Edit NBT** | Items, Tags, Exceptions, Trades |
-| **Lock Actions** | Items, Tags, Mods, Fluids |
+| **Recipes using this item** | Items → [Recipes](/wiki/locking/items-and-recipes/recipes#recipes-using-an-item) |
+| **Disguise** | Items, Tags → [Disguises](/wiki/locking/items-and-recipes/disguises) |
+| **Lock Actions** | Items, Tags, Mods, Fluids, Enchantments, Potion Effects |
+| **Locked from level**, **Applies to** | Enchantments, Potion Effects → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) |
 | **Text Override** | Items, Tags, Mods, Fluids — but only while the stage's Display card is set to *replace* |
 | **Generation** | Structures, on global stages only |
 | **SpawnControl** | Spawn |
@@ -209,11 +225,6 @@ types are not offered — an entry for them would be written to the stage file a
 
 ## The Zone Editor
 
-:::warning[Beta]
-The zone category is much younger than the rest of the mod. Expect bugs, and expect it to change. →
-[Zones](/wiki/locking/world/zones)
-:::
-
 Zones are the one lock type with no registry to pick from — the area has to be drawn. The zone tab lists a stage's zones with a one-line summary of what each does (`3 shapes · damage · barrier · inverted`), and **Edit** opens the zone's own screen.
 
 That screen has four sections. **General** holds the name, the world, and the list of shapes. **Effect** holds the message, the damage and the potion effects. **Protection** holds the interaction switches, the hard barrier and the spawn suppression. **Display** holds the two visibility switches.
@@ -229,11 +240,8 @@ A zone is the union of its shapes, so an awkward area is built by dropping sever
 
 ### The map
 
-Every zone screen carries a small map; clicking it opens the large one. It can be read flat from above or tilted into a **3D** view, dragged to turn and scrolled to zoom, and it has buttons to jump to the player (**to me**) or to frame the whole zone (**to zone**). A readout under it names the coordinates the cursor is over. A zone in a world the player is not currently in is drawn without terrain — the shapes are still positioned correctly, there is simply nothing to draw them on.
+Every zone screen carries a small map; clicking it opens the large one. It is a top-down view, dragged to pan and scrolled to zoom, and it has buttons to jump to the player (**to me**) or to frame the whole zone (**to zone**). A readout under it names the coordinates the cursor is over. A zone in a world the player is not currently in is drawn without terrain — the shapes are still positioned correctly, there is simply nothing to draw them on.
 
-:::note[Forge 1.20.1 and Fabric]
-The Forge and Fabric builds have the top-down view only; the tilted 3D view is NeoForge-only. Everything else on this page is the same on all three loaders.
-:::
 
 ## The Spawn Rule Dialog
 

@@ -24,6 +24,8 @@ sword but do not swing it, craft the ingot but do not wear the armour. →
 | [Unlock Actions](/wiki/locking/items-and-recipes/unlock-actions) | Gate one interaction instead of all of them. |
 | [Recipes](/wiki/locking/items-and-recipes/recipes) | Named recipe ids, when only one route to an item should close. |
 | [Fluids](/wiki/locking/items-and-recipes/fluids) | The fluid itself, which covers every bucket and tank item in the pack. |
+| [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) | Books, gear and potions by what they carry, and the stations that make them. |
+| [Disguises](/wiki/locking/items-and-recipes/disguises) | A locked item or block that looks like something else until it opens. |
 | [Loot](/wiki/locking/items-and-recipes/loot) | Chest loot and mob drops, filtered per player. |
 
 ### The World
@@ -32,7 +34,7 @@ sword but do not swing it, craft the ingot but do not wear the armour. →
 | :--- | :--- |
 | [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) | Refuse entry, wall a structure off, or cap how often it generates. |
 | [Biomes](/wiki/locking/world/biomes) | Make the place unsurvivable rather than unreachable. |
-| [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. **Beta.** |
+| [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. |
 
 ### Creatures & Trade
 

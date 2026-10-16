@@ -31,11 +31,6 @@ only by their output. EMI hides every recipe the padlock overlay would mark: a l
 recipe id named on a stage, and a recipe that makes or uses a gated fluid. JER's drop and loot
 pages stay visible in EMI, even when a drop on them is locked.
 
-:::note[EMI hiding needs 6.0.2]
-Hiding in EMI arrived in 6.0.2 on NeoForge and Forge. On the Fabric build the two settings reach
-JEI only, and EMI keeps the padlock overlay. → [Versions & Platforms](/wiki/about/versions-and-platforms#not-on-fabric-yet)
-:::
-
 [Research Booster](/wiki/in-game-tools/research/pedestal#boosters) blocks are registered as their
 own recipe category, so players can look up which blocks speed research up and by how much.
 
@@ -56,10 +51,18 @@ Rewards can either unlock or relock a stage — which, combined with
 [`external` mode](/wiki/stage-file/stage-modes#external), is the usual way to put progression
 entirely in the quest book's hands.
 
+## FTB Teams
+
+An individual stage with **Share with team** on is shared inside an FTB Teams party: one player
+unlocks it, the whole party has it. NeoForge 6.1.0 and up. →
+[Sharing with a team](/wiki/start-here/global-vs-individual#sharing-with-a-team)
+
 ## Jade
 
 When a player looks at a block, entity, armour stand or item frame that History Stages has locked,
-Jade names the stage it needs. → [`[jade]`](/wiki/server/config-files/visual-toml#jade-requires-jade)
+Jade names the stage it needs. A [disguised](/wiki/locking/items-and-recipes/disguises) block shows
+as its disguise, and the scroll in a [scroll shelf](/wiki/in-game-tools/research/scrolls#scroll-shelves)
+slot is named when you look at it. → [`[jade]`](/wiki/server/config-files/visual-toml#jade-requires-jade)
 
 ## Lootr — required
 

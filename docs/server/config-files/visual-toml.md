@@ -28,6 +28,7 @@ This page is a lookup list. Each block links to the page that explains what it i
 | `openScrollBackdrop` | `60` | How far the world behind an open scroll is dimmed, in percent. `0` = not at all, `100` = black. |
 | `showWelcomeMessage` | `true` | The welcome message shown to players when they join. |
 | `showEditorButton` | `true` | The Stage Editor button in the pause menu. Operators can still open the editor with `/history debug editor`. |
+| `groupInterchangeableStages` | `true` | List [interchangeable stages](/wiki/stage-file/interchangeable-stages) under a "One of:" line in the tooltip. Off, they are listed like any other stage. |
 
 ## `[structure_overlay]`
 
@@ -65,6 +66,7 @@ Zones read these rather than the structure values above, because a pack can gate
 | `showInfo` | `true` | Show stage information on locked blocks in the Jade overlay. |
 | `showStageName` | `true` | If Jade info is enabled, name the required stage. |
 | `showAllUntilComplete` | `true` | If a block belongs to several stages, list all of them until all are unlocked. |
+| `groupInterchangeableStages` | `true` | Same as in `[visuals]`, for the Jade overlay. |
 
 ## `[dimension_lock]` and `[mob_lock]`
 
@@ -113,8 +115,7 @@ Off by default, unlike the dimension and mob switches. Those answer "why can I n
 
 → Explained on [Recipes](/wiki/locking/items-and-recipes/recipes#what-players-see).
 
-The section and the keys are named after JEI, but they drive EMI too (6.0.2 and later on NeoForge
-and Forge; on Fabric JEI only).
+The section and the keys are named after JEI, but they drive EMI too.
 
 | Setting | Default | Description |
 | :--- | :--- | :--- |
@@ -162,6 +163,19 @@ Overrides for the actionbar/chat messages shown when a player interacts with loc
 | `recipeLocked` | `message.historystages.recipe_locked` | Clicking a locked recipe in the recipe book. |
 | `dimensionUnknown` | `message.historystages.dimension_unknown` | Entering a locked dimension. |
 | `mobUnknown` | `message.historystages.mob_unknown` | Attacking a locked mob. |
+| `stageBlocked` | built-in text | A stage cannot be unlocked because a [logic block](/wiki/stage-file/logic-blocks#blocked-while) blocks it. `{stage}` is its name. |
+| `stageRevoked` | built-in text, naming the cause | The toast when a [Revoke when](/wiki/stage-file/logic-blocks#revoke-when) block takes a stage away. `{stage}` is its name. |
+
+## `[stage_logic]`
+
+→ Explained on [Logic Blocks](/wiki/stage-file/logic-blocks).
+
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `blockedDisplay` | `REASON` | `REASON` lists the conditions that block a stage (pedestal, graph, tooltip); `PLAIN` only says that it is blocked. |
+| `showInactiveCostHints` | `true` | Show "Would be cheaper while ..." hints for cost blocks whose condition does not hold yet. Cost changes in effect are always shown. |
+| `showRevokeWarningOnStage` | `true` | Warn on a stage that a "Revoke when" block can take it away again (scroll tooltip, graph). |
+| `showRevokeWarningOnTrigger` | `true` | Warn on a stage whose unlock would take away a stage the player owns (scroll tooltip, pedestal). |
 
 ## `[scroll_tooltip]`
 
@@ -178,6 +192,7 @@ Overrides for the actionbar/chat messages shown when a player interacts with loc
 
 | Setting | Default | Description |
 | :--- | :--- | :--- |
+| `tabStyle` | `"icons"` | How the chapters are marked along the top: `"icons"` draws a small ink icon per chapter with the name on hover, `"words"` writes the names out. |
 | `chapters` | built-in defaults | Ordered chapter layout of the [open scroll document](/wiki/in-game-tools/research/scrolls#the-open-scroll-document) (`overview`, `items`, `creatures`, `world`). |
 | `lockedDisplay` | `"obscured"` | `"visible"` shows locked entries normally; `"obscured"` shows them as silhouettes with a redacted name. |
 | `overviewBlocks` | built-in defaults | Which blocks (`icon`, `title`, `description`, `counts`) appear on the overview page, and in what order. |

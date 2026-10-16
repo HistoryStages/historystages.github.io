@@ -120,7 +120,7 @@ Everything else about the tab answers for the section on screen — its entries,
 
 ## Widgets
 
-Everything under `net.bananemdnsa.historystages.api.editor.widget`. Nineteen types, and the built-in screens are made of these same nineteen.
+Everything under `net.bananemdnsa.historystages.api.editor.widget`. Twenty-one types, and the built-in screens are made of these same twenty-one.
 
 | Type | What it is |
 | :--- | :--- |
@@ -136,6 +136,8 @@ Everything under `net.bananemdnsa.historystages.api.editor.widget`. Nineteen typ
 | `ChoiceScreen` | That same list as a screen of its own, for `TriggerEditor.authoringScreen` and anywhere else a `Screen` is what gets returned. Picking a row or pressing ESC returns to the parent; a row that opens a screen of its own is free to do so. |
 | `FormattedTextScreen` | The dialog for text carrying format codes and placeholders: wrapping field, live preview underneath, codes and placeholders as buttons. Codes are written `&`, not `§`. |
 | `NumberStepper` | A bounded integer as minus, readout, plus. Clamps internally, greys a button out at its end of the range, and the readout doubles as a small digits-only field for wide ranges. |
+| `Badge` | **6.1.** The editor's badge: a short label in a 1px frame over a dark fill, all three shades of the one text colour you pass. Every badge in the editor is this one — row badges, overview markers, graph pills. Square brackets around the label are dropped, since the frame does their job. |
+| `Checkbox` | **6.1.** The editor's tick box: grey frame off, gold frame and tick on, and a bar for "some of what is below". The filter menu and the "Applies to" and "Recipes using this item" panels use it. One `Checkbox.State` per box, `update()` once a frame, then `draw()`. |
 | `SearchBar` | The search field plus funnel-icon filter button, owning its text, focus and clipboard handling and an embedded `FilterDropdown`. |
 | `FilterDropdown` | The funnel button and its checkbox popup. Options sharing a non-null `groupId` are mutually exclusive; a null `groupId` makes an independent checkbox. |
 | `ToggleControl` | The editor's on/off switch: both halves side by side, the active one filled, and the fill travels when the value changes. A click sets the half it landed on rather than flipping, so clicking what is already set does nothing. Keep one `ToggleControl.State` per switch and call `update()` once a frame before `draw()`. |
@@ -143,3 +145,19 @@ Everything under `net.bananemdnsa.historystages.api.editor.widget`. Nineteen typ
 | `SegmentBar` | The same switch with more than two segments: the selected one filled, the fill travelling when it changes, a click selecting the segment it landed on rather than advancing. For a control you draw inside your own `renderContent` — the bar above a `CompositeCategoryTab` is drawn by the host and needs nothing from you. Keep one `SegmentBar.State` per bar and call `update()` once a frame before `draw()`; pass one `disabled` flag per label, and hand `update()` a hovered index of `-1` for a segment nobody can choose. |
 | `TradeRowGeometry` | Where the parts of a trade row sit, in the merchant window's reading order: what it costs, an arrow, what you get. The painted zone is one fixed width for every row and the second price keeps its place even when an offer has only one, so the names all start at the same x and the list can be read down a column. Names no Minecraft type. |
 | `SegmentBarGeometry` | The arithmetic under both, for any number of labels: segment width sized from the widest so nothing moves when the selection does, where segment *n* starts, and which one a click landed in. `ToggleGeometry` is the two-segment front door onto it and is unchanged — a value that is on or off is a different gesture from choosing which section you are looking at, and only the naming differs. |
+
+## Added in 6.1
+
+**6.1**, NeoForge only until the ports are out. All additive; nothing an addon built against 6.0
+calls has changed.
+
+- **`EditorRowList.Row`** gets `badge(text, colour, minWidth)` and a tooltip on badges,
+  `button(label, tooltip, minWidth, onClick)` with a minimum width so rows line up in columns, and
+  `segments(labels, selected, tooltip, onPick)` for a small segmented switch inside a row.
+- **`EditorTab.badgeTooltip(int index)`** lets an addon tab put a tooltip on its row badges.
+- **`AbstractSearchableList`** gets `footerButtons()`, a list of `FooterButton(label, onClick)`
+  drawn along the bottom of the picker; `onRowClicked(entry, index, mouseX, rowX)` to take a click
+  on a row yourself (return `true` to swallow it); and `reloadEntriesKeepingScroll()` to refilter
+  without jumping back to the top.
+- **`AbstractCategoryTab.addIfAbsent(String id)`** adds an entry unless it is already there, and
+  marks the stage changed.

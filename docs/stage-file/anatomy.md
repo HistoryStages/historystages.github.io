@@ -58,16 +58,20 @@ the editor.
 | `mode` | String | How the stage opens, and whether a Research Scroll exists for it. `"default"` when omitted. → [Stage Modes](/wiki/stage-file/stage-modes) |
 | `auto_trigger` | Object | For `auto` and `temporary` stages: the triggers that open it, and whether any or all of them must fire. → [Stage Modes](/wiki/stage-file/stage-modes#auto) |
 | `temporary` | Object | For `temporary` stages: how long it stays open, how often it may fire, and the cooldown between times. → [Stage Modes](/wiki/stage-file/stage-modes#temporary) |
+| `lock_trigger` | Object | For `default` and `auto` stages: triggers that lock the stage again, and whether it can be unlocked afterwards. → [Relocking](/wiki/stage-file/relocking#lock-triggers) |
+| `notify` | Boolean | `false` keeps this stage's unlock and relock messages quiet. → [Relocking](/wiki/stage-file/relocking#notify) |
 | `research_time` | Integer | Seconds at the pedestal. `0` or omitted uses the server-wide `researchTimeInSeconds`. |
 | `min_pedestal_tier` | Integer 1–4 | Lowest [pedestal tier](/wiki/in-game-tools/research/pedestal#tiers) that may research it. Default `1`. |
 | `pedestal_tier_mode` | String | `"min"` (this tier and above) or `"exact"` (only this tier). Default `"min"`. |
 | `dependencies` | List of Objects | Conditions that must be met before it can be researched at all. → [Dependencies](/wiki/stage-file/dependencies) |
+| `logic` | List of Objects | Rules that block, hide, reprice or revoke the stage depending on other stages. → [Logic Blocks](/wiki/stage-file/logic-blocks) |
 | `scroll_completion` | String | What happens to the scroll when research finishes — `"consume"`, `"replace"` or `"open"`. Overrides the server-wide `defaultScrollCompletion`. → [Research Scrolls](/wiki/in-game-tools/research/scrolls#what-happens-when-research-finishes) |
 
 ## What it locks
 
 *In the editor:* one tab per row below — Items, Tags, Mods, Exceptions, Recipes, Fluids,
-Dimensions, Structures, Biomes, Zones, Entities (as Attack / Interaction / Spawn) and Trades.
+Enchants & Effects, Dimensions, Structures, Biomes, Zones, Entities (as Attack / Interaction /
+Spawn) and Trades.
 
 | Field | Type | What it locks |
 | :--- | :--- | :--- |
@@ -77,10 +81,12 @@ Dimensions, Structures, Biomes, Zones, Entities (as Attack / Interaction / Spawn
 | `mod_exceptions` | Strings / Objects | Items carved back out of a `mods` lock. |
 | `recipes` | Strings | Recipe ids, shown with a padlock in JEI and EMI. → [Recipes](/wiki/locking/items-and-recipes/recipes) |
 | `fluids` | Strings / Objects | Fluid ids. Gates what a stack is *carrying*, so one entry covers every bucket and tank. → [Fluids](/wiki/locking/items-and-recipes/fluids) |
+| `enchantments` | Strings / Objects | Enchantment ids. Locks books and gear that carry them, and the stations that apply them. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) |
+| `effects` | Strings / Objects | Potion effect ids. Locks potions and tipped arrows that carry them. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) |
 | `dimensions` | Strings | Dimension ids players may not enter. → [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) |
 | `structures` | Object | `structures` blocks entry; `block_generation` caps how often one may generate. → [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) |
 | `biomes` | Object | Biomes players cannot survive in. → [Biomes](/wiki/locking/world/biomes) |
-| `zones` | List of Objects | Areas you draw yourself, each with its own rules. **Beta.** → [Zones](/wiki/locking/world/zones) |
+| `zones` | List of Objects | Areas you draw yourself, each with its own rules. → [Zones](/wiki/locking/world/zones) |
 | `entities` | Object | `attacklock`, `interactionlock`, `spawnlock`. → [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) |
 | `trades` | Object | `offers`, `professions`, `levels`. → [Merchant Trades](/wiki/locking/creatures-and-trade/merchant-trades) |
 
@@ -90,13 +96,17 @@ Loot has no field of its own — locked items are filtered out of chest loot and
 
 ## How it behaves once it exists
 
-*In the editor:* **Stage Settings** — `hidden_display` as the Display card, `lose_on_death` as a
-switch next to it on individual stages.
+*In the editor:* **Stage Settings** — `hidden_display` as the Display card, `interchangeable` and
+the fixed actions in the Locks card, `lose_on_death` and `share_with_team` in the Individual card.
 
 | Field | Type | What it does |
 | :--- | :--- | :--- |
 | `hidden_display` | Object | What locked players see instead of the real name and tooltip. → [Hidden Display](/wiki/stage-file/hidden-display) |
 | `lose_on_death` | Boolean | Individual stages only. Relocks the stage when its owner dies. → [Lose on Death](/wiki/start-here/global-vs-individual#lose-on-death) |
+| `share_with_team` | Boolean | Individual stages only. Unlocking it unlocks it for the owner's FTB Teams party too. → [Sharing with a team](/wiki/start-here/global-vs-individual#sharing-with-a-team) |
+| `interchangeable` | Boolean | When several stages lock the same thing, one of the interchangeable ones is enough. → [Interchangeable Stages](/wiki/stage-file/interchangeable-stages) |
+| `fixed_lock_actions` | Object | Lock actions fixed for every item, fluid, interaction, enchantment or effect entry of the stage. → [Unlock Actions](/wiki/locking/items-and-recipes/unlock-actions#fixing-actions-for-a-whole-stage) |
+| `fixed_spawn_rule` | Object | Global stages only. SpawnControl rows fixed for every creature of the stage. → [Unlock Actions](/wiki/locking/items-and-recipes/unlock-actions#fixing-actions-for-a-whole-stage) |
 
 ## Fields other mods own
 

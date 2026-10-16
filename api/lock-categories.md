@@ -1,15 +1,16 @@
 ---
 title: Lock Categories
-description: "Registering a new kind of gated thing, the way the sixteen built-in categories are registered themselves."
+description: "Registering a new kind of gated thing, the way the eighteen built-in categories are registered themselves."
 sidebar_position: 4
 ---
 
 :::info
 **API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**.
+or **Fabric 1.21.1**. Everything marked **6.1** needs **6.1.0+ on NeoForge** until the Forge and
+Fabric ports are out.
 :::
 
-**A lock category answers the question "what can be gated?" — and the sixteen things History Stages ships with are themselves categories, registered through the same path an addon uses.**
+**A lock category answers the question "what can be gated?" — and the eighteen things History Stages ships with are themselves categories, registered through the same path an addon uses.**
 
 Items, tags, mods, structures, biomes, dimensions and the three entity locks are not hardcoded branches inside the lock engine. Each one is an entry in a registry that says three things: where its entries live on a stage, how they serialise, and how to recognise one of its subjects at runtime. Everything after that — walking the stages, global versus individual, skipping what the player has already unlocked, deduplicating the answer — happens on the mod's side, once, for built-ins and addons alike.
 
@@ -17,6 +18,8 @@ Items, tags, mods, structures, biomes, dimensions and the three entity locks are
 | :--- | :--- | :--- |
 | `historystages:items` | Item ids, optionally narrowed by NBT / data components | Global + Individual |
 | `historystages:fluids` | What a stack is *carrying* — one entry covers the vanilla bucket, every modded bucket and every tank item | Global + Individual |
+| `historystages:enchantments` | Enchantments a stack carries, from a level up, and the stations that apply them (6.1) | Global + Individual |
+| `historystages:effects` | Potion effects a stack carries, from a level up, and the brewing stand (6.1) | Global + Individual³ |
 | `historystages:tags` | Item tags | Global + Individual |
 | `historystages:mods` | Every item from a mod id | Global + Individual |
 | `historystages:mod_exceptions` | Carves items back out of a mod lock; gates nothing on its own | Global + Individual |
@@ -34,7 +37,9 @@ Items, tags, mods, structures, biomes, dimensions and the three entity locks are
 
 ¹ Individually only at the stations that know which player is standing at them — crafting table, the 2×2 inventory grid, stonecutter, smithing table. → [Global vs Individual Stages](/wiki/start-here/global-vs-individual) has the full list of what a per-player recipe gate does and does not reach.
 
-² Zones are in **beta** — the category is younger than the rest and still growing. Its one scope exception is the "no mob spawns" rule, which is global-only for the same reason `spawnlock` is. → [Zones](/wiki/locking/world/zones).
+² The one scope exception for zones is the "no mob spawns" rule, which is global-only for the same reason `spawnlock` is. → [Zones](/wiki/locking/world/zones).
+
+³ The brewing stand brews with nobody at it, so only global stages stop it there. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
 
 Blocks have no category of their own — a block is gated through its item id in `historystages:items`.
 
@@ -80,7 +85,7 @@ One further builder method is worth knowing: `supportedScopes(StageScope...)`. A
 
 ## Namespacing
 
-`historystages` is reserved for the sixteen built-ins. An addon namespaces its category ids with its own mod id — `hsdemo:relics`, `mymod:villagertrades` — and this is a requirement rather than a convention: `AddonLockCategory.build()` rejects an id with no `:` at all, and rejects the `historystages` namespace outright.
+`historystages` is reserved for the eighteen built-ins. An addon namespaces its category ids with its own mod id — `hsdemo:relics`, `mymod:villagertrades` — and this is a requirement rather than a convention: `AddonLockCategory.build()` rejects an id with no `:` at all, and rejects the `historystages` namespace outright.
 
 ```java
 // The id passed to builder(), as judged by build():
@@ -127,27 +132,131 @@ Two details fall out of that:
 
 ## Asking at runtime
 
-`CategoryLocks` is what an addon calls to ask whether one of its own objects is gated. Both signatures are server-side:
+`CategoryLocks` is what an addon calls to ask whether something is gated, by one of its own
+categories or a built-in one. All methods are server-side.
 
-| Method | Returns |
-| :--- | :--- |
-| `CategoryLocks.isLockedForPlayer(String categoryId, Object subject, UUID playerUuid)` | `boolean` — true when any stage gating this subject is still locked, in either scope. |
-| `CategoryLocks.missingStagesForPlayer(String categoryId, Object subject, UUID playerUuid)` | `List<String>` — the stage ids this player still needs, global ones first. Empty when the subject is not gated at all. |
-| `CategoryLocks.category(String categoryId)` | `@Nullable LockCategory<?>` — null when nothing is registered under that id. A check that your registration ran in time, not a way to fetch a typed category back. |
+| Method | Returns | |
+| :--- | :--- | :--- |
+| `isLockedForPlayer(String categoryId, Object subject, UUID playerUuid)` | `boolean` — true when a stage gating it is still locked, in either scope | |
+| `missingStagesForPlayer(String categoryId, Object subject, UUID playerUuid)` | `List<String>` — the stages this player still needs, global ones first; empty when not gated | |
+| `isLockedGlobally(String categoryId, Object subject)` | global stages only, for paths with no player, such as a machine | 6.1 |
+| `missingStagesGlobally(String categoryId, Object subject)` | the global stages the world still needs | 6.1 |
+| `hits(LockCategory<T> category, Object subject, UUID playerUuid)` | `List<LockHit<T>>` — every matching entry, see below | 6.1 |
+| `hits(String categoryId, Object subject, UUID playerUuid)` | the same by id | 6.1 |
+| `category(String categoryId)` | `@Nullable LockCategory<?>` — a check that your registration ran in time | |
 
 ```java
 UUID uuid = player.getUUID();
 if (CategoryLocks.isLockedForPlayer("hsdemo:relics", relicId, uuid)) {
     List<String> missing = CategoryLocks.missingStagesForPlayer("hsdemo:relics", relicId, uuid);
-    // refuse the action, and tell the player which stages are still in the way
+    LockFeedbacks.actionbar(player, "hsdemo:relics", Component.literal("This relic is sealed."), missing);
 }
 ```
 
-Both scopes are consulted: a subject is locked when a global stage gating it is not yet unlocked for the world, **or** an individual stage gating it is not yet unlocked for this player. A category that says it means nothing in a scope is not asked about that scope — the answer would be misleading rather than merely empty. An unknown category id answers "not locked" and an empty list rather than throwing.
+Both scopes are consulted: a subject is locked when a global stage gating it is not yet unlocked for the world, **or** an individual stage gating it is not yet unlocked for this player. A category that says it means nothing in a scope is not asked about that scope. An unknown category id answers "not locked" and an empty list rather than throwing.
+
+[Interchangeable stages](/wiki/stage-file/interchangeable-stages) are counted in from 6.1 on: a
+subject gated by two interchangeable stages is free once either is unlocked, and only the stages
+that still stand in the way are listed as missing.
 
 An addon supplies only the matcher. Which stages to consult, global versus individual, what the player has unlocked, deduplication — all of that stays on the mod's side, because those are the parts an addon would otherwise have to reimplement and could get subtly wrong.
 
 **The demo hooks nothing, because it has nothing to hook.** History Stages has no idea when a villager trade is about to be offered, when a spell is about to resolve, or when a quest reward is about to be handed out. A real addon owns that moment — it already has the event, the callback or the mixin — and calls `CategoryLocks` right there. That is the whole integration: register a category, ask at the moment your thing happens.
+
+### Every matching entry: `LockHit`
+
+**6.1.** A yes-or-no is not enough for an addon whose most specific entry wins, or whose entries can
+grant as well as deny. `hits(...)` returns every stored entry that matches, global stages first:
+
+```java
+record LockHit<T>(String stageId, StageScope scope, T entry, boolean unlocked, boolean locks)
+```
+
+Two flags, because they answer different questions. `unlocked` is the plain fact about this one
+stage. `locks` is the verdict with interchangeable stages counted in: once one stage of an
+interchangeable group is unlocked, the others stop standing in the way, though they are still
+locked. A hit with `locks == true` is exactly a stage `missingStagesForPlayer` would name. **Block
+by `locks`, grant by `unlocked`.**
+
+### Subjects for the built-in categories
+
+**6.1.** Most built-ins take a bare id string: dimensions, recipes, structures, biomes, trade levels
+and attack locks. Registry handles (`ResourceLocation`, `ResourceKey`, `Holder`) work wherever an id
+does. Items, tags and mods take an `ItemStack`, `Item` or item id; fluids a fluid id, `Fluid` or
+`FluidStack`. Everything that looks at more than an id is built with `Subjects`:
+
+| Category | Subject |
+| :--- | :--- |
+| items, tags, mods, fluids, enchantments, effects | `Subjects.item(ItemStack)` — with its fluid, enchantments and potion contents; also `item(Item)`, `item(String)` |
+| fluids, standing in the world | `Subjects.fluid(String fluidId)` |
+| enchantments, without an item | `Subjects.enchantment(String id, int level)` |
+| effects, without an item | `Subjects.effect(String id, int level)` |
+| spawnlock | `Subjects.spawn(String entityId, String source, String dimension)` |
+| interactionlock | `Subjects.interaction(String entityId, String action, ItemStack held)` |
+| trade_professions | `Subjects.merchant(String professionOrEntityId, int level)` |
+| trades | `Subjects.tradeOffer(String merchantKey, int level, ItemStack gives, ItemStack costA, ItemStack costB)` |
+
+They return a `LockSubject`, a marker type whose implementations are internal. Zones gate a place,
+not a thing; ask [`PlaceLocks`](#places-placelocks) for them.
+
+:::warning[Fixed in 6.1]
+Until 6.1, `isLocked('items', 'minecraft:diamond')` — and every `CategoryLocks` call for items, tags,
+mods, fluids or enchantments — answered "unlocked", because those categories only matched an
+internal subject record. Subjects are normalised now. Code that worked around it on 6.0.x can drop
+the workaround on 6.1.
+:::
+
+### Items: `ItemLocks`
+
+**6.1.** For items, use `ItemLocks` rather than `CategoryLocks`. An item is gated by more than its own
+entry — its tags, its mod, the fluid it carries, the enchantments and effects on it — each possibly
+narrowed to certain actions. `ItemLocks` asks all of that at once through the indexed path the mod's
+own handlers use, so it is cheap enough to call per tick.
+
+| Method | Use it for |
+| :--- | :--- |
+| `isActionLocked(ItemStack, String action, ServerPlayer or UUID)` | **blocking** something: may the player not do this |
+| `isActionLockedGlobally(ItemStack, String action)` | the same with no player, for machines |
+| `isGated(ItemStack, ServerPlayer or UUID)`, `isGatedGlobally(ItemStack)` | display: does a missing stage mention the item at all |
+| `missingStages(ItemStack, ServerPlayer or UUID)` | what the player still needs |
+| `isFluidActionLocked(String fluidId, String action, ServerPlayer)` | a fluid outside any container |
+| `isEnchantmentLocked(String id, int level, String station, String itemId, ServerPlayer)` | a station applying an enchantment; `station` is `enchanting_table` or `anvil` |
+
+**To block, ask `isActionLocked`.** `isGated` ignores action narrowing and answers whether any locked
+stage mentions the item. That is right for a tooltip and wrong for a gate: it is how a mod entry
+meant only for recipes once blocked container clicks, item frames and the anvil. The actions are
+those in `LockActions.ITEM`.
+
+### Places: `PlaceLocks`
+
+**6.1.** May this player be at, or reach into, a position? A place is gated four ways: its dimension,
+its biome, a structure covering it and a zone drawn around it. `PlaceLocks` asks all four with the
+same rules the mod's own handlers apply, for any position — what a teleport, waypoint or portal mod
+needs before it moves someone.
+
+| Method | Returns |
+| :--- | :--- |
+| `isLocked(ServerPlayer or UUID, ServerLevel, BlockPos)` | locked by any of the four |
+| `missingStages(ServerPlayer or UUID, ServerLevel, BlockPos)` | dimension first, then biome, structure and zone, each once |
+| `isDimensionLocked(ServerPlayer, ServerLevel)` | the dimension alone; cheap |
+
+Structure checks look at the structures near the position and cost more than the rest. Call it when
+a player is about to go somewhere, not every tick for every block.
+
+### Telling the player: `LockFeedbacks`
+
+**6.1.** So an addon's lock feels like part of the mod: dark red italics on the actionbar, at most once
+every two seconds per kind of lock.
+
+| Method | What it does |
+| :--- | :--- |
+| `actionbar(ServerPlayer, String bucket, Component message)` | shows the message unless this bucket spoke to the player in the last two seconds |
+| `actionbar(ServerPlayer, String bucket, Component message, List<String> missingStageIds)` | the same, with " (Required: …)" naming the stages |
+| `requiredSuffix(ServerPlayer, List<String> missingStageIds)` | only that suffix, for a message of your own; `null` when there is nothing to name |
+
+`bucket` keeps its own cooldown, so a recent item message does not swallow a block message. Prefix it
+with your mod id. The stage names are the ones the player may see — `"???"` for hidden stages — and
+the suffix is left out when a stage asks for its lock hints to be hidden.
 
 ## Making lookups fast (optional)
 

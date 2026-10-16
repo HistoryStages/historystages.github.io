@@ -48,6 +48,15 @@ This page is a lookup list. Each block links to the page that explains what it i
 | `defaultScrollCompletion` | `"consume"` | What happens to a scroll when its research finishes. `consume` uses it up; `replace` puts a fresh scroll for the same stage back into the pedestal; `open` leaves an open scroll as a keepsake. A stage can override this with its own `scroll_completion`. |
 | `enableScrollResealing` | `true` | Allow crafting an open scroll back into a sealed one. Crafting follows this immediately, but JEI and EMI build their recipe lists at startup, so the entry only appears or disappears there after a restart. |
 
+## `[stage_logic]`
+
+→ Explained on [Logic Blocks](/wiki/stage-file/logic-blocks).
+
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `researchWhenBlocked` | `PAUSE` | What a pedestal does when its stage becomes blocked while researching. `PAUSE` keeps the progress and goes on once the block clears; `CANCEL` stops and hands the scroll back. |
+| `warnOnForcedUnlock` | `true` | Tell an operator when a command or the editor unlocks a stage that was blocked. Those paths unlock anyway; this only decides whether they say so. |
+
 ## `[loot_replacements]`
 
 → Explained on [Loot](/wiki/locking/items-and-recipes/loot#replacing-instead-of-removing).
@@ -76,6 +85,16 @@ The per-player counterparts of the `[gameplay]` locks. Their notification settin
 | `lockEnchanting` | `true` | Prevent applying individually-locked enchantments. |
 | `lockRecipes` | `true` | Let individual stages gate recipes at the stations that know who is crafting: crafting table, 2×2 inventory grid, stonecutter, smithing table. Furnaces, hoppers and autocrafters resolve recipes with nobody there and stay global-only. |
 
+## `[team_mods]`
+
+→ Explained on [Sharing with a team](/wiki/start-here/global-vs-individual#sharing-with-a-team).
+
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `shareOnJoin` | `false` | Hand a player who joins a party every shared stage someone in it already has. Checked again at each login. Leaving never takes stages away. |
+| `shareLoss` | `false` | When one player loses a shared stage, the rest of the party loses it too, the normal way. Admin locks are never shared. |
+| `useFtbTeams` | `true` | Count FTB Teams parties as teams. Solo teams never count. |
+
 ## `[structure_lock]`
 
 → Explained on [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures#structures).
@@ -94,6 +113,7 @@ The per-player counterparts of the `[gameplay]` locks. Their notification settin
 | `blockRightClick` | `true` | Cancel right-click interactions inside a locked structure. |
 | `blockLeftClick` | `true` | Cancel left-click interactions inside a locked structure. |
 | `blockProjectiles` | `true` | Cancel projectiles the moment they would impact something inside a locked structure. |
+| `blockExplosions` | `true` | Keep explosions from destroying blocks inside a locked structure. |
 
 ## `[biome_lock]`
 
@@ -113,7 +133,8 @@ The per-player counterparts of the `[gameplay]` locks. Their notification settin
 | `damageInterval` | `20` | Ticks between damage ticks. Range 1–600. |
 | `blockRightClick` | `true` | Cancel right-click interactions inside a locked biome. |
 | `blockLeftClick` | `true` | Cancel left-click interactions inside a locked biome. |
-| `blockProjectiles` | `true` | Cancel projectiles and explosions the moment they would impact something inside a locked biome. |
+| `blockProjectiles` | `true` | Cancel projectiles the moment they would impact something inside a locked biome. |
+| `blockExplosions` | `true` | Keep explosions from destroying blocks inside a locked biome. |
 
 ## `[zone_lock]`
 

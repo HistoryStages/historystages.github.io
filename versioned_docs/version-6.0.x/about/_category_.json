@@ -1,0 +1,9 @@
+{
+  "label": "About History Stages",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "title": "About History Stages",
+    "description": "Which version runs where, where to ask for help, what the licence allows, and who built it."
+  }
+}

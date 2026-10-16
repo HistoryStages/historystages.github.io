@@ -31,11 +31,12 @@ The second one builds on the first: an addon still reads stage state the same wa
 
 | Page | Answers |
 | :--- | :--- |
-| [Lock Categories](./lock-categories.md) | What can be gated? The sixteen built-in kinds are registered through this same path. |
+| [Lock Categories](./lock-categories.md) | What can be gated? The eighteen built-in kinds are registered through this same path. |
 | [Requirements](./requirements.md) | What must a player do before the stage opens? |
 | [Auto-Triggers](./auto-triggers.md) | What unlocks a stage by itself, with no pedestal and no command? |
 | [Stage Settings](./stage-settings.md) | Your own settings on every stage, stored in the stage file. |
 | [Config Sections](./config-sections.md) | Your own rows in the config screen, stored in your own config. |
+| [Diagnostics](./diagnostics.md) | **6.1.** Your own checks and sections in the debug report, and runtime log lines. |
 
 ## The editor toolkit
 
@@ -50,9 +51,14 @@ write is a choice, and the cheapest tier is "none at all".
 
 ## Versioning
 
-The API generation equals the mod's major version: 6.x is generation 6, and a breaking change to
-anything in the API waits for 7.0. Declaring `versionRange="[6.0,7.0)"` in your mod metadata is
-therefore the whole compatibility check, and the loader performs it before any addon code runs. →
-[Adding the dependency](./addon-development.md#adding-the-dependency)
+`HistoryStagesAPI.API_VERSION` is the generation. It goes up only when something under `api` is
+removed, renamed or changes signature. `API_MINOR` counts additions within a generation: 6.0.x is
+`6.0`, 6.1.0 is `6.1`.
+
+The generation usually matches the mod's major version, but it does not have to: a later 6.x
+release could rebuild part of the API and raise it to 7 on its own. The loader only knows the mod
+version, so pin the mod versions you built against in your metadata, and end the range where the
+changelog says the generation went up. An addon using something added in 6.1 needs
+`versionRange="[6.1,7.0)"`. → [Adding the dependency](./addon-development.md#adding-the-dependency)
 
 Unlike the wiki, these pages are **not** versioned — they describe the current generation only.

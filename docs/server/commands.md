@@ -17,6 +17,14 @@ These commands manage global stages, which affect all players on the server.
 | `/history global unlock <stage_id>` | Unlocks a specific global stage. | Replace `<stage_id>` with the ID of the stage. Use `*` to unlock all defined global stages. |
 | `/history global lock <stage_id>` | Relocks a specific global stage. | Replace `<stage_id>` with the ID of the stage. Use `*` to relock all global stages. |
 
+:::note[Commands go past logic blocks, not past While stages]
+An unlock by command goes through even when a [logic block](/wiki/stage-file/logic-blocks#blocked-while)
+blocks the stage, and clears a [lost for good](/wiki/stage-file/relocking#lost-for-good) mark. It
+does not share the stage with a [team](/wiki/start-here/global-vs-individual#sharing-with-a-team).
+A [While stage](/wiki/stage-file/relocking#the-while-mode) is overwritten by its condition on the
+next check, a second later.
+:::
+
 ## Individual Stage Commands (Per-Player)
 
 These commands manage individual (per-player) stages, enabling personalized progression paths.

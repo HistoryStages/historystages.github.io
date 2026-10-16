@@ -75,7 +75,7 @@ ordering="AFTER"
 side="BOTH"
 ```
 
-The API generation equals the mod's major version: 6.x is generation 6, and a breaking change to anything under the `api` package waits for 7.0. That is what makes this `versionRange` the API check. The loader performs it at load time, before any addon code runs, so a mismatch is refused with a loader error the player can read instead of a `NoSuchMethodError` at the first call.
+`[6.0,7.0)` is right for an addon that uses only what 6.0 had; one that uses anything added in 6.1 needs `[6.1,7.0)`. The API generation (`HistoryStagesAPI.API_VERSION`) usually matches the mod's major version, and goes up only when something under `api` is removed, renamed or changes signature. Should a 6.x release ever raise it, its changelog says so, and that is where your range has to end. The loader checks the range at load time, before any addon code runs, so a mismatch is refused with a loader error the player can read instead of a `NoSuchMethodError` at the first call.
 
 `HistoryStagesAPI.API_VERSION` reports the same number — 6 — for a log line or a crash report. It is not a second gate, and there is deliberately no `requireAtLeast(...)` to call: by the time your code could run such a check, the loader has already made the decision.
 

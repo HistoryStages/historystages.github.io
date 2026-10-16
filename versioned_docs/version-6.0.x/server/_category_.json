@@ -1,0 +1,9 @@
+{
+  "label": "Server & Integration",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Server & Integration",
+    "description": "Running History Stages: commands, the three settings files, upgrading a pack from 5.x, the mods it recognises, and what scripts may do."
+  }
+}

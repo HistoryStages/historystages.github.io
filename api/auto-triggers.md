@@ -50,6 +50,42 @@ Narrowing the scopes is a real restriction, not a display filter. A type registe
 *   is not offered in the editor's add menu while an individual stage is being edited, and
 *   is not indexed for dispatch on individual stages, so it cannot fire there even if someone hand-writes it into the JSON.
 
+### State triggers
+
+**6.1**, NeoForge only until the ports are out. A trigger that describes a **state** — standing in a
+zone, a world flag — rather than something that happened can do two things an event cannot: keep a
+[While stage](/wiki/stage-file/relocking#the-while-mode) open, and be negated in a lock list. Say so
+when you register it:
+
+```java
+event.register("mymod:in_zone", InZoneTrigger.class, TriggerKind.PLAYER_STATE);
+event.register("mymod:blood_moon", BloodMoonTrigger.class, TriggerKind.WORLD_STATE, StageScope.GLOBAL);
+```
+
+`TriggerKind` is `EVENT` (the default, so existing registrations are unchanged), `PLAYER_STATE` or
+`WORLD_STATE`. Global While stages and negated lock triggers on global stages accept world states
+only, because "some player is in the zone" is not a state of the world.
+
+A class registered as a state must implement `StateTrigger`:
+
+```java
+public record InZoneTrigger(String zone) implements StateTrigger {
+    @Override
+    public boolean holds(StateView view) {
+        ServerPlayer player = StateViews.player(view);
+        return player != null && MyZones.contains(zone, player.blockPosition());
+    }
+    // type() and signature() as for any trigger
+}
+```
+
+`holds` is asked once a second while a stage uses the type as a state. It must not change the
+world. `StateView` carries what the built-in states read — `dimension()`, `biome()`,
+`structureIds()`, `structureTags()`, `effects()`, `items()`, `xpLevel()`, `raining()`,
+`thundering()`, `dayTime()` — each worked out once per player per poll and only when asked.
+`StateViews.player(view)` and `StateViews.level(view)` give the live objects behind it; the player
+is `null` for a world-only view.
+
 ---
 
 ## Writing the condition

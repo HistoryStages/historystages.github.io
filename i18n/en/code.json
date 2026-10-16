@@ -1,7 +1,7 @@
 {
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "These pages describe History Stages {versionLabel}, an older line. NeoForge, Forge and Fabric are all on 6.0.x now.",
-    "description": "Shown on an archived version. Until Fabric reached 6.0.x this said an archive could still be the current build on some loaders; since 6.0.0-1.21.1-fabric no loader runs an archived line."
+    "message": "These pages describe History Stages {versionLabel}. NeoForge 1.21.1 is on 6.1.x; Forge 1.20.1 and Fabric 1.21.1 run 6.0.x until their 6.1 port is out.",
+    "description": "Shown on an archived version. While 6.1 is NeoForge only, 6.0.x is still the live line on Forge and Fabric, so the banner must not call every archive outdated."
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
     "message": "The newest documentation is the {latestVersionLink} ({versionLabel}).",

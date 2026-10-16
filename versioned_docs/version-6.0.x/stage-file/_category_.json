@@ -1,0 +1,14 @@
+{
+  "label": "The Stage File",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "The Stage File",
+    "description": "One stage is one JSON file. These pages cover what goes in it: the fields, how a stage opens, what it demands first, what a player sees before it opens, and whole files to copy.",
+    "keywords": [
+      "stage file",
+      "json",
+      "fields"
+    ]
+  }
+}

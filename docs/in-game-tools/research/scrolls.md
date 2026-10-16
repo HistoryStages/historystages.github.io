@@ -86,7 +86,9 @@ book-style GUI describing the stage in full.
 
 ![The open scroll document](/img/screenshots/open-scroll.webp)
 
-It has an overview page plus three chapters: **items**, **creatures** and **world**. Locked entries
+It has an overview page plus three chapters: **items**, **creatures** and **world**. Along the top
+they are marked with small ink icons, the chapter's name on hover; `tabStyle = "words"` in
+[`[open_scroll]`](/wiki/server/config-files/visual-toml#open_scroll) writes the names out instead. Locked entries
 are drawn as silhouettes with a redacted name by default (`lockedDisplay = "obscured"`), or normally
 with `"visible"`.
 
@@ -126,6 +128,26 @@ controlled by `enableScrollResealing` in
 
 Crafting follows the setting immediately, but JEI and EMI build their recipe lists at startup — so
 the entry only appears or disappears in the recipe browser after a restart.
+
+## Scroll shelves
+
+:::info[New in 6.1.0]
+NeoForge only until the Forge and Fabric ports are out.
+:::
+
+A chiseled bookshelf for research scrolls, in eleven wood types from oak to warped. It holds six
+scrolls:
+
+- Click a slot with a scroll to put it in, with an empty hand to take it out.
+- A comparator reads the slot that was used last; hoppers can fill and empty it.
+- [Jade](/wiki/server/mod-compatibility#jade) names the scroll in the slot you are looking at.
+
+Research and creative scrolls fit, open scrolls do not. The item tag
+`historystages:scroll_shelf_scrolls` decides what fits, so a pack can add more.
+
+Crafted like the chiseled bookshelf, planks and slabs of one wood type, with **paper in the
+middle** so the two recipes do not collide. Unlike the vanilla shelf it always drops itself, with
+or without Silk Touch.
 
 ## Giving a scroll by command
 

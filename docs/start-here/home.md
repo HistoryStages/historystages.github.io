@@ -16,10 +16,9 @@ Nothing is locked out of the box. An installed History Stages with no stage file
 about the game.
 
 :::note[Which version is this?]
-These pages describe **6.0.x**, which runs on NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1.
-Where a loader does something differently, [Versions &
-Platforms](/wiki/about/versions-and-platforms) lists it. On an older build, pick its line in the
-version picker in the top bar.
+These pages describe **6.1.x**, which is out on NeoForge 1.21.1 so far. Forge 1.20.1 and
+Fabric 1.21.1 are on **6.0.x** until their port is out: pick that line in the version picker in
+the top bar. [Versions & Platforms](/wiki/about/versions-and-platforms) has the details.
 :::
 
 ## Two kinds of stage
@@ -48,7 +47,7 @@ designing a pack. It carries the full matrix of which lock works in which mode, 
 | [Loot](/wiki/locking/items-and-recipes/loot) | Remove or replace locked items in chest loot and mob drops. |
 | [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) | Refuse entry to a dimension, wall off a structure, or cap how often it generates. |
 | [Biomes](/wiki/locking/world/biomes) | Make a biome unsurvivable until the stage opens. |
-| [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. **Beta.** |
+| [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. |
 | [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) | Stop attacks, stop breeding and mounting, or write a full spawn rule. |
 | [Merchant Trades](/wiki/locking/creatures-and-trade/merchant-trades) | Gate one offer, a whole villager profession, or a merchant level everywhere. |
 

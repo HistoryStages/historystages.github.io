@@ -1,7 +1,7 @@
 ---
 title: Dependencies
 description: "Demanding items, levels, kills, stats or other stages before a stage opens, and how AND and OR groups are combined."
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Dependencies

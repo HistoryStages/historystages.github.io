@@ -1,6 +1,6 @@
 ---
 title: Stage Modes
-description: "The four ways a stage can open — research at a pedestal, an automatic trigger, an external command, or a timed unlock that relocks itself."
+description: "The five ways a stage can open — research at a pedestal, an automatic trigger, an external command, a timed unlock that relocks itself, or a state that holds."
 sidebar_position: 2
 ---
 
@@ -16,10 +16,13 @@ the stage is `default`.
 | [`auto`](#auto) | no | the player does something that trips a trigger |
 | [`external`](#external) | yes | a command or a script says so — the pedestal refuses it |
 | [`temporary`](#temporary) | no | a trigger fires; it then relocks itself after a timer |
+| [`conditional`](/wiki/stage-file/relocking#the-while-mode) | no | its triggers hold — and it locks again as soon as they stop holding |
 
 Picking between them is mostly a question of who is in control. `default` puts it in the player's
 hands, `auto` makes it a consequence of play, `external` keeps it with the pack author or a quest
-mod, and `temporary` is for anything that is supposed to end.
+mod, `temporary` is for anything that is supposed to end, and `conditional` (**While** in the
+editor) follows a state that comes and goes. `default` and `auto` stages can also carry
+[lock triggers](/wiki/stage-file/relocking#lock-triggers) that close them again.
 
 Mode and [dependencies](/wiki/stage-file/dependencies) are separate things: dependencies say what
 has to be true *before* a stage may be researched, and only `default` and `external` stages have

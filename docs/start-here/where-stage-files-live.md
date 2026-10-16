@@ -16,8 +16,10 @@ config/historystages/
         visual.toml      what a player sees or hears
         gameplay.toml    what happens in the background
         graph.toml       the player-facing Stage Graph
+        graph_stages.json   graph layout, per-stage styles and style presets
+        disguises.json      what locked items look like (since 6.1.0)
     logs/
-        debug-*.log      the load report, written at startup
+        debug-*.log      the load report, written at startup and after /history reload
         runtime-*.log    stage changes and blocked actions, if switched on
 ```
 

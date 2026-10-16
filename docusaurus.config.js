@@ -56,10 +56,13 @@ const config = {
           // to have been written on the day of the last deploy.
           showLastUpdateTime: true,
           // The live tree is the current release, not an unreleased "next" -- cutting it into a
-          // frozen folder once buried the whole site under /next/. It gets cut when 6.1 ships.
+          // frozen folder once buried the whole site under /next/. It gets cut when 6.2 ships.
           lastVersion: 'current',
           versions: {
-            current: {label: '6.0.x'},
+            current: {label: '6.1.x'},
+            // Still what Forge 1.20.1 and Fabric 1.21.1 run until their 6.1 port lands, so it
+            // stays findable in search engines, unlike the 5.x archives.
+            '6.0.x': {},
             // Archives stay out of search engines so nobody lands on a two-year-old page from Google.
             '5.6.x': {noIndex: true},
             '5.5.x': {noIndex: true},

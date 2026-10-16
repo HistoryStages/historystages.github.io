@@ -93,12 +93,13 @@ loot-table check without context, for example. There is nothing to match against
 cannot answer. Plain string tag entries are unaffected and still apply everywhere.
 :::
 
-## Enchantments are written this way too
+## Enchantments and potion effects
 
-There is no enchantment field in a stage file. Gating an enchantment means writing an
-`minecraft:enchanted_book` entry with a `StoredEnchantments` criterion, which the mod then also
-consults when an anvil or enchanting table is used. The `lvl` field takes a number, a `"min-max"`
-range, or nothing at all for every level. →
+Since 6.1.0 both have a field of their own, which reads what a stack carries without any NBT
+criteria. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
+
+The older form, an `minecraft:enchanted_book` entry with a `StoredEnchantments` criterion, still
+loads and still works. →
 [Items, Tags & Mods](/wiki/locking/items-and-recipes/items-tags-mods#enchantments)
 
 ## Building criteria without writing JSON

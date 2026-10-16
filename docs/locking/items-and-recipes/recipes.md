@@ -34,6 +34,29 @@ be gathered before pressing **Add**. On an individual stage the picker offers on
 gated per player, and says so under the grid. →
 [The Recipe Picker](/wiki/in-game-tools/in-game-editor#the-recipe-picker)
 
+## Recipes using an item
+
+:::info[New in 6.1.0]
+NeoForge only until the Forge and Fabric ports are out.
+:::
+
+Locking an item does not lock what can be made **from** it. To close those too, right-click an
+entry on the **Items** tab and pick **Recipes using this item**. It lists every recipe that takes
+the item as an ingredient, in two groups:
+
+- **Only locked items** — every slot the item fills can only be filled with locked items. These
+  come pre-ticked.
+- **Works without** — some slot also accepts an item that is not locked, so the recipe still works
+  without the locked one. These come unticked.
+
+On the cards a solid mark is a slot only locked items fit, a dashed one a slot with an alternative;
+the tooltip of a dashed slot lists what else fits. Add the ticked recipes as recipe entries, or
+their results as item entries.
+
+It is a one-off snapshot. The entries it adds are plain recipe or item entries, so the crafting
+table, modded machines and the recipe viewers all see the same thing, and a recipe a mod adds later
+is not picked up on its own.
+
 ## What it actually does depends on the scope
 
 This is the single biggest source of confusion in the mod, so it is worth stating plainly:
@@ -78,8 +101,7 @@ that players can see progression exists. Two settings change that:
 | `lockedItemMultiStagePolicy` | `STRICT` | For items in several stages: `STRICT` keeps them locked while any assigned stage is; `LENIENT` frees them as soon as any one is. |
 
 The names still say JEI because they predate EMI support, and renaming them would break existing
-configs. Hiding in EMI needs 6.0.2 or later on NeoForge or Forge; on Fabric the two settings
-reach JEI only. → [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
+configs. → [Mod Compatibility](/wiki/server/mod-compatibility#recipe-viewers--jei-and-emi)
 
 → [visual.toml](/wiki/server/config-files/visual-toml#jei_hiding)
 

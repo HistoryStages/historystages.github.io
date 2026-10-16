@@ -35,8 +35,11 @@ ignored — you will only see it in `debug-*.log`.
 | [`spawnlock`](/wiki/locking/creatures-and-trade/entities-and-spawns#spawnlock) (mob does not spawn at all) | yes | **no** |
 | [Merchant offers](/wiki/locking/creatures-and-trade/merchant-trades) (`trades` → `offers`) | yes | yes |
 | [Merchant professions and levels](/wiki/locking/creatures-and-trade/merchant-trades) | yes | yes |
-| Enchantments | yes | yes |
+| [Enchantments](/wiki/locking/items-and-recipes/enchantments-and-effects) | yes | yes |
+| [Potion effects](/wiki/locking/items-and-recipes/enchantments-and-effects) | yes | yes, except at the brewing stand |
 | [`lose_on_death`](#lose-on-death) | **no** | yes |
+| [`share_with_team`](#sharing-with-a-team) | **no** | yes |
+| [While mode](/wiki/stage-file/relocking#the-while-mode) | world states only | yes |
 
 **Why three of them are one-sided.** `spawnlock` is a world-global mechanic: a mob spawn does not
 know who it is appearing for, and an individual lock needs a concrete player ("this player just
@@ -69,8 +72,7 @@ While the stage is locked, every recipe whose output is the locked item is filte
 - Custom recipe types from KubeJS, CraftTweaker, and other mods
 
 The item cannot be produced. No one on the server can craft it. JEI and EMI show a lock overlay, or
-hide the recipe entirely if `hideLockedItemsInJei` or `hideLockedRecipesInJei` is on (in EMI from
-6.0.2, not yet on Fabric). The `recipes`
+hide the recipe entirely if `hideLockedItemsInJei` or `hideLockedRecipesInJei` is on. The `recipes`
 field works as a more surgical tool on top of this, removing specific recipe ids by hand when you
 only want one of several variants gone.
 
@@ -196,6 +198,44 @@ items the only thing a player risks losing on death.
 If the stage is in [`temporary`](/wiki/stage-file/stage-modes#temporary) mode with a running timer,
 dying ends that timer early and starts the cooldown as if it had expired naturally, without counting
 against `max_triggers` any differently than a normal expiry.
+
+## Sharing with a team
+
+:::info[New in 6.1.0]
+NeoForge only until the Forge and Fabric ports are out.
+:::
+
+An individual stage can be shared inside an FTB Teams party:
+
+```json
+{ "share_with_team": true }
+```
+
+When one player in the party unlocks the stage, everyone else in the party gets it too. Teammates
+who are offline get it at their next login.
+
+- Only real parties count. A player's own solo team never shares anything.
+- A teammate for whom the stage is [lost for good](/wiki/stage-file/relocking#lost-for-good) or
+  [blocked](/wiki/stage-file/logic-blocks#blocked-while) does not get it.
+- `temporary` and `conditional` stages are never shared. Their timer or condition belongs to one
+  player; shared, the stage would flip between teammates. The switch is greyed out there.
+- An operator unlocking a stage by command or in the editor gives it to that one player only.
+- Whatever arrives by sharing is not passed on again, so nothing echoes back and forth.
+
+Three settings in [`[team_mods]`](/wiki/server/config-files/gameplay-toml#team_mods) in
+`gameplay.toml`:
+
+| Key | Default | What it does |
+| :--- | :--- | :--- |
+| `shareOnJoin` | `false` | A player who joins a party, or logs in while in one, gets every shared stage someone in it already has. Leaving a party never takes stages away. |
+| `shareLoss` | `false` | When one player loses a shared stage (death, a lock trigger, a revoke), the rest of the party loses it too. They lose it the normal way and can earn it back, even if the first player lost it for good. |
+| `useFtbTeams` | `true` | Off, FTB Teams stays installed but its parties share nothing. |
+
+*In the editor:* **Stage Settings → Individual → Share with team.** Shared stages carry a blue
+**Team** badge in the overview.
+
+Other team mods can plug in through `RegisterTeamProvidersEvent`. →
+[Stage State & Events](/api/stage-state-and-events#teams)
 
 ## Dual-Phase: when both lists target the same content
 

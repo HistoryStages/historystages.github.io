@@ -65,6 +65,12 @@ A bare id gates that profession at every level:
 The object form gates only the levels listed — `{"id": "minecraft:librarian", "levels": [4, 5]}`
 leaves novice, apprentice and journeyman librarians trading normally.
 
+**Merchants without a profession** are locked by their entity id in the same list. Vinery's
+wandering winemaker has no villager profession, so `"vinery:wandering_winemaker"` goes in
+`professions` and gates every offer it has. The server asks each such merchant for its offers once,
+so they show up in the offer and profession pickers like villagers do. The wandering trader is
+listed the same way.
+
 :::warning[`levels` here lists the gated ones, not the free ones]
 That is the opposite of [`unlock_actions`](/wiki/locking/items-and-recipes/unlock-actions), and it
 is deliberate. The `levels` list at the top of `trades` already means "these levels are gated", and

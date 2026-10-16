@@ -45,6 +45,8 @@ labelled as in the table below.
 
 Entity interaction entries have their own version of the same popup under **Interaction Actions**,
 and fluid rows use the shorter fluid vocabulary.
+[Enchantment and effect](/wiki/locking/items-and-recipes/enchantments-and-effects#actions) rows
+have their own lists too.
 
 ## The actions
 
@@ -73,6 +75,47 @@ block placement.
 
 Locking `use` alone will not stop a placeable block from being placed. If the point is that the
 block must not go into the world, `place` has to be gated.
+
+## Locked ammo is skipped
+
+A bow, a crossbow, or any weapon that looks for ammo the same way passes over an arrow whose `use`
+is locked and takes the next one it may use. With nothing left it has no ammo. This holds for every
+item lock, plain or narrowed; before 6.1.0 a locked arrow could still be shot.
+
+## Fixing actions for a whole stage
+
+:::info[New in 6.1.0]
+NeoForge only until the Forge and Fabric ports are out.
+:::
+
+Ticking the same box on forty entries is tedious, and the forty-first gets forgotten. A stage can
+**fix** an action for all of its entries of one kind instead.
+
+**Stage Settings → Locks** has a row for each kind: **Item actions** (items, tags and mods),
+**Fluid actions**, **Enchantment actions**, **Effect actions**, **Interaction actions** and, on
+global stages, **SpawnControl**. Each opens the familiar popup in fixing mode:
+
+- Left click sets a value as usual.
+- **Right click fixes it** — locked or allowed — and marks it with a padlock.
+- Only fixed values count. Anything you leave unfixed in this popup means nothing.
+
+A fixed action wins over what the entry says. On the entry it shows the stage's value, padlocked
+and closed to input; everything not fixed stays editable per entry. The entries keep their own
+values underneath, so releasing a fix (right click again) brings them back.
+
+```json
+"fixed_lock_actions": {
+  "items": { "trade": false, "loot": true },
+  "fluids": { "pickup": true }
+}
+```
+
+`true` is locked, `false` is allowed. The keys are `items`, `fluids`, `interactions`,
+`enchantments` and `effects`.
+
+SpawnControl works the same way, per row instead of per action, and is stored as
+`fixed_spawn_rule`. Individual stages have no spawn lock, so it does not exist there. →
+[Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns#spawnlock)
 
 ## `trade` changed the meaning of existing files
 

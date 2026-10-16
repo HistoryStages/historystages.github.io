@@ -1,0 +1,8 @@
+{
+  "label": "Scripting",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "server/scripting/index"
+  }
+}

@@ -45,7 +45,13 @@ the scroll is moved to a pedestal of the wrong tier.
 When a stage has [dependencies](/wiki/stage-file/dependencies), the pedestal GUI expands to show a
 side panel listing every condition and whether it is met. Deposit-based conditions — items, item
 tags, XP levels — are fulfilled by putting them straight into the pedestal, a few at a time if need
-be. The counter on each entry shows how far along it is.
+be. The counter on each entry shows how far along it is. Handing items in by hand counts the
+booster's cost reduction the same way the deposit slot does.
+
+A stage can also be [blocked](/wiki/stage-file/logic-blocks#blocked-while) by its logic, or be
+[cheaper or costlier](/wiki/stage-file/logic-blocks#cheapercostlier-while) while some other stage
+is unlocked. The pedestal shows a red box with the reason and keeps the start button disabled
+while a stage is blocked, and a line with what is cheaper and why while a cost block applies.
 
 ## Tiers
 

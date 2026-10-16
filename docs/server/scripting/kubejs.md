@@ -74,7 +74,7 @@ HistoryStages.missingStages('items', 'minecraft:diamond', player)   // what is s
 The first argument is a **lock category id**. Use it to gate your own machine, your own GUI or
 your own tooltip the same way the mod gates its own content.
 
-Category ids are namespaced. The sixteen built-in ones live under `historystages:`, and you may
+Category ids are namespaced. The eighteen built-in ones live under `historystages:`, and you may
 leave that off — `'items'` and `'historystages:items'` mean the same thing, the way a bare item id
 means `minecraft:`. A category added by an **addon mod** must be named in full (`'hsdemo:relics'`),
 because guessing a namespace for it would break the day two addons pick the same short name.
@@ -88,6 +88,7 @@ historystages:structures     historystages:biomes          historystages:attackl
 historystages:spawnlock      historystages:interactionlock historystages:fluids
 historystages:trades         historystages:trade_professions
 historystages:trade_levels   historystages:zones
+historystages:enchantments   historystages:effects
 ```
 
 ## Client scripts

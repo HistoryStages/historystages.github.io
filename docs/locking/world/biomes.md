@@ -44,6 +44,7 @@ biome in the pack:
 | `messageEnabled` / `messageFormat` / `showInChat` | on | A periodic warning. `{stage}` and `{biome}` are replaced. |
 | `damageEnabled` / `damageAmount` / `damageInterval` | on / `1.0` / `20` | Periodic damage. |
 | `blockRightClick` / `blockLeftClick` / `blockProjectiles` | all on | Interactions refused inside. |
+| `blockExplosions` | on | Explosions do not destroy blocks inside. |
 | `checkInterval` | `10` | Ticks between position checks. Range 1–200. |
 
 Note that **damage is on by default for biomes** and off by default for
