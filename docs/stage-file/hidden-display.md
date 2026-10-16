@@ -94,6 +94,15 @@ precedence over the stage-wide ones:
 still decide whether replacing happens at all — an entry with a `name_text` and a stage whose
 `name_mode` is `"off"` shows the real name.
 
+## When two stages both change the same item
+
+Two locked stages can both set a hidden display for the same item. The one that matches it more
+closely wins: an entry for the item itself beats a tag or a mod. When both match equally well, the
+stage that sorts first by folder path and id wins, and global stages come before individual ones.
+The "you still need" lines in the tooltip list the stages in that same order.
+
+Before 6.1.0 such a tie was decided at random and could flip after a reload.
+
 ## `???` is the mod's own word for "unknown"
 
 `hidden_display` is off by default, so nothing is renamed until a stage asks for it. But if you want

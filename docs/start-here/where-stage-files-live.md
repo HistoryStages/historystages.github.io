@@ -36,6 +36,9 @@ what another stage's [dependencies](/wiki/stage-file/dependencies) point at, and
 Renaming a file therefore renames the stage, and **every unlock recorded against the old id is
 gone** — nothing migrates it.
 
+Stage files are read and written as **UTF-8**, so names with umlauts or symbols survive on every
+system. Before 6.1.0 they used the system's default charset and could come out garbled on Windows.
+
 ## Folders
 
 Both stage folders take nested subfolders, up to 8 levels deep:
