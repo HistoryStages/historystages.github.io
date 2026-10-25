@@ -1,0 +1,122 @@
+/* Sits between the popular pages and the feature cards; the cards bring their own top
+   padding, so this only pays for the gap above. */
+.trailer {
+  padding: 2.5rem 0 0;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+/* Capped width: full container width on a large screen makes the video bigger than anyone
+   watches it, and pushes the feature cards a whole screen down. */
+.frame {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #141312;
+  box-shadow:
+    0 0 0 1px rgba(224, 165, 62, 0.35),
+    0 14px 36px -12px rgba(0, 0, 0, 0.55);
+}
+
+.player,
+.cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.cover {
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.2s ease;
+}
+
+.cover:hover img,
+.cover:focus-visible img {
+  filter: brightness(0.85);
+}
+
+/* Gold play disc in the hero button's colours, triangle cut from it with a clip-path. */
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #eeca86 0%, #d79a4b 100%);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  width: 26px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  background: #241a0a;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.cover:hover .play,
+.cover:focus-visible .play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.coverLabel {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(20, 19, 18, 0.75);
+  color: #ede9e0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 996px) {
+  .play {
+    width: 58px;
+    height: 58px;
+  }
+  .play::after {
+    width: 20px;
+    height: 23px;
+  }
+}

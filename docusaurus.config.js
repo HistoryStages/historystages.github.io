@@ -352,6 +352,10 @@ const config = {
                 href: 'https://discord.gg/BeZzxyZ9c4',
               },
               {
+                label: 'Trailer',
+                href: 'https://youtu.be/IOS8yzhGZ3A',
+              },
+              {
                 label: 'GitHub',
                 href: 'https://github.com/Flix100000/History-Stages',
               },
