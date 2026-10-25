@@ -302,6 +302,12 @@ const config = {
             'aria-label': 'Discord',
           },
           {
+            href: 'https://www.youtube.com/@HistoryStages',
+            position: 'right',
+            className: 'header-icon-link header-youtube-link',
+            'aria-label': 'YouTube',
+          },
+          {
             href: 'https://github.com/Flix100000/History-Stages',
             position: 'right',
             className: 'header-icon-link header-github-link',
@@ -322,8 +328,33 @@ const config = {
                 to: '/wiki/',
               },
               {
-                label: 'Addon API',
+                label: 'Installation',
+                to: '/wiki/start-here/installation',
+              },
+              {
+                label: 'Config Files',
+                to: '/wiki/server/config-files',
+              },
+              {
+                label: 'Mod Compatibility',
+                to: '/wiki/server/mod-compatibility',
+              },
+            ],
+          },
+          {
+            title: 'Addons',
+            items: [
+              {
+                label: 'HSTG: Permissions',
+                href: 'https://www.curseforge.com/minecraft/mc-mods/hstg-permissions',
+              },
+              {
+                label: 'Build Your Own',
                 to: '/api/addon-development',
+              },
+              {
+                label: 'API Overview',
+                to: '/api/',
               },
             ],
           },
@@ -352,8 +383,8 @@ const config = {
                 href: 'https://discord.gg/BeZzxyZ9c4',
               },
               {
-                label: 'Trailer',
-                href: 'https://youtu.be/IOS8yzhGZ3A',
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@HistoryStages',
               },
               {
                 label: 'GitHub',

@@ -63,6 +63,10 @@
   -webkit-mask-image: url('/img/icons/discord.svg');
   mask-image: url('/img/icons/discord.svg');
 }
+.header-youtube-link:before {
+  -webkit-mask-image: url('/img/icons/youtube.svg');
+  mask-image: url('/img/icons/youtube.svg');
+}
 
 /* Bolder admonitions: uppercase label, a touch more weight and background tint
    than the Infima default, closer to what a reader actually stops and reads. */
