@@ -7,7 +7,6 @@ sidebar_position: 7
 # Disguises
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 A locked item can look like another item, and a locked block in the world like another block,

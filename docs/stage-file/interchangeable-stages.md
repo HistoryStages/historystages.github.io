@@ -7,7 +7,6 @@ sidebar_position: 6
 # Interchangeable Stages
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 Normally, something locked by several stages stays locked until **every one** of them is unlocked.

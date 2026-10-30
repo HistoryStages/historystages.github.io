@@ -6,8 +6,8 @@ sidebar_position: 2
 
 :::info
 **API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**. Everything marked **6.1** needs **6.1.0+ on NeoForge**; Forge and Fabric get
-it with their 6.1 port. `HistoryStagesAPI.API_MINOR` is `1` from 6.1.0 on.
+or **Fabric 1.21.1**. Everything marked **6.1** needs **6.1.0+**. `HistoryStagesAPI.API_MINOR` is
+`1` from 6.1.0 on.
 :::
 
 **Reading stages, changing them, and reacting when they change — the part of the API a mod needs even if it registers no extension point at all.**
@@ -98,7 +98,7 @@ The **offline** forms write the stage, log it and post the event; the sync and t
 for the next login, where the player's stages are sent anyway.
 
 :::note[On 6.0.x]
-Forge and Fabric, until their 6.1 port, have only the four single calls, and those do **not** check
+6.0.x has only the four single calls, and those do **not** check
 that the stage exists: an unknown id is written into the save and the call returns `true`. Guard
 with `StageManager.getStages().containsKey(id)` or `StageManager.getIndividualStages().get(id) != null`
 there.
@@ -282,7 +282,8 @@ Two differences from the other loaders:
 
 There is also `EventBus.register(...)`, which takes a class with static methods (or an object) and
 subscribes every method marked with `platform.bus.SubscribeEvent` — the same shape as
-`@EventBusSubscriber` on the other loaders, without the annotation on the class.
+`@EventBusSubscriber` on the other loaders, without the annotation on the class. Since 6.1,
+`EventBus.unregister(...)` takes either kind of listener off again.
 
 ### They fire from every path
 
@@ -377,6 +378,9 @@ FTB Teams ships as a provider. Another team mod registers its own on the mod bus
 modEventBus.addListener(RegisterTeamProvidersEvent.class, event ->
         event.register("mymod:parties", (server, player) -> MyParties.membersOf(player)));
 ```
+
+On Fabric the same body goes into `registerTeamProviders` of the plugin. →
+[On Fabric](./addon-development.md#entrypoints-instead-of-a-mod-bus)
 
 A `TeamProvider` returns the other members of the player's team, online or not, without the player
 itself. **Leave out teams a player did not choose**: a mod that gives everyone a solo team must not

@@ -52,7 +52,7 @@ Narrowing the scopes is a real restriction, not a display filter. A type registe
 
 ### State triggers
 
-**6.1**, NeoForge only until the ports are out. A trigger that describes a **state** — standing in a
+**6.1.** A trigger that describes a **state** — standing in a
 zone, a world flag — rather than something that happened can do two things an event cannot: keep a
 [While stage](/wiki/stage-file/relocking#the-while-mode) open, and be negated in a lock list. Say so
 when you register it:

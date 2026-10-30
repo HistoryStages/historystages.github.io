@@ -225,6 +225,9 @@ override only what you use:
 | | `registerStageSettingsGroups` | `RegisterStageSettingsGroupsEvent` |
 | | `registerConfigSections` | `RegisterConfigSectionsEvent` |
 | | `registerIndividualRecipeSupport` | `RegisterIndividualRecipeSupportEvent` |
+| | `registerTeamProviders` | `RegisterTeamProvidersEvent` (6.1) |
+| | `registerStageChecks` | `RegisterStageChecksEvent` (6.1) |
+| | `registerReportSections` | `RegisterReportSectionsEvent` (6.1) |
 | `HistoryStagesClientPlugin` | `registerCategoryEditors` | `RegisterCategoryEditorsEvent` |
 | | `registerTriggerEditors` | `RegisterTriggerEditorsEvent` |
 | | `registerRequirementEditors` | `RegisterRequirementEditorsEvent` |
@@ -259,7 +262,8 @@ example on these pages: where one shows `@SubscribeEvent` or `modEventBus.addLis
 body into the matching plugin method.
 
 A plugin that throws is logged with its class name and skipped. The others still register, and the
-registries close as usual.
+registries close as usual. The debug report credits each registration to the mod that declares the
+entrypoint.
 
 ## The worked example
 

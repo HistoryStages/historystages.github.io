@@ -7,7 +7,6 @@ sidebar_position: 5
 # Logic Blocks
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 [Dependencies](/wiki/stage-file/dependencies) say "A has to come before B". Logic blocks cover what

@@ -7,7 +7,6 @@ sidebar_position: 6
 # Enchantments & Effects
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 Two lock categories that read **what a stack carries** instead of what it is. One entry for

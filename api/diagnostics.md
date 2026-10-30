@@ -5,8 +5,9 @@ sidebar_position: 10
 ---
 
 :::info
-**New in 6.1.0** · Requires History Stages **6.1.0+** on **NeoForge 1.21**. Forge and Fabric get it
-with their 6.1 port.
+**New in 6.1.0** · Requires History Stages **6.1.0+** on **NeoForge 1.21**, **Forge 1.20.1** or
+**Fabric 1.21.1**. On Fabric both events reach `registerStageChecks` and `registerReportSections` of
+the plugin. → [On Fabric](./addon-development.md#entrypoints-instead-of-a-mod-bus)
 :::
 
 **The debug report a pack author attaches to a bug is also yours.** An addon can check its own data

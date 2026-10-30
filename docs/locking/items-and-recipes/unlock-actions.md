@@ -85,7 +85,6 @@ item lock, plain or narrowed; before 6.1.0 a locked arrow could still be shot.
 ## Fixing actions for a whole stage
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 Ticking the same box on forty entries is tedious, and the forty-first gets forgotten. A stage can

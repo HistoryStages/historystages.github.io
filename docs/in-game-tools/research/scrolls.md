@@ -132,7 +132,6 @@ the entry only appears or disappears in the recipe browser after a restart.
 ## Scroll shelves
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 A chiseled bookshelf for research scrolls, in eleven wood types from oak to warped. It holds six

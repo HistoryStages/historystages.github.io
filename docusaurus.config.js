@@ -60,10 +60,9 @@ const config = {
           lastVersion: 'current',
           versions: {
             current: {label: '6.1.x'},
-            // Still what Forge 1.20.1 and Fabric 1.21.1 run until their 6.1 port lands, so it
-            // stays findable in search engines, unlike the 5.x archives.
-            '6.0.x': {},
             // Archives stay out of search engines so nobody lands on a two-year-old page from Google.
+            // 6.0.x joined them once every loader was on 6.1.
+            '6.0.x': {noIndex: true},
             '5.6.x': {noIndex: true},
             '5.5.x': {noIndex: true},
             '5.4.x': {noIndex: true},

@@ -37,7 +37,6 @@ gated per player, and says so under the grid. →
 ## Recipes using an item
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 Locking an item does not lock what can be made **from** it. To close those too, right-click an

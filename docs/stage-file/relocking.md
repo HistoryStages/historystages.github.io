@@ -7,7 +7,6 @@ sidebar_position: 3
 # Relocking
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 A stage normally stays unlocked once it is open. Two things can close it again on their own:

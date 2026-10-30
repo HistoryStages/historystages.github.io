@@ -6,14 +6,14 @@ sidebar_position: 1
 
 # Versions & Platforms
 
-History Stages runs on three mod loaders. New features land on NeoForge first; the other two
-follow when they follow.
+History Stages runs on three mod loaders, and all three are on the same line. New features land on
+NeoForge first; the other two follow when they follow.
 
 | Loader | Minecraft | Line it is on |
 | :--- | :--- | :--- |
 | **NeoForge** | 1.21.1 | 6.1.x |
-| **Forge** | 1.20.1 | 6.0.x — the 6.1 port is not out yet |
-| **Fabric** | 1.21.1 | 6.0.x — the 6.1 port is not out yet |
+| **Forge** | 1.20.1 | 6.1.x — with the differences below |
+| **Fabric** | 1.21.1 | 6.1.x — with the differences below |
 
 The 1.19.X builds are no longer updated.
 
@@ -24,13 +24,10 @@ where it would quietly go stale; the download pages have it:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub Releases](https://github.com/Flix100000/History-Stages/releases).
 
-These pages describe 6.1.x, which is NeoForge only for now. **On Forge 1.20.1 or Fabric 1.21.1,
-pick 6.0.x in the version picker in the top bar.** That stand also lists what those two builds do
-differently from NeoForge.
+These pages describe 6.1.x. Still running an older build? Pick its line in the version picker in
+the top bar.
 
 ## What 6.1 added
-
-Everything below is NeoForge only until the Forge and Fabric ports are out.
 
 - [Interchangeable stages](/wiki/stage-file/interchangeable-stages) — several stages that lock the
   same thing, where any one of them is enough.
@@ -52,11 +49,42 @@ Everything below is NeoForge only until the Forge and Fabric ports are out.
 
 The zone map lost its 3D view in 6.1. It is the top-down view on every loader now.
 
+## What Forge 1.20.1 does differently
+
+The 1.20.1 build carries the whole 6.1 feature set. Three things behave differently, because 1.20.1
+itself does:
+
+- **A gated fluid is refused at the vanilla water and lava cauldrons.** A modded cauldron is not
+  recognised — 1.20.1 has no registry to look one up in.
+- **Once a KubeJS script adds recipes, KubeJS ends the recipe load early**, so the report about
+  locked recipes that are not loaded does not run in those packs. The locks themselves are
+  unaffected.
+- **MixinExtras is bundled inside the jar**, because Forge 1.20.1 does not ship it. There is
+  nothing extra to install.
+
+## What Fabric 1.21.1 does differently
+
+The Fabric build carries the whole 6.1 feature set too. Same Minecraft version as NeoForge, so the
+differences come from the loader and from which mods exist for it:
+
+- **There is no scripting.** KubeJS has no Fabric build for 1.21.1 and CraftTweaker has none at
+  all, so there is nothing for a script to talk to. Reading, changing and reacting to stage state
+  from code goes through the [API](/api/) instead. → [Scripting](/wiki/server/scripting)
+- **Equip locks cover Accessories instead of Curios.** Curios does not exist on Fabric. →
+  [Mod Compatibility](/wiki/server/mod-compatibility#curios-and-accessories)
+- **An addon registers through entrypoints in its `fabric.mod.json`**, not through a mod bus. What
+  it can register is the same. → [Addon Development](/api/addon-development#on-fabric)
+- **Settings from 5.2 are not carried over.** The Fabric 5.2 build kept them in a `config.json`
+  that 6.0 does not read. → [Upgrading from 5.x](/wiki/server/upgrading-from-5x#coming-from-fabric-52)
+
+One thing works better here than on Forge 1.20.1: a gated fluid is refused at modded cauldrons as
+well, not only at the vanilla water and lava ones.
+
 ## How this wiki is versioned
 
 The version picker cuts by **mod version, not by Minecraft version**. Eight stands exist: the living
-6.1.x tree, 6.0.x, and six older archives, 5.6.x down to 5.0.x. 6.0.x is still the current stand
-for Forge and Fabric and stays findable in search engines; the 5.x archives do not.
+6.1.x tree and seven archives, 6.0.x down to 5.0.x. Search engines are kept to the living tree;
+the archives are still in the version picker and in the search box.
 
 It does not go back further than 5.0.x because the wiki itself only started in April 2026. 5.1 never
 got a documentation pass of its own and is covered by the 5.0.x stand.
@@ -69,7 +97,7 @@ that version.
 
 The **API** tab is not versioned. It describes the current addon interface. The base of it exists
 on all three loaders from 6.0.0 onwards; the parts added in 6.1.0 say so at the top of their
-section and are NeoForge only until the ports are out.
+section.
 
 ## Porting to a loader or version that is not listed
 

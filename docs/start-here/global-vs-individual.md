@@ -202,7 +202,6 @@ against `max_triggers` any differently than a normal expiry.
 ## Sharing with a team
 
 :::info[New in 6.1.0]
-NeoForge only until the Forge and Fabric ports are out.
 :::
 
 An individual stage can be shared inside an FTB Teams party:
@@ -234,7 +233,8 @@ Three settings in [`[team_mods]`](/wiki/server/config-files/gameplay-toml#team_m
 *In the editor:* **Stage Settings → Individual → Share with team.** Shared stages carry a blue
 **Team** badge in the overview.
 
-Other team mods can plug in through `RegisterTeamProvidersEvent`. →
+Other team mods can plug in through `RegisterTeamProvidersEvent`, on Fabric through
+`registerTeamProviders` in their plugin. →
 [Stage State & Events](/api/stage-state-and-events#teams)
 
 ## Dual-Phase: when both lists target the same content

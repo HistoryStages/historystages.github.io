@@ -148,7 +148,7 @@ Everything under `net.bananemdnsa.historystages.api.editor.widget`. Twenty-one t
 
 ## Added in 6.1
 
-**6.1**, NeoForge only until the ports are out. All additive; nothing an addon built against 6.0
+**6.1.** All additive; nothing an addon built against 6.0
 calls has changed.
 
 - **`EditorRowList.Row`** gets `badge(text, colour, minWidth)` and a tooltip on badges,
