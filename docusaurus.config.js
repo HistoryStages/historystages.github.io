@@ -78,6 +78,10 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        // The search page is an empty box until someone types; nothing on it is worth ranking.
+        sitemap: {
+          ignorePatterns: ['/search'],
+        },
       }),
     ],
   ],
@@ -232,6 +236,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/social-card.png',
+      // Proves to Google Search Console that we own the site. Removing it drops the access.
+      metadata: [{name: 'google-site-verification', content: 'nQ8sRGIdYQWV-GJtRg3nxzdnUjUCMbqtB9YZAriP1xM'}],
       mermaid: {
         theme: {light: 'neutral', dark: 'dark'},
       },

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://historystages.github.io/sitemap.xml
