@@ -5,8 +5,8 @@ sidebar_position: 3
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**.
 :::
 
 **History Stages 6.0.0** is an addon platform: another mod can register its own kind of gated content, its own way to earn a stage, and its own tabs in the in-game editor, without a fork and without a mixin.
@@ -47,7 +47,7 @@ dependencies {
 }
 ```
 
-The version string is the Modrinth version, so it carries the loader: `6.0.0-1.21.1` is the NeoForge build, `6.0.0-1.20.1` the Forge one, `6.0.0-1.21.1-fabric` the Fabric one. With Loom, use `modImplementation` rather than `implementation`.
+The version string is the Modrinth version, so it carries the loader: `6.0.0-1.21.1` is the NeoForge build, `6.0.0-1.20.1` the Forge one, `6.0.0-1.21.1-fabric` the Fabric one. With Loom, use `modImplementation` rather than `implementation`. The 26.2 builds are `6.1.0-26.2-neoforge` and `6.1.0-26.2-fabric`. → [On Minecraft 26.2](#on-minecraft-262)
 
 History Stages has **Lootr** as a required dependency, so your dev environment needs it too — History Stages will not load without it. See [Mod Compatibility](/wiki/server/mod-compatibility) for why.
 
@@ -264,6 +264,43 @@ body into the matching plugin method.
 A plugin that throws is logged with its class name and skipped. The others still register, and the
 registries close as usual. The debug report credits each registration to the mod that declares the
 entrypoint.
+
+## On Minecraft 26.2
+
+The 26.2 build is one mod for NeoForge and Fabric. Everything under `api` is the same as on 1.21.1:
+the event classes, the builders and the editor toolkit keep their names and packages. What changes
+is the bus.
+
+**The `Register…Event`s are History Stages' own events on both loaders**, not NeoForge's. On
+NeoForge, mark your class with History Stages' annotations instead of NeoForge's; History Stages
+finds them in your mod's scan data the same way NeoForge finds its own:
+
+```java
+import net.bananemdnsa.historystages.platform.bus.EventBusSubscriber;
+import net.bananemdnsa.historystages.platform.bus.SubscribeEvent;
+
+@EventBusSubscriber(modid = "yourmodid", bus = EventBusSubscriber.Bus.MOD)
+public final class MyLocks {
+
+    @SubscribeEvent
+    public static void onRegisterCategories(RegisterLockCategoriesEvent event) {
+        // body unchanged from the hello world above
+    }
+}
+```
+
+A client-only class takes `value = Dist.CLIENT` from `net.bananemdnsa.historystages.platform.Dist`.
+Where an example on these pages calls `modEventBus.addListener(...)`, put its body into a
+`@SubscribeEvent` method of such a class.
+
+**On Fabric nothing changes.** The `historystages` and `historystages:client` entrypoints work as
+described in [On Fabric](#on-fabric).
+
+**Game events** like `StageEvent` go through the same bus as on Fabric 1.21.1, on both loaders. →
+[Subscribing on Fabric and 26.2](./stage-state-and-events.md#subscribing-on-fabric-and-262)
+
+Your dev environment needs **Architectury API** next to Lootr, since History Stages requires both
+on 26.2.
 
 ## The worked example
 

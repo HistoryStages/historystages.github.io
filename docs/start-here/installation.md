@@ -18,6 +18,11 @@ without it.
 
 **On Fabric, Fabric API is required too**, as it is for nearly every Fabric mod.
 
+**On Minecraft 26.2, Architectury API is required too**
+([Modrinth](https://modrinth.com/mod/architectury-api) ·
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/architectury-api)), on NeoForge and on
+Fabric. The 26.2 build is one mod for both loaders, and Architectury is what it stands on.
+
 **Recommended, not required:**
 
 | | |

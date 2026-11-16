@@ -5,8 +5,8 @@ sidebar_position: 8
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**.
 :::
 
 **A config section gives an addon its own rows in the History Stages config screen.**

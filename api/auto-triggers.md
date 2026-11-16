@@ -5,8 +5,8 @@ sidebar_position: 6
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**.
 :::
 
 An **auto-trigger** answers "what unlocks this stage by itself?" — no pedestal, no command, no quest reward.

@@ -6,14 +6,15 @@ sidebar_position: 1
 
 # Versions & Platforms
 
-History Stages runs on three mod loaders, and all three are on the same line. New features land on
-NeoForge first; the other two follow when they follow.
+History Stages runs on three mod loaders, and all of them are on the same line. New features land on
+NeoForge 1.21.1 first; the others follow when they follow.
 
 | Loader | Minecraft | Line it is on |
 | :--- | :--- | :--- |
 | **NeoForge** | 1.21.1 | 6.1.x |
 | **Forge** | 1.20.1 | 6.1.x — with the differences below |
 | **Fabric** | 1.21.1 | 6.1.x — with the differences below |
+| **NeoForge** and **Fabric** | 26.2 | 6.1.x — beta, with the differences below |
 
 The 1.19.X builds are no longer updated.
 
@@ -80,6 +81,25 @@ differences come from the loader and from which mods exist for it:
 One thing works better here than on Forge 1.20.1: a gated fluid is refused at modded cauldrons as
 well, not only at the vanilla water and lava ones.
 
+## What 26.2 does differently
+
+26.2 is one build for NeoForge and Fabric. It is in beta and carries the 6.1 feature set, apart from
+the integrations whose mods have no 26.2 version yet:
+
+- **Architectury API is required** on both loaders, next to Lootr (and Fabric API on Fabric). →
+  [Installation](/wiki/start-here/installation#what-you-need-alongside-it)
+- **Not on 26.2 yet:** EMI, FTB Quests, FTB Teams, KubeJS, CraftTweaker, Accessories and the
+  FastSuite fix. So there is no [team sharing](/wiki/start-here/global-vs-individual#sharing-with-a-team),
+  no quest tasks or rewards and no [scripting](/wiki/server/scripting) on 26.2 for now. They come
+  back once those mods update.
+- **JEI** exists for 26.2 only as a beta, and History Stages is built against that beta.
+- **Equip locks in accessory slots** work through Curios on NeoForge. On Fabric there is no
+  accessory mod to hook into yet. → [Mod Compatibility](/wiki/server/mod-compatibility#curios-and-accessories)
+- **Trades are data-pack only in 26.2.** A merchant that uses its own screen instead of the normal
+  trade window is not filtered.
+- **An addon registers through History Stages' own event bus** on both loaders, not through
+  NeoForge's. → [Addon Development](/api/addon-development#on-minecraft-262)
+
 ## How this wiki is versioned
 
 The version picker cuts by **mod version, not by Minecraft version**. Eight stands exist: the living
@@ -96,7 +116,7 @@ archive, and the addon API pages in 5.6.x, which described an interface that did
 that version.
 
 The **API** tab is not versioned. It describes the current addon interface. The base of it exists
-on all three loaders from 6.0.0 onwards; the parts added in 6.1.0 say so at the top of their
+on every loader from 6.0.0 onwards; the parts added in 6.1.0 say so at the top of their
 section.
 
 ## Porting to a loader or version that is not listed

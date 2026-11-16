@@ -17,7 +17,7 @@ about the game.
 
 :::note[Which version is this?]
 These pages describe **6.1.x**, the line NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1 are all
-on. Still running an older build? Pick its line in the version picker in the top bar.
+on, and the 26.2 beta for NeoForge and Fabric with it. Still running an older build? Pick its line in the version picker in the top bar.
 [Versions & Platforms](/wiki/about/versions-and-platforms) has the details.
 :::
 

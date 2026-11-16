@@ -5,8 +5,8 @@ sidebar_position: 7
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**.
 :::
 
 A settings group attaches your own settings to **every stage** — not to the mod, to the individual stage.

@@ -202,6 +202,7 @@ against `max_triggers` any differently than a normal expiry.
 ## Sharing with a team
 
 :::info[New in 6.1.0]
+Not on 26.2 yet: FTB Teams has no 26.2 version, so the 26.2 beta has no team sharing.
 :::
 
 An individual stage can be shared inside an FTB Teams party:

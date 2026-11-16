@@ -5,8 +5,8 @@ sidebar_position: 4
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**. Everything marked **6.1** needs **6.1.0+**.
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**. Everything marked **6.1** needs **6.1.0+**.
 :::
 
 **A lock category answers the question "what can be gated?" — and the eighteen things History Stages ships with are themselves categories, registered through the same path an addon uses.**

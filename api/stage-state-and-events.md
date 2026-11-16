@@ -5,8 +5,8 @@ sidebar_position: 2
 ---
 
 :::info
-**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**
-or **Fabric 1.21.1**. Everything marked **6.1** needs **6.1.0+**. `HistoryStagesAPI.API_MINOR` is
+**API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
+**Fabric 1.21.1** or **26.2**. Everything marked **6.1** needs **6.1.0+**. `HistoryStagesAPI.API_MINOR` is
 `1` from 6.1.0 on.
 :::
 
@@ -135,7 +135,7 @@ The point for an addon author: **unlocking a stage is not "set a flag".** It is 
 
 ## Reacting to changes
 
-`StageEvent` is a loader `Event` — NeoForge's on 1.21, Forge's on 1.20.1, History Stages' own on Fabric — with these subclasses:
+`StageEvent` is a loader `Event` — NeoForge's on 1.21, Forge's on 1.20.1, History Stages' own on Fabric and on 26.2 — with these subclasses:
 
 | Event | Fired | |
 | :--- | :--- | :--- |
@@ -254,9 +254,10 @@ NeoForge.EVENT_BUS.addListener((StageEvent.Unlocked event) ->
 
 On Forge 1.20.1 the bus is `MinecraftForge.EVENT_BUS`; the listener itself is unchanged.
 
-### Subscribing on Fabric
+### Subscribing on Fabric and 26.2
 
-Fabric has no game bus. History Stages posts `StageEvent` on a small bus of its own,
+Fabric has no game bus, and the 26.2 build uses the same bus on NeoForge too. History Stages
+posts `StageEvent` on a small bus of its own,
 `net.bananemdnsa.historystages.platform.bus.EventBus`, and a listener goes there. Your mod
 initializer is a fine place to add it — nothing fires before a world is running:
 
@@ -277,6 +278,7 @@ Two differences from the other loaders:
 
 - **Subscribe to the concrete class.** The bus dispatches by the event's own class, not its
   supertypes, so a listener on `StageEvent` itself receives nothing. Add one per variant you need.
+  On 26.2 a listener on a supertype receives its subclasses too, as it does on NeoForge.
 - **The bus class sits outside `api`.** It is the bus `StageEvent` is posted on, and the event's own
   javadoc points to it, but the API generation promise covers the `api` package only.
 
@@ -442,7 +444,7 @@ you name the class as a string from a script, that string.
 Fabric 5.2 exposed the four changes as Fabric `Event<>` fields on
 `net.bananemdnsa.historystages.api.StageEvents`. That class no longer exists in 6.0.0. Each field
 maps to one `StageEvent` variant, registered as shown in
-[Subscribing on Fabric](#subscribing-on-fabric):
+[Subscribing on Fabric and 26.2](#subscribing-on-fabric-and-262):
 
 | 5.2 | 6.0.0 |
 | :--- | :--- |
