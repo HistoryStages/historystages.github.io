@@ -1,5 +1,6 @@
 import Footer from '@theme-original/DocItem/Footer';
 import Link from '@docusaurus/Link';
+import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 // Wraps the stock doc footer (tags, edit link, last updated) with a line saying where to go
@@ -10,9 +11,14 @@ export default function FooterWrapper(props) {
     <>
       <Footer {...props} />
       <div className={styles.pageHelp}>
-        Something wrong or missing here?{' '}
-        <Link to="https://discord.gg/BeZzxyZ9c4">Ask on Discord</Link> ·{' '}
-        <Link to="https://github.com/Flix100000/History-Stages/issues">Open an issue</Link>
+        <Translate id="doc.help.question">Something wrong or missing here?</Translate>{' '}
+        <Link to="https://discord.gg/BeZzxyZ9c4">
+          <Translate id="doc.help.discord">Ask on Discord</Translate>
+        </Link>{' '}
+        ·{' '}
+        <Link to="https://github.com/Flix100000/History-Stages/issues">
+          <Translate id="doc.help.issue">Open an issue</Translate>
+        </Link>
       </div>
     </>
   );

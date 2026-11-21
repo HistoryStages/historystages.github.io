@@ -1,0 +1,34 @@
+{
+  "title": {
+    "message": "History Stages",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "History Stages Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Wiki": {
+    "message": "Wiki",
+    "description": "Navbar item with label Wiki"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Download": {
+    "message": "Download",
+    "description": "Navbar item with label Download"
+  },
+  "item.label.CurseForge": {
+    "message": "CurseForge",
+    "description": "Navbar item with label CurseForge"
+  },
+  "item.label.Modrinth": {
+    "message": "Modrinth",
+    "description": "Navbar item with label Modrinth"
+  },
+  "item.label.GitHub Releases": {
+    "message": "GitHub-Releases",
+    "description": "Navbar item with label GitHub Releases"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "link.title.Wiki": {
+    "message": "Wiki",
+    "description": "The title of the footer links column with title=Wiki in the footer"
+  },
+  "link.title.Addons": {
+    "message": "Addons",
+    "description": "The title of the footer links column with title=Addons in the footer"
+  },
+  "link.title.Download": {
+    "message": "Download",
+    "description": "The title of the footer links column with title=Download in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "Mehr",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Start Here": {
+    "message": "Erste Schritte",
+    "description": "The label of footer link with label=Start Here linking to /wiki/"
+  },
+  "link.item.label.Installation": {
+    "message": "Installation",
+    "description": "The label of footer link with label=Installation linking to /wiki/start-here/installation"
+  },
+  "link.item.label.Config Files": {
+    "message": "Config-Dateien",
+    "description": "The label of footer link with label=Config Files linking to /wiki/server/config-files"
+  },
+  "link.item.label.Mod Compatibility": {
+    "message": "Mod-Kompatibilität",
+    "description": "The label of footer link with label=Mod Compatibility linking to /wiki/server/mod-compatibility"
+  },
+  "link.item.label.HSTG: Permissions": {
+    "message": "HSTG: Permissions",
+    "description": "The label of footer link with label=HSTG: Permissions linking to https://www.curseforge.com/minecraft/mc-mods/hstg-permissions"
+  },
+  "link.item.label.Build Your Own": {
+    "message": "Eigenes Addon bauen",
+    "description": "The label of footer link with label=Build Your Own linking to /api/addon-development"
+  },
+  "link.item.label.API Overview": {
+    "message": "API-Überblick",
+    "description": "The label of footer link with label=API Overview linking to /api/"
+  },
+  "link.item.label.CurseForge": {
+    "message": "CurseForge",
+    "description": "The label of footer link with label=CurseForge linking to https://www.curseforge.com/minecraft/mc-mods/history-stages"
+  },
+  "link.item.label.Modrinth": {
+    "message": "Modrinth",
+    "description": "The label of footer link with label=Modrinth linking to https://modrinth.com/mod/history-stages"
+  },
+  "link.item.label.GitHub Releases": {
+    "message": "GitHub-Releases",
+    "description": "The label of footer link with label=GitHub Releases linking to https://github.com/Flix100000/History-Stages/releases"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/BeZzxyZ9c4"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/@HistoryStages"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Flix100000/History-Stages"
+  },
+  "link.item.label.License": {
+    "message": "Lizenz",
+    "description": "The label of footer link with label=License linking to https://github.com/Flix100000/History-Stages/blob/neoforge-1.21.X/LICENSE.txt"
+  },
+  "link.item.label.Contributing": {
+    "message": "Mitmachen",
+    "description": "The label of footer link with label=Contributing linking to https://github.com/Flix100000/History-Stages/blob/neoforge-1.21.X/CONTRIBUTING.md"
+  },
+  "link.item.label.Security Policy": {
+    "message": "Sicherheitsrichtlinie",
+    "description": "The label of footer link with label=Security Policy linking to https://github.com/Flix100000/History-Stages/blob/neoforge-1.21.X/SECURITY.md"
+  },
+  "link.item.label.Report a Bug": {
+    "message": "Fehler melden",
+    "description": "The label of footer link with label=Report a Bug linking to https://github.com/Flix100000/History-Stages/issues"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 History Stages. Gebaut mit Docusaurus.<br />\n          Ein inoffizielles Fan-Projekt. Nicht verbunden mit Mojang Studios oder Microsoft.\n          Minecraft ist eine Marke von Mojang Synergies AB.",
+    "description": "The footer copyright"
+  }
+}

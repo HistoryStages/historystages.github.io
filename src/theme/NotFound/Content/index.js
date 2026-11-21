@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import Translate, {translate} from '@docusaurus/Translate';
 import HomepagePopular from '@site/src/components/HomepagePopular';
 
 // Taken over from the theme rather than wrapped, because the wording had to go: the stock
@@ -16,24 +17,32 @@ export default function NotFoundContent({className}) {
         <div className="row">
           <div className="col col--6 col--offset-3">
             <Heading as="h1" className="hero__title">
-              Page Not Found
+              <Translate id="notfound.title">Page Not Found</Translate>
             </Heading>
             <p>
-              There is nothing at this address. It was most likely renamed when this wiki
-              moved, or it belongs to an older version of the documentation.
+              <Translate id="notfound.body">
+                There is nothing at this address. It was most likely renamed when this wiki
+                moved, or it belongs to an older version of the documentation.
+              </Translate>
             </p>
             <p>
-              The search at the top of the page covers every version and is the fastest way
-              back. If it turns up nothing, say so on{' '}
-              <Link to="https://discord.gg/BeZzxyZ9c4">Discord</Link> — a dead link here is
-              ours to fix, and worth hearing about.
+              <Translate
+                id="notfound.search"
+                values={{discord: <Link to="https://discord.gg/BeZzxyZ9c4">Discord</Link>}}>
+                {
+                  'The search at the top of the page covers every version and is the fastest way back. If it turns up nothing, say so on {discord} — a dead link here is ours to fix, and worth hearing about.'
+                }
+              </Translate>
             </p>
           </div>
         </div>
       </main>
       <HomepagePopular
-        title="Try one of these instead"
-        subtitle="The pages most readers are after."
+        title={translate({id: 'notfound.popular.title', message: 'Try one of these instead'})}
+        subtitle={translate({
+          id: 'notfound.popular.subtitle',
+          message: 'The pages most readers are after.',
+        })}
         last
       />
     </>

@@ -1,0 +1,118 @@
+{
+  "version.label": {
+    "message": "6.2.x",
+    "description": "The label for version current"
+  },
+  "sidebar.wikiSidebar.category.Start Here": {
+    "message": "Erste Schritte",
+    "description": "The label for category 'Start Here' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The Stage File": {
+    "message": "Die Stage-Datei",
+    "description": "The label for category 'The Stage File' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The Stage File.link.generated-index.title": {
+    "message": "Die Stage-Datei",
+    "description": "The generated-index page title for category 'The Stage File' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The Stage File.link.generated-index.description": {
+    "message": "Eine Stage ist eine JSON-Datei. Diese Seiten erklären, was hineingehört: die Felder, wie eine Stage freigeschaltet wird, was sie vorher verlangt, was Spieler sehen, solange sie gesperrt ist, und komplette Dateien zum Kopieren.",
+    "description": "The generated-index page description for category 'The Stage File' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.What You Can Lock": {
+    "message": "Was sich sperren lässt",
+    "description": "The label for category 'What You Can Lock' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Items & Recipes": {
+    "message": "Items & Rezepte",
+    "description": "The label for category 'Items & Recipes' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Items & Recipes.link.generated-index.title": {
+    "message": "Items & Rezepte",
+    "description": "The generated-index page title for category 'Items & Recipes' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Items & Recipes.link.generated-index.description": {
+    "message": "Alles sperren, was ein Spieler hält, herstellt oder findet: einzelne Items, Item-Tags, ganze Mods, einzelne Rezepte, Flüssigkeiten und Loot. Jedes davon lässt sich auch auf einzelne Interaktionen eingrenzen.",
+    "description": "The generated-index page description for category 'Items & Recipes' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The World": {
+    "message": "Die Welt",
+    "description": "The label for category 'The World' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The World.link.generated-index.title": {
+    "message": "Die Welt",
+    "description": "The generated-index page title for category 'The World' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.The World.link.generated-index.description": {
+    "message": "Orte unerreichbar machen: Dimensionen, Strukturen, Biome und selbst gezeichnete Zonen.",
+    "description": "The generated-index page description for category 'The World' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Creatures & Trade": {
+    "message": "Kreaturen & Handel",
+    "description": "The label for category 'Creatures & Trade' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Creatures & Trade.link.generated-index.title": {
+    "message": "Kreaturen & Handel",
+    "description": "The generated-index page title for category 'Creatures & Trade' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Creatures & Trade.link.generated-index.description": {
+    "message": "Sperren, was in der Welt lebt und was es dir verkauft: Angriffe, Interaktionen, Spawn-Regeln und Dorfbewohner-Angebote.",
+    "description": "The generated-index page description for category 'Creatures & Trade' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.In-Game Tools": {
+    "message": "Werkzeuge im Spiel",
+    "description": "The label for category 'In-Game Tools' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.In-Game Tools.link.generated-index.title": {
+    "message": "Werkzeuge im Spiel",
+    "description": "The generated-index page title for category 'In-Game Tools' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.In-Game Tools.link.generated-index.description": {
+    "message": "Die Bildschirme und Blöcke der Mod: der Editor, in dem ein Modpack gebaut wird, die Fortschrittskarte, die Spieler öffnen, und das Forschungssystem, mit dem sie Stages freischalten.",
+    "description": "The generated-index page description for category 'In-Game Tools' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Research": {
+    "message": "Forschung",
+    "description": "The label for category 'Research' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Research.link.generated-index.title": {
+    "message": "Forschung",
+    "description": "The generated-index page title for category 'Research' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Research.link.generated-index.description": {
+    "message": "Wie eine Stage tatsächlich verdient wird: das Forschungspodest, an dem es passiert, die Forschungsrolle, die sie trägt, und wie Spieler überhaupt an beides kommen.",
+    "description": "The generated-index page description for category 'Research' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Server & Integration": {
+    "message": "Server & Anbindung",
+    "description": "The label for category 'Server & Integration' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Server & Integration.link.generated-index.title": {
+    "message": "Server & Anbindung",
+    "description": "The generated-index page title for category 'Server & Integration' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Server & Integration.link.generated-index.description": {
+    "message": "History Stages betreiben: Befehle, die drei Einstellungsdateien, ein Modpack von 5.x hochziehen, die Mods, die es erkennt, und was Skripte dürfen.",
+    "description": "The generated-index page description for category 'Server & Integration' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Config Files": {
+    "message": "Config-Dateien",
+    "description": "The label for category 'Config Files' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Scripting": {
+    "message": "Skripte",
+    "description": "The label for category 'Scripting' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.About History Stages": {
+    "message": "Über History Stages",
+    "description": "The label for category 'About History Stages' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.About History Stages.link.generated-index.title": {
+    "message": "Über History Stages",
+    "description": "The generated-index page title for category 'About History Stages' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.About History Stages.link.generated-index.description": {
+    "message": "Welche Version wo läuft, wo es Hilfe gibt, was die Lizenz erlaubt und wer die Mod gebaut hat.",
+    "description": "The generated-index page description for category 'About History Stages' in sidebar 'wikiSidebar'"
+  }
+}

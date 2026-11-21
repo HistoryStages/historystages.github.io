@@ -35,12 +35,15 @@ const config = {
   // Anchors only break when a heading is renamed, which is exactly the edit nobody rechecks.
   onBrokenAnchors: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // English stays the source. A page without a German translation under i18n/de falls back
+  // to the English one, so translations can land page by page.
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'de'],
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en'},
+      de: {label: 'Deutsch', htmlLang: 'de'},
+    },
   },
 
   presets: [
@@ -204,6 +207,7 @@ const config = {
       /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
       ({
         hashed: true,
+        language: ['en', 'de'],
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
@@ -273,6 +277,10 @@ const config = {
             docsPluginId: 'api',
             position: 'left',
             label: 'API',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             type: 'docsVersionDropdown',

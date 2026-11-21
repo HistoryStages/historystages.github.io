@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Heading from '@theme/Heading';
+import Translate, {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 // Ornamental corner bracket, echoing the frame PixlStudios already drew for the mod's own
@@ -35,14 +36,16 @@ export default function HomepageHero() {
         <Heading as="h1" className={styles.heroTitle}>
           History Stages
         </Heading>
-        <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
+        <p className={styles.heroSubtitle}>
+          {translate({id: 'homepage.tagline', message: siteConfig.tagline})}
+        </p>
         <div className={styles.buttons}>
           {/* Points at the wiki's own landing page rather than straight at the install steps:
               someone arriving here has to be told what a stage is before being told where to
               drop the jar. "Start Here" is what the sidebar calls that section too, so the
               button and the page it opens agree on their name. */}
           <Link className={clsx('button button--lg', styles.heroButton)} to="/wiki/">
-            Start Here
+            <Translate id="homepage.hero.start">Start Here</Translate>
           </Link>
         </div>
       </div>

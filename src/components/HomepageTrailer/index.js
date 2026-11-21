@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Heading from '@theme/Heading';
+import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 const VIDEO_ID = 'IOS8yzhGZ3A';
@@ -16,9 +17,11 @@ export default function HomepageTrailer() {
       <div className="container">
         <div className={styles.header}>
           <Heading as="h2" className={styles.heading}>
-            Official trailer
+            <Translate id="homepage.trailer.title">Official trailer</Translate>
           </Heading>
-          <span className={styles.subtitle}>Three minutes of what the mod can do.</span>
+          <span className={styles.subtitle}>
+            <Translate id="homepage.trailer.subtitle">Three minutes of what the mod can do.</Translate>
+          </span>
         </div>
         <div className={styles.frame}>
           {playing ? (
@@ -34,7 +37,9 @@ export default function HomepageTrailer() {
             <button type="button" className={styles.cover} onClick={() => setPlaying(true)}>
               <img src={coverUrl} alt="" width="1280" height="720" loading="lazy" />
               <span className={styles.play} aria-hidden="true" />
-              <span className={styles.coverLabel}>Play trailer (loads YouTube)</span>
+              <span className={styles.coverLabel}>
+                <Translate id="homepage.trailer.play">Play trailer (loads YouTube)</Translate>
+              </span>
             </button>
           )}
         </div>
