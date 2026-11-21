@@ -43,7 +43,7 @@ version picker in the top bar — 6.1.x for everything that is not NeoForge 1.21
   with categories that are left alone.
 - Entries of [mods that are no longer installed](/wiki/in-game-tools/in-game-editor#managing-stages)
   show red in the editor and can be removed in one go.
-- A stage change [no longer freezes the server](/wiki/server/large-packs#what-a-stage-change-sets-off)
+- A stage change [no longer freezes the server](/wiki/server/stage-change-reload)
   with a full datapack reload.
 - [`SlotLockQuery`](/api/lock-categories#slots-slotlockquery) and NBT variants in the [addon API](/api/).
 

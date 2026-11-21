@@ -116,6 +116,8 @@ Return one from `createTab` and the host does the rest: it recognises the type, 
 
 **Sections the current stage cannot use are greyed rather than hidden.** A section is disabled when the stage being edited is individual and the section's category does not serve that scope — which the tab reads from the section itself, so a category that changes its mind about scopes cannot leave a stale copy behind. A disabled section cannot be selected, the tab never opens on one, and the whole tab is only withheld from individual stages when *none* of its sections fits. That last rule is why the built-in entity tab still works per player: spawn locks are global-only, attack and interaction locks are not.
 
+**6.2.** `section(int index)` returns the tab behind a section, whether it is on screen or not — for code outside the tab that has to reach one particular section.
+
 Everything else about the tab answers for the section on screen — its entries, its rows, its picker, its right-click menu — because a row index means nothing else. The one exception is the number the strip shows in brackets after the tab's name, which sums every section: a tab holding twenty offers must not claim `(0)` because someone left it on another section.
 
 ## Widgets

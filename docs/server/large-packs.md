@@ -66,26 +66,10 @@ Worth saying plainly, because it is the part people assume is the problem:
 
 ## What a stage change sets off
 
-A stage that locks recipes changes the recipe list when it opens or closes. Machines from other mods
-keep their own copy of that list, so they have to be told.
-
-Up to 6.1, History Stages did that with a full datapack reload — the same as typing `/reload` — on
-every such stage change. On a small pack nobody noticed. On a pack with about 120 mods and 12,000
-recipes the server stood still for over twenty seconds each time, and JEI rebuilt itself on top of
-that.
-
-Since 6.2.0 it only re-runs the parts of mods that react to a reload, while the server keeps
-ticking. The same pack takes about a second. JEI and EMI no longer start over either — they show and
-hide only what changed.
-
-Nothing has to be set for this; it is the default. Should a machine from some mod still offer a
-recipe after its stage locked, set
-[`reloadAfterStageChange`](/wiki/server/config-files/gameplay-toml#advanced) to `BACKGROUND`, and
-please [report](/wiki/about/getting-help) which mod it was. `FULL` brings back the old behaviour
-exactly.
-
-After each targeted reload the server log names the listeners that took longest. One that loads
-its own data and keeps no recipes can go on `targetedReloadSkip` to make stage changes faster still.
+A stage that locks recipes makes other mods rebuild their recipe lists when it opens or closes. Up
+to 6.1 that was a full datapack reload, and on a big pack it froze the server for twenty seconds and
+more on every unlock. Since 6.2.0 it is a targeted reload that takes about a second and lets the
+server keep running. → [Reloads After a Stage Change](/wiki/server/stage-change-reload)
 
 ## Things that do scale with the pack
 

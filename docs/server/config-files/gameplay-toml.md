@@ -149,7 +149,7 @@ Zones carry their own rules per zone, so almost nothing about them is configured
 
 ## `[advanced]`
 
-→ Explained on [Large Packs](/wiki/server/large-packs#what-a-stage-change-sets-off). *Since 6.2.0.*
+→ Explained on [Reloads After a Stage Change](/wiki/server/stage-change-reload). *Since 6.2.0.*
 
 The last block on purpose, and labelled as such in the config editor. The defaults are right for
 almost every pack.
