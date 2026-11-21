@@ -1,50 +1,122 @@
-from PIL import Image, ImageDraw, ImageFont
+"""Builds static/img/social-card.png, the image link previews show (Discord, GitHub, ...).
+
+It reuses the mod's own store-page look instead of a generic web banner: the four red bands,
+the gold fret frame and the 3D title lettering. The title banner, the frame corners and the
+pixel font come from the trailer assets in the mod repo (docs/trailer/v7/mc), which only exist
+locally, so run this from a machine that has both checkouts side by side.
+"""
+from pathlib import Path
+
+from PIL import Image
+
+WIKI = Path(__file__).resolve().parent.parent
+MC = WIKI.parent / "History-Stages" / "docs" / "trailer" / "v7" / "mc"
 
 W, H = 1200, 630
-BG = (26, 19, 20)          # near-black with the icon's brick-red tint
-GOLD = (224, 165, 62)
-GOLD_DIM = (140, 100, 38)
-TEXT = (245, 240, 233)
-MUTED = (166, 155, 143)
+BANDS = [(234, 50, 60), (196, 36, 48), (137, 30, 43), (87, 28, 39)]
+FRAME = [(255, 235, 87), (255, 200, 37), (255, 162, 20), (237, 118, 20)]
+WHITE = (255, 255, 255)
+CREAM = (255, 232, 170)
+SHADOW = (63, 18, 24)
 
-card = Image.new("RGB", (W, H), BG)
-d = ImageDraw.Draw(card, "RGBA")
+card = Image.new("RGB", (W, H))
+px = card.load()
+band_h = H / 4
 
-# radial-ish glow behind the icon, painted as concentric translucent ellipses
-cx, cy = 300, H // 2 - 20
-for r in range(360, 0, -12):
-    a = int(16 * (1 - r / 360) ** 2 * 8)
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(184, 121, 31, max(a, 1)))
 
-# corner brackets, same motif as the site hero
-def bracket(x, y, dx, dy, span=86, inset=44, w=4):
-    d.line([(x + dx * inset, y + dy * (inset + span)), (x + dx * inset, y + dy * (inset + 18))], fill=GOLD, width=w)
-    d.line([(x + dx * (inset + 18), y + dy * inset), (x + dx * (inset + span), y + dy * inset)], fill=GOLD, width=w)
-    off = 26
-    d.line([(x + dx * (inset + off), y + dy * (inset + off + span // 2)),
-            (x + dx * (inset + off), y + dy * (inset + off + 16))], fill=GOLD_DIM, width=2)
-    d.line([(x + dx * (inset + off + 16), y + dy * (inset + off)),
-            (x + dx * (inset + off + span // 2), y + dy * (inset + off))], fill=GOLD_DIM, width=2)
+def band(y):
+    return min(int(y // band_h), 3)
 
-bracket(0, 0, 1, 1)
-bracket(W, 0, -1, 1)
-bracket(0, H, 1, -1)
-bracket(W, H, -1, -1)
 
-# pixel art: nearest-neighbour at 1:1, anything else smears the padlock
-icon = Image.open("static/img/icon.png").convert("RGBA")
-card.paste(icon, (cx - 128, cy - 128), icon)
+for y in range(H):
+    c = BANDS[band(y)]
+    for x in range(W):
+        px[x, y] = c
 
-title = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 82)
-sub = ImageFont.truetype("C:/Windows/Fonts/seguisb.ttf", 36)
-small = ImageFont.truetype("C:/Windows/Fonts/segoeui.ttf", 28)
+# Frame: same proportions as the store images, just at half scale (they are 2560 wide).
+store = Image.open(MC / "store_pedestals.png").convert("RGB")
+CORNER = 180  # corner motif size in the store image
+INSET, THICK = 11, 11
+for y in range(H):
+    c = FRAME[band(y)]
+    for x in list(range(INSET, INSET + THICK)) + list(range(W - INSET - THICK, W - INSET)):
+        px[x, y] = c
+for x in range(W):
+    for y in range(INSET, INSET + THICK):
+        px[x, y] = FRAME[0]
+    for y in range(H - INSET - THICK, H - INSET):
+        px[x, y] = FRAME[3]
 
-tx = 540
-d.text((tx, 208), "History Stages", font=title, fill=TEXT)
-d.line([(tx, 316), (tx + 120, 316)], fill=GOLD, width=4)
-d.text((tx, 348), "Documentation for modpack authors", font=sub, fill=GOLD)
-d.text((tx, 404), "Stages, locks, research and the in-game editor —", font=small, fill=MUTED)
-d.text((tx, 440), "the full reference for every version.", font=small, fill=MUTED)
+sw, sh = store.size
+half = CORNER // 2
+corners = {
+    (0, 0): (0, 0),
+    (sw - CORNER, 0): (W - half, 0),
+    (0, sh - CORNER): (0, H - half),
+    (sw - CORNER, sh - CORNER): (W - half, H - half),
+}
+for (sx, sy), dest in corners.items():
+    piece = store.crop((sx, sy, sx + CORNER, sy + CORNER)).resize((half, half), Image.NEAREST)
+    card.paste(piece, dest)
 
-card.save("static/img/social-card.png", optimize=True)
+# Logo: pixel art, so whole-number nearest-neighbour scaling only. A dark outline keeps its
+# own red frame from melting into the background bands.
+icon = Image.open(WIKI / "static" / "img" / "icon.png").convert("RGBA")
+ix, iy = 110, (H - 256) // 2
+outline = Image.new("RGBA", (256 + 16, 256 + 16), SHADOW + (255,))
+card.paste(outline, (ix - 8 + 6, iy - 8 + 8))
+card.paste(outline, (ix - 8, iy - 8))
+card.paste(icon, (ix, iy), icon)
+
+# Title: the 3D lettering from the trailer and store art.
+banner = Image.open(MC / "title_banner.png").convert("RGBA")
+tw = 690
+th = round(banner.height * tw / banner.width)
+banner = banner.resize((tw, th), Image.LANCZOS)
+tx = 430
+TOP = 222
+card.paste(banner, (tx, TOP), banner)
+
+
+# Subtitle in the vanilla pixel font, read from the 16x16 glyph sheet.
+font = Image.open(MC / "ascii.png").convert("RGBA")
+
+
+def glyph(ch):
+    code = ord(ch)
+    g = font.crop(((code % 16) * 8, (code // 16) * 8, (code % 16) * 8 + 8, (code // 16) * 8 + 8))
+    if ch == " ":
+        return g, 4
+    alpha = g.getchannel("A")
+    width = 0
+    for x in range(8):
+        if any(alpha.getpixel((x, y)) for y in range(8)):
+            width = x + 1
+    return g, width + 1
+
+
+def text_width(s, scale):
+    return sum(glyph(ch)[1] for ch in s) * scale - scale
+
+
+def draw_text(s, x, y, scale, color):
+    for dx, dy, col in ((scale, scale, SHADOW), (0, 0, color)):
+        cx = x + dx
+        for ch in s:
+            g, adv = glyph(ch)
+            alpha = g.getchannel("A").resize((8 * scale, 8 * scale), Image.NEAREST)
+            card.paste(Image.new("RGB", alpha.size, col), (cx, y + dy), alpha)
+            cx += adv * scale
+
+
+def center_x(s, scale):
+    return tx + (tw - text_width(s, scale)) // 2
+
+
+line1 = "Documentation for modpack authors"
+line2 = "Stages, locks, research and the editor"
+draw_text(line1, center_x(line1, 3), TOP + th + 34, 3, WHITE)
+draw_text(line2, center_x(line2, 3), TOP + th + 34 + 40, 3, CREAM)
+
+card.save(WIKI / "static" / "img" / "social-card.png", optimize=True)
 print("written", card.size)
