@@ -6,12 +6,12 @@ sidebar_position: 1
 
 # Versions & Platforms
 
-History Stages runs on three mod loaders, and all of them are on the same line. New features land on
-NeoForge 1.21.1 first; the others follow when they follow.
+History Stages runs on three mod loaders. New features land on NeoForge 1.21.1 first; the others
+follow when they follow.
 
 | Loader | Minecraft | Line it is on |
 | :--- | :--- | :--- |
-| **NeoForge** | 1.21.1 | 6.1.x |
+| **NeoForge** | 1.21.1 | 6.2.x |
 | **Forge** | 1.20.1 | 6.1.x — with the differences below |
 | **Fabric** | 1.21.1 | 6.1.x — with the differences below |
 | **NeoForge** and **Fabric** | 26.2 | 6.1.x — beta, with the differences below |
@@ -25,8 +25,27 @@ where it would quietly go stale; the download pages have it:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub Releases](https://github.com/Flix100000/History-Stages/releases).
 
-These pages describe 6.1.x. Still running an older build? Pick its line in the version picker in
-the top bar.
+These pages describe 6.2.x. On Forge, Fabric or 26.2, or on an older build? Pick its line in the
+version picker in the top bar — 6.1.x for everything that is not NeoForge 1.21.1 yet.
+
+## What 6.2 added
+
+- [Slots](/wiki/locking/items-and-recipes/slots) — inventory and container slots that stay shut,
+  hidden or covered, until a stage opens.
+- [Plants](/wiki/locking/world/plants) — crops and saplings that do not grow and refuse bonemeal.
+- [NBT variants](/wiki/locking/items-and-recipes/nbt-and-components#several-variants-any-one-is-enough)
+  — several criteria on one item, tag, exception or pedestal entry, where any one is enough.
+- [Creatures by NBT](/wiki/locking/creatures-and-trade/entities-and-spawns#only-some-creatures-of-a-type)
+  — attack and interaction locks that hit only some creatures of a type, and boats and minecarts
+  in the interaction list.
+- [Placeholders](/wiki/server/config-files/visual-toml#lock_messages) in the lock message
+  overrides, and a [switch for the JEI/EMI lock overlay](/wiki/server/config-files/visual-toml#jei_hiding)
+  with categories that are left alone.
+- Entries of [mods that are no longer installed](/wiki/in-game-tools/in-game-editor#managing-stages)
+  show red in the editor and can be removed in one go.
+- A stage change [no longer freezes the server](/wiki/server/large-packs#what-a-stage-change-sets-off)
+  with a full datapack reload.
+- [`SlotLockQuery`](/api/lock-categories#slots-slotlockquery) and NBT variants in the [addon API](/api/).
 
 ## What 6.1 added
 
@@ -52,7 +71,7 @@ The zone map lost its 3D view in 6.1. It is the top-down view on every loader no
 
 ## What Forge 1.20.1 does differently
 
-The 1.20.1 build carries the whole 6.1 feature set. Three things behave differently, because 1.20.1
+The 1.20.1 build is on 6.1.x and carries the whole 6.1 feature set; 6.2 has not been ported yet. Three things behave differently, because 1.20.1
 itself does:
 
 - **A gated fluid is refused at the vanilla water and lava cauldrons.** A modded cauldron is not
@@ -65,7 +84,7 @@ itself does:
 
 ## What Fabric 1.21.1 does differently
 
-The Fabric build carries the whole 6.1 feature set too. Same Minecraft version as NeoForge, so the
+The Fabric build is on 6.1.x too and carries the whole 6.1 feature set. Same Minecraft version as NeoForge, so the
 differences come from the loader and from which mods exist for it:
 
 - **There is no scripting.** KubeJS has no Fabric build for 1.21.1 and CraftTweaker has none at
@@ -102,9 +121,10 @@ the integrations whose mods have no 26.2 version yet:
 
 ## How this wiki is versioned
 
-The version picker cuts by **mod version, not by Minecraft version**. Eight stands exist: the living
-6.1.x tree and seven archives, 6.0.x down to 5.0.x. Search engines are kept to the living tree;
-the archives are still in the version picker and in the search box.
+The version picker cuts by **mod version, not by Minecraft version**. Nine stands exist: the living
+6.2.x tree and eight archives, 6.1.x down to 5.0.x. 6.1.x is still the live line on Forge, Fabric
+and 26.2, so search engines see it as well as the living tree; the older archives are kept out of
+them but are still in the version picker and in the search box.
 
 It does not go back further than 5.0.x because the wiki itself only started in April 2026. 5.1 never
 got a documentation pass of its own and is covered by the 5.0.x stand.
@@ -116,7 +136,7 @@ archive, and the addon API pages in 5.6.x, which described an interface that did
 that version.
 
 The **API** tab is not versioned. It describes the current addon interface. The base of it exists
-on every loader from 6.0.0 onwards; the parts added in 6.1.0 say so at the top of their
+on every loader from 6.0.0 onwards; the parts added in 6.1.0 or 6.2.0 say so at the top of their
 section.
 
 ## Porting to a loader or version that is not listed

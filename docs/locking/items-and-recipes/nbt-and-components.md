@@ -27,11 +27,39 @@ the mod item in a particular state.
 
 Only Sharpness I–IV books are locked here. Every other enchanted book behaves normally.
 
+## Several variants: any one is enough
+
+Since 6.2.0 `nbt` can also be a **list** of criteria. The entry then applies when any one of them
+matches. That is how one entry covers "Sharpness or Smite", or — the case it was built for — a mod
+like Tinkers' Construct, where one item id stands for every material and only the item's data
+tells them apart:
+
+```json
+{
+  "items": [
+    {
+      "id": "minecraft:enchanted_book",
+      "nbt": [
+        { "StoredEnchantments": [{ "id": "minecraft:sharpness" }] },
+        { "StoredEnchantments": [{ "id": "minecraft:smite" }] }
+      ]
+    }
+  ]
+}
+```
+
+Without variants this needed one entry, or even one stage, per material. A single object, as in the
+first example, is still the normal form and stays exactly as it was.
+
+On a [research pedestal](/wiki/in-game-tools/research/pedestal#handing-in-dependencies),
+an item requirement with variants counts stacks of every variant toward the same total.
+
 ## In the editor
 
 **Right-click the entry** in the Items, Tags or Exceptions list and pick **Edit NBT**. Criteria are
 built as cards, with presets for the fields items commonly carry and a free-form dialog for anything
-else, plus live validation.
+else, plus live validation. **+ OR variant** adds another variant; each shows as a chip above the
+cards.
 
 The quickest route is not to build one at all: hold the item and **Ctrl-click** an inventory slot to
 import that exact stack's state. Failing that, `/history debug nbt preset`, `/history debug nbt
@@ -113,12 +141,13 @@ the two approaches mix.
 
 | Field | Criteria? |
 | :--- | :--- |
-| `items` | yes |
-| `tags` | yes, with the caveat above |
-| `mod_exceptions` | yes |
-| `dependencies` → `items` | yes — an entry can demand a *specific* enchanted book at the pedestal |
-| `trades` → `offers` | yes |
-| `entities` → `interactionlock` → `lock_items` | yes |
+| `items` | yes, with variants |
+| `tags` | yes, with variants and the caveat above |
+| `mod_exceptions` | yes, with variants |
+| `dependencies` → `items` | yes, with variants — an entry can demand a *specific* enchanted book at the pedestal |
+| `trades` → `offers` | yes, one criterion |
+| `entities` → `interactionlock` → `lock_items` | yes, with variants (written by hand; the editor keeps them) |
+| `entities` → `attacklock` / `interactionlock` | yes, with variants — but on the creature's own data, not an item's. → [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns#only-some-creatures-of-a-type) |
 | `fluids` | **no** — see below |
 | `mods` | no, by nature: a mod id is not an item |
 

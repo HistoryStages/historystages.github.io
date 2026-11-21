@@ -53,12 +53,12 @@ write is a choice, and the cheapest tier is "none at all".
 
 `HistoryStagesAPI.API_VERSION` is the generation. It goes up only when something under `api` is
 removed, renamed or changes signature. `API_MINOR` counts additions within a generation: 6.0.x is
-`6.0`, 6.1.0 is `6.1`.
+`6.0`, 6.1.0 is `6.1`, 6.2.0 is `6.2`.
 
 The generation usually matches the mod's major version, but it does not have to: a later 6.x
 release could rebuild part of the API and raise it to 7 on its own. The loader only knows the mod
 version, so pin the mod versions you built against in your metadata, and end the range where the
 changelog says the generation went up. An addon using something added in 6.1 needs
-`versionRange="[6.1,7.0)"`. → [Adding the dependency](./addon-development.md#adding-the-dependency)
+`versionRange="[6.1,7.0)"`, one using something added in 6.2 `[6.2,7.0)`. → [Adding the dependency](./addon-development.md#adding-the-dependency)
 
 Unlike the wiki, these pages are **not** versioned — they describe the current generation only.

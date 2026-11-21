@@ -36,6 +36,7 @@ This page is a lookup list. Each block links to the page that explains what it i
 | `lockBlockInteraction` | `true` | Prevent opening the GUI of locked blocks (chests, furnaces, crafting tables, …). |
 | `lockContainerInteraction` | `true` | Prevent moving locked items within containers. |
 | `lockEnchanting` | `true` | Prevent applying locked enchantments via anvils and enchanting tables. |
+| `dropItemsFromLockedSlots` | `true` | Drop items lying in a slot when that slot becomes [locked](/wiki/locking/items-and-recipes/slots#items-already-in-a-locked-slot). `false` keeps them there and freezes the slot around them. *Since 6.2.0.* |
 
 ## `[research]`
 
@@ -145,3 +146,16 @@ Zones carry their own rules per zone, so almost nothing about them is configured
 | Setting | Default | Description |
 | :--- | :--- | :--- |
 | `markerItem` | `"minecraft:stick"` | Item used to mark out zone corners. Sneak + left click sets the first corner, sneak + right click the second. Requires permission level 2, the same bar as opening the editor. Without sneaking the item behaves completely normally, so something you already carry is a safe choice. Leave empty to switch marking by item off and use `/history zone` instead. |
+
+## `[advanced]`
+
+→ Explained on [Large Packs](/wiki/server/large-packs#what-a-stage-change-sets-off). *Since 6.2.0.*
+
+The last block on purpose, and labelled as such in the config editor. The defaults are right for
+almost every pack.
+
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `reloadAfterStageChange` | `TARGETED` | What a stage change that alters locked recipes sets off. `TARGETED` re-runs only the parts of mods that react to a reload, and the server keeps running. `BACKGROUND` runs the full datapack reload while the server keeps running. `FULL` is the full reload with the server waiting for it — how every 6.x version before 6.2.0 behaved. |
+| `targetedReloadSkip` | Modular Machinery Reborn's machine loader, The Hordes' spawn tables | Reload listeners `TARGETED` leaves out, by full class name. Only for listeners that load their own data and keep no recipes. KubeJS and CraftTweaker scripts are always left out and need no entry. |
+| `slowListenerHintMs` | `250` | After a `TARGETED` reload, log every listener that held the server at least this many milliseconds. `0` switches the hint off. Range 0–60000. |

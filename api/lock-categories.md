@@ -1,15 +1,15 @@
 ---
 title: Lock Categories
-description: "Registering a new kind of gated thing, the way the eighteen built-in categories are registered themselves."
+description: "Registering a new kind of gated thing, the way the twenty built-in categories are registered themselves."
 sidebar_position: 4
 ---
 
 :::info
 **API generation 6** · Requires History Stages **6.0.0+** on **NeoForge 1.21**, **Forge 1.20.1**,
-**Fabric 1.21.1** or **26.2**. Everything marked **6.1** needs **6.1.0+**.
+**Fabric 1.21.1** or **26.2**. Everything marked **6.1** needs **6.1.0+**, everything marked **6.2** needs **6.2.0+** (NeoForge 1.21.1 only so far).
 :::
 
-**A lock category answers the question "what can be gated?" — and the eighteen things History Stages ships with are themselves categories, registered through the same path an addon uses.**
+**A lock category answers the question "what can be gated?" — and the twenty things History Stages ships with are themselves categories, registered through the same path an addon uses.**
 
 Items, tags, mods, structures, biomes, dimensions and the three entity locks are not hardcoded branches inside the lock engine. Each one is an entry in a registry that says three things: where its entries live on a stage, how they serialise, and how to recognise one of its subjects at runtime. Everything after that — walking the stages, global versus individual, skipping what the player has already unlocked, deduplicating the answer — happens on the mod's side, once, for built-ins and addons alike.
 
@@ -32,6 +32,8 @@ Items, tags, mods, structures, biomes, dimensions and the three entity locks are
 | `historystages:trade_levels` | A merchant level, for every profession at once | Global + Individual |
 | `historystages:structures` | Structure ids and structure tags | Global + Individual |
 | `historystages:biomes` | Biome ids and biome tags | Global + Individual |
+| `historystages:crops` | Plants that do not grow, by block id or block tag (6.2) | Global only |
+| `historystages:slots` | Player inventory slots and container slots (6.2) — ask [`SlotLockQuery`](#slots-slotlockquery) | Global + Individual⁴ |
 | `historystages:zones` | Named areas a pack author draws themselves, each with its own rules | Global + Individual² |
 
 ¹ Individually only at the stations that know which player is standing at them — crafting table, the 2×2 inventory grid, stonecutter, smithing table. → [Global vs Individual Stages](/wiki/start-here/global-vs-individual) has the full list of what a per-player recipe gate does and does not reach.
@@ -39,6 +41,8 @@ Items, tags, mods, structures, biomes, dimensions and the three entity locks are
 ² The one scope exception for zones is the "no mob spawns" rule, which is global-only for the same reason `spawnlock` is. → [Zones](/wiki/locking/world/zones).
 
 ³ The brewing stand brews with nobody at it, so only global stages stop it there. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
+
+⁴ Player slots in both scopes, container slots on global stages only. → [Slots](/wiki/locking/items-and-recipes/slots#global-or-individual)
 
 Blocks have no category of their own — a block is gated through its item id in `historystages:items`.
 
@@ -226,6 +230,13 @@ stage mentions the item. That is right for a tooltip and wrong for a gate: it is
 meant only for recipes once blocked container clicks, item frames and the anvil. The actions are
 those in `LockActions.ITEM`.
 
+**6.2.** An item, tag or mod-exception entry, and a pedestal item requirement, can carry
+[several NBT variants](/wiki/locking/items-and-recipes/nbt-and-components#several-variants-any-one-is-enough).
+Code that reads entries directly — `ItemEntry`, `NamedLockEntry`, `DependencyItem` — gets them
+from `getNbtFilter()`, and builds such an entry with the `withFilter(...)` factories. `getNbt()` is
+deprecated: it still works, but returns only the first variant, so code that matches stacks with
+it ignores every other one. `ItemLocks` and `CategoryLocks` already account for all variants.
+
 ### Places: `PlaceLocks`
 
 **6.1.** May this player be at, or reach into, a position? A place is gated four ways: its dimension,
@@ -241,6 +252,31 @@ needs before it moves someone.
 
 Structure checks look at the structures near the position and cost more than the rest. Call it when
 a player is about to go somewhere, not every tick for every block.
+
+### Slots: `SlotLockQuery`
+
+**6.2.** For inventory sorters that move items without clicking, mods that draw their own slots,
+and scripts that put items somewhere. It asks slot locks the way the mod asks them for itself.
+
+| Method | Returns |
+| :--- | :--- |
+| `state(Player, int inventoryIndex)` | the `SlotState` of one of the player's own inventory slots |
+| `state(Player, Slot)` | the state of any slot of an open menu, as that player sees it |
+| `isLocked(Player, int)`, `isLocked(Player, Slot)` | shorthand for `state(...).isLocked()` |
+| `containerState(String target, int index)` | a container slot with no player, for machines and automation; server side only |
+| `targetOf(AbstractContainerMenu)` | which target a menu's container slots answer to: the block it was opened from, else its menu type id; empty for a menu that holds only the player's inventory |
+
+`SlotState` is `OPEN`, `HIDDEN` (not drawn, not hoverable, refuses items) or `OVERLAY` (drawn with
+a lock on top, refuses items).
+
+It works on both sides. On the server pass the server player; on the client pass the local player,
+and the answer comes from the stages the client has been sent. On the client `targetOf` knows the
+block only once the server has said so, shortly after the menu opens — until then it answers the
+menu type. Creative and spectator players are never locked out, so every query answers `OPEN` for
+them.
+
+Inventory indices are those of `Inventory`: 0–8 hotbar, 9–35 main, 36–39 armour from feet to head,
+40 offhand. Container slots are numbered as the menu numbers them.
 
 ### Telling the player: `LockFeedbacks`
 

@@ -1,0 +1,9 @@
+{
+  "label": "Items & Recipes",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Items & Recipes",
+    "description": "Gating things a player holds, makes or finds: single items, item tags, whole mods, single recipes, fluids and loot \u2014 and narrowing any of them to single interactions."
+  }
+}

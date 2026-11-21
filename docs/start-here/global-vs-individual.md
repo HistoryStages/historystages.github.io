@@ -29,6 +29,7 @@ ignored — you will only see it in `debug-*.log`.
 | [Structures](/wiki/locking/world/dimensions-and-structures) | yes | yes |
 | [Structure generation caps](/wiki/locking/world/dimensions-and-structures#generation-limits) (`block_generation`) | yes | **no** |
 | [Biomes](/wiki/locking/world/biomes) | yes | yes |
+| [Plants](/wiki/locking/world/plants) (crops and saplings do not grow) | yes | **no** |
 | [Zones](/wiki/locking/world/zones) (areas you draw yourself) | yes | yes, except "no mob spawns" |
 | [`attacklock`](/wiki/locking/creatures-and-trade/entities-and-spawns#attacklock) (player cannot attack the mob) | yes | yes |
 | [`interactionlock`](/wiki/locking/creatures-and-trade/entities-and-spawns#interactionlock) (breed/mount/trade/leash/…) | yes | yes |
@@ -37,16 +38,20 @@ ignored — you will only see it in `debug-*.log`.
 | [Merchant professions and levels](/wiki/locking/creatures-and-trade/merchant-trades) | yes | yes |
 | [Enchantments](/wiki/locking/items-and-recipes/enchantments-and-effects) | yes | yes |
 | [Potion effects](/wiki/locking/items-and-recipes/enchantments-and-effects) | yes | yes, except at the brewing stand |
+| [Slots](/wiki/locking/items-and-recipes/slots) of the player's inventory | yes | yes |
+| [Slots](/wiki/locking/items-and-recipes/slots) of containers | yes | **no** |
 | [`lose_on_death`](#lose-on-death) | **no** | yes |
 | [`share_with_team`](#sharing-with-a-team) | **no** | yes |
 | [While mode](/wiki/stage-file/relocking#the-while-mode) | world states only | yes |
 
-**Why three of them are one-sided.** `spawnlock` is a world-global mechanic: a mob spawn does not
+**Why some of them are one-sided.** `spawnlock` is a world-global mechanic: a mob spawn does not
 know who it is appearing for, and an individual lock needs a concrete player ("this player just
 tried to use this item"). A zone's **no mob spawns** switch is the same question in a different
 place and is likewise global-only; everything else a zone does has a player standing in it and works
 in both. `block_generation` is the same class of reason — world generation happens once,
-permanently, for the whole world, so there is no per-player chunk to gate. `lose_on_death` is the
+permanently, for the whole world, so there is no per-player chunk to gate. Plants grow in random
+ticks with no player attached, and two players looking into the same chest cannot see different
+slots, so plant locks and container slots are global-only as well. `lose_on_death` is the
 mirror case: there is no single player whose death should relock a stage shared by the whole server.
 
 Fluids work in both, because a fluid is only ever asked about with a player at hand. The one place

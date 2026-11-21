@@ -27,6 +27,7 @@ sword but do not swing it, craft the ingot but do not wear the armour. →
 | [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) | Books, gear and potions by what they carry, and the stations that make them. |
 | [Disguises](/wiki/locking/items-and-recipes/disguises) | A locked item or block that looks like something else until it opens. |
 | [Loot](/wiki/locking/items-and-recipes/loot) | Chest loot and mob drops, filtered per player. |
+| [Slots](/wiki/locking/items-and-recipes/slots) | Inventory and container slots, hidden or covered until the stage opens. |
 
 ### The World
 
@@ -34,13 +35,14 @@ sword but do not swing it, craft the ingot but do not wear the armour. →
 | :--- | :--- |
 | [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) | Refuse entry, wall a structure off, or cap how often it generates. |
 | [Biomes](/wiki/locking/world/biomes) | Make the place unsurvivable rather than unreachable. |
+| [Plants](/wiki/locking/world/plants) | Crops and saplings that do not grow and refuse bonemeal. |
 | [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. |
 
 ### Creatures & Trade
 
 | | |
 | :--- | :--- |
-| [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) | Attacking, interacting, and whether the thing spawns at all. |
+| [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) | Attacking, interacting (boats and minecarts included), and whether the thing spawns at all. |
 | [Merchant Trades](/wiki/locking/creatures-and-trade/merchant-trades) | One offer, a whole profession, or a merchant level. |
 
 ## Two things worth knowing before you pick

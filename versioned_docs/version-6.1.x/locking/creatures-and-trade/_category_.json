@@ -1,0 +1,9 @@
+{
+  "label": "Creatures & Trade",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Creatures & Trade",
+    "description": "Gating what lives in the world and what it will sell you: attacks, interactions, spawn rules, and villager offers."
+  }
+}

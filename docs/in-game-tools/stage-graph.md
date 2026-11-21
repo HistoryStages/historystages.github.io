@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The Stage Graph is a player-facing, interactive node graph of a modpack's progression. It shows stages as nodes connected by dependency edges, so players can see what they've unlocked, what's next, and how everything connects — without spoiling content they haven't reached yet.
 
-There is one graph screen with two ways in. From the **pause menu** it is the player view, filtered by the rules below. From the **Stage Overview** in the [editor](/wiki/in-game-tools/in-game-editor) it is the admin view, which ignores those rules and shows every stage — that is where layout and per-stage styling are done. `/history graph` opens the player view, so an operator can check what a player would actually see.
+There is one graph screen with two ways in. From the **pause menu** it is the player view, filtered by the rules below. From the **Stage Overview** in the [editor](/wiki/in-game-tools/in-game-editor) it is the admin view, which ignores those rules and shows every stage — that is where layout and per-stage styling are done. `/history graph` opens the player view, so an operator can check what a player would actually see. Since 6.2.0 the player view has a **Back** button, and large graphs draw much faster.
 
 ![The Stage Graph](/img/screenshots/stage-graph.webp)
 

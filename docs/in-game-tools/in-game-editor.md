@@ -49,6 +49,13 @@ move. Moving a folder brings its contents along.
 [disguise rule](/wiki/locking/items-and-recipes/disguises) in the pack, with what it looks like,
 how it drops and which stages lock it.
 
+**Remove unknown entries**, in the same header menu, cleans up after a mod has left the pack. Its
+entries stay in the stage files and lock nothing, and since 6.2.0 they show **red** in the stage
+editor. The menu removes them from every stage at once, after a confirmation that names the count,
+and saves right away. Inside one stage, a **Remove unknown** button does the same for that stage
+only and waits for you to save. Removing a missing mod takes its linked creatures, structures,
+biomes and exceptions along. Tags and recipes of mods that are still installed are left alone.
+
 **Per-player unlocking** sits there too — unlock or relock an individual stage for one online
 player, or for everyone online at once, without typing
 [`/history individual unlock`](/wiki/server/commands). It runs the same server-side path as the
@@ -144,8 +151,10 @@ interrupted.
 
 A tab of its own for every setting in `visual.toml`, `gameplay.toml` and `graph.toml`, grouped into
 Common, Client and Graph tabs with a reset-to-defaults option. That includes the
-[research booster](/wiki/in-game-tools/research/pedestal#boosters) list and the
-[scroll tooltip](/wiki/in-game-tools/research/scrolls#the-scroll-tooltip) layout, both of which are
+[research booster](/wiki/in-game-tools/research/pedestal#boosters) list, the
+[scroll tooltip](/wiki/in-game-tools/research/scrolls#the-scroll-tooltip) layout, the
+[slot tooltip](/wiki/locking/items-and-recipes/slots#the-tooltip) layout and the
+[JEI/EMI category exemptions](/wiki/server/config-files/visual-toml#jei_hiding), all of which are
 unpleasant to write as TOML strings by hand.
 
 Saving needs permission level 2, the same bar as the editor itself. →

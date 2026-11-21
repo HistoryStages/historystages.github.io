@@ -1,0 +1,9 @@
+{
+  "label": "In-Game Tools",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "In-Game Tools",
+    "description": "The screens and blocks the mod adds: the editor a pack is built in, the progression map players open, and the research system they unlock stages with."
+  }
+}

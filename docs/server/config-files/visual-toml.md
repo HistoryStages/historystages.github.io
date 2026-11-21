@@ -122,6 +122,22 @@ The section and the keys are named after JEI, but they drive EMI too.
 | `hideLockedItemsInJei` | `false` | Remove locked items from the JEI and EMI ingredient panels entirely instead of marking them with a lock overlay. |
 | `hideLockedRecipesInJei` | `false` | Hide locked recipes. JEI only catches vanilla recipe types by their output; EMI hides every recipe the lock overlay would mark. |
 | `lockedItemMultiStagePolicy` | `STRICT` | How items assigned to several stages behave. `STRICT` = locked while any assigned stage is still locked. `LENIENT` = unlocked as soon as any assigned stage is. |
+| `showLockOverlay` | `true` | Darken locked recipes in JEI and EMI and block hovering their slots. Off, a locked recipe looks like any other; hiding it is still `hideLockedRecipesInJei`. *Since 6.2.0.* |
+| `lockOverlayExemptions` | none | JEI and EMI categories the recipe lock leaves alone entirely: no overlay, hover works, nothing hidden. `create:mixing` names one category, `create` every category of that mod. For pages that only show where things come from. Just Enough Resources is always left alone. *Since 6.2.0.* |
+
+In the [config editor](/wiki/in-game-tools/in-game-editor#the-config-editor) `lockOverlayExemptions` is a picker over the categories JEI or EMI actually has, grouped by mod, with a **Whole mod** option per mod. Entries for mods that are not installed are kept when you save.
+
+## `[slot_lock]`
+
+→ Explained on [Slots](/wiki/locking/items-and-recipes/slots#the-tooltip). *Since 6.2.0.*
+
+The tooltip shown when a player hovers a locked slot in `overlay` mode.
+
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `showTooltip` | `true` | Show the tooltip at all. |
+| `tooltipLines` | built-in defaults | Which lines it shows (title, the entry's hint, the required stages), in which order, with which text and colour. Easiest to edit with the layout editor under **Slot Lock** in the config editor. |
+| `showAllUntilComplete` | `true` | While several stages gate one slot, list all of them with their status, not only the missing ones. |
 
 ## `[notifications]`
 
@@ -150,19 +166,19 @@ The same five settings again, for per-player stages. They are nested under `[not
 
 → Related: [Hidden Display](/wiki/stage-file/hidden-display).
 
-Overrides for the actionbar/chat messages shown when a player interacts with locked content. Each defaults to an empty string, which falls back to the built-in translation key — so existing localisations are preserved unless overridden. Override strings support `&`-style colour codes and the same `{stage}` / `{player}` / `{structure}` placeholders as the other message settings, where applicable.
+Overrides for the actionbar/chat messages shown when a player interacts with locked content. Each defaults to an empty string, which falls back to the built-in translation key — so existing localisations are preserved unless overridden. Override strings support `&`-style colour codes and, since 6.2.0, placeholders for what the player ran into — the table names which ones each message takes. Names are filled in the player's own language and keep the colour that was active before them. `{stage}` names only the stages blocking that exact action, and shows `???` for a stage that [hides its lock hints](/wiki/stage-file/hidden-display). The config editor offers the placeholders as chips next to each field.
 
 | Setting | Falls back to | Shown when |
 | :--- | :--- | :--- |
-| `itemLocked` | `message.historystages.item_locked` | Interacting with a locked item. |
-| `fluidLocked` | `message.historystages.fluid_locked` | Taking a locked fluid out of the world. |
+| `itemLocked` | `message.historystages.item_locked` | Interacting with a locked item. Takes `{item}`, `{stage}`. |
+| `fluidLocked` | `message.historystages.fluid_locked` | Taking a locked fluid out of the world. Takes `{fluid}`, `{stage}`. |
 | `tradeLocked` | `message.historystages.trade_locked` | A merchant has nothing left once the trade locks have been applied. |
-| `blockLocked` | `message.historystages.block_locked` | Interacting with a locked block. |
-| `entityItemLocked` | `message.historystages.entity_item_locked` | Interacting with armor stands or item frames holding locked items. |
-| `enchantmentLocked` | `message.historystages.enchantment_locked` | Applying a locked enchantment via an anvil or enchanting table. |
-| `recipeLocked` | `message.historystages.recipe_locked` | Clicking a locked recipe in the recipe book. |
-| `dimensionUnknown` | `message.historystages.dimension_unknown` | Entering a locked dimension. |
-| `mobUnknown` | `message.historystages.mob_unknown` | Attacking a locked mob. |
+| `blockLocked` | `message.historystages.block_locked` | Interacting with a locked block. Takes `{block}`, `{stage}`. |
+| `entityItemLocked` | `message.historystages.entity_item_locked` | Interacting with armor stands or item frames holding locked items. Takes `{item}` (the displayed item), `{stage}`. |
+| `enchantmentLocked` | `message.historystages.enchantment_locked` | Applying a locked enchantment via an anvil or enchanting table. Takes `{enchantment}`, `{item}`, `{stage}`. |
+| `recipeLocked` | `message.historystages.recipe_locked` | Clicking a locked recipe in the recipe book. Takes `{item}` (what the recipe makes), `{stage}`. |
+| `dimensionUnknown` | `message.historystages.dimension_unknown` | Entering a locked dimension. Takes `{dimension}`, `{stage}`. |
+| `mobUnknown` | `message.historystages.mob_unknown` | Attacking a locked mob. Takes `{mob}`, `{stage}`. |
 | `stageBlocked` | built-in text | A stage cannot be unlocked because a [logic block](/wiki/stage-file/logic-blocks#blocked-while) blocks it. `{stage}` is its name. |
 | `stageRevoked` | built-in text, naming the cause | The toast when a [Revoke when](/wiki/stage-file/logic-blocks#revoke-when) block takes a stage away. `{stage}` is its name. |
 

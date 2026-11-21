@@ -1,0 +1,8 @@
+{
+  "label": "What You Can Lock",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "locking/index"
+  }
+}

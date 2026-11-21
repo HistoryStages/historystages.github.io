@@ -36,11 +36,12 @@ then Sources, Location, Time & Weather and Extra biomes as tabs, with a line und
 finished rule out in words.
 
 An interaction entry right-clicks to **Interaction Actions** for its action list and **Item Filter**
-for the held-item condition.
+for the held-item condition. Attack and interaction entries both right-click to **Edit NBT**
+for [narrowing them to some creatures](#only-some-creatures-of-a-type).
 
 ## `attacklock`
 
-A flat list of entity ids. While the stage is locked, every attack the player makes against one is
+A list of entity ids, or [objects with an NBT filter](#only-some-creatures-of-a-type). While the stage is locked, every attack the player makes against one is
 cancelled.
 
 ```json
@@ -59,6 +60,9 @@ under `mobUnknown` in [`[lock_messages]`](/wiki/server/config-files/visual-toml#
 
 Everything that is not combat: naming, leashing, shearing, milking, breeding, trading, mounting,
 equipping armour and saddles. Attacking and spawning are untouched.
+
+Since 6.2.0 the list also takes **boats, chest boats and minecarts**, which are not creatures and
+were missing from the picker before. Getting in counts as `mount`.
 
 An entry is either a plain entity id — which blocks every recognised interaction — or an object:
 
@@ -83,6 +87,32 @@ saddled, bred or leashed — and only while a saddle is actually in hand.
 
 `unlock_actions` here works the same way round as it does for
 [items](/wiki/locking/items-and-recipes/unlock-actions): the list is what stays available.
+
+## Only some creatures of a type
+
+Since 6.2.0 an `attacklock` or `interactionlock` entry can carry an `nbt` filter, checked against
+the creature's saved data. The lock then hits only the creatures that match — oak boats but not
+birch ones, a zombie that carries a command tag, a horse that never despawns.
+
+```json
+"interactionlock": [
+  { "id": "minecraft:boat", "nbt": [{ "Type": "oak" }, { "Type": "spruce" }] }
+],
+"attacklock": [
+  { "id": "minecraft:zombie", "nbt": { "Tags": ["boss"] } }
+]
+```
+
+`nbt` is one object or a list of them, and any one of the list is enough — the same shape as
+[item criteria](/wiki/locking/items-and-recipes/nbt-and-components#several-variants-any-one-is-enough).
+An entry without `nbt` stays a plain id and hits every creature of that type.
+
+The **Edit NBT** screen is built like the item one: presets with a description each (silent,
+no gravity, command tags, health, …), a list of the keys that creature type actually saves, and
+**Take from a creature**, which reads the one you are looking at or standing next to. Boats and
+chest boats right-click to **Wood types** as a shortcut for the most common case.
+
+Spawn rules take no NBT filter.
 
 ## `spawnlock`
 
