@@ -16,6 +16,8 @@ ist.
 
 ## `[visuals]` {/* #visuals */}
 
+![Der Config-Editor auf dem Reiter Visual](/img/editor/config-visual.webp)
+
 → Siehe auch: [Verdeckte Anzeige](/wiki/stage-file/hidden-display) · [Forschungsrollen](/wiki/in-game-tools/research/scrolls).
 
 | Einstellung | Standard | Beschreibung |

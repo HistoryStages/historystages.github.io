@@ -120,6 +120,10 @@ Art ist auch am Zaubertisch und am Amboss verschont.
 
 ![Der Reiter Verzauberungen & Effekte](/img/editor/enchantments-tab.webp)
 
+![Der Bereich Trankeffekte im selben Reiter](/img/editor/effects-subtab.webp)
+
+![Die Effekt-Auswahl](/img/editor/effect-picker.webp)
+
 Der Reiter **Verzauberungen & Effekte**, mit einem Abschnitt für Verzauberungen und einem für
 Trank-Effekte. Jede Auswahl listet die echte Registry, also tauchen auch Einträge aus Mods auf.
 Rechtsklick auf eine Zeile für **Gesperrt ab Stufe**, **Sperr-Aktionen** und **Gilt für**. Alle

@@ -14,6 +14,8 @@ hand, or the other way round.
 
 ## Opening it
 
+![The pause menu with the Stage Editor button in the corner](/img/editor/pause-menu.webp)
+
 Permission level 2, in singleplayer or on a server. Either the **History Stages button in the pause
 menu**, or `/history editor`.
 
@@ -24,6 +26,12 @@ when it is off.
 ## Managing stages
 
 ![The editor overview: every stage with its state and an Unlock or Lock button](/img/editor/overview.webp)
+
+![Right-clicking a stage: edit, duplicate or delete it](/img/editor/stage-menu.webp)
+
+![Individual stages in the overview, with the player picker that unlock and lock act on](/img/editor/overview-individual.webp)
+
+![Organize mode: tick stages, then drag them onto a folder](/img/editor/organize.webp)
 
 The **Stage Overview** is the front page: create, edit, duplicate and delete stages. A new stage
 asks for its display name up front.
@@ -157,6 +165,10 @@ interrupted.
 
 ![The config editor on its Gameplay tab](/img/editor/config-editor.webp)
 
+![The config editor on its Visual tab](/img/editor/config-visual.webp)
+
+![The config editor on its Graph tab](/img/editor/config-graph.webp)
+
 A tab of its own for every setting in `visual.toml`, `gameplay.toml` and `graph.toml`, grouped into
 Common, Client and Graph tabs with a reset-to-defaults option. That includes the
 [research booster](/wiki/in-game-tools/research/pedestal#boosters) list, the
@@ -246,6 +258,12 @@ types are not offered — an entry for them would be written to the stage file a
 
 ![The zone editor with three shapes on its map](/img/editor/zone-shapes.webp)
 
+![Zone editor, Effect page: message, damage and potion effects](/img/editor/zone-effect.webp)
+
+![Zone editor, Protection page](/img/editor/zone-protection.webp)
+
+![Zone editor, Display page](/img/editor/zone-display.webp)
+
 Zones are the one lock type with no registry to pick from — the area has to be drawn. The zone tab lists a stage's zones with a one-line summary of what each does (`3 shapes · damage · barrier · inverted`), and **Edit** opens the zone's own screen.
 
 That screen has four sections. **General** holds the name, the world, and the list of shapes. **Effect** holds the message, the damage and the potion effects. **Protection** holds the interaction switches, the hard barrier and the spawn suppression. **Display** holds the two visibility switches.
@@ -266,6 +284,14 @@ Every zone screen carries a small map; clicking it opens the large one. It is a 
 
 ## The Spawn Rule Dialog
 
+![Right-clicking a spawn entry opens SpawnControl](/img/editor/spawn-menu.webp)
+
+![The SpawnControl dialog on its Sources page](/img/editor/spawn-rule.webp)
+
+![SpawnControl, Location page](/img/editor/spawn-location.webp)
+
+![SpawnControl, Time & Weather page](/img/editor/spawn-time.webp)
+
 A spawn lock entry is a rule rather than a checkbox, and the editor opens it as a dialog. The lock **phase** sits at the top — *while locked* or *after unlock* — and the rest is four tabs, each with a count badge saying how much of it is set:
 
 1.  **Sources** — the six spawn sources.
@@ -278,6 +304,8 @@ A line under the tabs spells the whole rule out in words, so the thing being sav
 → [Lock Types](/wiki/locking/creatures-and-trade/entities-and-spawns) has what each of those writes into the stage file, and the four limits worth knowing about extra biomes.
 
 ## Saving and multiplayer
+
+![Leaving a screen with unsaved changes asks first](/img/editor/unsaved.webp)
 
 A save writes the stage file and reloads immediately — no `/history reload` needed, unlike a
 hand-edited file. The change is synced to connected players in the same step.

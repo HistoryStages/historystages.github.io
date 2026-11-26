@@ -29,6 +29,8 @@ Server statt pro Eintrag.
 
 ![Der Biome-Reiter](/img/editor/biomes-tab.webp)
 
+![Die Biom-Auswahl](/img/editor/biome-picker.webp)
+
 Der Reiter **Biome** an einer Stage, mit einer durchsuchbaren Auswahl über jedes Biom und jedes
 Biom-Tag, das das Modpack geladen hat.
 

@@ -29,6 +29,8 @@ server-wide rather than per entry.
 
 ![The Biomes tab](/img/editor/biomes-tab.webp)
 
+![The biome picker](/img/editor/biome-picker.webp)
+
 The **Biomes** tab on a stage, with a searchable picker over every biome and biome tag the pack has
 loaded.
 

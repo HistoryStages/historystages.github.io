@@ -90,6 +90,8 @@ ein gesperrter Pfeil noch verschießen.
 
 ## Aktionen für eine ganze Stage fixieren {/* #fixing-actions-for-a-whole-stage */}
 
+![Der Bereich Sperren in den Stage-Einstellungen: austauschbar und fixierte Aktionen](/img/editor/stage-locks-section.webp)
+
 :::info[Neu in 6.1.0]
 :::
 

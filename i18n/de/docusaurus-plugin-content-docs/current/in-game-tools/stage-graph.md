@@ -48,6 +48,10 @@ Zwei verwandte Schalter: `respectHiddenDisplay` (Standard `true`) wendet die Ein
 
 ### Gestaltung pro Stage {/* #per-stage-overrides */}
 
+![Der Knoten-Stil mit einer Vorschau für jeden Zustand](/img/editor/graph-node-style.webp)
+
+![Die Farbauswahl](/img/editor/graph-colour.webp)
+
 Über die Standards des ganzen Graphs hinaus können einzelne Stages ihren eigenen Stil haben, optional je nach Sperr-Zustand. Das wird pro Modpack in `settings/graph_stages.json` gespeichert und normalerweise im Graph-Bildschirm selbst bearbeitet (für Operatoren zugänglich) statt von Hand. Jede angepasste Stage kann festlegen:
 
 - Eine **Beschreibung** (wörtlicher Text oder ein Übersetzungsschlüssel), die in ihrem Detail-Fenster erscheint.
@@ -101,6 +105,8 @@ Jedes Feld, das in der Überschreibung fehlt, hier `size`, `borderWidth`, `fillO
 
 ### Stil-Vorlagen {/* #style-presets */}
 
+![Die Liste der Stil-Vorlagen](/img/editor/graph-presets.webp)
+
 Eine Vorlage ist ein benanntes Knoten-Aussehen, auf das Stages zeigen. Änderst du die Vorlage einmal,
 folgt jede Stage, die sie benutzt. Die eigenen Stil-Werte einer Stage liegen weiterhin obendrauf, also
 bleibt „Boss, aber mit blauem Rahmen“ blau. Vorlagen decken das Knoten-Aussehen in jedem Zustand ab,
@@ -149,6 +155,12 @@ Vier Dinge daran solltest du wissen, weil jedes davon sonst wie ein Fehler wirkt
 - **Etwas schon Freigeschaltetes noch einmal freizuschalten macht es nicht zum neuesten.** Gespeichert wird die Zeit der ersten Freischaltung.
 
 ## Das Layout bearbeiten {/* #editing-the-layout */}
+
+![Der Stage-Graph im Editor, links die Stage-Liste](/img/editor/graph-editor.webp)
+
+![Rechtsklick auf einen Knoten](/img/editor/graph-node-menu.webp)
+
+![Die Legende des Graphen](/img/editor/graph-legend.webp)
 
 Das ist die Editor-Ansicht, geöffnet aus der Stage-Übersicht.
 

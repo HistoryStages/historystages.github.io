@@ -62,6 +62,10 @@ Eine Zone ganz ohne Formen ist erlaubt. Sie wird als unvollständig angezeigt un
 
 ## Regeln {/* #rules */}
 
+![Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte](/img/editor/zone-effect.webp)
+
+![Zonen-Editor, Seite Schutz](/img/editor/zone-protection.webp)
+
 | Schlüssel | Standard | Wirkung |
 | :--- | :--- | :--- |
 | `message.enabled` / `.text` / `.in_chat` | an / leer / aus | Eine Nachricht, solange der Spieler drin ist. `{zone}` und `{stage}` werden ersetzt; `&` setzt eine Farbe. `in_chat` schreibt sie zusätzlich zur Anzeige über der Hotbar in den Chat. |

@@ -40,6 +40,8 @@ gated per player, and says so under the grid. →
 
 ## Recipes using an item
 
+![Recipes using an item, from the entry's right-click menu](/img/editor/recipes-using.webp)
+
 :::info[New in 6.1.0]
 :::
 

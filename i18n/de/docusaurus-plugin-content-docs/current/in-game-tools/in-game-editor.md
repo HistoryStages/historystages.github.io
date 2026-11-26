@@ -14,6 +14,8 @@ angefangen und von Hand fertiggestellt werden, oder umgekehrt.
 
 ## Öffnen {/* #opening-it */}
 
+![Das Pausemenü mit dem Knopf „Stage Editor“ in der Ecke](/img/editor/pause-menu.webp)
+
 Berechtigungsstufe 2, im Einzelspieler oder auf einem Server. Entweder der **Knopf „History Stages“ im
 Pausemenü** oder `/history editor`.
 
@@ -24,6 +26,12 @@ Operatoren trotzdem.
 ## Stages verwalten {/* #managing-stages */}
 
 ![Die Editor-Übersicht: jede Stage mit ihrem Zustand und einem Knopf zum Freischalten oder Sperren](/img/editor/overview.webp)
+
+![Rechtsklick auf eine Stage: bearbeiten, duplizieren oder löschen](/img/editor/stage-menu.webp)
+
+![Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken](/img/editor/overview-individual.webp)
+
+![Organisieren: Stages anhaken und auf einen Ordner ziehen](/img/editor/organize.webp)
 
 Die **Stage-Übersicht** ist die Startseite: Stages anlegen, bearbeiten, kopieren und löschen. Eine
 neue Stage fragt gleich nach ihrem Anzeigenamen.
@@ -162,6 +170,10 @@ nicht unterbrochen wird.
 
 ![Der Config-Editor auf dem Reiter Gameplay](/img/editor/config-editor.webp)
 
+![Der Config-Editor auf dem Reiter Visual](/img/editor/config-visual.webp)
+
+![Der Config-Editor auf dem Reiter Graph](/img/editor/config-graph.webp)
+
 Ein eigener Reiter für jede Einstellung in `visual.toml`, `gameplay.toml` und `graph.toml`, gruppiert in
 die Reiter Common, Client und Graph, mit einer Option zum Zurücksetzen auf Standard. Dazu gehören die
 Liste der [Forschungs-Booster](/wiki/in-game-tools/research/pedestal#boosters), das Layout des
@@ -254,6 +266,12 @@ würde in die Stage-Datei geschrieben und dann nichts tun.
 
 ![Der Zonen-Editor mit drei Formen auf der Karte](/img/editor/zone-shapes.webp)
 
+![Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte](/img/editor/zone-effect.webp)
+
+![Zonen-Editor, Seite Schutz](/img/editor/zone-protection.webp)
+
+![Zonen-Editor, Seite Anzeige](/img/editor/zone-display.webp)
+
 Zonen sind die eine Sperr-Art ohne Registry zum Auswählen: Der Bereich muss gezeichnet werden. Der Zonen-Reiter listet die Zonen einer Stage mit einer einzeiligen Zusammenfassung dessen, was jede tut (`3 Formen · Schaden · Barriere · umgekehrt`), und **Bearbeiten** öffnet den eigenen Bildschirm der Zone.
 
 Dieser Bildschirm hat vier Abschnitte. **Allgemein** enthält den Namen, die Welt und die Liste der Formen. **Wirkung** enthält die Nachricht, den Schaden und die Trank-Effekte. **Schutz** enthält die Interaktions-Schalter, die harte Barriere und das Unterdrücken von Spawns. **Anzeige** enthält die beiden Sichtbarkeits-Schalter.
@@ -274,6 +292,14 @@ Jeder Zonen-Bildschirm hat eine kleine Karte; ein Klick darauf öffnet die groß
 
 ## Der Spawn-Dialog {/* #the-spawn-rule-dialog */}
 
+![Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl](/img/editor/spawn-menu.webp)
+
+![Der SpawnControl-Dialog auf der Seite Quellen](/img/editor/spawn-rule.webp)
+
+![SpawnControl, Seite Ort](/img/editor/spawn-location.webp)
+
+![SpawnControl, Seite Zeit & Wetter](/img/editor/spawn-time.webp)
+
 Ein Spawn-Sperr-Eintrag ist eine Regel statt eines Kästchens, und der Editor öffnet ihn als Dialog. Die **Phase** der Sperre sitzt oben, *solange gesperrt* oder *nach dem Freischalten*, und der Rest sind vier Reiter, jeder mit einem Zähler, wie viel davon eingestellt ist:
 
 1.  **Quellen**: die sechs Spawn-Quellen.
@@ -286,6 +312,8 @@ Eine Zeile unter den Reitern schreibt die ganze Regel in Worten aus, damit sich 
 → [Kreaturen & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) zeigt, was jeder davon in die Stage-Datei schreibt, und die vier Grenzen, die man bei zusätzlichen Biomen kennen sollte.
 
 ## Speichern und Multiplayer {/* #saving-and-multiplayer */}
+
+![Wer einen Bildschirm mit ungespeicherten Änderungen verlässt, wird erst gefragt](/img/editor/unsaved.webp)
 
 Speichern schreibt die Stage-Datei und lädt sofort neu, ganz ohne `/history reload`, anders als bei
 einer Datei, die von Hand bearbeitet wurde. Die Änderung wird im selben Schritt an verbundene Spieler

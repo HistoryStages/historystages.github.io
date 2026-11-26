@@ -46,6 +46,8 @@ not grow yet.
 
 ![The Plants tab](/img/editor/plants-tab.webp)
 
+![The plant picker, with block tags on their own tab](/img/editor/plant-picker.webp)
+
 The **Plants** tab on a stage, with a searchable picker over every block and block tag. Locking a
 whole mod offers its plants as a step in the same popup chain as its creatures, structures and
 biomes.

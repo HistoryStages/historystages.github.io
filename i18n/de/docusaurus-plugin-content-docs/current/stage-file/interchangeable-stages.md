@@ -68,6 +68,8 @@ abschalten, getrennt in [`[visuals]`](/wiki/server/config-files/visual-toml#visu
 
 ## Im Editor {/* #in-the-editor */}
 
+![Der Bereich Sperren in den Stage-Einstellungen: austauschbar und fixierte Aktionen](/img/editor/stage-locks-section.webp)
+
 **Stage-Einstellungen → Sperren → Austauschbar.** Den Schalter gibt es bei globalen und individuellen
 Stages. Ein Modpack, das ihn nie einschaltet, verhält sich genau wie vor 6.1.
 

@@ -15,6 +15,12 @@ structure inside the world. A third option caps how often a structure is allowed
 
 ![The Dims tab](/img/editor/dimensions-tab.webp)
 
+![The dimension picker](/img/editor/dimension-picker.webp)
+
+![The Structs tab](/img/editor/structures-tab.webp)
+
+![The structure picker, with structure tags on their own tab](/img/editor/structure-picker.webp)
+
 Two tabs: **Dimensions** and **Structures**, each with a searchable picker. The structure picker
 takes structure tags as well as ids.
 

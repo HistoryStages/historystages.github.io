@@ -31,6 +31,8 @@ Stage-Datei steht.
 
 ![Der Flüssigkeiten-Reiter mit Rezept-Zählern](/img/editor/fluids-tab.webp)
 
+![Die Flüssigkeits-Auswahl](/img/editor/fluid-picker.webp)
+
 Der Reiter **Fluide**, mit einer Auswahl über jede Flüssigkeit im Modpack. Jede Zeile trägt ein
 Abzeichen `[Recipes: N]`, das sagt, wie viele Rezepte dieser Eintrag erreichen würde. Ein Blick darauf
 lohnt sich vor dem Hinzufügen, denn die Zahl ist oft größer, als man denkt.

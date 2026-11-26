@@ -62,6 +62,10 @@ A zone with no shapes at all is legal. It is shown as incomplete and applies to 
 
 ## Rules
 
+![Zone editor, Effect page: message, damage and potion effects](/img/editor/zone-effect.webp)
+
+![Zone editor, Protection page](/img/editor/zone-protection.webp)
+
 | Key | Default | Effect |
 | :--- | :--- | :--- |
 | `message.enabled` / `.text` / `.in_chat` | on / empty / off | A message while the player is inside. `{zone}` and `{stage}` are replaced; `&` sets a colour. `in_chat` prints it in chat as well as above the hotbar. |

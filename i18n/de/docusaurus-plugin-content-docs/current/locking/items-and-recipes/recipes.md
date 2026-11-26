@@ -42,6 +42,8 @@ dem Raster. → [Die Rezept-Auswahl](/wiki/in-game-tools/in-game-editor#the-reci
 
 ## Rezepte, die ein Item benutzen {/* #recipes-using-an-item */}
 
+![Rezepte mit einem Item, aus dem Rechtsklick-Menü des Eintrags](/img/editor/recipes-using.webp)
+
 :::info[Neu in 6.1.0]
 :::
 

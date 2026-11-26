@@ -31,6 +31,10 @@ seit 6.0 bedeutet keine davon eine andere mit:
 
 ![Der Kreaturen-Reiter im Bereich Spawn](/img/editor/spawn-tab.webp)
 
+![Der Bereich Interagieren im Kreaturen-Reiter](/img/editor/interact-subtab.webp)
+
+![Die Kreaturen-Auswahl](/img/editor/entity-picker.webp)
+
 Die drei Listen sind drei eigene Reiter: **Angriff**, **Interaktion** und **Spawn**. Die
 Kreaturen-Auswahl funktioniert wie die Item-Auswahl, Mehrfachauswahl eingeschlossen.
 
@@ -225,6 +229,14 @@ sie sonst genau das Biom ausschließen würde, das hinzugefügt wird.
 - **Platz und Boden zählen weiterhin**, auch mit `ignore_spawn_rules`.
 
 ## Spawn-Regeln im Editor bauen {/* #building-spawn-rules-in-the-editor */}
+
+![Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl](/img/editor/spawn-menu.webp)
+
+![Der SpawnControl-Dialog auf der Seite Quellen](/img/editor/spawn-rule.webp)
+
+![SpawnControl, Seite Ort](/img/editor/spawn-location.webp)
+
+![SpawnControl, Seite Zeit & Wetter](/img/editor/spawn-time.webp)
 
 Spawn-Regeln werden normalerweise im Spawn-Dialog des Editors gebaut statt getippt: oben die Phase,
 dann vier Reiter (Quellen, Ort, Zeit & Wetter, Zusätzliche Biome) und eine Zeile darunter, die die ganze

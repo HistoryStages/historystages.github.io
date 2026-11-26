@@ -33,6 +33,12 @@ only if none of the three gates it.
 
 ![The Trades tab](/img/editor/trades-tab.webp)
 
+![Trades tab, Professions section, with a level badge on the librarian](/img/editor/trades-professions.webp)
+
+![Trades tab, Levels section](/img/editor/trades-levels.webp)
+
+![The trade picker, grouped by profession](/img/editor/trade-picker.webp)
+
 The **Trades** tab. Its picker lists **real offers** rather than every item in the game — pick a
 profession and you see what that merchant actually trades, at which level, for what price. Most of
 this block is written by clicking.

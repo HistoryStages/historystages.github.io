@@ -32,6 +32,8 @@ sagen, was *bevor* eine Stage erforscht werden darf, erfüllt sein muss, und nur
 
 ![Der Bildschirm mit den Stage-Einstellungen](/img/editor/stage-settings.webp)
 
+![Einen Stage-Modus wählen](/img/editor/mode-dropdown.webp)
+
 **Stage-Einstellungen**, der Knopf im Bildschirm der Stage. Der Modus ist ein Auswahlmenü, und wählst
 du einen, tauscht sich die Karte darunter gegen die Einstellungen dieses Modus aus: die Auslöser-Liste
 für `auto`, Dauer und Abklingzeit für `temporary`, ein Hinweis für `external`, dass das Podest sie

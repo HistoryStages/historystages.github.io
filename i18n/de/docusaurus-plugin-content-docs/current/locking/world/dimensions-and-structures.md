@@ -16,6 +16,12 @@ einzelne Struktur in der Welt abriegeln. Eine dritte Möglichkeit begrenzt, wie 
 
 ![Der Dimensionen-Reiter](/img/editor/dimensions-tab.webp)
 
+![Die Dimensions-Auswahl](/img/editor/dimension-picker.webp)
+
+![Der Strukturen-Reiter](/img/editor/structures-tab.webp)
+
+![Die Struktur-Auswahl, Struktur-Tags auf einem eigenen Reiter](/img/editor/structure-picker.webp)
+
 Zwei Reiter: **Dimensionen** und **Strukturen**, jeder mit einer durchsuchbaren Auswahl. Die
 Struktur-Auswahl nimmt Struktur-Tags genauso wie IDs.
 

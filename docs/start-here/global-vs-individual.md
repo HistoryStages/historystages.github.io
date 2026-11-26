@@ -187,6 +187,10 @@ checker simply skips them rather than measuring them against whoever last opened
 
 ## Lose on Death
 
+![The Individual section: lose on death and share with team](/img/editor/stage-individual-section.webp)
+
+![Individual stages in the overview, with the player picker that unlock and lock act on](/img/editor/overview-individual.webp)
+
 An individual stage can relock itself when its owner dies:
 
 ```json

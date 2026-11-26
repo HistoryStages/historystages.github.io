@@ -24,6 +24,14 @@ matches — the difference is only how wide the net is.
 
 ![The Items tab, with action and NBT badges on narrowed entries](/img/editor/items-tab.webp)
 
+![The Tags tab](/img/editor/tags-tab.webp)
+
+![The tag picker](/img/editor/tag-picker.webp)
+
+![The mod picker](/img/editor/mod-picker.webp)
+
+![The Exceptions tab, empty until a mod lock needs one](/img/editor/exceptions-tab.webp)
+
 Four tabs of their own on a stage: **Items**, **Tags**, **Mods** and **Exceptions**. Each has a
 search bar over the live registry, a button to pick straight out of your own inventory, and a
 multi-select mode with a **Selected** tab for adding many at once.

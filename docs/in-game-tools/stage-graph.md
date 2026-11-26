@@ -51,6 +51,10 @@ Two related toggles: `respectHiddenDisplay` (default `true`) applies each stage'
 
 ### Per-Stage Overrides
 
+![The node style screen with a preview of every state](/img/editor/graph-node-style.webp)
+
+![The colour picker](/img/editor/graph-colour.webp)
+
 Beyond the graph-wide defaults, individual stages can have their own style, optionally varying by lock state. This is stored per-modpack in `settings/graph_stages.json` and is normally edited from the graph screen itself (accessible to OPs) rather than by hand. Each overridden stage can set:
 
 - A **description** (literal text or a translation key) shown in its detail window.
@@ -104,6 +108,8 @@ Every field left out of the override — `size`, `borderWidth`, `fillOpacity`, `
 
 ### Style presets
 
+![The style presets list](/img/editor/graph-presets.webp)
+
 A preset is a named node look that stages point at. Change the preset once and every stage using it
 follows. A stage's own style values still sit on top, so "Boss, but with a blue border" stays blue.
 Presets cover the node look in every state, not the map background.
@@ -151,6 +157,12 @@ Four things about it are worth knowing, because each of them otherwise reads as 
 - **Unlocking something already unlocked does not make it the newest.** The recorded time is the first unlock.
 
 ## Editing the layout
+
+![The stage graph in the editor, with the stage list on the left](/img/editor/graph-editor.webp)
+
+![Right-clicking a node](/img/editor/graph-node-menu.webp)
+
+![The graph legend](/img/editor/graph-legend.webp)
 
 This is the editor view, opened from the Stage Overview.
 

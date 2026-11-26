@@ -12,6 +12,8 @@ stage is unlocked, everything displays normally again.
 
 ## In the editor
 
+![Display set to replace the name until the stage opens](/img/editor/hidden-name.webp)
+
 Not a tab — it belongs to the stage rather than to one lock category. **Stage Settings**, the button
 on the stage's own screen, holds it as the **Display** card: the two modes as dropdowns, their
 replacement texts as fields, and the lock-hint switch.

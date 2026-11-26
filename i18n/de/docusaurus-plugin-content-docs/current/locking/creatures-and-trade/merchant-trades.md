@@ -33,6 +33,12 @@ bleibt nur, wenn keine der drei es sperrt.
 
 ![Der Handels-Reiter](/img/editor/trades-tab.webp)
 
+![Handels-Reiter, Bereich Berufe, mit Stufen-Kennzeichen beim Bibliothekar](/img/editor/trades-professions.webp)
+
+![Handels-Reiter, Bereich Stufen](/img/editor/trades-levels.webp)
+
+![Die Angebots-Auswahl, nach Beruf gruppiert](/img/editor/trade-picker.webp)
+
 Der Reiter **Handel**. Seine Auswahl listet **echte Angebote** statt jedes Items im Spiel: Wähl einen
 Beruf, und du siehst, was dieser Händler tatsächlich handelt, auf welcher Stufe und zu welchem Preis.
 Den größten Teil dieses Blocks schreibst du per Klick.

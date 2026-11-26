@@ -68,6 +68,8 @@ Players who would rather see a flat list can turn the grouping off with
 
 ## In the editor
 
+![The Locks section of the stage settings: interchangeable and fixed actions](/img/editor/stage-locks-section.webp)
+
 **Stage Settings → Locks → Interchangeable.** The switch is there on global and individual stages.
 A pack that never turns it on behaves exactly as it did before 6.1.
 

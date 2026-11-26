@@ -194,6 +194,10 @@ eine blockierte und eine entzogene Stage sind `lock_messages.stageBlocked` und
 
 ![Ein Günstiger-solange-Baustein im Logik-Editor](/img/editor/logic-block.webp)
 
+![Blockiert-, Versteckt- und Entziehen-Bausteine auf einer Stage, jeder zeigt, ob er gerade greift](/img/editor/logic-blocks.webp)
+
+![Die Stage auswählen, von der ein Logikbaustein abhängt](/img/editor/logic-stage-picker.webp)
+
 **Logik**, der Knopf neben Einstellungen und Abhängigkeiten im Bildschirm der Stage. Jeder Baustein
 ist eine Karte; **+ Baustein** fügt einen hinzu. Eine Karte zeigt live, ob ihre Bedingung für dich
 gerade zutrifft, und markiert jeden Teil, der erfüllt ist. Die Stage-Auswahl bietet nur Stages an, auf

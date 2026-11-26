@@ -24,6 +24,14 @@ verhalten sich alle gleich; der Unterschied ist nur, wie weit das Netz ausgeworf
 
 ![Der Items-Reiter mit Kennzeichen für eingegrenzte Aktionen und NBT](/img/editor/items-tab.webp)
 
+![Der Tags-Reiter](/img/editor/tags-tab.webp)
+
+![Die Tag-Auswahl](/img/editor/tag-picker.webp)
+
+![Die Mod-Auswahl](/img/editor/mod-picker.webp)
+
+![Der Ausnahmen-Reiter, leer bis eine Mod-Sperre eine braucht](/img/editor/exceptions-tab.webp)
+
 Vier eigene Reiter an einer Stage: **Items**, **Tags**, **Mods** und **Ausnahmen**. Jeder hat eine
 Suchleiste über die echte Registry, einen Knopf zum Auswählen direkt aus deinem Inventar und einen
 Mehrfachauswahl-Modus mit einem Reiter **Gewählt**, um viele auf einmal hinzuzufügen.

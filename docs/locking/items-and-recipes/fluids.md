@@ -31,6 +31,8 @@ appearing in the stage file.
 
 ![The Fluids tab with recipe counts](/img/editor/fluids-tab.webp)
 
+![The fluid picker](/img/editor/fluid-picker.webp)
+
 The **Fluids** tab, with a picker over every fluid in the pack. Each row carries a
 `[Recipes: N]` badge saying how many recipes that entry would reach — worth a look before adding
 one, since that number is frequently larger than people expect.

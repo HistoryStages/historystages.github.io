@@ -37,6 +37,18 @@ stehen, für Anforderungsarten, die anderen Mods gehören, siehe [Requirements](
 
 ## Die Bedingungen {/* #the-conditions */}
 
+![Ein Item zum Abgeben hinzufügen](/img/editor/dep-item-picker.webp)
+
+![Eine Stage als Abhängigkeit](/img/editor/dep-global-stages.webp)
+
+![Der Reiter XP-Level, nur bei individuellen Stages](/img/editor/dep-xp.webp)
+
+![Einen Fortschritt auswählen](/img/editor/dep-advancement-picker.webp)
+
+![Eine Kreatur für einen Kill-Zähler auswählen](/img/editor/dep-kill-picker.webp)
+
+![Eine Statistik auswählen](/img/editor/dep-stat-picker.webp)
+
 Zwei Felder beschreiben die Gruppe selbst: `id` (siehe
 [unten](#group-ids-and-why-they-matter-in-a-live-world)) und `logic`. Alles danach ist eine
 Anforderungsliste.
@@ -71,6 +83,10 @@ dessen Wert sie liest. Ohne Halter nimmt sie den handelnden Spieler, und das ist
 Stage, wer gerade zufällig am Podest steht. Gib dort also den Halter an.
 
 ## UND, ODER, und wo die Grenze verläuft {/* #and-or-and-where-the-line-runs */}
+
+![Zwei Abhängigkeits-Gruppen](/img/editor/dep-groups.webp)
+
+![Eine Gruppe zwischen UND und ODER umschalten](/img/editor/dep-logic.webp)
 
 :::warning
 **`logic` gilt innerhalb einer Gruppe und nie zwischen Gruppen.** Gruppen sind immer mit UND

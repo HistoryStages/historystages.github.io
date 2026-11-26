@@ -119,6 +119,10 @@ spared type is spared at the enchanting table and the anvil too.
 
 ![The Enchants & Effects tab](/img/editor/enchantments-tab.webp)
 
+![The Potion effects section of the same tab](/img/editor/effects-subtab.webp)
+
+![The effect picker](/img/editor/effect-picker.webp)
+
 The **Enchants & Effects** tab, with one section for enchantments and one for potion effects. Each
 picker lists the live registry, so modded entries show up. Right-click a row for **Locked from
 level**, **Lock Actions** and **Applies to**. All actions can also be

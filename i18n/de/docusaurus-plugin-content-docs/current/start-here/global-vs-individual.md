@@ -195,6 +195,10 @@ zu messen, der das Podest zuletzt geöffnet hat.
 
 ## Bei Tod verlieren {/* #lose-on-death */}
 
+![Der Bereich Individuell: beim Tod verlieren und mit dem Team teilen](/img/editor/stage-individual-section.webp)
+
+![Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken](/img/editor/overview-individual.webp)
+
 Eine individuelle Stage kann sich selbst wieder sperren, wenn ihr Besitzer stirbt:
 
 ```json

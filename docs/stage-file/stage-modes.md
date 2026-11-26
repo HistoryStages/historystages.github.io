@@ -32,6 +32,8 @@ research to gate.
 
 ![The stage settings screen](/img/editor/stage-settings.webp)
 
+![Choosing a stage mode](/img/editor/mode-dropdown.webp)
+
 **Stage Settings**, the button on the stage's own screen. The mode is a dropdown, and picking one
 swaps the card underneath it for that mode's own settings — the trigger list for `auto`, the
 duration and cooldown for `temporary`, a note for `external` explaining that the pedestal will

@@ -15,6 +15,8 @@ This page is a lookup list. Each block links to the page that explains what it i
 
 ## `[visuals]`
 
+![The config editor on its Visual tab](/img/editor/config-visual.webp)
+
 → Related: [Hidden Display](/wiki/stage-file/hidden-display) · [Research Scrolls](/wiki/in-game-tools/research/scrolls).
 
 | Setting | Default | Description |

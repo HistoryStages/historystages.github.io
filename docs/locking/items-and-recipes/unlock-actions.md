@@ -88,6 +88,8 @@ item lock, plain or narrowed; before 6.1.0 a locked arrow could still be shot.
 
 ## Fixing actions for a whole stage
 
+![The Locks section of the stage settings: interchangeable and fixed actions](/img/editor/stage-locks-section.webp)
+
 :::info[New in 6.1.0]
 :::
 

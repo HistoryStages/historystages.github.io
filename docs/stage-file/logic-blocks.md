@@ -186,6 +186,10 @@ blocked and a revoked stage are `lock_messages.stageBlocked` and `lock_messages.
 
 ![A cheaper-while block in the logic editor](/img/editor/logic-block.webp)
 
+![Blocked, hidden and revoke blocks on one stage, each showing whether it is in effect right now](/img/editor/logic-blocks.webp)
+
+![Picking the stage a logic block depends on](/img/editor/logic-stage-picker.webp)
+
 **Logic**, the button next to Settings and Dependencies on the stage's screen. Each block is a
 card; **+ Block** adds one. A card shows live whether its condition holds for you right now, and
 marks every term that is met. The stage picker only offers stages the condition may look at.

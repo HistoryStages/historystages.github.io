@@ -47,6 +47,8 @@ nicht wächst.
 
 ![Der Pflanzen-Reiter](/img/editor/plants-tab.webp)
 
+![Die Pflanzen-Auswahl, Block-Tags auf einem eigenen Reiter](/img/editor/plant-picker.webp)
+
 Der Reiter **Pflanzen** an einer Stage, mit einer durchsuchbaren Auswahl über jeden Block und jedes
 Block-Tag. Sperrst du eine ganze Mod, werden ihre Pflanzen als Schritt in derselben Popup-Kette
 angeboten wie ihre Kreaturen, Strukturen und Biome.

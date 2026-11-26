@@ -159,6 +159,8 @@ not change.
 
 ## In the editor
 
+![The lock trigger screen with its list of trigger types](/img/editor/lock-triggers.webp)
+
 **Stage Settings.** The mode dropdown has **While**, with a card to configure its conditions and
 the message switch. On Default and Auto stages a **Re-lock** card sits below the mode card:
 **Configure lock triggers →**, **Can be unlocked again** and **Messages on unlock/lock**.

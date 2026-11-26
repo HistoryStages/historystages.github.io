@@ -164,6 +164,8 @@ Stages nicht ändern.
 
 ## Im Editor {/* #in-the-editor */}
 
+![Der Bildschirm für Sperr-Auslöser mit der Liste der Auslöser-Arten](/img/editor/lock-triggers.webp)
+
 **Stage-Einstellungen.** Das Modus-Menü hat **Solange**, mit einer Karte für seine Bedingungen und den
 Nachrichten-Schalter. Bei Default- und Auto-Stages sitzt unter der Modus-Karte eine Karte **Sperren**:
 **Sperr-Trigger konfigurieren →**, **Wieder freischaltbar** und **Meldungen beim Öffnen/Sperren**.

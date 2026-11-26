@@ -31,6 +31,10 @@ since 6.0 none of them implies another:
 
 ![The Entities tab on its Spawn section](/img/editor/spawn-tab.webp)
 
+![The Interact section of the Entities tab](/img/editor/interact-subtab.webp)
+
+![The entity picker](/img/editor/entity-picker.webp)
+
 The three lists are three tabs of their own: **Attack**, **Interaction** and **Spawn**. The entity
 pickers work like the item picker, multi-select included.
 
@@ -221,6 +225,14 @@ would otherwise exclude the very biome being added.
 - **Space and ground still count**, even with `ignore_spawn_rules`.
 
 ## Building spawn rules in the editor
+
+![Right-clicking a spawn entry opens SpawnControl](/img/editor/spawn-menu.webp)
+
+![The SpawnControl dialog on its Sources page](/img/editor/spawn-rule.webp)
+
+![SpawnControl, Location page](/img/editor/spawn-location.webp)
+
+![SpawnControl, Time & Weather page](/img/editor/spawn-time.webp)
 
 Spawn rules are normally built in the editor's spawn dialog rather than typed: phase at the top,
 then four tabs — Sources, Location, Time & Weather, Extra biomes — and a line underneath that spells

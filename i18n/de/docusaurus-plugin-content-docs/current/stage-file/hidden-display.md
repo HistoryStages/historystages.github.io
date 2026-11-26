@@ -12,6 +12,8 @@ freigeschaltet ist, wird alles wieder normal angezeigt.
 
 ## Im Editor {/* #in-the-editor */}
 
+![Anzeige: Der Name wird ersetzt, bis die Stage offen ist](/img/editor/hidden-name.webp)
+
 Kein Reiter, denn es gehört zur Stage und nicht zu einer Sperr-Kategorie. **Stage-Einstellungen**, der
 Knopf im Bildschirm der Stage, hat es als Karte **Anzeige**: die beiden Modi als Auswahlmenüs, ihre
 Ersatztexte als Felder und den Schalter für den Sperr-Hinweis.
