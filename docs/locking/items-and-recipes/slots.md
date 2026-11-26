@@ -8,8 +8,8 @@ sidebar_position: 9
 
 <Scope global="yes" individual="partly" note="Individual: only the player's own inventory. Container slots need a global stage." />
 
-Since 6.2.0 a stage can keep **slots** shut: part of the player's own inventory, or chosen slots of
-a chest, furnace or modded machine. A pack that starts players on a three-slot hotbar and hands out
+A stage can keep **slots** shut: part of the player's own inventory, or chosen slots of
+a chest, furnace or modded machine.<Since v="6.2.0" /> A pack that starts players on a three-slot hotbar and hands out
 the rest stage by stage is one stage file per step.
 
 ```json
@@ -81,9 +81,10 @@ For an individual stage relocked while its player is offline, the items drop at 
 
 ## The look
 
-![The inventory with locked items and the locked hotbar slots hidden](/img/ingame/inventory-locked.webp)
-
-![A chest whose bottom row is locked with the overlay mode](/img/ingame/chest-locked-row.webp)
+<Gallery items={[
+  {src: "/img/ingame/inventory-locked.webp", alt: "The inventory with locked items and the locked hotbar slots hidden"},
+  {src: "/img/ingame/chest-locked-row.webp", alt: "A chest whose bottom row is locked with the overlay mode"},
+]} />
 
 An `overlay` slot gets a tint and a symbol on top. All of it is optional; an entry without a `look`
 block gets a half-transparent black cover with a lock symbol.

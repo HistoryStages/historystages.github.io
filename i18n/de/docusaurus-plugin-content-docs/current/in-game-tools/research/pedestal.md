@@ -45,9 +45,10 @@ Abhängigkeit mittendrin nicht mehr erfüllt ist oder die Rolle in ein Podest de
 
 ## Abhängigkeiten abgeben {/* #handing-in-dependencies */}
 
-![Das Podest mit eingelegter Rolle, die Anforderungen noch nicht erfüllt](/img/ingame/pedestal-requirements.webp)
-
-![Eisenbarren abgegeben: alle Anforderungen erfüllt](/img/ingame/pedestal-met.webp)
+<Gallery items={[
+  {src: "/img/ingame/pedestal-requirements.webp", alt: "Das Podest mit eingelegter Rolle, die Anforderungen noch nicht erfüllt"},
+  {src: "/img/ingame/pedestal-met.webp", alt: "Eisenbarren abgegeben: alle Anforderungen erfüllt"},
+]} />
 
 Hat eine Stage [Abhängigkeiten](/wiki/stage-file/dependencies), erweitert sich die GUI des Podests um
 ein Seitenpanel, das jede Bedingung auflistet und ob sie erfüllt ist. Bedingungen, die man abgibt, also

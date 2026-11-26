@@ -8,13 +8,10 @@ sidebar_position: 7
 
 <Scope global="yes" individual="yes" />
 
-:::info[Neu in 6.1.0]
-:::
-
 Ein gesperrtes Item kann wie ein anderes Item aussehen und ein gesperrter Block in der Welt wie ein
 anderer Block, bis der Spieler ihn benutzen darf. Smaragderz, das wie Stein aussehen soll, wird als
 Stein gezeichnet, klingt wie Stein, zeigt in jedem Inventar das Stein-Modell und den Namen Stein und
-wird in dem Moment zu Erz, in dem die Stage, die es sperrt, freigeschaltet wird.
+wird in dem Moment zu Erz, in dem die Stage, die es sperrt, freigeschaltet wird.<Since v="6.1.0" />
 
 Das ist die Idee hinter Revelationary, fest eingebaut. Revelationary selbst wird weder gebraucht noch
 benutzt.
@@ -99,9 +96,10 @@ Bekannte Konflikte:
 
 ## Im Editor {/* #in-the-editor */}
 
-![Die Tarnungs-Liste aus dem Zahnrad-Menü](/img/editor/disguises-list.webp)
-
-![Der Tarnungs-Dialog für einen einzelnen Eintrag, aus seinem Rechtsklick-Menü](/img/editor/disguise-dialog.webp)
+<Gallery items={[
+  {src: "/img/editor/disguises-list.webp", alt: "Die Tarnungs-Liste aus dem Zahnrad-Menü", wide: true},
+  {src: "/img/editor/disguise-dialog.webp", alt: "Der Tarnungs-Dialog für einen einzelnen Eintrag, aus seinem Rechtsklick-Menü"},
+]} />
 
 - **Rechtsklick auf eine Item- oder Tag-Zeile → Tarnung.** Der Dialog hat das Item, wie es aussehen
   soll, **Drops** (Echt / Wie Tarnung) und **Sperr-Hinweise zeigen**, dazu, welche Stages das Item

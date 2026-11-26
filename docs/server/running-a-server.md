@@ -79,11 +79,11 @@ opening the editor. →
 
 ## Backups
 
-- `config/historystages/` — the whole pack: stages, folders, settings, and the graph layout.
-- `<world>/data/historystages_*.dat` — everything players have earned.
-- `config/historystages/logs/` — not worth backing up, but worth reading. The load report is written
-  on every startup and is the first place a misbehaving pack shows up. →
-  [Getting Help](/wiki/about/getting-help#before-reporting-check-the-load-report)
+| Path | What it is |
+| :--- | :--- |
+| `config/historystages/` | the whole pack: stages, folders, settings, and the graph layout. |
+| `<world>/data/historystages_*.dat` | everything players have earned. |
+| `config/historystages/logs/` | not worth backing up, but worth reading. The load report is written on every startup and is the first place a misbehaving pack shows up. → [Getting Help](/wiki/about/getting-help#before-reporting-check-the-load-report) |
 
 ## Permissions
 

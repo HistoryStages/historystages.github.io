@@ -13,13 +13,12 @@ structure inside the world. A third option caps how often a structure is allowed
 
 ## In the editor
 
-![The Dims tab](/img/editor/dimensions-tab.webp)
-
-![The dimension picker](/img/editor/dimension-picker.webp)
-
-![The Structs tab](/img/editor/structures-tab.webp)
-
-![The structure picker, with structure tags on their own tab](/img/editor/structure-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/dimensions-tab.webp", alt: "The Dims tab", wide: true},
+  {src: "/img/editor/dimension-picker.webp", alt: "The dimension picker"},
+  {src: "/img/editor/structures-tab.webp", alt: "The Structs tab", wide: true},
+  {src: "/img/editor/structure-picker.webp", alt: "The structure picker, with structure tags on their own tab"},
+]} />
 
 Two tabs: **Dimensions** and **Structures**, each with a searchable picker. The structure picker
 takes structure tags as well as ids.
@@ -76,10 +75,13 @@ whole thing, but a shape clustered from the pieces the structure is actually mad
 zone it can cancel right-clicks, left-clicks and projectile impacts, show a message, and optionally
 deal periodic damage.
 
-:::note[A flat array still works]
+<details>
+<summary>A flat array still works</summary>
+
 `"structures": ["minecraft:stronghold"]` — the pre-6.0 spelling — is still read, and rewritten into
 the object form the next time the stage is saved.
-:::
+
+</details>
 
 ### Tuning the lock zone
 

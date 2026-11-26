@@ -21,11 +21,14 @@ custom recipe "doesn't work" — the scroll crafts, and the pedestal then refuse
 [Where Stage Files Live](/wiki/start-here/where-stage-files-live)
 :::
 
-:::info[Components, not NBT]
+<details>
+<summary>Components, not NBT</summary>
+
 From Minecraft 1.20.5 on, item data uses **data components** (`minecraft:custom_data`) rather than
 raw NBT. The examples below use the modern syntax. For 1.20.4 and older, replace
 `{"minecraft:custom_data":{...}}` with the old `{StageResearch:"..."}` form.
-:::
+
+</details>
 
 ---
 

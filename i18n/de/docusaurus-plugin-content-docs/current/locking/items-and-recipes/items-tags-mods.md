@@ -9,37 +9,36 @@ sidebar_position: 1
 <Scope global="yes" individual="yes" />
 
 Vier Felder sperren Items, von einer einzelnen ID bis zu einer ganzen Mod. Sobald ein Item passt,
-verhalten sich alle gleich; der Unterschied ist nur, wie weit das Netz ausgeworfen wird.
+verhalten sich alle vier gleich; sie unterscheiden sich nur darin, wie weit das Netz ausgeworfen wird.
 
-```json
-{
-  "items": ["minecraft:iron_ingot"],
-  "tags": ["c:ores/iron"],
-  "mods": ["create"],
-  "mod_exceptions": ["create:andesite_alloy"]
-}
-```
+| Feld | Sperrt | Gut für |
+| :--- | :--- | :--- |
+| [`items`](#items) | Eine Item-ID | Ein bestimmtes Werkzeug, einen Block, eine Zutat |
+| [`tags`](#tags) | Jedes Item in einem Item-Tag, auch später hinzugekommene | Alle Eisenerze, alle Barren |
+| [`mods`](#mods) | Alles, was eine Mod registriert | Eine ganze Tech-Mod sperren |
+| [`mod_exceptions`](#mod-exceptions) | Items, die aus einer `mods`-Sperre wieder herausgenommen werden | Ein Einstiegs-Item durchlassen |
 
-## Im Editor {/* #in-the-editor */}
+## Einrichten {/* #in-the-editor */}
 
-![Der Items-Reiter mit Kennzeichen für eingegrenzte Aktionen und NBT](/img/editor/items-tab.webp)
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
 
-![Der Tags-Reiter](/img/editor/tags-tab.webp)
+<Gallery items={[
+  {src: "/img/editor/items-tab.webp", alt: "Der Items-Reiter mit Kennzeichen für eingegrenzte Aktionen und NBT", wide: true},
+  {src: "/img/editor/tags-tab.webp", alt: "Der Tags-Reiter", wide: true},
+  {src: "/img/editor/tag-picker.webp", alt: "Die Tag-Auswahl"},
+  {src: "/img/editor/mod-picker.webp", alt: "Die Mod-Auswahl"},
+  {src: "/img/editor/exceptions-tab.webp", alt: "Der Ausnahmen-Reiter, leer bis eine Mod-Sperre eine braucht", wide: true},
+]} />
 
-![Die Tag-Auswahl](/img/editor/tag-picker.webp)
+1. Öffne eine Stage und wähle den Reiter **Items**, **Tags**, **Mods** oder **Ausnahmen**.
+2. Drück **+ Add**. Die Auswahl durchsucht die echte Registry; der Reiter **Inventar** nimmt direkt
+   aus deinem eigenen Inventar, und **Gewählt** sammelt mehrere auf einmal.
+3. Drück **Save**.
 
-![Die Mod-Auswahl](/img/editor/mod-picker.webp)
+Alles, was du mit einem Eintrag machst, der schon in der Liste steht, ist ein **Rechtsklick**:
 
-![Der Ausnahmen-Reiter, leer bis eine Mod-Sperre eine braucht](/img/editor/exceptions-tab.webp)
-
-Vier eigene Reiter an einer Stage: **Items**, **Tags**, **Mods** und **Ausnahmen**. Jeder hat eine
-Suchleiste über die echte Registry, einen Knopf zum Auswählen direkt aus deinem Inventar und einen
-Mehrfachauswahl-Modus mit einem Reiter **Gewählt**, um viele auf einmal hinzuzufügen.
-
-**Alles, was du mit einem Eintrag machst, der schon in der Liste steht, ist ein Rechtsklick.** Das
-Kontextmenü, das sich öffnet, enthält:
-
-| | |
+| Menüeintrag | Was er tut |
 | :--- | :--- |
 | **NBT bearbeiten** | [Kriterien für NBT und Data Components](/wiki/locking/items-and-recipes/nbt-and-components). |
 | **Sperr-Aktionen** | [Den Eintrag auf bestimmte Interaktionen eingrenzen](/wiki/locking/items-and-recipes/unlock-actions). |
@@ -50,29 +49,48 @@ Kontextmenü, das sich öffnet, enthält:
 Welche davon erscheinen, hängt vom Reiter ab (ein Mod-Eintrag hat kein NBT zum Bearbeiten), und ein
 installiertes Addon kann weiter unten eigene ergänzen, über „ID kopieren“ und „Entfernen“.
 
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
+Alle vier sind Listen an der Stage:
+
+```json title="config/historystages/global/iron_age.json"
+{
+  "items": ["minecraft:iron_ingot"],
+  "tags": ["c:ores/iron"],
+  "mods": ["create"],
+  "mod_exceptions": ["create:andesite_alloy"]
+}
+```
+
+Ein Eintrag ist entweder eine einfache ID oder ein Object, das mehr dazu angibt; die Abschnitte
+unten zeigen beides. Nach einer Änderung von Hand führst du `/history reload` aus.
+
+</TabItem>
+</Tabs>
+
 ## Was „gesperrt“ heißt {/* #what-locked-means */}
 
-![Der Tooltip eines gesperrten Items nennt die Stage, die es braucht](/img/ingame/tooltip-item.webp)
-
-![Ein Eisenbarren, gesperrt über den Tag c:ingots/iron](/img/ingame/tooltip-tag.webp)
-
-![Gesperrte Items tragen in der Hotbar ein Schloss, die letzten drei Slots sind ausgeblendet](/img/ingame/hotbar-locks.webp)
+<Gallery items={[
+  {src: "/img/ingame/tooltip-item.webp", alt: "Der Tooltip eines gesperrten Items nennt die Stage, die es braucht"},
+  {src: "/img/ingame/tooltip-tag.webp", alt: "Ein Eisenbarren, gesperrt über den Tag c:ingots/iron", wide: true},
+  {src: "/img/ingame/hotbar-locks.webp", alt: "Gesperrte Items tragen in der Hotbar ein Schloss, die letzten drei Slots sind ausgeblendet", wide: true},
+]} />
 
 Standardmäßig ist ein passendes Item für **alles** gesperrt: benutzen, damit angreifen, es tragen,
 aufheben, platzieren, damit Blöcke abbauen, seine GUI öffnen, im Loot auftauchen, seine Rezepte zeigen
-und damit handeln. Das auf eine einzelne Interaktion einzugrenzen, ist die Aufgabe von
+und damit handeln. Willst du nur einen Teil davon sperren, nimm
 [`unlock_actions`](/wiki/locking/items-and-recipes/unlock-actions).
 
-Ein gesperrter **Block** ist ein etwas größeres Thema als ein gesperrtes Item, weil er schon in der
-Welt steht:
+Ein gesperrter **Block** steht schon in der Welt, deshalb geht die Sperre etwas weiter:
 
-- Ihn abzubauen dauert 20-mal länger, und er droppt nichts (`lockedBlockBreakSpeedMultiplier`).
-- Seine GUI öffnet sich nicht, ob Truhe, Ofen oder Maschine.
-- Rüstungsständer und Rahmen mit einem gesperrten Item lassen sich ebenfalls weder benutzen noch
-  zerstören.
+| Ein gesperrter Block … | Schalter in [gameplay.toml](/wiki/server/config-files/gameplay-toml#gameplay) |
+| :--- | :--- |
+| lässt sich nur 20-mal langsamer abbauen und droppt nichts | `lockBlockBreaking`, `lockedBlockBreakSpeedMultiplier` |
+| öffnet seine GUI nicht (Truhe, Ofen, Maschine) | `lockBlockInteraction` |
+| lässt sich auf einem Rüstungsständer oder in einem Rahmen weder nehmen noch zerstören | `lockEntityItems` |
 
-Jedes davon ist ein Schalter in [gameplay.toml](/wiki/server/config-files/gameplay-toml#gameplay),
-und jeder hat einen Zwilling pro Spieler unter `[individual_stages]`.
+Jeder davon hat einen Zwilling pro Spieler unter `[individual_stages]`.
 
 ## Items {/* #items */}
 
@@ -88,9 +106,13 @@ Item-IDs, entweder einfach oder als Objects:
 ]
 ```
 
-Die Object-Form nimmt [Kriterien über `nbt` / `components`](/wiki/locking/items-and-recipes/nbt-and-components),
-[`unlock_actions`](/wiki/locking/items-and-recipes/unlock-actions) und eigene `name_text`- /
-`tooltip_text`-Überschreibungen pro Eintrag für die [verdeckte Anzeige](/wiki/stage-file/hidden-display).
+Die Object-Form nimmt:
+
+| Schlüssel | Wofür |
+| :--- | :--- |
+| `nbt` / `components` | [Nur die Stacks, die zu einem Kriterium passen](/wiki/locking/items-and-recipes/nbt-and-components) |
+| `unlock_actions` | [Nur bestimmte Interaktionen](/wiki/locking/items-and-recipes/unlock-actions) |
+| `name_text` / `tooltip_text` | Die eigene [verdeckte Anzeige](/wiki/stage-file/hidden-display) dieses Eintrags |
 
 ## Tags {/* #tags */}
 
@@ -111,11 +133,14 @@ Ein Tag wird live aufgelöst, also sind auch Items gesperrt, die eine andere Mod
 gelegentlich die Überraschung, wenn eine neu installierte Mod still eine Sperre erweitert, die niemand
 angefasst hat.
 
-:::note
-Tag-Einträge mit einem NBT-Kriterium werden überall übersprungen, wo es keinen echten Item-Stack zum
-Vergleichen gibt, zum Beispiel bei einer Loot-Table-Prüfung ohne Kontext. Einfache Tag-Einträge sind
-davon nicht betroffen. → [NBT & Data Components](/wiki/locking/items-and-recipes/nbt-and-components)
-:::
+<details>
+<summary>Tag-Einträge mit einem NBT-Kriterium</summary>
+
+Sie werden überall übersprungen, wo es keinen echten Item-Stack zum Vergleichen gibt, zum Beispiel
+bei einer Loot-Table-Prüfung ohne Kontext. Einfache Tag-Einträge sind davon nicht betroffen. →
+[NBT & Data Components](/wiki/locking/items-and-recipes/nbt-and-components)
+
+</details>
 
 ## Mods {/* #mods */}
 
@@ -128,11 +153,18 @@ Eine Mod-ID sperrt **jedes Item, das diese Mod registriert**:
 Das ist das weiteste Netz, das es gibt, und es wird aus der Registry aufgelöst statt aus einer Liste,
 also deckt es auch Items ab, die ein späteres Update der Mod hinzufügt.
 
-Seit 6.1.0 deckt es auch **verzauberte Bücher und Tränke ab, deren Verzauberung oder Effekt aus dieser
-Mod kommt**, und solange der Eintrag die Aktion `recipe` sperrt, lehnen Zaubertisch, Amboss und
-Braustand die Verzauberungen und Effekte dieser Mod ab. Ausrüstung wird weiter nach ihrer eigenen ID
-beurteilt: Ein Vanilla-Schwert mit einer Mod-Verzauberung fängt die Mod-Sperre nicht. Dafür sperrst du
-die Verzauberung selbst. → [Verzauberungen & Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects)
+Es deckt auch **verzauberte Bücher und Tränke ab, deren Verzauberung oder Effekt aus dieser Mod
+kommt**.<Since v="6.1.0" /> Solange der Eintrag die Aktion `recipe` sperrt, lehnen Zaubertisch,
+Amboss und Braustand die Verzauberungen und Effekte dieser Mod ab.
+
+<details>
+<summary>Ausrüstung mit einer Mod-Verzauberung</summary>
+
+Ausrüstung wird weiter nach ihrer eigenen ID beurteilt: Ein Vanilla-Schwert mit einer
+Mod-Verzauberung fängt die Mod-Sperre nicht. Dafür sperrst du die Verzauberung selbst. →
+[Verzauberungen & Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects)
+
+</details>
 
 ## Mod-Ausnahmen {/* #mod-exceptions */}
 
@@ -151,17 +183,26 @@ reinkommen“.
 ```
 
 Ausnahmen nehmen dieselben NBT-Kriterien wie Items. Sie heben nur eine `mods`-Sperre auf: Ein Item,
-das ausdrücklich in `items` steht, bleibt gesperrt, egal was `mod_exceptions` sagt. Und eine Ausnahme
-ist die einzige Kategorie, die nie an einer
+das ausdrücklich in `items` steht, bleibt gesperrt, egal was `mod_exceptions` sagt.
+
+<details>
+<summary>Ausnahmen und Dual-Phase-Sperren</summary>
+
+Eine Ausnahme ist die einzige Kategorie, die nie an einer
 [Dual-Phase-Sperre](/wiki/start-here/global-vs-individual#dual-phase-when-both-lists-target-the-same-content)
 teilnimmt, weil sie Lücken schneidet statt zu sperren.
 
+</details>
+
 ## Verzauberungen {/* #enchantments */}
 
-Seit 6.1.0 haben Verzauberungen ein eigenes Feld, das auch Ausrüstung und die Stationen abdeckt. →
+Verzauberungen haben ein eigenes Feld, das auch Ausrüstung und die Stationen abdeckt.<Since v="6.1.0" /> →
 [Verzauberungen & Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects)
 
-Der ältere Weg funktioniert weiter und tut, was er immer getan hat: ein `items`-Eintrag für
+<details>
+<summary>Der ältere Weg: ein verzaubertes Buch in <code>items</code></summary>
+
+Er funktioniert weiter und tut, was er immer getan hat: ein `items`-Eintrag für
 `minecraft:enchanted_book`, dessen NBT `StoredEnchantments` enthält. Die Mod liest genau diesen
 Eintrag, wenn sie entscheidet, ob ein Amboss oder Zaubertisch die Verzauberung überhaupt auftragen
 darf:
@@ -193,17 +234,23 @@ Der Eintrag oben sperrt also Reparatur komplett, Schärfe nur auf IV und V und G
 Schärfe III bleibt auftragbar.
 
 Zwei Details, auf die es ankommt: Die Item-ID muss genau `minecraft:enchanted_book` sein, und das
-Kriterium muss unter dem alten Schlüssel `StoredEnchantments` stehen statt unter `components`, denn die
-Verzauberungs-Prüfung liest genau diese eine Form und nichts anderes. Der Schalter, ob Ambosse und
-Zaubertische das beachten, ist `lockEnchanting` in
+Kriterium muss unter dem alten Schlüssel `StoredEnchantments` stehen statt unter `components`. Der
+Schalter, ob Ambosse und Zaubertische das beachten, ist `lockEnchanting` in
 [gameplay.toml](/wiki/server/config-files/gameplay-toml#gameplay), mit einem Zwilling pro Spieler unter
 `[individual_stages]`.
+
+</details>
 
 ## Global oder individuell? {/* #global-or-individual */}
 
 Beides. Alle vier Felder funktionieren in beiden Arten, aber was sie *tun*, unterscheidet sich stark:
-Eine globale Stage nimmt das Rezept aus dem Spiel, eine individuelle lässt das Rezept in Ruhe und lässt
-das Item nicht in das Inventar dieses Spielers. Über diesen Unterschied stolpert fast jeder einmal. →
+
+| | Globale Stage | Individuelle Stage |
+| :--- | :--- | :--- |
+| Das Rezept | wird aus dem Spiel genommen | bleibt; andere Spieler können es weiter herstellen |
+| Das Item | ist für alle gesperrt | kommt nicht in das Inventar dieses Spielers |
+
+Über diesen Unterschied stolpert fast jeder einmal. →
 [Global vs. individuell](/wiki/start-here/global-vs-individual#global-and-individual-lock-at-different-layers)
 
 ## Siehe auch {/* #see-also */}

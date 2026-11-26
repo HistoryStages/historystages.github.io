@@ -68,8 +68,8 @@ Das sollte man deutlich sagen, weil die meisten genau hier das Problem vermuten:
 
 Eine Stage, die Rezepte sperrt, lässt andere Mods ihre Rezeptlisten neu bauen, wenn sie aufgeht oder
 zugeht. Bis 6.1 war das ein voller Datapack-Reload, und bei einem großen Modpack fror das den Server bei
-jeder Freischaltung zwanzig Sekunden und länger ein. Seit 6.2.0 ist es ein gezielter Reload, der etwa
-eine Sekunde dauert und den Server weiterlaufen lässt. →
+jeder Freischaltung zwanzig Sekunden und länger ein. Inzwischen ist es ein gezielter Reload, der etwa
+eine Sekunde dauert und den Server weiterlaufen lässt.<Since v="6.2.0" /> →
 [Reloads nach einer Stage-Änderung](/wiki/server/stage-change-reload)
 
 ## Was mit dem Modpack wächst {/* #things-that-do-scale-with-the-pack */}

@@ -37,17 +37,14 @@ stehen, für Anforderungsarten, die anderen Mods gehören, siehe [Requirements](
 
 ## Die Bedingungen {/* #the-conditions */}
 
-![Ein Item zum Abgeben hinzufügen](/img/editor/dep-item-picker.webp)
-
-![Eine Stage als Abhängigkeit](/img/editor/dep-global-stages.webp)
-
-![Der Reiter XP-Level, nur bei individuellen Stages](/img/editor/dep-xp.webp)
-
-![Einen Fortschritt auswählen](/img/editor/dep-advancement-picker.webp)
-
-![Eine Kreatur für einen Kill-Zähler auswählen](/img/editor/dep-kill-picker.webp)
-
-![Eine Statistik auswählen](/img/editor/dep-stat-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/dep-item-picker.webp", alt: "Ein Item zum Abgeben hinzufügen"},
+  {src: "/img/editor/dep-global-stages.webp", alt: "Eine Stage als Abhängigkeit", wide: true},
+  {src: "/img/editor/dep-xp.webp", alt: "Der Reiter XP-Level, nur bei individuellen Stages", wide: true},
+  {src: "/img/editor/dep-advancement-picker.webp", alt: "Einen Fortschritt auswählen"},
+  {src: "/img/editor/dep-kill-picker.webp", alt: "Eine Kreatur für einen Kill-Zähler auswählen"},
+  {src: "/img/editor/dep-stat-picker.webp", alt: "Eine Statistik auswählen"},
+]} />
 
 Zwei Felder beschreiben die Gruppe selbst: `id` (siehe
 [unten](#group-ids-and-why-they-matter-in-a-live-world)) und `logic`. Alles danach ist eine
@@ -84,9 +81,10 @@ Stage, wer gerade zufällig am Podest steht. Gib dort also den Halter an.
 
 ## UND, ODER, und wo die Grenze verläuft {/* #and-or-and-where-the-line-runs */}
 
-![Zwei Abhängigkeits-Gruppen](/img/editor/dep-groups.webp)
-
-![Eine Gruppe zwischen UND und ODER umschalten](/img/editor/dep-logic.webp)
+<Gallery items={[
+  {src: "/img/editor/dep-groups.webp", alt: "Zwei Abhängigkeits-Gruppen", wide: true},
+  {src: "/img/editor/dep-logic.webp", alt: "Eine Gruppe zwischen UND und ODER umschalten", wide: true},
+]} />
 
 :::warning
 **`logic` gilt innerhalb einer Gruppe und nie zwischen Gruppen.** Gruppen sind immer mit UND

@@ -36,17 +36,14 @@ them for requirement kinds owned by other mods; see [Requirements](/api/requirem
 
 ## The conditions
 
-![Adding an item to hand in](/img/editor/dep-item-picker.webp)
-
-![A stage demanded as a dependency](/img/editor/dep-global-stages.webp)
-
-![The XP Level tab, only on individual stages](/img/editor/dep-xp.webp)
-
-![Picking an advancement](/img/editor/dep-advancement-picker.webp)
-
-![Picking an entity for a kill count](/img/editor/dep-kill-picker.webp)
-
-![Picking a statistic](/img/editor/dep-stat-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/dep-item-picker.webp", alt: "Adding an item to hand in"},
+  {src: "/img/editor/dep-global-stages.webp", alt: "A stage demanded as a dependency", wide: true},
+  {src: "/img/editor/dep-xp.webp", alt: "The XP Level tab, only on individual stages", wide: true},
+  {src: "/img/editor/dep-advancement-picker.webp", alt: "Picking an advancement"},
+  {src: "/img/editor/dep-kill-picker.webp", alt: "Picking an entity for a kill count"},
+  {src: "/img/editor/dep-stat-picker.webp", alt: "Picking a statistic"},
+]} />
 
 Two fields describe the group itself: `id` (see [below](#group-ids-and-why-they-matter-in-a-live-world))
 and `logic`. Everything after them is a requirement list.
@@ -81,9 +78,10 @@ the pedestal — so name the holder when you use it there.
 
 ## AND, OR, and where the line runs
 
-![Two dependency groups](/img/editor/dep-groups.webp)
-
-![Switching a group between AND and OR](/img/editor/dep-logic.webp)
+<Gallery items={[
+  {src: "/img/editor/dep-groups.webp", alt: "Two dependency groups", wide: true},
+  {src: "/img/editor/dep-logic.webp", alt: "Switching a group between AND and OR", wide: true},
+]} />
 
 :::warning
 **`logic` applies inside a group and never between groups.** Groups are always joined by AND: every

@@ -11,29 +11,22 @@ sidebar_position: 1
 Das Object `entities` enthält drei unabhängige Listen. Sie beantworten drei verschiedene Fragen, und
 seit 6.0 bedeutet keine davon eine andere mit:
 
-```json
-{
-  "entities": {
-    "attacklock": ["minecraft:zombie"],
-    "interactionlock": ["minecraft:villager"],
-    "spawnlock": ["minecraft:ghast"]
-  }
-}
-```
-
 | Liste | Frage | Stage-Art |
 | :--- | :--- | :--- |
 | [`attacklock`](#attacklock) | Darf der Spieler sie schlagen? | global + individuell |
 | [`interactionlock`](#interactionlock) | Darf der Spieler sie züchten, reiten, scheren, benennen? | global + individuell |
 | [`spawnlock`](#spawnlock) | Darf sie überhaupt erscheinen? | **nur global** |
 
-## Im Editor {/* #in-the-editor */}
+## Einrichten {/* #in-the-editor */}
 
-![Der Kreaturen-Reiter im Bereich Spawn](/img/editor/spawn-tab.webp)
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
 
-![Der Bereich Interagieren im Kreaturen-Reiter](/img/editor/interact-subtab.webp)
-
-![Die Kreaturen-Auswahl](/img/editor/entity-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-tab.webp", alt: "Der Kreaturen-Reiter im Bereich Spawn", wide: true},
+  {src: "/img/editor/interact-subtab.webp", alt: "Der Bereich Interagieren im Kreaturen-Reiter", wide: true},
+  {src: "/img/editor/entity-picker.webp", alt: "Die Kreaturen-Auswahl"},
+]} />
 
 Die drei Listen sind drei eigene Reiter: **Angriff**, **Interaktion** und **Spawn**. Die
 Kreaturen-Auswahl funktioniert wie die Item-Auswahl, Mehrfachauswahl eingeschlossen.
@@ -46,6 +39,24 @@ die fertige Regel in Worten ausschreibt.
 Ein Interaktions-Eintrag bietet per Rechtsklick **Interaktions-Aktionen** für seine Aktionsliste und
 **Item-Filter** für die Bedingung zum gehaltenen Item. Angriffs- und Interaktions-Einträge bieten beide
 per Rechtsklick **NBT bearbeiten**, um sie [auf manche Kreaturen einzugrenzen](#only-some-creatures-of-a-type).
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
+```json
+{
+  "entities": {
+    "attacklock": ["minecraft:zombie"],
+    "interactionlock": ["minecraft:villager"],
+    "spawnlock": ["minecraft:ghast"]
+  }
+}
+```
+
+Nach einer Änderung von Hand führst du `/history reload` aus.
+
+</TabItem>
+</Tabs>
 
 ## `attacklock` {/* #attacklock */}
 
@@ -70,8 +81,8 @@ unter `mobUnknown` in [`[lock_messages]`](/wiki/server/config-files/visual-toml#
 Alles, was kein Kampf ist: benennen, anleinen, scheren, melken, züchten, handeln, reiten, Rüstung und
 Sättel anlegen. Angreifen und Spawnen bleiben unberührt.
 
-Seit 6.2.0 nimmt die Liste auch **Boote, Kistenboote und Loren**, die keine Kreaturen sind und vorher
-in der Auswahl fehlten. Einsteigen zählt als `mount`.
+Die Liste nimmt auch **Boote, Kistenboote und Loren**, die keine Kreaturen sind und vorher
+in der Auswahl fehlten.<Since v="6.2.0" /> Einsteigen zählt als `mount`.
 
 Ein Eintrag ist entweder eine einfache Kreatur-ID, die jede erkannte Interaktion blockiert, oder ein
 Object:
@@ -100,8 +111,8 @@ nicht satteln, züchten oder anleinen, und das nur, solange wirklich ein Sattel 
 
 ## Nur manche Kreaturen einer Art {/* #only-some-creatures-of-a-type */}
 
-Seit 6.2.0 kann ein Eintrag in `attacklock` oder `interactionlock` einen `nbt`-Filter haben, der gegen
-die gespeicherten Daten der Kreatur geprüft wird. Die Sperre trifft dann nur die Kreaturen, die passen:
+Ein Eintrag in `attacklock` oder `interactionlock` kann einen `nbt`-Filter haben, der gegen
+die gespeicherten Daten der Kreatur geprüft wird.<Since v="6.2.0" /> Die Sperre trifft dann nur die Kreaturen, die passen:
 Eichenboote, aber keine Birkenboote, ein Zombie mit einem bestimmten Command-Tag, ein Pferd, das nie
 despawnt.
 
@@ -124,7 +135,7 @@ Kreatur-Art tatsächlich speichert, und **Von einer Kreatur übernehmen**, was d
 anschaust oder neben der du stehst. Boote und Kistenboote bieten per Rechtsklick **Holzarten** als
 Abkürzung für den häufigsten Fall.
 
-:::note[Auf Minecraft 26.2]
+:::info[Auf Minecraft 26.2]
 Dort ist jede Holzart ein eigener Boot-Typ (`minecraft:oak_boat`, `minecraft:bamboo_raft`, …). Du wählst
 die Holzarten also in der Liste aus, die Abkürzung **Holzarten** gibt es nicht. Ein Eintrag
 `minecraft:boat` wie der oben wird als `minecraft:oak_boat` und `minecraft:spruce_boat` gelesen; ohne
@@ -232,13 +243,12 @@ sie sonst genau das Biom ausschließen würde, das hinzugefügt wird.
 
 ## Spawn-Regeln im Editor bauen {/* #building-spawn-rules-in-the-editor */}
 
-![Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl](/img/editor/spawn-menu.webp)
-
-![Der SpawnControl-Dialog auf der Seite Quellen](/img/editor/spawn-rule.webp)
-
-![SpawnControl, Seite Ort](/img/editor/spawn-location.webp)
-
-![SpawnControl, Seite Zeit & Wetter](/img/editor/spawn-time.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-menu.webp", alt: "Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl", wide: true},
+  {src: "/img/editor/spawn-rule.webp", alt: "Der SpawnControl-Dialog auf der Seite Quellen"},
+  {src: "/img/editor/spawn-location.webp", alt: "SpawnControl, Seite Ort"},
+  {src: "/img/editor/spawn-time.webp", alt: "SpawnControl, Seite Zeit & Wetter"},
+]} />
 
 Spawn-Regeln werden normalerweise im Spawn-Dialog des Editors gebaut statt getippt: oben die Phase,
 dann vier Reiter (Quellen, Ort, Zeit & Wetter, Zusätzliche Biome) und eine Zeile darunter, die die ganze

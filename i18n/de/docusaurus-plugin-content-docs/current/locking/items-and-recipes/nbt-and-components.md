@@ -31,7 +31,7 @@ Hier sind nur Bücher mit Schärfe I–IV gesperrt. Jedes andere verzauberte Buc
 
 ## Mehrere Varianten: eine reicht {/* #several-variants-any-one-is-enough */}
 
-Seit 6.2.0 kann `nbt` auch eine **Liste** von Kriterien sein. Der Eintrag greift dann, wenn irgendeins
+`nbt` kann auch eine **Liste** von Kriterien sein.<Since v="6.2.0" /> Der Eintrag greift dann, wenn irgendeins
 davon passt. So deckt ein Eintrag „Schärfe oder Bann“ ab, oder, wofür es gebaut wurde, eine Mod wie
 Tinkers' Construct, bei der eine Item-ID für jedes Material steht und nur die Daten des Items sie
 unterscheiden:
@@ -129,7 +129,7 @@ weiterhin überall.
 
 ## Verzauberungen und Trank-Effekte {/* #enchantments-and-potion-effects */}
 
-Seit 6.1.0 haben beide ein eigenes Feld, das liest, was ein Stack trägt, ganz ohne NBT-Kriterien. →
+Beide haben ein eigenes Feld, das liest, was ein Stack trägt, ganz ohne NBT-Kriterien.<Since v="6.1.0" /> →
 [Verzauberungen & Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects)
 
 Die ältere Form, ein `minecraft:enchanted_book`-Eintrag mit einem `StoredEnchantments`-Kriterium, lädt

@@ -32,14 +32,11 @@ zurück, wenn er geht. **Seine Dateien auf der Festplatte werden von einem Serve
 
 ## Die drei Dateien {/* #the-three-files */}
 
-- **[visual.toml](/wiki/server/config-files/visual-toml)**: Tooltips, Overlays, Sperr-Nachrichten,
-  Benachrichtigungen, der Rezept-Browser, der Rollen-Tooltip und das Dokument der geöffneten Rolle.
-- **[gameplay.toml](/wiki/server/config-files/gameplay-toml)**: Logging, die grundlegenden
-  Gameplay-Sperren, Forschung und Booster, Loot-Ersatz und das Verhalten der Struktur-, Biom- und
-  Zonen-Sperren.
-- **graph.toml**: rund 90 eigene Schlüssel für Aussehen der Fläche, Sichtbarkeits-Regeln und
-  Knoten-Gestaltung. Erklärt auf der Seite [Stufen-Graph](/wiki/in-game-tools/stage-graph), mit
-  eigenem Reiter im Config-Editor.
+| Datei | Enthält |
+| :--- | :--- |
+| **[visual.toml](/wiki/server/config-files/visual-toml)** | Tooltips, Overlays, Sperr-Nachrichten, Benachrichtigungen, der Rezept-Browser, der Rollen-Tooltip und das Dokument der geöffneten Rolle. |
+| **[gameplay.toml](/wiki/server/config-files/gameplay-toml)** | Logging, die grundlegenden Gameplay-Sperren, Forschung und Booster, Loot-Ersatz und das Verhalten der Struktur-, Biom- und Zonen-Sperren. |
+| **graph.toml** | rund 90 eigene Schlüssel für Aussehen der Fläche, Sichtbarkeits-Regeln und Knoten-Gestaltung. Erklärt auf der Seite [Stufen-Graph](/wiki/in-game-tools/stage-graph), mit eigenem Reiter im Config-Editor. |
 
 ## Wo die Einstellungen wirklich erklärt werden {/* #where-the-settings-are-actually-explained */}
 

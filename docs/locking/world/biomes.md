@@ -11,6 +11,25 @@ sidebar_position: 2
 A biome lock does not stop a player walking in. It makes the place **unsurvivable** — effects,
 damage, a warning, and interactions refused — until the stage opens.
 
+## Setting it up {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
+
+<Gallery items={[
+  {src: "/img/editor/biomes-tab.webp", alt: "The Biomes tab", wide: true},
+  {src: "/img/editor/biome-picker.webp", alt: "The biome picker"},
+]} />
+
+The **Biomes** tab on a stage, with a searchable picker over every biome and biome tag the pack has
+loaded.
+
+The behaviour itself is not on this tab — it is server-wide, and lives in the **Common** tab of the
+[Config Editor](/wiki/in-game-tools/in-game-editor#the-config-editor) under `biome_lock`.
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
+
 ```json
 {
   "biomes": {
@@ -25,17 +44,10 @@ damage, a warning, and interactions refused — until the stage opens.
 Entries are biome ids, or biome **tags** with a `#` prefix. Everything else about the behaviour is
 server-wide rather than per entry.
 
-## In the editor
+After editing a file by hand, run `/history reload`.
 
-![The Biomes tab](/img/editor/biomes-tab.webp)
-
-![The biome picker](/img/editor/biome-picker.webp)
-
-The **Biomes** tab on a stage, with a searchable picker over every biome and biome tag the pack has
-loaded.
-
-The behaviour itself is not on this tab — it is server-wide, and lives in the **Common** tab of the
-[Config Editor](/wiki/in-game-tools/in-game-editor#the-config-editor) under `biome_lock`.
+</TabItem>
+</Tabs>
 
 ## What happens while a player stands there
 

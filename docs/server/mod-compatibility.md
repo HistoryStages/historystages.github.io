@@ -9,7 +9,7 @@ sidebar_position: 4
 History Stages recognises a number of widely used mods and adjusts its behaviour when they are
 present. **Nothing here needs configuring** — install the mod and the integration is on.
 
-:::note[On Minecraft 26.2]
+:::info[On Minecraft 26.2]
 EMI, FTB Quests, FTB Teams, KubeJS, CraftTweaker and Accessories have no 26.2 version yet, so the
 26.2 beta has none of their integrations. They come back once those mods update. JEI, Jade, Lootr,
 Spell Engine, Better Combat and Curios (NeoForge) work on 26.2.

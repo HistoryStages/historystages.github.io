@@ -8,7 +8,7 @@ History Stages spricht mit beiden Skript-Mods. Ein Skript kann den Stage-Zustand
 darauf **reagieren**, wenn er sich ändert: in JavaScript über KubeJS, in ZenScript über CraftTweaker, mit
 denselben Möglichkeiten auf beiden Seiten.
 
-:::note[Nicht auf Fabric, noch nicht auf 26.2]
+:::info[Nicht auf Fabric, noch nicht auf 26.2]
 Alles unter Skripte gilt nur für NeoForge 1.21.1 und Forge 1.20.1. KubeJS hat keine Fabric-Version für
 1.21.1 und CraftTweaker überhaupt keine, also hat die Fabric-Version von History Stages keine
 Skript-Anbindung. Den Stage-Zustand aus Code lesen, ändern und darauf reagieren geht trotzdem aus einer
@@ -98,7 +98,7 @@ KubeJS baut Rezept-IDs aus der Reihenfolge, in der Dinge in deinen Skripten steh
 `kubejs:crafting_shaped_7` ist das siebte geformte Rezept, das es gesehen hat. Sortierst du das Skript
 um, verschiebt sich die Nummerierung, und jede Stage, die die alte ID gesperrt hat, geht still kaputt.
 
-Seit 6.0.0 prüft History Stages das. Nach jedem Laden einer Welt und jedem `/reload` vergleicht es die
+History Stages prüft das.<Since v="6.0.0" /> Nach jedem Laden einer Welt und jedem `/reload` vergleicht es die
 Rezept-IDs in deinen Stages mit den Rezepten, die tatsächlich geladen sind, und schreibt für jedes
 fehlende eine Warnung. Im Editor werden diese Einträge im Reiter Rezepte der Stage rot angezeigt.
 

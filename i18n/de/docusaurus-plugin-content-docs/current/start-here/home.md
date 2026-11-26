@@ -16,10 +16,13 @@ nicht.
 Von Haus aus ist nichts gesperrt. Ein installiertes History Stages ohne Stage-Dateien ändert nichts
 am Spiel.
 
-:::note[Welche Version ist das?]
+<details>
+<summary>Welche Version ist das?</summary>
+
 Diese Seiten beschreiben **6.2.x**, die Version aller Loader, die 26.2-Beta eingeschlossen. Eine ältere
 Version wählst du oben in der Leiste im Versionsmenü aus. Details stehen unter [Versionen & Plattformen](/wiki/about/versions-and-platforms).
-:::
+
+</details>
 
 ## Wie alles zusammenhängt {/* #how-it-fits-together */}
 

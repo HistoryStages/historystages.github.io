@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Der Stufen-Graph ist ein interaktiver Knoten-Graph des Fortschritts in einem Modpack, gemacht für Spieler. Er zeigt Stages als Knoten, verbunden durch Abhängigkeits-Linien, damit Spieler sehen, was sie freigeschaltet haben, was als Nächstes kommt und wie alles zusammenhängt, ohne Inhalte zu verraten, die sie noch nicht erreicht haben.
 
-Es gibt einen Graph-Bildschirm mit zwei Eingängen. Aus dem **Pausemenü** ist es die Spieleransicht, gefiltert nach den Regeln unten. Aus der **Stage-Übersicht** im [Editor](/wiki/in-game-tools/in-game-editor) ist es die Admin-Ansicht, die diese Regeln ignoriert und jede Stage zeigt; dort werden Layout und Gestaltung pro Stage gemacht. `/history graph` öffnet die Spieleransicht, damit ein Operator prüfen kann, was ein Spieler tatsächlich sehen würde. Seit 6.2.0 hat die Spieleransicht einen Knopf **Zurück**, und große Graphen werden viel schneller gezeichnet.
+Es gibt einen Graph-Bildschirm mit zwei Eingängen. Aus dem **Pausemenü** ist es die Spieleransicht, gefiltert nach den Regeln unten. Aus der **Stage-Übersicht** im [Editor](/wiki/in-game-tools/in-game-editor) ist es die Admin-Ansicht, die diese Regeln ignoriert und jede Stage zeigt; dort werden Layout und Gestaltung pro Stage gemacht. `/history graph` öffnet die Spieleransicht, damit ein Operator prüfen kann, was ein Spieler tatsächlich sehen würde. Die Spieleransicht hat einen Knopf **Zurück**, und große Graphen werden viel schneller gezeichnet.<Since v="6.2.0" />
 
 ![Der Stufen-Graph](/img/screenshots/stage-graph.webp)
 
@@ -21,9 +21,10 @@ Der Titel des Bildschirms ist standardmäßig ein Übersetzungsschlüssel (`grap
 
 ## Sichtbarkeits-Modi {/* #visibility-modes */}
 
-![Der Stage-Graph aus Spielersicht: nur Freigeschaltetes und was als Nächstes kommt](/img/ingame/graph-player-view.webp)
-
-![Ein Klick auf eine Stage zeigt, was sie braucht und wohin sie führt](/img/ingame/graph-node-details.webp)
+<Gallery items={[
+  {src: "/img/ingame/graph-player-view.webp", alt: "Der Stage-Graph aus Spielersicht: nur Freigeschaltetes und was als Nächstes kommt"},
+  {src: "/img/ingame/graph-node-details.webp", alt: "Ein Klick auf eine Stage zeigt, was sie braucht und wohin sie führt"},
+]} />
 
 `[visibility].mode` legt fest, welche Stages ein Spieler sieht, vom offensten zum strengsten:
 
@@ -52,9 +53,10 @@ Zwei verwandte Schalter: `respectHiddenDisplay` (Standard `true`) wendet die Ein
 
 ### Gestaltung pro Stage {/* #per-stage-overrides */}
 
-![Der Knoten-Stil mit einer Vorschau für jeden Zustand](/img/editor/graph-node-style.webp)
-
-![Die Farbauswahl](/img/editor/graph-colour.webp)
+<Gallery items={[
+  {src: "/img/editor/graph-node-style.webp", alt: "Der Knoten-Stil mit einer Vorschau für jeden Zustand"},
+  {src: "/img/editor/graph-colour.webp", alt: "Die Farbauswahl"},
+]} />
 
 Über die Standards des ganzen Graphs hinaus können einzelne Stages ihren eigenen Stil haben, optional je nach Sperr-Zustand. Das wird pro Modpack in `settings/graph_stages.json` gespeichert und normalerweise im Graph-Bildschirm selbst bearbeitet (für Operatoren zugänglich) statt von Hand. Jede angepasste Stage kann festlegen:
 
@@ -160,11 +162,11 @@ Vier Dinge daran solltest du wissen, weil jedes davon sonst wie ein Fehler wirkt
 
 ## Das Layout bearbeiten {/* #editing-the-layout */}
 
-![Der Stage-Graph im Editor, links die Stage-Liste](/img/editor/graph-editor.webp)
-
-![Rechtsklick auf einen Knoten](/img/editor/graph-node-menu.webp)
-
-![Die Legende des Graphen](/img/editor/graph-legend.webp)
+<Gallery items={[
+  {src: "/img/editor/graph-editor.webp", alt: "Der Stage-Graph im Editor, links die Stage-Liste"},
+  {src: "/img/editor/graph-node-menu.webp", alt: "Rechtsklick auf einen Knoten"},
+  {src: "/img/editor/graph-legend.webp", alt: "Die Legende des Graphen"},
+]} />
 
 Das ist die Editor-Ansicht, geöffnet aus der Stage-Übersicht.
 

@@ -1,5 +1,5 @@
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 // The line at the top of a lock page that says which kind of stage it works in. The full
@@ -13,8 +13,9 @@ import styles from './styles.module.css';
 const MATRIX = '/wiki/start-here/global-vs-individual#what-can-each-one-lock';
 
 function Sentence({global, individual}) {
-  const g = <b>global</b>;
-  const i = <b>individual</b>;
+  // The words themselves are translated too: German inflects them ("globalen Stages").
+  const g = <b>{translate({id: 'scope.word.global', message: 'global'})}</b>;
+  const i = <b>{translate({id: 'scope.word.individual', message: 'individual'})}</b>;
   if (individual === 'no') {
     return (
       <Translate id="scope.globalOnly" values={{global: g}}>

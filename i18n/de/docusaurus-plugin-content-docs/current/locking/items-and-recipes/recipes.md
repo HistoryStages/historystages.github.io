@@ -17,14 +17,10 @@ Ein Rezept kann auf zwei Wegen gesperrt werden, und es lohnt sich, sie auseinand
    mehreren Wegen, etwas herzustellen, gesperrt werden soll, oder wenn das Ergebnis selbst verfügbar
    bleiben soll.
 
-```json
-{
-  "items": ["minecraft:iron_ingot"],
-  "recipes": ["minecraft:iron_pickaxe", "minecraft:iron_sword"]
-}
-```
+## Einrichten {/* #in-the-editor */}
 
-## Im Editor {/* #in-the-editor */}
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
 
 ![Der Rezepte-Reiter](/img/editor/recipes-tab.webp)
 
@@ -40,16 +36,28 @@ Rezepte über mehrere Items sammeln, bevor du **Hinzufügen** drückst. In einer
 bietet die Auswahl nur die Rezeptarten an, die pro Spieler gesperrt werden können, und sagt das unter
 dem Raster. → [Die Rezept-Auswahl](/wiki/in-game-tools/in-game-editor#the-recipe-picker)
 
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
+```json
+{
+  "items": ["minecraft:iron_ingot"],
+  "recipes": ["minecraft:iron_pickaxe", "minecraft:iron_sword"]
+}
+```
+
+Nach einer Änderung von Hand führst du `/history reload` aus.
+
+</TabItem>
+</Tabs>
+
 ## Rezepte, die ein Item benutzen {/* #recipes-using-an-item */}
 
 ![Rezepte mit einem Item, aus dem Rechtsklick-Menü des Eintrags](/img/editor/recipes-using.webp)
 
-:::info[Neu in 6.1.0]
-:::
-
 Ein Item zu sperren sperrt nicht, was sich **daraus** herstellen lässt. Um das auch zu schließen,
 Rechtsklick auf einen Eintrag im Reiter **Items** und **Rezepte mit diesem Item**. Das listet jedes
-Rezept auf, das das Item als Zutat nimmt, in zwei Gruppen:
+Rezept auf, das das Item als Zutat nimmt, in zwei Gruppen:<Since v="6.1.0" />
 
 - **Nur gesperrte Items**: Jeder Slot, den das Item füllt, kann nur mit gesperrten Items gefüllt
   werden. Diese sind schon angehakt.
@@ -140,7 +148,7 @@ IDs von Hand zu schreiben geht auch. Es sind die IDs, die Datapacks und Mods reg
 um, verschiebt sich die Nummerierung, und jede Stage, die die alte ID gesperrt hat, geht still kaputt.
 :::
 
-Seit 6.0.0 prüft History Stages das. Nach jedem Laden einer Welt und jedem `/reload` vergleicht es die
+History Stages prüft das.<Since v="6.0.0" /> Nach jedem Laden einer Welt und jedem `/reload` vergleicht es die
 Rezept-IDs in deinen Stages mit den Rezepten, die tatsächlich geladen wurden, und schreibt für jedes
 fehlende eine Warnung. Diese Einträge erscheinen im Editor im Reiter Rezepte der Stage in **Rot**.
 

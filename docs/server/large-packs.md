@@ -68,8 +68,8 @@ Worth saying plainly, because it is the part people assume is the problem:
 
 A stage that locks recipes makes other mods rebuild their recipe lists when it opens or closes. Up
 to 6.1 that was a full datapack reload, and on a big pack it froze the server for twenty seconds and
-more on every unlock. Since 6.2.0 it is a targeted reload that takes about a second and lets the
-server keep running. → [Reloads After a Stage Change](/wiki/server/stage-change-reload)
+more on every unlock. It is a targeted reload that takes about a second and lets the
+server keep running.<Since v="6.2.0" /> → [Reloads After a Stage Change](/wiki/server/stage-change-reload)
 
 ## Things that do scale with the pack
 

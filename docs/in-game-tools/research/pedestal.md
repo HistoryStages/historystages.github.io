@@ -44,9 +44,10 @@ the scroll is moved to a pedestal of the wrong tier.
 
 ## Handing in dependencies
 
-![The pedestal with a scroll in it and its requirements not yet met](/img/ingame/pedestal-requirements.webp)
-
-![Iron ingots handed in: every requirement is met](/img/ingame/pedestal-met.webp)
+<Gallery items={[
+  {src: "/img/ingame/pedestal-requirements.webp", alt: "The pedestal with a scroll in it and its requirements not yet met"},
+  {src: "/img/ingame/pedestal-met.webp", alt: "Iron ingots handed in: every requirement is met"},
+]} />
 
 When a stage has [dependencies](/wiki/stage-file/dependencies), the pedestal GUI expands to show a
 side panel listing every condition and whether it is met. Deposit-based conditions — items, item

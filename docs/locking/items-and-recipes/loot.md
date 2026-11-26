@@ -9,7 +9,25 @@ sidebar_position: 8
 <Scope global="yes" individual="yes" />
 
 Loot has no field of its own. A locked item is kept out of chest loot and mob drops by the **`loot`
-action**, which — like every other action — is on unless an entry narrows it away:
+action**, which — like every other action — is on unless an entry narrows it away.
+
+What happens to the filtered slot — empty, or something else in its place — is a server-wide
+decision in [gameplay.toml](/wiki/server/config-files/gameplay-toml#loot_replacements).
+
+## Setting it up {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
+
+There is no Loot tab, because loot is not a category of its own. **Right-click** an ordinary item,
+tag or mod entry and pick **Lock Actions**; `loot` is one of the tick boxes in that popup, alongside
+`use`, `pickup` and the rest.
+
+Replacement is server-wide and lives in the **Common** tab of the
+[Config Editor](/wiki/in-game-tools/in-game-editor#the-config-editor) under `loot_replacements`.
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
 
 ```json
 {
@@ -23,17 +41,10 @@ action**, which — like every other action — is on unless an entry narrows it
 Diamonds will not appear in loot while the stage is locked. Emeralds still will, because `loot` is
 listed as an action that stays free.
 
-What happens to the filtered slot — empty, or something else in its place — is a server-wide
-decision in [gameplay.toml](/wiki/server/config-files/gameplay-toml#loot_replacements).
+After editing a file by hand, run `/history reload`.
 
-## In the editor
-
-There is no Loot tab, because loot is not a category of its own. **Right-click** an ordinary item,
-tag or mod entry and pick **Lock Actions**; `loot` is one of the tick boxes in that popup, alongside
-`use`, `pickup` and the rest.
-
-Replacement is server-wide and lives in the **Common** tab of the
-[Config Editor](/wiki/in-game-tools/in-game-editor#the-config-editor) under `loot_replacements`.
+</TabItem>
+</Tabs>
 
 ## Chest loot goes through Lootr
 
@@ -47,12 +58,15 @@ Because the filter sits at roll time rather than at open time, it covers every L
 one go, including the ones that never open a menu at all: the decorated pot and the suspicious sand
 or gravel a player brushes.
 
-:::note[Loot rolled before the lock does not disappear]
+<details>
+<summary>Loot rolled before the lock does not disappear</summary>
+
 A container that was already rolled for a player keeps what it holds, even if a stage is locked
 afterwards. This is deliberate. Inside a Lootr inventory, loot and whatever a player put in
 themselves are indistinguishable, so a hook that cleaned out locked items on open would also throw
 away their own belongings.
-:::
+
+</details>
 
 ## Mob drops are not symmetrical with chest loot
 

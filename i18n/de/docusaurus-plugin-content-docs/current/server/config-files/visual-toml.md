@@ -125,14 +125,14 @@ Abschnitt und Schlüssel sind nach JEI benannt, steuern aber auch EMI.
 | `hideLockedItemsInJei` | `false` | Gesperrte Items ganz aus den Zutatenlisten von JEI und EMI entfernen, statt sie mit einem Schloss-Overlay zu markieren. |
 | `hideLockedRecipesInJei` | `false` | Gesperrte Rezepte verstecken. JEI erfasst nur Vanilla-Rezeptarten über ihr Ergebnis; EMI versteckt jedes Rezept, das das Schloss-Overlay markieren würde. |
 | `lockedItemMultiStagePolicy` | `STRICT` | Wie sich Items verhalten, die mehreren Stages zugewiesen sind. `STRICT` = gesperrt, solange irgendeine zugewiesene Stage gesperrt ist. `LENIENT` = frei, sobald irgendeine zugewiesene Stage frei ist. |
-| `showLockOverlay` | `true` | Gesperrte Rezepte in JEI und EMI abdunkeln und Hovern über ihre Slots blockieren. Aus sieht ein gesperrtes Rezept aus wie jedes andere; verstecken bleibt `hideLockedRecipesInJei`. *Seit 6.2.0.* |
-| `lockOverlayExemptions` | keine | JEI- und EMI-Kategorien, die die Rezept-Sperre ganz in Ruhe lässt: kein Overlay, Hovern geht, nichts versteckt. `create:mixing` nennt eine Kategorie, `create` jede Kategorie dieser Mod. Für Seiten, die nur zeigen, wo Dinge herkommen. Just Enough Resources bleibt immer unberührt. *Seit 6.2.0.* |
+| `showLockOverlay` | `true` | Gesperrte Rezepte in JEI und EMI abdunkeln und Hovern über ihre Slots blockieren. Aus sieht ein gesperrtes Rezept aus wie jedes andere; verstecken bleibt `hideLockedRecipesInJei`. <Since v="6.2.0" /> |
+| `lockOverlayExemptions` | keine | JEI- und EMI-Kategorien, die die Rezept-Sperre ganz in Ruhe lässt: kein Overlay, Hovern geht, nichts versteckt. `create:mixing` nennt eine Kategorie, `create` jede Kategorie dieser Mod. Für Seiten, die nur zeigen, wo Dinge herkommen. Just Enough Resources bleibt immer unberührt. <Since v="6.2.0" /> |
 
 Im [Config-Editor](/wiki/in-game-tools/in-game-editor#the-config-editor) ist `lockOverlayExemptions` eine Auswahl über die Kategorien, die JEI oder EMI tatsächlich hat, nach Mod gruppiert, mit einer Option **Ganze Mod** pro Mod. Einträge für Mods, die nicht installiert sind, bleiben beim Speichern erhalten.
 
 ## `[slot_lock]` {/* #slot_lock */}
 
-→ Erklärt unter [Slots](/wiki/locking/items-and-recipes/slots#the-tooltip). *Seit 6.2.0.*
+→ Erklärt unter [Slots](/wiki/locking/items-and-recipes/slots#the-tooltip). <Since v="6.2.0" />
 
 Der Tooltip, der erscheint, wenn ein Spieler über einen gesperrten Slot im Modus `overlay` fährt.
 
@@ -169,9 +169,10 @@ Dieselben fünf Einstellungen noch einmal, für Stages pro Spieler. Sie stehen u
 
 ## `[lock_messages]` {/* #lock_messages */}
 
-![Einen gesperrten Block benutzen](/img/ingame/message-block.webp)
-
-![Mit einer gesperrten Kreatur interagieren](/img/ingame/message-creature.webp)
+<Gallery items={[
+  {src: "/img/ingame/message-block.webp", alt: "Einen gesperrten Block benutzen", wide: true},
+  {src: "/img/ingame/message-creature.webp", alt: "Mit einer gesperrten Kreatur interagieren", wide: true},
+]} />
 
 → Siehe auch: [Verdeckte Anzeige](/wiki/stage-file/hidden-display).
 

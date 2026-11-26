@@ -37,7 +37,7 @@ ist.
 | `lockBlockInteraction` | `true` | Öffnen der GUI gesperrter Blöcke verhindern (Truhen, Öfen, Werkbänke, …). |
 | `lockContainerInteraction` | `true` | Verschieben gesperrter Items in Behältern verhindern. |
 | `lockEnchanting` | `true` | Auftragen gesperrter Verzauberungen über Ambosse und Zaubertische verhindern. |
-| `dropItemsFromLockedSlots` | `true` | Items aus einem Slot werfen, wenn dieser Slot [gesperrt](/wiki/locking/items-and-recipes/slots#items-already-in-a-locked-slot) wird. `false` lässt sie liegen und friert den Slot um sie herum ein. *Seit 6.2.0.* |
+| `dropItemsFromLockedSlots` | `true` | Items aus einem Slot werfen, wenn dieser Slot [gesperrt](/wiki/locking/items-and-recipes/slots#items-already-in-a-locked-slot) wird. `false` lässt sie liegen und friert den Slot um sie herum ein. <Since v="6.2.0" /> |
 
 ## `[research]` {/* #research */}
 
@@ -150,7 +150,7 @@ Zonen haben ihre eigenen Regeln pro Zone, also wird fast nichts davon für den g
 
 ## `[advanced]` {/* #advanced */}
 
-→ Erklärt unter [Reloads nach einer Stage-Änderung](/wiki/server/stage-change-reload). *Seit 6.2.0.*
+→ Erklärt unter [Reloads nach einer Stage-Änderung](/wiki/server/stage-change-reload). <Since v="6.2.0" />
 
 Absichtlich der letzte Block und im Config-Editor auch so beschriftet. Die Standards passen für fast
 jedes Modpack.

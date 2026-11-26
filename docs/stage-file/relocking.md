@@ -6,10 +6,7 @@ sidebar_position: 3
 
 # Relocking
 
-:::info[New in 6.1.0]
-:::
-
-A stage normally stays unlocked once it is open. Two things can close it again on their own:
+A stage normally stays unlocked once it is open. Two things can close it again on their own:<Since v="6.1.0" />
 
 | | [The While mode](#the-while-mode) | [Lock triggers](#lock-triggers) |
 | :--- | :--- | :--- |

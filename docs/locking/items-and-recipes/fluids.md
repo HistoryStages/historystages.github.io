@@ -8,7 +8,32 @@ sidebar_position: 5
 
 <Scope global="yes" individual="yes" />
 
-The `fluids` block gates a fluid by its registry id:
+The `fluids` block gates a fluid by its registry id.
+
+**What is gated is the fluid, but what is recognised is the container.** The mod asks every item
+stack what it is *carrying* rather than what it is, so a single `minecraft:lava` entry covers the
+vanilla bucket, every modded bucket, and every filled tank item in the pack — without one item id
+appearing in the stage file.
+
+## Setting it up {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
+
+<Gallery items={[
+  {src: "/img/editor/fluids-tab.webp", alt: "The Fluids tab with recipe counts", wide: true},
+  {src: "/img/editor/fluid-picker.webp", alt: "The fluid picker"},
+]} />
+
+The **Fluids** tab, with a picker over every fluid in the pack. Each row carries a
+`[Recipes: N]` badge saying how many recipes that entry would reach — worth a look before adding
+one, since that number is frequently larger than people expect.
+
+The seven actions below are set the same way item entries work — **right-click the row**, then
+**Lock Actions**.
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
 
 ```json
 {
@@ -22,23 +47,10 @@ The `fluids` block gates a fluid by its registry id:
 }
 ```
 
-**What is gated is the fluid, but what is recognised is the container.** The mod asks every item
-stack what it is *carrying* rather than what it is, so a single `minecraft:lava` entry covers the
-vanilla bucket, every modded bucket, and every filled tank item in the pack — without one item id
-appearing in the stage file.
+After editing a file by hand, run `/history reload`.
 
-## In the editor
-
-![The Fluids tab with recipe counts](/img/editor/fluids-tab.webp)
-
-![The fluid picker](/img/editor/fluid-picker.webp)
-
-The **Fluids** tab, with a picker over every fluid in the pack. Each row carries a
-`[Recipes: N]` badge saying how many recipes that entry would reach — worth a look before adding
-one, since that number is frequently larger than people expect.
-
-The seven actions below are set the same way item entries work — **right-click the row**, then
-**Lock Actions**.
+</TabItem>
+</Tabs>
 
 ## The seven actions
 

@@ -6,12 +6,9 @@ sidebar_position: 6
 
 # Austauschbare Stages {/* #interchangeable-stages */}
 
-:::info[Neu in 6.1.0]
-:::
-
 Normalerweise bleibt etwas, das mehrere Stages sperren, gesperrt, bis **jede einzelne** davon
 freigeschaltet ist. Steckst du Arkanerz in eine Stage Magie und eine Stage Bergbau, braucht ein
-Spieler beide.
+Spieler beide.<Since v="6.1.0" />
 
 Schalte in diesen Stages **Austauschbar** ein, dann vertreten sie sich gegenseitig: Eine von beiden
 freizuschalten reicht.

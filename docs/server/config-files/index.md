@@ -33,13 +33,11 @@ join a server, that server's values apply for the session, and their own come ba
 
 ## The three files
 
-- **[visual.toml](/wiki/server/config-files/visual-toml)** — tooltips, overlays, lock messages,
-  notifications, the recipe browser, the scroll tooltip and the open scroll document.
-- **[gameplay.toml](/wiki/server/config-files/gameplay-toml)** — logging, the core gameplay locks,
-  research and boosters, loot replacement, and the structure, biome and zone lock behaviour.
-- **graph.toml** — around 90 keys of its own: canvas appearance, visibility rules, node styling. It
-  is documented on the [Stage Graph](/wiki/in-game-tools/stage-graph) page and has its own tab in
-  the config editor.
+| File | Holds |
+| :--- | :--- |
+| **[visual.toml](/wiki/server/config-files/visual-toml)** | tooltips, overlays, lock messages, notifications, the recipe browser, the scroll tooltip and the open scroll document. |
+| **[gameplay.toml](/wiki/server/config-files/gameplay-toml)** | logging, the core gameplay locks, research and boosters, loot replacement, and the structure, biome and zone lock behaviour. |
+| **graph.toml** | around 90 keys of its own: canvas appearance, visibility rules, node styling. It is documented on the [Stage Graph](/wiki/in-game-tools/stage-graph) page and has its own tab in the config editor. |
 
 ## Where the settings are actually explained
 

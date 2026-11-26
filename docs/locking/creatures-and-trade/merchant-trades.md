@@ -11,6 +11,28 @@ sidebar_position: 2
 The `trades` object holds three lists. They are asked separately and they stack: an offer survives
 only if none of the three gates it.
 
+## Setting it up {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
+
+<Gallery items={[
+  {src: "/img/editor/trades-tab.webp", alt: "The Trades tab", wide: true},
+  {src: "/img/editor/trades-professions.webp", alt: "Trades tab, Professions section, with a level badge on the librarian", wide: true},
+  {src: "/img/editor/trades-levels.webp", alt: "Trades tab, Levels section", wide: true},
+  {src: "/img/editor/trade-picker.webp", alt: "The trade picker, grouped by profession"},
+]} />
+
+The **Trades** tab. Its picker lists **real offers** rather than every item in the game — pick a
+profession and you see what that merchant actually trades, at which level, for what price. Most of
+this block is written by clicking.
+
+Professions sit on the same tab. The pack-wide level gate is a **right-click** on a profession
+entry and then **Merchant Levels**.
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
+
 ```json
 "trades": {
   "offers": [
@@ -29,22 +51,10 @@ only if none of the three gates it.
 }
 ```
 
-## In the editor
+After editing a file by hand, run `/history reload`.
 
-![The Trades tab](/img/editor/trades-tab.webp)
-
-![Trades tab, Professions section, with a level badge on the librarian](/img/editor/trades-professions.webp)
-
-![Trades tab, Levels section](/img/editor/trades-levels.webp)
-
-![The trade picker, grouped by profession](/img/editor/trade-picker.webp)
-
-The **Trades** tab. Its picker lists **real offers** rather than every item in the game — pick a
-profession and you see what that merchant actually trades, at which level, for what price. Most of
-this block is written by clicking.
-
-Professions sit on the same tab. The pack-wide level gate is a **right-click** on a profession
-entry and then **Merchant Levels**.
+</TabItem>
+</Tabs>
 
 ## `offers` — one named trade
 
@@ -56,10 +66,13 @@ entry and then **Merchant Levels**.
 | `takes` | One or both price items. |
 | `nbt` | Optional criterion, narrowing it the same way it does on an item entry. |
 
-:::note[Amounts are deliberately not part of an offer]
+<details>
+<summary>Amounts are deliberately not part of an offer</summary>
+
 A merchant rolls its own price and stack size, so an entry naming them would gate the same trade on
 one villager and miss it on the next.
-:::
+
+</details>
 
 The editor's trade picker lists **real offers** rather than every item in the game, so most of the
 time this block is written by clicking rather than by hand.

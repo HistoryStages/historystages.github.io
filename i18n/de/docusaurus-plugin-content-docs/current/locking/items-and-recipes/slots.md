@@ -8,8 +8,8 @@ sidebar_position: 9
 
 <Scope global="yes" individual="partly" note="Individuell: nur das eigene Inventar. Behälter-Slots brauchen eine globale Stage." />
 
-Seit 6.2.0 kann eine Stage **Slots** geschlossen halten: einen Teil des eigenen Inventars des Spielers
-oder ausgewählte Slots einer Truhe, eines Ofens oder einer Mod-Maschine. Ein Modpack, das Spieler mit
+Eine Stage kann **Slots** geschlossen halten: einen Teil des eigenen Inventars des Spielers
+oder ausgewählte Slots einer Truhe, eines Ofens oder einer Mod-Maschine.<Since v="6.2.0" /> Ein Modpack, das Spieler mit
 einer Hotbar aus drei Slots starten lässt und den Rest Stage für Stage verteilt, braucht eine
 Stage-Datei pro Schritt.
 
@@ -83,9 +83,10 @@ nächsten Einloggen heraus.
 
 ## Das Aussehen {/* #the-look */}
 
-![Das Inventar mit gesperrten Items und ausgeblendeten Hotbar-Slots](/img/ingame/inventory-locked.webp)
-
-![Eine Truhe, deren untere Reihe im Overlay-Modus gesperrt ist](/img/ingame/chest-locked-row.webp)
+<Gallery items={[
+  {src: "/img/ingame/inventory-locked.webp", alt: "Das Inventar mit gesperrten Items und ausgeblendeten Hotbar-Slots"},
+  {src: "/img/ingame/chest-locked-row.webp", alt: "Eine Truhe, deren untere Reihe im Overlay-Modus gesperrt ist"},
+]} />
 
 Ein `overlay`-Slot bekommt eine Tönung und ein Symbol darüber. Alles davon ist optional; ein Eintrag
 ohne `look`-Block bekommt eine halbtransparente schwarze Abdeckung mit Schloss-Symbol.

@@ -15,14 +15,10 @@ There are two ways a recipe ends up gated, and they are worth keeping apart:
 2. **The recipe is named.** `recipes` lists individual recipe ids. Use it when only *one* of several
    ways to make something should be gated, or when the output itself should stay available.
 
-```json
-{
-  "items": ["minecraft:iron_ingot"],
-  "recipes": ["minecraft:iron_pickaxe", "minecraft:iron_sword"]
-}
-```
+## Setting it up {/* #in-the-editor */}
 
-## In the editor
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
 
 ![The Recipes tab](/img/editor/recipes-tab.webp)
 
@@ -38,16 +34,28 @@ be gathered before pressing **Add**. On an individual stage the picker offers on
 gated per player, and says so under the grid. →
 [The Recipe Picker](/wiki/in-game-tools/in-game-editor#the-recipe-picker)
 
+</TabItem>
+<TabItem value="file" label="In the stage file">
+
+```json
+{
+  "items": ["minecraft:iron_ingot"],
+  "recipes": ["minecraft:iron_pickaxe", "minecraft:iron_sword"]
+}
+```
+
+After editing a file by hand, run `/history reload`.
+
+</TabItem>
+</Tabs>
+
 ## Recipes using an item
 
 ![Recipes using an item, from the entry's right-click menu](/img/editor/recipes-using.webp)
 
-:::info[New in 6.1.0]
-:::
-
 Locking an item does not lock what can be made **from** it. To close those too, right-click an
 entry on the **Items** tab and pick **Recipes using this item**. It lists every recipe that takes
-the item as an ingredient, in two groups:
+the item as an ingredient, in two groups:<Since v="6.1.0" />
 
 - **Only locked items** — every slot the item fills can only be filled with locked items. These
   come pre-ticked.
@@ -137,7 +145,7 @@ Writing ids by hand works too — they are the ids datapacks and mods register, 
 numbering shifts, which silently breaks every stage that gated the old id.
 :::
 
-Since 6.0.0 History Stages checks for this. After every world load and every `/reload` it compares
+History Stages checks for this.<Since v="6.0.0" /> After every world load and every `/reload` it compares
 the recipe ids in your stages against the recipes that actually loaded, and writes a warning for
 each one that is missing. Those entries show in **red** on the stage's Recipes tab in the editor.
 

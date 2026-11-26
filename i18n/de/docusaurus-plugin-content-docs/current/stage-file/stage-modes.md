@@ -30,9 +30,10 @@ sagen, was *bevor* eine Stage erforscht werden darf, erfüllt sein muss, und nur
 
 ## Im Editor {/* #in-the-editor */}
 
-![Der Bildschirm mit den Stage-Einstellungen](/img/editor/stage-settings.webp)
-
-![Einen Stage-Modus wählen](/img/editor/mode-dropdown.webp)
+<Gallery items={[
+  {src: "/img/editor/stage-settings.webp", alt: "Der Bildschirm mit den Stage-Einstellungen"},
+  {src: "/img/editor/mode-dropdown.webp", alt: "Einen Stage-Modus wählen"},
+]} />
 
 **Stage-Einstellungen**, der Knopf im Bildschirm der Stage. Der Modus ist ein Auswahlmenü, und wählst
 du einen, tauscht sich die Karte darunter gegen die Einstellungen dieses Modus aus: die Auslöser-Liste
@@ -244,20 +245,21 @@ kann man sie nicht aus der Stage-Datei lesen.
 
 ### `max_triggers` im Detail {/* #max_triggers-in-detail */}
 
-- **`1`**: Die Stage wird genau einmal freigeschaltet und bleibt danach für immer gesperrt. Die
-  Abklingzeit gilt nicht. Ein Server-Operator kann sie trotzdem per `/history global unlock` von Hand
-  freischalten, das startet aber keinen neuen Timer.
-- **`N > 1`**: Die Stage darf insgesamt bis zu N-mal freigeschaltet werden. Nach jedem Wiedersperren
-  muss die Abklingzeit vergehen, bevor der Auslöser wieder angenommen wird.
-- **`0`**: unbegrenzt oft. Nach jedem Wiedersperren verhindert nur die Abklingzeit ein sofortiges
-  erneutes Auslösen. Eine Abklingzeit von `0` heißt, die Stage kann sofort wieder auslösen.
+| Wert | Bedeutung |
+| :--- | :--- |
+| **`1`** | Die Stage wird genau einmal freigeschaltet und bleibt danach für immer gesperrt. Die Abklingzeit gilt nicht. Ein Server-Operator kann sie trotzdem per `/history global unlock` von Hand freischalten, das startet aber keinen neuen Timer. |
+| **`N > 1`** | Die Stage darf insgesamt bis zu N-mal freigeschaltet werden. Nach jedem Wiedersperren muss die Abklingzeit vergehen, bevor der Auslöser wieder angenommen wird. |
+| **`0`** | unbegrenzt oft. Nach jedem Wiedersperren verhindert nur die Abklingzeit ein sofortiges erneutes Auslösen. Eine Abklingzeit von `0` heißt, die Stage kann sofort wieder auslösen. |
 
-:::note[Sterben beendet einen laufenden Timer vorzeitig]
+<details>
+<summary>Sterben beendet einen laufenden Timer vorzeitig</summary>
+
 Hat eine individuelle `temporary`-Stage auch
 [`lose_on_death`](/wiki/start-here/global-vs-individual#lose-on-death), beendet der Tod den Timer und
 startet die Abklingzeit, als wäre er von selbst abgelaufen. Für `max_triggers` zählt das genauso wie
 ein normales Ablaufen.
-:::
+
+</details>
 
 ## Siehe auch {/* #see-also */}
 

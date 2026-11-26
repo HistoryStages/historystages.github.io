@@ -12,8 +12,8 @@ machine that keeps its own copy of the recipe list still offers a locked recipe 
 tells it to rebuild that copy.
 
 Up to 6.1 that something was a full datapack reload, the same as typing `/reload`, on every stage
-change that touched recipes. Since 6.2.0 History Stages does a much smaller reload that only reaches
-the mods that need it, and the server keeps running while it happens.
+change that touched recipes. History Stages does a much smaller reload that only reaches
+the mods that need it, and the server keeps running while it happens.<Since v="6.2.0" />
 
 **Nothing has to be set for this.** It is the default. This page is for when you want to know what
 happens, or when a mod in your pack does not pick up a change.

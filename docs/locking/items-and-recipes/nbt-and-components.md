@@ -31,7 +31,7 @@ Only Sharpness I–IV books are locked here. Every other enchanted book behaves 
 
 ## Several variants: any one is enough
 
-Since 6.2.0 `nbt` can also be a **list** of criteria. The entry then applies when any one of them
+`nbt` can also be a **list** of criteria.<Since v="6.2.0" /> The entry then applies when any one of them
 matches. That is how one entry covers "Sharpness or Smite", or — the case it was built for — a mod
 like Tinkers' Construct, where one item id stands for every material and only the item's data
 tells them apart:
@@ -127,8 +127,8 @@ cannot answer. Plain string tag entries are unaffected and still apply everywher
 
 ## Enchantments and potion effects
 
-Since 6.1.0 both have a field of their own, which reads what a stack carries without any NBT
-criteria. → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
+Both have a field of their own, which reads what a stack carries without any NBT
+criteria.<Since v="6.1.0" /> → [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects)
 
 The older form, an `minecraft:enchanted_book` entry with a `StoredEnchantments` criterion, still
 loads and still works. →

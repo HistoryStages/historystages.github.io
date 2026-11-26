@@ -12,8 +12,8 @@ schon: Eine Maschine, die ihre eigene Kopie der Rezeptliste hält, bietet ein ge
 bis ihr etwas sagt, diese Kopie neu zu bauen.
 
 Bis 6.1 war dieses Etwas bei jeder Stage-Änderung, die Rezepte betraf, ein voller Datapack-Reload,
-dasselbe wie `/reload`. Seit 6.2.0 macht History Stages einen viel kleineren Reload, der nur die Mods
-erreicht, die ihn brauchen, und der Server läuft dabei weiter.
+dasselbe wie `/reload`. Inzwischen macht History Stages einen viel kleineren Reload, der nur die Mods
+erreicht, die ihn brauchen, und der Server läuft dabei weiter.<Since v="6.2.0" />
 
 **Einstellen musst du dafür nichts.** Es ist der Standard. Diese Seite ist für den Fall, dass du wissen
 willst, was passiert, oder dass eine Mod in deinem Modpack eine Änderung nicht mitbekommt.

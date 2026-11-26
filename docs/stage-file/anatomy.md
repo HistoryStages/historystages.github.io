@@ -146,12 +146,15 @@ free:
 
 Both forms can sit in the same list.
 
-:::note[Legacy spellings still load]
+<details>
+<summary>Legacy spellings still load</summary>
+
 Files written for older versions keep working. `"structures": [ ... ]` as a flat array is read and
 rewritten into the object form on the next save; `lock_actions` is read alongside the newer
 `unlock_actions`; `unlock_dimensions` on a spawn rule is read as a dimension condition. New files
 are always written in the current form.
-:::
+
+</details>
 
 ## Next
 

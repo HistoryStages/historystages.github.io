@@ -25,13 +25,12 @@ when it is off.
 
 ## Managing stages
 
-![The editor overview: every stage with its state and an Unlock or Lock button](/img/editor/overview.webp)
-
-![Right-clicking a stage: edit, duplicate or delete it](/img/editor/stage-menu.webp)
-
-![Individual stages in the overview, with the player picker that unlock and lock act on](/img/editor/overview-individual.webp)
-
-![Organize mode: tick stages, then drag them onto a folder](/img/editor/organize.webp)
+<Gallery items={[
+  {src: "/img/editor/overview.webp", alt: "The editor overview: every stage with its state and an Unlock or Lock button", wide: true},
+  {src: "/img/editor/stage-menu.webp", alt: "Right-clicking a stage: edit, duplicate or delete it", wide: true},
+  {src: "/img/editor/overview-individual.webp", alt: "Individual stages in the overview, with the player picker that unlock and lock act on", wide: true},
+  {src: "/img/editor/organize.webp", alt: "Organize mode: tick stages, then drag them onto a folder", wide: true},
+]} />
 
 The **Stage Overview** is the front page: create, edit, duplicate and delete stages. A new stage
 asks for its display name up front.
@@ -139,14 +138,17 @@ To see how the whole chain fits together, open the
 node with its dependencies as edges, which is what makes a long chain or a link you did not mean
 visible at a glance.
 
-:::note[The editor sees more of it than players do]
+<details>
+<summary>The editor sees more of it than players do</summary>
+
 It is one screen with two ways in. Opened from the editor it shows **every** stage, ignoring the
 visibility rules in `graph.toml`. Opened from the pause menu it applies them, so players see only
 what the pack wants them to.
 
 That is also where the graph's layout and its per-stage styling are done — the node positions and
 the **Re-arrange** button live in the graph itself, not in a separate authoring tool.
-:::
+
+</details>
 
 ## Warnings while you build
 
@@ -163,11 +165,11 @@ interrupted.
 
 ## The config editor
 
-![The config editor on its Gameplay tab](/img/editor/config-editor.webp)
-
-![The config editor on its Visual tab](/img/editor/config-visual.webp)
-
-![The config editor on its Graph tab](/img/editor/config-graph.webp)
+<Gallery items={[
+  {src: "/img/editor/config-editor.webp", alt: "The config editor on its Gameplay tab"},
+  {src: "/img/editor/config-visual.webp", alt: "The config editor on its Visual tab"},
+  {src: "/img/editor/config-graph.webp", alt: "The config editor on its Graph tab"},
+]} />
 
 A tab of its own for every setting in `visual.toml`, `gameplay.toml` and `graph.toml`, grouped into
 Common, Client and Graph tabs with a reset-to-defaults option. That includes the
@@ -256,13 +258,12 @@ types are not offered — an entry for them would be written to the stage file a
 
 ## The Zone Editor
 
-![The zone editor with three shapes on its map](/img/editor/zone-shapes.webp)
-
-![Zone editor, Effect page: message, damage and potion effects](/img/editor/zone-effect.webp)
-
-![Zone editor, Protection page](/img/editor/zone-protection.webp)
-
-![Zone editor, Display page](/img/editor/zone-display.webp)
+<Gallery items={[
+  {src: "/img/editor/zone-shapes.webp", alt: "The zone editor with three shapes on its map", wide: true},
+  {src: "/img/editor/zone-effect.webp", alt: "Zone editor, Effect page: message, damage and potion effects", wide: true},
+  {src: "/img/editor/zone-protection.webp", alt: "Zone editor, Protection page", wide: true},
+  {src: "/img/editor/zone-display.webp", alt: "Zone editor, Display page", wide: true},
+]} />
 
 Zones are the one lock type with no registry to pick from — the area has to be drawn. The zone tab lists a stage's zones with a one-line summary of what each does (`3 shapes · damage · barrier · inverted`), and **Edit** opens the zone's own screen.
 
@@ -284,13 +285,12 @@ Every zone screen carries a small map; clicking it opens the large one. It is a 
 
 ## The Spawn Rule Dialog
 
-![Right-clicking a spawn entry opens SpawnControl](/img/editor/spawn-menu.webp)
-
-![The SpawnControl dialog on its Sources page](/img/editor/spawn-rule.webp)
-
-![SpawnControl, Location page](/img/editor/spawn-location.webp)
-
-![SpawnControl, Time & Weather page](/img/editor/spawn-time.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-menu.webp", alt: "Right-clicking a spawn entry opens SpawnControl", wide: true},
+  {src: "/img/editor/spawn-rule.webp", alt: "The SpawnControl dialog on its Sources page"},
+  {src: "/img/editor/spawn-location.webp", alt: "SpawnControl, Location page"},
+  {src: "/img/editor/spawn-time.webp", alt: "SpawnControl, Time & Weather page"},
+]} />
 
 A spawn lock entry is a rule rather than a checkbox, and the editor opens it as a dialog. The lock **phase** sits at the top — *while locked* or *after unlock* — and the rest is four tabs, each with a count badge saying how much of it is set:
 

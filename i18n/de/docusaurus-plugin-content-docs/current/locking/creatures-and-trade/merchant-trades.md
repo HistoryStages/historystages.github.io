@@ -11,6 +11,28 @@ sidebar_position: 2
 Das Object `trades` enthält drei Listen. Sie werden einzeln gefragt und stapeln sich: Ein Angebot
 bleibt nur, wenn keine der drei es sperrt.
 
+## Einrichten {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
+
+<Gallery items={[
+  {src: "/img/editor/trades-tab.webp", alt: "Der Handels-Reiter", wide: true},
+  {src: "/img/editor/trades-professions.webp", alt: "Handels-Reiter, Bereich Berufe, mit Stufen-Kennzeichen beim Bibliothekar", wide: true},
+  {src: "/img/editor/trades-levels.webp", alt: "Handels-Reiter, Bereich Stufen", wide: true},
+  {src: "/img/editor/trade-picker.webp", alt: "Die Angebots-Auswahl, nach Beruf gruppiert"},
+]} />
+
+Der Reiter **Handel**. Seine Auswahl listet **echte Angebote** statt jedes Items im Spiel: Wähl einen
+Beruf, und du siehst, was dieser Händler tatsächlich handelt, auf welcher Stufe und zu welchem Preis.
+Den größten Teil dieses Blocks schreibst du per Klick.
+
+Berufe stehen auf demselben Reiter. Die Stufen-Sperre für das ganze Modpack ist ein **Rechtsklick** auf
+einen Berufs-Eintrag und dann **Händlerstufen**.
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
 ```json
 "trades": {
   "offers": [
@@ -29,22 +51,10 @@ bleibt nur, wenn keine der drei es sperrt.
 }
 ```
 
-## Im Editor {/* #in-the-editor */}
+Nach einer Änderung von Hand führst du `/history reload` aus.
 
-![Der Handels-Reiter](/img/editor/trades-tab.webp)
-
-![Handels-Reiter, Bereich Berufe, mit Stufen-Kennzeichen beim Bibliothekar](/img/editor/trades-professions.webp)
-
-![Handels-Reiter, Bereich Stufen](/img/editor/trades-levels.webp)
-
-![Die Angebots-Auswahl, nach Beruf gruppiert](/img/editor/trade-picker.webp)
-
-Der Reiter **Handel**. Seine Auswahl listet **echte Angebote** statt jedes Items im Spiel: Wähl einen
-Beruf, und du siehst, was dieser Händler tatsächlich handelt, auf welcher Stufe und zu welchem Preis.
-Den größten Teil dieses Blocks schreibst du per Klick.
-
-Berufe stehen auf demselben Reiter. Die Stufen-Sperre für das ganze Modpack ist ein **Rechtsklick** auf
-einen Berufs-Eintrag und dann **Händlerstufen**.
+</TabItem>
+</Tabs>
 
 ## `offers`: ein benanntes Angebot {/* #offers--one-named-trade */}
 
@@ -56,10 +66,13 @@ einen Berufs-Eintrag und dann **Händlerstufen**.
 | `takes` | Ein oder beide Preis-Items. |
 | `nbt` | Optionales Kriterium, das es so eingrenzt wie bei einem Item-Eintrag. |
 
-:::note[Mengen gehören absichtlich nicht zu einem Angebot]
+<details>
+<summary>Mengen gehören absichtlich nicht zu einem Angebot</summary>
+
 Ein Händler würfelt seinen eigenen Preis und seine eigene Stapelgröße aus. Ein Eintrag, der sie nennt,
 würde dasselbe Angebot bei einem Dorfbewohner sperren und beim nächsten verfehlen.
-:::
+
+</details>
 
 Die Handels-Auswahl im Editor listet **echte Angebote** statt jedes Items im Spiel, also schreibst du
 diesen Block meistens per Klick statt von Hand.

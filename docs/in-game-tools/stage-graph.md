@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 The Stage Graph is a player-facing, interactive node graph of a modpack's progression. It shows stages as nodes connected by dependency edges, so players can see what they've unlocked, what's next, and how everything connects — without spoiling content they haven't reached yet.
 
-There is one graph screen with two ways in. From the **pause menu** it is the player view, filtered by the rules below. From the **Stage Overview** in the [editor](/wiki/in-game-tools/in-game-editor) it is the admin view, which ignores those rules and shows every stage — that is where layout and per-stage styling are done. `/history graph` opens the player view, so an operator can check what a player would actually see. Since 6.2.0 the player view has a **Back** button, and large graphs draw much faster.
+There is one graph screen with two ways in. From the **pause menu** it is the player view, filtered by the rules below. From the **Stage Overview** in the [editor](/wiki/in-game-tools/in-game-editor) it is the admin view, which ignores those rules and shows every stage — that is where layout and per-stage styling are done. `/history graph` opens the player view, so an operator can check what a player would actually see. The player view has a **Back** button, and large graphs draw much faster.<Since v="6.2.0" />
 
 ![The Stage Graph](/img/screenshots/stage-graph.webp)
 
@@ -21,9 +21,10 @@ The screen title defaults to a translation key (`graph.historystages.title`) but
 
 ## Visibility Modes
 
-![The stage graph as a player sees it: only what is unlocked and what comes next](/img/ingame/graph-player-view.webp)
-
-![Clicking a stage shows what it needs and what it leads to](/img/ingame/graph-node-details.webp)
+<Gallery items={[
+  {src: "/img/ingame/graph-player-view.webp", alt: "The stage graph as a player sees it: only what is unlocked and what comes next"},
+  {src: "/img/ingame/graph-node-details.webp", alt: "Clicking a stage shows what it needs and what it leads to"},
+]} />
 
 `[visibility].mode` controls which stages a player sees, from least to most restrictive:
 
@@ -55,9 +56,10 @@ Two related toggles: `respectHiddenDisplay` (default `true`) applies each stage'
 
 ### Per-Stage Overrides
 
-![The node style screen with a preview of every state](/img/editor/graph-node-style.webp)
-
-![The colour picker](/img/editor/graph-colour.webp)
+<Gallery items={[
+  {src: "/img/editor/graph-node-style.webp", alt: "The node style screen with a preview of every state"},
+  {src: "/img/editor/graph-colour.webp", alt: "The colour picker"},
+]} />
 
 Beyond the graph-wide defaults, individual stages can have their own style, optionally varying by lock state. This is stored per-modpack in `settings/graph_stages.json` and is normally edited from the graph screen itself (accessible to OPs) rather than by hand. Each overridden stage can set:
 
@@ -162,11 +164,11 @@ Four things about it are worth knowing, because each of them otherwise reads as 
 
 ## Editing the layout
 
-![The stage graph in the editor, with the stage list on the left](/img/editor/graph-editor.webp)
-
-![Right-clicking a node](/img/editor/graph-node-menu.webp)
-
-![The graph legend](/img/editor/graph-legend.webp)
+<Gallery items={[
+  {src: "/img/editor/graph-editor.webp", alt: "The stage graph in the editor, with the stage list on the left"},
+  {src: "/img/editor/graph-node-menu.webp", alt: "Right-clicking a node"},
+  {src: "/img/editor/graph-legend.webp", alt: "The graph legend"},
+]} />
 
 This is the editor view, opened from the Stage Overview.
 

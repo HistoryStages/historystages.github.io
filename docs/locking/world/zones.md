@@ -62,9 +62,10 @@ A zone with no shapes at all is legal. It is shown as incomplete and applies to 
 
 ## Rules
 
-![Zone editor, Effect page: message, damage and potion effects](/img/editor/zone-effect.webp)
-
-![Zone editor, Protection page](/img/editor/zone-protection.webp)
+<Gallery items={[
+  {src: "/img/editor/zone-effect.webp", alt: "Zone editor, Effect page: message, damage and potion effects", wide: true},
+  {src: "/img/editor/zone-protection.webp", alt: "Zone editor, Protection page", wide: true},
+]} />
 
 | Key | Default | Effect |
 | :--- | :--- | :--- |

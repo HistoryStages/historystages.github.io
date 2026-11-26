@@ -14,13 +14,12 @@ einzelne Struktur in der Welt abriegeln. Eine dritte Möglichkeit begrenzt, wie 
 
 ## Im Editor {/* #in-the-editor */}
 
-![Der Dimensionen-Reiter](/img/editor/dimensions-tab.webp)
-
-![Die Dimensions-Auswahl](/img/editor/dimension-picker.webp)
-
-![Der Strukturen-Reiter](/img/editor/structures-tab.webp)
-
-![Die Struktur-Auswahl, Struktur-Tags auf einem eigenen Reiter](/img/editor/structure-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/dimensions-tab.webp", alt: "Der Dimensionen-Reiter", wide: true},
+  {src: "/img/editor/dimension-picker.webp", alt: "Die Dimensions-Auswahl"},
+  {src: "/img/editor/structures-tab.webp", alt: "Der Strukturen-Reiter", wide: true},
+  {src: "/img/editor/structure-picker.webp", alt: "Die Struktur-Auswahl, Struktur-Tags auf einem eigenen Reiter"},
+]} />
 
 Zwei Reiter: **Dimensionen** und **Strukturen**, jeder mit einer durchsuchbaren Auswahl. Die
 Struktur-Auswahl nimmt Struktur-Tags genauso wie IDs.
@@ -77,10 +76,13 @@ sondern eine Form, die aus den Teilen zusammengesetzt ist, aus denen die Struktu
 In dieser Zone kann sie Rechtsklicks, Linksklicks und Projektil-Treffer abbrechen, eine Nachricht zeigen
 und optional regelmäßig Schaden zufügen.
 
-:::note[Ein flaches Array geht weiterhin]
+<details>
+<summary>Ein flaches Array geht weiterhin</summary>
+
 `"structures": ["minecraft:stronghold"]`, die Schreibweise vor 6.0, wird weiter gelesen und beim
 nächsten Speichern der Stage in die Object-Form umgeschrieben.
-:::
+
+</details>
 
 ### Die Sperrzone einstellen {/* #tuning-the-lock-zone */}
 

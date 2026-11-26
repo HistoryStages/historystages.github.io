@@ -36,7 +36,7 @@ This page is a lookup list. Each block links to the page that explains what it i
 | `lockBlockInteraction` | `true` | Prevent opening the GUI of locked blocks (chests, furnaces, crafting tables, …). |
 | `lockContainerInteraction` | `true` | Prevent moving locked items within containers. |
 | `lockEnchanting` | `true` | Prevent applying locked enchantments via anvils and enchanting tables. |
-| `dropItemsFromLockedSlots` | `true` | Drop items lying in a slot when that slot becomes [locked](/wiki/locking/items-and-recipes/slots#items-already-in-a-locked-slot). `false` keeps them there and freezes the slot around them. *Since 6.2.0.* |
+| `dropItemsFromLockedSlots` | `true` | Drop items lying in a slot when that slot becomes [locked](/wiki/locking/items-and-recipes/slots#items-already-in-a-locked-slot). `false` keeps them there and freezes the slot around them. <Since v="6.2.0" /> |
 
 ## `[research]`
 
@@ -149,7 +149,7 @@ Zones carry their own rules per zone, so almost nothing about them is configured
 
 ## `[advanced]`
 
-→ Explained on [Reloads After a Stage Change](/wiki/server/stage-change-reload). *Since 6.2.0.*
+→ Explained on [Reloads After a Stage Change](/wiki/server/stage-change-reload). <Since v="6.2.0" />
 
 The last block on purpose, and labelled as such in the config editor. The defaults are right for
 almost every pack.

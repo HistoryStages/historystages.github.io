@@ -38,7 +38,7 @@ export default function HomepageHero() {
           </Link>
           <Link
             className={clsx('button button--lg', styles.heroButtonOutline)}
-            href="https://modrinth.com/mod/history-stages">
+            to="/download">
             <Translate id="homepage.hero.download">Download</Translate>
           </Link>
         </div>

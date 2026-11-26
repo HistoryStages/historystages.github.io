@@ -77,9 +77,9 @@ file in `global/`.
 }
 ```
 
-Since 6.0 a spawn lock no longer implies an attack lock, which is why blaze and wither skeleton are
+A spawn lock no longer implies an attack lock, which is why blaze and wither skeleton are
 listed separately — a ghast that comes out of a spawn egg is a perfectly ordinary ghast and can be
-hit.
+hit.<Since v="6.0" />
 
 ## A personal skill path
 
@@ -311,12 +311,15 @@ takes the object form, and that the dependencies are the kinds a global stage ca
 }
 ```
 
-:::note[Why not XP levels and kill counts here]
+<details>
+<summary>Why not XP levels and kill counts here</summary>
+
 Advancements, XP level, entity kills and tracked statistics need one identifiable researcher, and a
 global stage has none — a global scroll has no owner. Written into a global stage they are skipped
 rather than checked. Put them in an individual stage, as the Monster Hunter example above does. →
 [Dependencies](/wiki/stage-file/dependencies#four-of-them-are-individual-only)
-:::
+
+</details>
 
 ## Making a pair: the dual-phase lock
 

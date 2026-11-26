@@ -11,29 +11,22 @@ sidebar_position: 1
 The `entities` object holds three independent lists. They answer three different questions, and
 since 6.0 none of them implies another:
 
-```json
-{
-  "entities": {
-    "attacklock": ["minecraft:zombie"],
-    "interactionlock": ["minecraft:villager"],
-    "spawnlock": ["minecraft:ghast"]
-  }
-}
-```
-
 | List | Question | Scope |
 | :--- | :--- | :--- |
 | [`attacklock`](#attacklock) | May the player hit it? | global + individual |
 | [`interactionlock`](#interactionlock) | May the player breed, mount, shear, name it? | global + individual |
 | [`spawnlock`](#spawnlock) | May it appear at all? | **global only** |
 
-## In the editor
+## Setting it up {/* #in-the-editor */}
 
-![The Entities tab on its Spawn section](/img/editor/spawn-tab.webp)
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
 
-![The Interact section of the Entities tab](/img/editor/interact-subtab.webp)
-
-![The entity picker](/img/editor/entity-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-tab.webp", alt: "The Entities tab on its Spawn section", wide: true},
+  {src: "/img/editor/interact-subtab.webp", alt: "The Interact section of the Entities tab", wide: true},
+  {src: "/img/editor/entity-picker.webp", alt: "The entity picker"},
+]} />
 
 The three lists are three tabs of their own: **Attack**, **Interaction** and **Spawn**. The entity
 pickers work like the item picker, multi-select included.
@@ -46,6 +39,24 @@ finished rule out in words.
 An interaction entry right-clicks to **Interaction Actions** for its action list and **Item Filter**
 for the held-item condition. Attack and interaction entries both right-click to **Edit NBT**
 for [narrowing them to some creatures](#only-some-creatures-of-a-type).
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
+
+```json
+{
+  "entities": {
+    "attacklock": ["minecraft:zombie"],
+    "interactionlock": ["minecraft:villager"],
+    "spawnlock": ["minecraft:ghast"]
+  }
+}
+```
+
+After editing a file by hand, run `/history reload`.
+
+</TabItem>
+</Tabs>
 
 ## `attacklock`
 
@@ -71,8 +82,8 @@ under `mobUnknown` in [`[lock_messages]`](/wiki/server/config-files/visual-toml#
 Everything that is not combat: naming, leashing, shearing, milking, breeding, trading, mounting,
 equipping armour and saddles. Attacking and spawning are untouched.
 
-Since 6.2.0 the list also takes **boats, chest boats and minecarts**, which are not creatures and
-were missing from the picker before. Getting in counts as `mount`.
+The list also takes **boats, chest boats and minecarts**, which are not creatures and
+were missing from the picker before.<Since v="6.2.0" /> Getting in counts as `mount`.
 
 An entry is either a plain entity id — which blocks every recognised interaction — or an object:
 
@@ -100,8 +111,8 @@ saddled, bred or leashed — and only while a saddle is actually in hand.
 
 ## Only some creatures of a type
 
-Since 6.2.0 an `attacklock` or `interactionlock` entry can carry an `nbt` filter, checked against
-the creature's saved data. The lock then hits only the creatures that match — oak boats but not
+An `attacklock` or `interactionlock` entry can carry an `nbt` filter, checked against
+the creature's saved data.<Since v="6.2.0" /> The lock then hits only the creatures that match — oak boats but not
 birch ones, a zombie that carries a command tag, a horse that never despawns.
 
 ```json
@@ -122,7 +133,7 @@ no gravity, command tags, health, …), a list of the keys that creature type ac
 **Take from a creature**, which reads the one you are looking at or standing next to. Boats and
 chest boats right-click to **Wood types** as a shortcut for the most common case.
 
-:::note[On Minecraft 26.2]
+:::info[On Minecraft 26.2]
 Every wood is its own boat type there (`minecraft:oak_boat`, `minecraft:bamboo_raft`, …), so you pick
 the woods in the list and there is no Wood types shortcut. A `minecraft:boat` entry like the one above
 is read as `minecraft:oak_boat` and `minecraft:spruce_boat`; without a `Type` it becomes every wood.
@@ -228,13 +239,12 @@ would otherwise exclude the very biome being added.
 
 ## Building spawn rules in the editor
 
-![Right-clicking a spawn entry opens SpawnControl](/img/editor/spawn-menu.webp)
-
-![The SpawnControl dialog on its Sources page](/img/editor/spawn-rule.webp)
-
-![SpawnControl, Location page](/img/editor/spawn-location.webp)
-
-![SpawnControl, Time & Weather page](/img/editor/spawn-time.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-menu.webp", alt: "Right-clicking a spawn entry opens SpawnControl", wide: true},
+  {src: "/img/editor/spawn-rule.webp", alt: "The SpawnControl dialog on its Sources page"},
+  {src: "/img/editor/spawn-location.webp", alt: "SpawnControl, Location page"},
+  {src: "/img/editor/spawn-time.webp", alt: "SpawnControl, Time & Weather page"},
+]} />
 
 Spawn rules are normally built in the editor's spawn dialog rather than typed: phase at the top,
 then four tabs — Sources, Location, Time & Weather, Extra biomes — and a line underneath that spells

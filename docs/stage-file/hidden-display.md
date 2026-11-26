@@ -21,11 +21,14 @@ replacement texts as fields, and the lock-hint switch.
 Per-entry overrides are set where the entry is: **right-click** the item, tag, mod or fluid in its
 list and pick **Text Override**.
 
-:::note[No Text Override in the menu?]
+<details>
+<summary>No Text Override in the menu?</summary>
+
 It only appears while this stage's `name_mode` or `tooltip_mode` is set to `"replace"` — with both
 off or hidden there is no text for an entry to override, so the menu leaves it out rather than
 offering something that would do nothing.
-:::
+
+</details>
 
 ```json
 {

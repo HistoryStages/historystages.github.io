@@ -62,9 +62,10 @@ Eine Zone ganz ohne Formen ist erlaubt. Sie wird als unvollständig angezeigt un
 
 ## Regeln {/* #rules */}
 
-![Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte](/img/editor/zone-effect.webp)
-
-![Zonen-Editor, Seite Schutz](/img/editor/zone-protection.webp)
+<Gallery items={[
+  {src: "/img/editor/zone-effect.webp", alt: "Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte", wide: true},
+  {src: "/img/editor/zone-protection.webp", alt: "Zonen-Editor, Seite Schutz", wide: true},
+]} />
 
 | Schlüssel | Standard | Wirkung |
 | :--- | :--- | :--- |

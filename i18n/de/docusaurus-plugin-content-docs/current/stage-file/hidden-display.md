@@ -21,11 +21,14 @@ Ersatztexte als Felder und den Schalter für den Sperr-Hinweis.
 Überschreibungen pro Eintrag stellst du direkt beim Eintrag ein: **Rechtsklick** auf das Item, das Tag,
 die Mod oder die Flüssigkeit in der Liste und dann **Text überschreiben**.
 
-:::note[Kein „Text überschreiben“ im Menü?]
+<details>
+<summary>Kein „Text überschreiben“ im Menü?</summary>
+
 Das erscheint nur, solange `name_mode` oder `tooltip_mode` dieser Stage auf `"replace"` steht. Sind beide
 aus oder auf hidden, gibt es keinen Text, den ein Eintrag überschreiben könnte, also lässt das Menü den
 Punkt weg, statt etwas anzubieten, das nichts bewirkt.
-:::
+
+</details>
 
 ```json
 {

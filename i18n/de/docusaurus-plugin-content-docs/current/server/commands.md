@@ -17,13 +17,16 @@ Diese Befehle verwalten globale Stages, die für alle Spieler auf dem Server gel
 | `/history global unlock <stage_id>` | Schaltet eine bestimmte globale Stage frei. | Ersetze `<stage_id>` durch die ID der Stage. Mit `*` werden alle angelegten globalen Stages freigeschaltet. |
 | `/history global lock <stage_id>` | Sperrt eine bestimmte globale Stage wieder. | Ersetze `<stage_id>` durch die ID der Stage. Mit `*` werden alle globalen Stages wieder gesperrt. |
 
-:::note[Befehle gehen an Logikbausteinen vorbei, nicht an Solange-Stages]
+<details>
+<summary>Befehle gehen an Logikbausteinen vorbei, nicht an Solange-Stages</summary>
+
 Ein Freischalten per Befehl geht auch durch, wenn ein [Logikbaustein](/wiki/stage-file/logic-blocks#blocked-while)
 die Stage blockiert, und löscht eine Markierung [endgültig verloren](/wiki/stage-file/relocking#lost-for-good).
 Es teilt die Stage nicht mit einem [Team](/wiki/start-here/global-vs-individual#sharing-with-a-team).
 Eine [Solange-Stage](/wiki/stage-file/relocking#the-while-mode) wird bei der nächsten Prüfung, eine
 Sekunde später, von ihrer Bedingung überschrieben.
-:::
+
+</details>
 
 ## Befehle für individuelle Stages (pro Spieler) {/* #individual-stage-commands-per-player */}
 

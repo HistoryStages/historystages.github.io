@@ -78,8 +78,8 @@ gehört nach `global/`.
 }
 ```
 
-Seit 6.0 bedeutet eine Spawn-Sperre keine Angriffs-Sperre mehr, deshalb stehen Lohe und
-Witherskelett extra da. Ein Ghast aus einem Spawn-Ei ist ein ganz normaler Ghast und lässt sich
+Eine Spawn-Sperre bedeutet keine Angriffs-Sperre mehr, deshalb stehen Lohe und
+Witherskelett extra da.<Since v="6.0" /> Ein Ghast aus einem Spawn-Ei ist ein ganz normaler Ghast und lässt sich
 schlagen.
 
 ## Ein persönlicher Skill-Pfad {/* #a-personal-skill-path */}
@@ -315,12 +315,15 @@ wirklich messen kann (eine Abgabe am Podest und eine schon freigeschaltete Stage
 }
 ```
 
-:::note[Warum hier keine XP-Level und Kill-Anzahlen]
+<details>
+<summary>Warum hier keine XP-Level und Kill-Anzahlen</summary>
+
 Fortschritte, XP-Level, getötete Kreaturen und erfasste Statistiken brauchen einen eindeutigen Forscher,
 und eine globale Stage hat keinen, denn eine globale Rolle hat keinen Besitzer. In einer globalen Stage
 werden sie übersprungen statt geprüft. Pack sie in eine individuelle Stage, wie im Beispiel Monster
 Hunter oben. → [Abhängigkeiten](/wiki/stage-file/dependencies#four-of-them-are-individual-only)
-:::
+
+</details>
 
 ## Ein Paar bilden: die Dual-Phase-Sperre {/* #making-a-pair-the-dual-phase-lock */}
 

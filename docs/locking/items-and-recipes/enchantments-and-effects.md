@@ -8,12 +8,9 @@ sidebar_position: 6
 
 <Scope global="yes" individual="partly" note="Individual: potion effects are not gated at the brewing stand." />
 
-:::info[New in 6.1.0]
-:::
-
 Two lock categories that read **what a stack carries** instead of what it is. One entry for
 Mending covers every book and every piece of gear with Mending on it, without listing a single item
-id.
+id.<Since v="6.1.0" />
 
 ```json
 {
@@ -117,11 +114,11 @@ spared type is spared at the enchanting table and the anvil too.
 
 ## In the editor
 
-![The Enchants & Effects tab](/img/editor/enchantments-tab.webp)
-
-![The Potion effects section of the same tab](/img/editor/effects-subtab.webp)
-
-![The effect picker](/img/editor/effect-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/enchantments-tab.webp", alt: "The Enchants & Effects tab", wide: true},
+  {src: "/img/editor/effects-subtab.webp", alt: "The Potion effects section of the same tab", wide: true},
+  {src: "/img/editor/effect-picker.webp", alt: "The effect picker"},
+]} />
 
 The **Enchants & Effects** tab, with one section for enchantments and one for potion effects. Each
 picker lists the live registry, so modded entries show up. Right-click a row for **Locked from

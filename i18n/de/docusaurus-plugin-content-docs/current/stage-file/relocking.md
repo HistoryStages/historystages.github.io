@@ -6,11 +6,8 @@ sidebar_position: 3
 
 # Wieder sperren {/* #relocking */}
 
-:::info[Neu in 6.1.0]
-:::
-
 Eine Stage bleibt normalerweise freigeschaltet, sobald sie offen ist. Zwei Dinge können sie von selbst
-wieder schließen:
+wieder schließen:<Since v="6.1.0" />
 
 | | [Der Solange-Modus](#the-while-mode) | [Sperr-Auslöser](#lock-triggers) |
 | :--- | :--- | :--- |

@@ -8,7 +8,32 @@ sidebar_position: 5
 
 <Scope global="yes" individual="yes" />
 
-Der Block `fluids` sperrt eine Flüssigkeit über ihre Registry-ID:
+Der Block `fluids` sperrt eine Flüssigkeit über ihre Registry-ID.
+
+**Gesperrt wird die Flüssigkeit, erkannt wird aber der Behälter.** Die Mod fragt jeden Item-Stack, was
+er *enthält*, statt was er ist. Ein einziger Eintrag `minecraft:lava` deckt also den Vanilla-Eimer,
+jeden Mod-Eimer und jedes gefüllte Tank-Item im Modpack ab, ohne dass eine einzige Item-ID in der
+Stage-Datei steht.
+
+## Einrichten {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
+
+<Gallery items={[
+  {src: "/img/editor/fluids-tab.webp", alt: "Der Flüssigkeiten-Reiter mit Rezept-Zählern", wide: true},
+  {src: "/img/editor/fluid-picker.webp", alt: "Die Flüssigkeits-Auswahl"},
+]} />
+
+Der Reiter **Fluide**, mit einer Auswahl über jede Flüssigkeit im Modpack. Jede Zeile trägt ein
+Abzeichen `[Recipes: N]`, das sagt, wie viele Rezepte dieser Eintrag erreichen würde. Ein Blick darauf
+lohnt sich vor dem Hinzufügen, denn die Zahl ist oft größer, als man denkt.
+
+Die sieben Aktionen unten stellst du genauso ein wie bei Item-Einträgen: **Rechtsklick auf die
+Zeile**, dann **Sperr-Aktionen**.
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
 
 ```json
 {
@@ -22,23 +47,10 @@ Der Block `fluids` sperrt eine Flüssigkeit über ihre Registry-ID:
 }
 ```
 
-**Gesperrt wird die Flüssigkeit, erkannt wird aber der Behälter.** Die Mod fragt jeden Item-Stack, was
-er *enthält*, statt was er ist. Ein einziger Eintrag `minecraft:lava` deckt also den Vanilla-Eimer,
-jeden Mod-Eimer und jedes gefüllte Tank-Item im Modpack ab, ohne dass eine einzige Item-ID in der
-Stage-Datei steht.
+Nach einer Änderung von Hand führst du `/history reload` aus.
 
-## Im Editor {/* #in-the-editor */}
-
-![Der Flüssigkeiten-Reiter mit Rezept-Zählern](/img/editor/fluids-tab.webp)
-
-![Die Flüssigkeits-Auswahl](/img/editor/fluid-picker.webp)
-
-Der Reiter **Fluide**, mit einer Auswahl über jede Flüssigkeit im Modpack. Jede Zeile trägt ein
-Abzeichen `[Recipes: N]`, das sagt, wie viele Rezepte dieser Eintrag erreichen würde. Ein Blick darauf
-lohnt sich vor dem Hinzufügen, denn die Zahl ist oft größer, als man denkt.
-
-Die sieben Aktionen unten stellst du genauso ein wie bei Item-Einträgen: **Rechtsklick auf die
-Zeile**, dann **Sperr-Aktionen**.
+</TabItem>
+</Tabs>
 
 ## Die sieben Aktionen {/* #the-seven-actions */}
 

@@ -21,11 +21,14 @@ warum ein eigenes Rezept „nicht funktioniert“: Die Rolle lässt sich herstel
 sie dann ab. → [Wo die Stage-Dateien liegen](/wiki/start-here/where-stage-files-live)
 :::
 
-:::info[Components, nicht NBT]
+<details>
+<summary>Components, nicht NBT</summary>
+
 Ab Minecraft 1.20.5 nutzen Item-Daten **Data Components** (`minecraft:custom_data`) statt rohem NBT. Die
 Beispiele unten nutzen die moderne Schreibweise. Für 1.20.4 und älter ersetzt du
 `{"minecraft:custom_data":{...}}` durch die alte Form `{StageResearch:"..."}`.
-:::
+
+</details>
 
 ---
 

@@ -274,7 +274,8 @@ const config = {
         theme: {light: 'neutral', dark: 'dark'},
       },
       zoom: {
-        selector: '.markdown img',
+        // Gallery thumbnails switch the picture instead of enlarging it.
+        selector: '.markdown img:not(.no-zoom)',
         background: {
           light: 'rgba(255, 255, 255, 0.92)',
           dark: 'rgba(15, 15, 17, 0.94)',
@@ -313,25 +314,13 @@ const config = {
             label: 'API',
             className: 'nav-icon nav-icon-api',
           },
+          // A page of every official source rather than a dropdown that sends the reader
+          // straight to one store.
           {
-            type: 'dropdown',
+            to: '/download',
             label: 'Download',
             position: 'left',
             className: 'nav-icon nav-icon-download',
-            items: [
-              {
-                label: 'CurseForge',
-                href: 'https://www.curseforge.com/minecraft/mc-mods/history-stages',
-              },
-              {
-                label: 'Modrinth',
-                href: 'https://modrinth.com/mod/history-stages',
-              },
-              {
-                label: 'GitHub Releases',
-                href: 'https://github.com/Flix100000/History-Stages/releases',
-              },
-            ],
           },
           {
             type: 'localeDropdown',

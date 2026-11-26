@@ -70,6 +70,47 @@
 
 /* ---------- reading column ---------- */
 
+/* "In the editor / In the stage file" as two even buttons, the way the GeyserMC wiki splits
+   its setup paths, instead of underlined tab labels. */
+.theme-doc-markdown .tabs-container > .tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+.theme-doc-markdown .tabs-container > .tabs .tabs__item {
+  justify-content: center;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 8px;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+}
+.theme-doc-markdown .tabs-container > .tabs .tabs__item:hover {
+  background: rgba(224, 165, 62, 0.1);
+}
+.theme-doc-markdown .tabs-container > .tabs .tabs__item--active {
+  background: var(--ifm-color-primary);
+  color: #1b1306;
+}
+
+/* Edge cases fold away: a quiet bordered row that opens on click. */
+.theme-doc-markdown details {
+  --ifm-alert-background-color: var(--ifm-background-surface-color);
+  --ifm-alert-background-color-highlight: transparent;
+  --ifm-alert-border-color: var(--ifm-toc-border-color);
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-left-width: 1px;
+  border-radius: 8px;
+  box-shadow: none;
+  margin: 0.75rem 0;
+}
+.theme-doc-markdown details > summary {
+  font-weight: 700;
+}
+
 .theme-doc-markdown {
   max-width: 820px;
 }
@@ -255,6 +296,11 @@ html:has(.homepage-scene) .navbar:not(.navbar-sidebar--show) {
   box-shadow: none;
 }
 .admonition-heading {
+  text-transform: none;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+.theme-admonition [class*='admonitionHeading'] {
   text-transform: none;
   font-size: 0.95rem;
   letter-spacing: 0;

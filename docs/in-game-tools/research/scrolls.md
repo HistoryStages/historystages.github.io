@@ -67,7 +67,9 @@ The dependency block is built from sub-templates of its own — `dep.header`, `d
 Unknown ids are ignored, and a known id missing from the list falls back to its default, so a
 config keeps working when later versions add sections.
 
-:::note[AND and OR are printed in two different places]
+<details>
+<summary>AND and OR are printed in two different places</summary>
+
 `dep.group_header` sits **above** a group and says how that group's own entries combine — *All of*
 or *One of*. `dep.separator` sits **between** groups and always says AND, because groups are always
 joined by AND.
@@ -75,7 +77,8 @@ joined by AND.
 They used to be one line, which printed one group's logic in the gap before the next and made an OR
 group look like it applied to everything after it. →
 [Dependencies](/wiki/stage-file/dependencies#and-or-and-where-the-line-runs)
-:::
+
+</details>
 
 `hideFulfilledDependencies` drops lines the player has already met, leaving only what is
 outstanding. Visibility is worked out *before* a switched-off line disappears, so a met entry whose
@@ -133,11 +136,8 @@ the entry only appears or disappears in the recipe browser after a restart.
 
 ## Scroll shelves
 
-:::info[New in 6.1.0]
-:::
-
 A chiseled bookshelf for research scrolls, in eleven wood types from oak to warped. It holds six
-scrolls:
+scrolls:<Since v="6.1.0" />
 
 - Click a slot with a scroll to put it in, with an empty hand to take it out.
 - A comparator reads the slot that was used last; hoppers can fill and empty it.

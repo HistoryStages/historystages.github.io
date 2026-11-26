@@ -113,8 +113,8 @@ an). Die Sperre für Klicks in Behältern ist ein eigener Schalter, `lockContain
 
 ### Rezept-Sperren pro Spieler, und wo sie aufhören {/* #per-player-recipe-locks-and-where-they-stop */}
 
-Seit 6.0 funktioniert das Feld `recipes` auch in einer individuellen Stage, ebenso ein Item-Eintrag,
-dessen `recipe`-Aktion gesperrt ist. Beide werden pro Spieler an den Stationen gesperrt, die wissen,
+Das Feld `recipes` funktioniert auch in einer individuellen Stage, ebenso ein Item-Eintrag,
+dessen `recipe`-Aktion gesperrt ist.<Since v="6.0" /> Beide werden pro Spieler an den Stationen gesperrt, die wissen,
 wer davor steht:
 
 - Werkbank
@@ -133,8 +133,8 @@ können an derselben Werkbank stehen und unterschiedliche Ergebnisse bekommen.
 - Der Crafter-Block, Trichter-Zufuhr und Autocrafter aus Mods
 - Jede Mod-Station mit eigenem Menü, deren Rezeptart nicht als „pro Spieler sperrbar“ angemeldet ist
 
-**Eine andere Mod kann die Liste erweitern.** Seit 6.0.0 darf eine Mod eine ihrer eigenen Rezeptarten
-als pro Spieler sperrbar anmelden, und der Editor bietet sie dann an wie die drei eingebauten. Das ist
+**Eine andere Mod kann die Liste erweitern.** Eine Mod darf eine ihrer eigenen Rezeptarten
+als pro Spieler sperrbar anmelden, und der Editor bietet sie dann an wie die drei eingebauten.<Since v="6.0.0" /> Das ist
 ein Versprechen über die eigene Station der Mod, nämlich dass ein Spieler davor steht und unsere Hooks
 ihn sehen. Die Liste oben ist also das Minimum aus Vanilla, nicht alles. →
 [Addon-Entwicklung](/api/addon-development).
@@ -195,9 +195,10 @@ zu messen, der das Podest zuletzt geöffnet hat.
 
 ## Bei Tod verlieren {/* #lose-on-death */}
 
-![Der Bereich Individuell: beim Tod verlieren und mit dem Team teilen](/img/editor/stage-individual-section.webp)
-
-![Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken](/img/editor/overview-individual.webp)
+<Gallery items={[
+  {src: "/img/editor/stage-individual-section.webp", alt: "Der Bereich Individuell: beim Tod verlieren und mit dem Team teilen", wide: true},
+  {src: "/img/editor/overview-individual.webp", alt: "Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken", wide: true},
+]} />
 
 Eine individuelle Stage kann sich selbst wieder sperren, wenn ihr Besitzer stirbt:
 

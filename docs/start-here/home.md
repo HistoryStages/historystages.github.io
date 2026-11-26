@@ -15,11 +15,14 @@ the recipe cannot be crafted, the dimension cannot be entered, the mob does not 
 Nothing is locked out of the box. An installed History Stages with no stage files changes nothing
 about the game.
 
-:::note[Which version is this?]
+<details>
+<summary>Which version is this?</summary>
+
 These pages describe **6.2.x**, the line every loader is on, the 26.2 beta included. An older
 build? Pick it in the version picker in the top bar.
 [Versions & Platforms](/wiki/about/versions-and-platforms) has the details.
-:::
+
+</details>
 
 ## How it fits together
 

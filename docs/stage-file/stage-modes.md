@@ -30,9 +30,10 @@ research to gate.
 
 ## In the editor
 
-![The stage settings screen](/img/editor/stage-settings.webp)
-
-![Choosing a stage mode](/img/editor/mode-dropdown.webp)
+<Gallery items={[
+  {src: "/img/editor/stage-settings.webp", alt: "The stage settings screen"},
+  {src: "/img/editor/mode-dropdown.webp", alt: "Choosing a stage mode"},
+]} />
 
 **Stage Settings**, the button on the stage's own screen. The mode is a dropdown, and picking one
 swaps the card underneath it for that mode's own settings — the trigger list for `auto`, the
@@ -229,17 +230,21 @@ alike.
 
 ### `max_triggers` in detail
 
-- **`1`** — the stage unlocks exactly once and stays locked permanently afterwards. The cooldown does not apply. A server operator can still unlock it manually via `/history global unlock`, but that does not start a new timer.
-- **`N > 1`** — the stage may unlock up to N times total. After each re-lock, the cooldown must pass before the trigger is accepted again.
-- **`0`** — unlimited unlocks. After each re-lock, only the cooldown prevents immediate
-  re-triggering. A cooldown of `0` means the stage can fire again right away.
+| Value | Meaning |
+| :--- | :--- |
+| **`1`** | the stage unlocks exactly once and stays locked permanently afterwards. The cooldown does not apply. A server operator can still unlock it manually via `/history global unlock`, but that does not start a new timer. |
+| **`N > 1`** | the stage may unlock up to N times total. After each re-lock, the cooldown must pass before the trigger is accepted again. |
+| **`0`** | unlimited unlocks. After each re-lock, only the cooldown prevents immediate re-triggering. A cooldown of `0` means the stage can fire again right away. |
 
-:::note[Dying ends a running timer early]
+<details>
+<summary>Dying ends a running timer early</summary>
+
 If a `temporary` individual stage also has
 [`lose_on_death`](/wiki/start-here/global-vs-individual#lose-on-death), dying ends the timer and
 starts the cooldown as though it had expired on its own — it does not count against `max_triggers`
 any differently from a normal expiry.
-:::
+
+</details>
 
 ## See also
 

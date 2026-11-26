@@ -8,13 +8,10 @@ sidebar_position: 7
 
 <Scope global="yes" individual="yes" />
 
-:::info[New in 6.1.0]
-:::
-
 A locked item can look like another item, and a locked block in the world like another block,
 until the player is allowed to use it. Emerald ore set to look like stone renders as stone, sounds
 like stone, shows the stone model and name in every inventory, and turns into ore the moment the
-stage that locks it is unlocked.
+stage that locks it is unlocked.<Since v="6.1.0" />
 
 It is the idea behind Revelationary, built in. Revelationary itself is not needed and not used.
 
@@ -95,9 +92,10 @@ Known to clash:
 
 ## In the editor
 
-![The Disguises list from the gear menu](/img/editor/disguises-list.webp)
-
-![The disguise dialog for a single entry, from its right-click menu](/img/editor/disguise-dialog.webp)
+<Gallery items={[
+  {src: "/img/editor/disguises-list.webp", alt: "The Disguises list from the gear menu", wide: true},
+  {src: "/img/editor/disguise-dialog.webp", alt: "The disguise dialog for a single entry, from its right-click menu"},
+]} />
 
 - **Right-click an item or tag row → Disguise.** The dialog has the item it should look like,
   **Drops** (Real / Like disguise) and **Show lock hints**, plus which stages lock the item and

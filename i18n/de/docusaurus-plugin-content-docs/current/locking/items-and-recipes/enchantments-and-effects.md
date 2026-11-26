@@ -8,11 +8,8 @@ sidebar_position: 6
 
 <Scope global="yes" individual="partly" note="Individuell: Trankeffekte werden am Braustand nicht gesperrt." />
 
-:::info[Neu in 6.1.0]
-:::
-
 Zwei Sperr-Kategorien, die lesen, **was ein Stack trägt**, statt was er ist. Ein Eintrag für Reparatur
-deckt jedes Buch und jedes Ausrüstungsteil mit Reparatur ab, ohne eine einzige Item-ID aufzulisten.
+deckt jedes Buch und jedes Ausrüstungsteil mit Reparatur ab, ohne eine einzige Item-ID aufzulisten.<Since v="6.1.0" />
 
 ```json
 {
@@ -118,11 +115,11 @@ Art ist auch am Zaubertisch und am Amboss verschont.
 
 ## Im Editor {/* #in-the-editor */}
 
-![Der Reiter Verzauberungen & Effekte](/img/editor/enchantments-tab.webp)
-
-![Der Bereich Trankeffekte im selben Reiter](/img/editor/effects-subtab.webp)
-
-![Die Effekt-Auswahl](/img/editor/effect-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/enchantments-tab.webp", alt: "Der Reiter Verzauberungen & Effekte", wide: true},
+  {src: "/img/editor/effects-subtab.webp", alt: "Der Bereich Trankeffekte im selben Reiter", wide: true},
+  {src: "/img/editor/effect-picker.webp", alt: "Die Effekt-Auswahl"},
+]} />
 
 Der Reiter **Verzauberungen & Effekte**, mit einem Abschnitt für Verzauberungen und einem für
 Trank-Effekte. Jede Auswahl listet die echte Registry, also tauchen auch Einträge aus Mods auf.

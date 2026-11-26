@@ -147,12 +147,15 @@ die frei bleiben:
 
 Beide Formen können in derselben Liste stehen.
 
-:::note[Alte Schreibweisen werden weiter geladen]
+<details>
+<summary>Alte Schreibweisen werden weiter geladen</summary>
+
 Dateien für ältere Versionen funktionieren weiter. `"structures": [ ... ]` als flaches Array wird
 gelesen und beim nächsten Speichern in die Object-Form umgeschrieben; `lock_actions` wird neben dem
 neueren `unlock_actions` gelesen; `unlock_dimensions` in einer Spawn-Regel wird als
 Dimensions-Bedingung gelesen. Neue Dateien werden immer in der aktuellen Form geschrieben.
-:::
+
+</details>
 
 ## Weiter {/* #next */}
 

@@ -573,5 +573,83 @@
   },
   "homepage.hero.subtitle": {
     "message": "Fortschritt für Modpacks: Halte Items, Rezepte, Orte und Mobs zurück, bis Spieler sich den Weg dorthin erforschen."
+  },
+  "download.modrinth.text": {
+    "message": "Jeder Loader und jede Version, mit Changelogs. Funktioniert mit der Modrinth App und den meisten Launchern."
+  },
+  "download.curseforge.text": {
+    "message": "Dieselben Dateien, für die CurseForge App und Modpacks, die auf CurseForge gebaut sind."
+  },
+  "download.github.text": {
+    "message": "Jedes Release mit seinen vollständigen Notizen, auch ältere Builds."
+  },
+  "download.open": {
+    "message": "Download-Seite öffnen ↗"
+  },
+  "download.title": {
+    "message": "Download"
+  },
+  "download.description": {
+    "message": "Die offiziellen Download-Seiten von History Stages, welche Datei du brauchst und was du dazu installierst."
+  },
+  "download.heading": {
+    "message": "History Stages herunterladen"
+  },
+  "download.lead": {
+    "message": "Diese drei Seiten sind die einzigen offiziellen Quellen. Sie haben dieselben Dateien; nimm die, mit der dein Launcher arbeitet."
+  },
+  "download.which.heading": {
+    "message": "Welche Datei brauche ich?"
+  },
+  "download.which.text": {
+    "message": "Nimm die Datei für deinen Mod-Loader und deine Minecraft-Version. Alle Loader sind auf derselben Linie, dieses Wiki gilt also für alle."
+  },
+  "download.col.loader": {
+    "message": "Loader"
+  },
+  "download.col.line": {
+    "message": "Versionslinie"
+  },
+  "download.col.needs": {
+    "message": "Zusätzlich installieren"
+  },
+  "download.beta": {
+    "message": "Beta"
+  },
+  "download.lootr": {
+    "message": "Lootr ist auf jedem Loader Pflicht: Es gibt jedem Spieler eine eigene Ansicht einer Loot-Truhe, und nur so lässt sich Loot pro Spieler filtern."
+  },
+  "download.old": {
+    "message": "Die 1.19.X-Builds werden nicht mehr aktualisiert."
+  },
+  "download.next.heading": {
+    "message": "Wie es weitergeht"
+  },
+  "download.next.single": {
+    "message": "Einzelspieler oder dein eigenes Modpack"
+  },
+  "download.next.installation": {
+    "message": "Installation & deine erste Stage →"
+  },
+  "download.next.server": {
+    "message": "Auf einem Server"
+  },
+  "download.next.serversetup": {
+    "message": "Auf einen Server bringen →"
+  },
+  "download.next.diff": {
+    "message": "Unterschiede zwischen den Loadern"
+  },
+  "download.next.versions": {
+    "message": "Versionen & Plattformen →"
+  },
+  "since.title": {
+    "message": "Neu in {version}"
+  },
+  "scope.word.global": {
+    "message": "globalen"
+  },
+  "scope.word.individual": {
+    "message": "individuellen"
   }
 }

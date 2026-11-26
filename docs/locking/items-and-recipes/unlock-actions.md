@@ -12,6 +12,31 @@ By default, every entry in `items`, `tags` and `mods` blocks **all** interaction
 content. `unlock_actions` narrows that down: it lists the interactions that stay available while the
 stage is still locked.
 
+:::danger[The list says what stays free]
+`unlock_actions` is not a list of what is locked — it is a list of what is **not** locked. Every
+action you leave out stays blocked. A plain string entry, or an object without `unlock_actions`,
+locks everything.
+:::
+
+## Setting it up {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="In the editor">
+
+![The Blocked Actions dialog for one entry](/img/editor/lock-actions.webp)
+
+Not a tab of its own — it hangs off an entry that is already in the list. **Right-click the entry**
+and pick **Lock Actions** from the context menu; the popup that opens has one tick box per action,
+labelled as in the table below.
+
+Entity interaction entries have their own version of the same popup under **Interaction Actions**,
+and fluid rows use the shorter fluid vocabulary.
+[Enchantment and effect](/wiki/locking/items-and-recipes/enchantments-and-effects#actions) rows
+have their own lists too.
+
+</TabItem>
+<TabItem value="file" label="In the stage file">
+
 ```json
 {
   "items": [
@@ -33,24 +58,10 @@ stage is still locked.
 The diamond pickaxe stays fully locked. The diamond sword can be picked up and worn, but not swung,
 crafted with, or traded. Iron ingots from the tag can be picked up and nothing else.
 
-:::danger[The list says what stays free]
-`unlock_actions` is not a list of what is locked — it is a list of what is **not** locked. Every
-action you leave out stays blocked. A plain string entry, or an object without `unlock_actions`,
-locks everything.
-:::
+After editing a file by hand, run `/history reload`.
 
-## In the editor
-
-![The Blocked Actions dialog for one entry](/img/editor/lock-actions.webp)
-
-Not a tab of its own — it hangs off an entry that is already in the list. **Right-click the entry**
-and pick **Lock Actions** from the context menu; the popup that opens has one tick box per action,
-labelled as in the table below.
-
-Entity interaction entries have their own version of the same popup under **Interaction Actions**,
-and fluid rows use the shorter fluid vocabulary.
-[Enchantment and effect](/wiki/locking/items-and-recipes/enchantments-and-effects#actions) rows
-have their own lists too.
+</TabItem>
+</Tabs>
 
 ## The actions
 
@@ -90,11 +101,8 @@ item lock, plain or narrowed; before 6.1.0 a locked arrow could still be shot.
 
 ![The Locks section of the stage settings: interchangeable and fixed actions](/img/editor/stage-locks-section.webp)
 
-:::info[New in 6.1.0]
-:::
-
 Ticking the same box on forty entries is tedious, and the forty-first gets forgotten. A stage can
-**fix** an action for all of its entries of one kind instead.
+**fix** an action for all of its entries of one kind instead.<Since v="6.1.0" />
 
 **Stage Settings → Locks** has a row for each kind: **Item actions** (items, tags and mods),
 **Fluid actions**, **Enchantment actions**, **Effect actions**, **Interaction actions** and, on

@@ -8,7 +8,7 @@ sidebar_position: 3
 
 <Scope global="yes" individual="no" />
 
-Since 6.2.0 a stage can keep **plants** from growing. A locked crop stays at the stage it was
+A stage can keep **plants** from growing.<Since v="6.2.0" /> A locked crop stays at the stage it was
 planted in, bonemeal does nothing on it, and a locked sapling never turns into a tree.
 
 ```json
@@ -44,9 +44,10 @@ not grow yet.
 
 ## In the editor
 
-![The Plants tab](/img/editor/plants-tab.webp)
-
-![The plant picker, with block tags on their own tab](/img/editor/plant-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/plants-tab.webp", alt: "The Plants tab", wide: true},
+  {src: "/img/editor/plant-picker.webp", alt: "The plant picker, with block tags on their own tab"},
+]} />
 
 The **Plants** tab on a stage, with a searchable picker over every block and block tag. Locking a
 whole mod offers its plants as a step in the same popup chain as its creatures, structures and

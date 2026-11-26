@@ -11,6 +11,26 @@ sidebar_position: 2
 Eine Biom-Sperre hält einen Spieler nicht davon ab, hineinzulaufen. Sie macht den Ort
 **unbewohnbar**: Effekte, Schaden, eine Warnung und verweigerte Interaktionen, bis die Stage offen ist.
 
+## Einrichten {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
+
+<Gallery items={[
+  {src: "/img/editor/biomes-tab.webp", alt: "Der Biome-Reiter", wide: true},
+  {src: "/img/editor/biome-picker.webp", alt: "Die Biom-Auswahl"},
+]} />
+
+Der Reiter **Biome** an einer Stage, mit einer durchsuchbaren Auswahl über jedes Biom und jedes
+Biom-Tag, das das Modpack geladen hat.
+
+Das Verhalten selbst steht nicht auf diesem Reiter. Es gilt für den ganzen Server und steht im Reiter
+**Common** des [Config-Editors](/wiki/in-game-tools/in-game-editor#the-config-editor) unter
+`biome_lock`.
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
 ```json
 {
   "biomes": {
@@ -25,18 +45,10 @@ Eine Biom-Sperre hält einen Spieler nicht davon ab, hineinzulaufen. Sie macht d
 Einträge sind Biom-IDs oder Biom-**Tags** mit `#` davor. Alles andere am Verhalten gilt für den ganzen
 Server statt pro Eintrag.
 
-## Im Editor {/* #in-the-editor */}
+Nach einer Änderung von Hand führst du `/history reload` aus.
 
-![Der Biome-Reiter](/img/editor/biomes-tab.webp)
-
-![Die Biom-Auswahl](/img/editor/biome-picker.webp)
-
-Der Reiter **Biome** an einer Stage, mit einer durchsuchbaren Auswahl über jedes Biom und jedes
-Biom-Tag, das das Modpack geladen hat.
-
-Das Verhalten selbst steht nicht auf diesem Reiter. Es gilt für den ganzen Server und steht im Reiter
-**Common** des [Config-Editors](/wiki/in-game-tools/in-game-editor#the-config-editor) unter
-`biome_lock`.
+</TabItem>
+</Tabs>
 
 ## Was passiert, solange ein Spieler dort steht {/* #what-happens-while-a-player-stands-there */}
 

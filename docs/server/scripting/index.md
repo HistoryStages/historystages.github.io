@@ -8,7 +8,7 @@ History Stages talks to both scripting mods. A script can **read** stage state, 
 **react** when it changes — in JavaScript through KubeJS, in ZenScript through CraftTweaker, with
 the same capabilities on both sides.
 
-:::note[Not on Fabric, not on 26.2 yet]
+:::info[Not on Fabric, not on 26.2 yet]
 Everything under Scripting is NeoForge 1.21.1 and Forge 1.20.1 only. KubeJS has no Fabric build for 1.21.1 and
 CraftTweaker has none at all, so the Fabric build of History Stages has no script bridge. Reading,
 changing and reacting to stage state from code is still possible from a mod, through the
@@ -96,7 +96,7 @@ KubeJS builds recipe ids out of the order things appear in your scripts —
 `kubejs:crafting_shaped_7` is the seventh shaped recipe it saw. Reorder the script and the
 numbering shifts, which silently breaks any stage that gated the old id.
 
-Since 6.0.0 History Stages checks this. After every world load and every `/reload` it compares
+History Stages checks this.<Since v="6.0.0" /> After every world load and every `/reload` it compares
 the recipe ids in your stages against the recipes actually loaded, and writes a warning for each
 one that is missing. In the editor, those entries are shown in red on the stage's Recipes tab.
 

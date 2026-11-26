@@ -65,7 +65,9 @@ Der Abhängigkeits-Block besteht aus eigenen Teil-Vorlagen, `dep.header`, `dep.g
 Unbekannte IDs werden ignoriert, und eine bekannte ID, die in der Liste fehlt, fällt auf ihren Standard
 zurück. So funktioniert eine Config weiter, wenn spätere Versionen Abschnitte hinzufügen.
 
-:::note[UND und ODER stehen an zwei verschiedenen Stellen]
+<details>
+<summary>UND und ODER stehen an zwei verschiedenen Stellen</summary>
+
 `dep.group_header` steht **über** einer Gruppe und sagt, wie die eigenen Einträge dieser Gruppe
 verknüpft sind: *Alle davon* oder *Eines davon*. `dep.separator` steht **zwischen** Gruppen und sagt
 immer UND, weil Gruppen immer mit UND verbunden sind.
@@ -73,7 +75,8 @@ immer UND, weil Gruppen immer mit UND verbunden sind.
 Früher war das eine Zeile, die die Logik einer Gruppe in die Lücke vor der nächsten schrieb, und so sah
 eine ODER-Gruppe aus, als gelte sie für alles danach. →
 [Abhängigkeiten](/wiki/stage-file/dependencies#and-or-and-where-the-line-runs)
-:::
+
+</details>
 
 `hideFulfilledDependencies` lässt Zeilen weg, die der Spieler schon erfüllt hat, und zeigt nur, was noch
 offen ist. Die Sichtbarkeit wird ausgerechnet, *bevor* eine abgeschaltete Zeile verschwindet, also
@@ -132,11 +135,8 @@ also erscheint oder verschwindet der Eintrag im Rezept-Browser erst nach einem N
 
 ## Rollenregale {/* #scroll-shelves */}
 
-:::info[Neu in 6.1.0]
-:::
-
 Ein gemeißeltes Bücherregal für Forschungsrollen, in elf Holzarten von Eiche bis Wirrholz. Es fasst
-sechs Rollen:
+sechs Rollen:<Since v="6.1.0" />
 
 - Klick mit einer Rolle auf einen Slot, um sie hineinzulegen, mit leerer Hand, um sie herauszunehmen.
 - Ein Komparator liest den zuletzt benutzten Slot; Trichter können es füllen und leeren.

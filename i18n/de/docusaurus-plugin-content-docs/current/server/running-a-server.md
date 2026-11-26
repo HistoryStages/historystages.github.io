@@ -81,11 +81,11 @@ Handänderung `/history reload` aus, bevor du den Editor öffnest. →
 
 ## Backups {/* #backups */}
 
-- `config/historystages/`: das ganze Modpack, also Stages, Ordner, Einstellungen und das Graph-Layout.
-- `<world>/data/historystages_*.dat`: alles, was Spieler sich verdient haben.
-- `config/historystages/logs/`: kein Backup wert, aber lesenswert. Der Lade-Bericht wird bei jedem Start
-  geschrieben und ist die erste Stelle, an der ein Modpack, das sich komisch verhält, auffällt. →
-  [Hilfe bekommen](/wiki/about/getting-help#before-reporting-check-the-load-report)
+| Pfad | Was es ist |
+| :--- | :--- |
+| `config/historystages/` | das ganze Modpack, also Stages, Ordner, Einstellungen und das Graph-Layout. |
+| `<world>/data/historystages_*.dat` | alles, was Spieler sich verdient haben. |
+| `config/historystages/logs/` | kein Backup wert, aber lesenswert. Der Lade-Bericht wird bei jedem Start geschrieben und ist die erste Stelle, an der ein Modpack, das sich komisch verhält, auffällt. → [Hilfe bekommen](/wiki/about/getting-help#before-reporting-check-the-load-report) |
 
 ## Rechte {/* #permissions */}
 

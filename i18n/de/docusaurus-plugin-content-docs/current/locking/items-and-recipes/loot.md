@@ -10,7 +10,25 @@ sidebar_position: 8
 
 Loot hat kein eigenes Feld. Ein gesperrtes Item wird über die **Aktion `loot`** aus Truhen-Loot und
 Mob-Drops herausgehalten, und die ist, wie jede andere Aktion, an, solange ein Eintrag sie nicht
-weglässt:
+weglässt.
+
+Was mit dem gefilterten Slot passiert, ob er leer bleibt oder etwas anderes an seine Stelle kommt,
+entscheidet der ganze Server in [gameplay.toml](/wiki/server/config-files/gameplay-toml#loot_replacements).
+
+## Einrichten {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
+
+Es gibt keinen Loot-Reiter, weil Loot keine eigene Kategorie ist. **Rechtsklick** auf einen normalen
+Item-, Tag- oder Mod-Eintrag und **Sperr-Aktionen**; `loot` ist eins der Kästchen in diesem Popup,
+neben `use`, `pickup` und dem Rest.
+
+Das Ersetzen gilt für den ganzen Server und steht im Reiter **Common** des
+[Config-Editors](/wiki/in-game-tools/in-game-editor#the-config-editor) unter `loot_replacements`.
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
 
 ```json
 {
@@ -24,17 +42,10 @@ weglässt:
 Diamanten tauchen nicht im Loot auf, solange die Stage gesperrt ist. Smaragde schon, weil `loot` als
 Aktion aufgeführt ist, die frei bleibt.
 
-Was mit dem gefilterten Slot passiert, ob er leer bleibt oder etwas anderes an seine Stelle kommt,
-entscheidet der ganze Server in [gameplay.toml](/wiki/server/config-files/gameplay-toml#loot_replacements).
+Nach einer Änderung von Hand führst du `/history reload` aus.
 
-## Im Editor {/* #in-the-editor */}
-
-Es gibt keinen Loot-Reiter, weil Loot keine eigene Kategorie ist. **Rechtsklick** auf einen normalen
-Item-, Tag- oder Mod-Eintrag und **Sperr-Aktionen**; `loot` ist eins der Kästchen in diesem Popup,
-neben `use`, `pickup` und dem Rest.
-
-Das Ersetzen gilt für den ganzen Server und steht im Reiter **Common** des
-[Config-Editors](/wiki/in-game-tools/in-game-editor#the-config-editor) unter `loot_replacements`.
+</TabItem>
+</Tabs>
 
 ## Truhen-Loot läuft über Lootr {/* #chest-loot-goes-through-lootr */}
 
@@ -48,12 +59,15 @@ Weil der Filter beim Würfeln sitzt und nicht beim Öffnen, deckt er jeden Lootr
 auch die, die nie ein Menü öffnen: den verzierten Krug und den seltsamen Sand oder Kies, den ein
 Spieler abpinselt.
 
-:::note[Loot, der vor der Sperre gewürfelt wurde, verschwindet nicht]
+<details>
+<summary>Loot, der vor der Sperre gewürfelt wurde, verschwindet nicht</summary>
+
 Ein Behälter, der für einen Spieler schon gewürfelt wurde, behält seinen Inhalt, auch wenn danach eine
 Stage gesperrt wird. Das ist Absicht. In einem Lootr-Inventar lassen sich Loot und das, was ein Spieler
 selbst hineingelegt hat, nicht unterscheiden, also würde ein Hook, der beim Öffnen gesperrte Items
 ausräumt, auch seine eigenen Sachen wegwerfen.
-:::
+
+</details>
 
 ## Mob-Drops funktionieren anders als Truhen-Loot {/* #mob-drops-are-not-symmetrical-with-chest-loot */}
 

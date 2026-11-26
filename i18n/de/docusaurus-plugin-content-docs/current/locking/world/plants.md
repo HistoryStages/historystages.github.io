@@ -8,7 +8,7 @@ sidebar_position: 3
 
 <Scope global="yes" individual="no" />
 
-Seit 6.2.0 kann eine Stage **Pflanzen** am Wachsen hindern. Eine gesperrte Feldfrucht bleibt in dem
+Eine Stage kann **Pflanzen** am Wachsen hindern.<Since v="6.2.0" /> Eine gesperrte Feldfrucht bleibt in dem
 Stadium, in dem sie gepflanzt wurde, Knochenmehl bewirkt nichts, und ein gesperrter Setzling wird nie
 zu einem Baum.
 
@@ -45,9 +45,10 @@ nicht wächst.
 
 ## Im Editor {/* #in-the-editor */}
 
-![Der Pflanzen-Reiter](/img/editor/plants-tab.webp)
-
-![Die Pflanzen-Auswahl, Block-Tags auf einem eigenen Reiter](/img/editor/plant-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/plants-tab.webp", alt: "Der Pflanzen-Reiter", wide: true},
+  {src: "/img/editor/plant-picker.webp", alt: "Die Pflanzen-Auswahl, Block-Tags auf einem eigenen Reiter"},
+]} />
 
 Der Reiter **Pflanzen** an einer Stage, mit einer durchsuchbaren Auswahl über jeden Block und jedes
 Block-Tag. Sperrst du eine ganze Mod, werden ihre Pflanzen als Schritt in derselben Popup-Kette

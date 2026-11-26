@@ -6,11 +6,8 @@ sidebar_position: 6
 
 # Interchangeable Stages
 
-:::info[New in 6.1.0]
-:::
-
 Normally, something locked by several stages stays locked until **every one** of them is unlocked.
-Put Arcane Ore into a Magic stage and a Mining stage, and a player needs both.
+Put Arcane Ore into a Magic stage and a Mining stage, and a player needs both.<Since v="6.1.0" />
 
 Turn on **Interchangeable** in those stages and they stand in for each other: unlocking either one
 is enough.

@@ -6,12 +6,9 @@ sidebar_position: 5
 
 # Logikbausteine {/* #logic-blocks */}
 
-:::info[Neu in 6.1.0]
-:::
-
 [Abhängigkeiten](/wiki/stage-file/dependencies) sagen „A muss vor B kommen“. Logikbausteine decken ab,
 was Abhängigkeiten nicht können: eine Stage, die nicht verfügbar, unsichtbar, günstiger oder verloren
-ist, weil mit **anderen** Stages etwas passiert ist.
+ist, weil mit **anderen** Stages etwas passiert ist.<Since v="6.1.0" />
 
 Der klassische Fall sind zwei Wege, die sich gegenseitig ausschließen. Ein Magier wählt Feuer oder
 Eis; wer mit einem anfängt, sperrt den anderen, bis der erste gemeistert ist.
@@ -172,11 +169,14 @@ Zwei Warnungen können **vorher** erscheinen, jede mit eigenem Schalter in
 - `showRevokeWarningOnTrigger`: „Freischalten nimmt dir …“ an Rolle und Podest der Stage, deren
   Freischaltung es auslösen würde.
 
-:::note[Eine „Solange“-Stage löst ein Entziehen bei jedem Öffnen aus]
+<details>
+<summary>Eine „Solange“-Stage löst ein Entziehen bei jedem Öffnen aus</summary>
+
 Eine [`Solange`-Stage](/wiki/stage-file/relocking#the-while-mode), die immer wieder auf- und zugeht,
 schaltet „ist freigeschaltet“ an und aus. Ein Entziehen, das auf sie schaut, löst bei jedem Öffnen aus.
 So funktioniert die Regel, das ist kein Fehler.
-:::
+
+</details>
 
 ## Was Spieler sehen {/* #what-players-see */}
 
@@ -192,11 +192,11 @@ eine blockierte und eine entzogene Stage sind `lock_messages.stageBlocked` und
 
 ## Im Editor {/* #in-the-editor */}
 
-![Ein Günstiger-solange-Baustein im Logik-Editor](/img/editor/logic-block.webp)
-
-![Blockiert-, Versteckt- und Entziehen-Bausteine auf einer Stage, jeder zeigt, ob er gerade greift](/img/editor/logic-blocks.webp)
-
-![Die Stage auswählen, von der ein Logikbaustein abhängt](/img/editor/logic-stage-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/logic-block.webp", alt: "Ein Günstiger-solange-Baustein im Logik-Editor", wide: true},
+  {src: "/img/editor/logic-blocks.webp", alt: "Blockiert-, Versteckt- und Entziehen-Bausteine auf einer Stage, jeder zeigt, ob er gerade greift", wide: true},
+  {src: "/img/editor/logic-stage-picker.webp", alt: "Die Stage auswählen, von der ein Logikbaustein abhängt"},
+]} />
 
 **Logik**, der Knopf neben Einstellungen und Abhängigkeiten im Bildschirm der Stage. Jeder Baustein
 ist eine Karte; **+ Baustein** fügt einen hinzu. Eine Karte zeigt live, ob ihre Bedingung für dich

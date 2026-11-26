@@ -6,12 +6,9 @@ sidebar_position: 5
 
 # Logic Blocks
 
-:::info[New in 6.1.0]
-:::
-
 [Dependencies](/wiki/stage-file/dependencies) say "A has to come before B". Logic blocks cover what
 dependencies cannot: a stage that becomes unavailable, invisible, cheaper or lost because of what
-happened to **other** stages.
+happened to **other** stages.<Since v="6.1.0" />
 
 The classic case is two paths that exclude each other. A mage picks fire or ice; starting one shuts
 the other until the first is mastered.
@@ -166,11 +163,14 @@ Two warnings can show **before** it happens, each with its own switch in
 - `showRevokeWarningOnTrigger` — "Unlocking takes away ..." on the scroll and pedestal of the stage
   whose unlock would fire it.
 
-:::note[A "While" stage fires a revoke every time it opens]
+<details>
+<summary>A "While" stage fires a revoke every time it opens</summary>
+
 A [`While` stage](/wiki/stage-file/relocking#the-while-mode) that keeps opening and closing turns
 "is unlocked" on and off. A revoke that looks at it fires on every opening. That is how the rule
 works, not a bug.
-:::
+
+</details>
 
 ## What players see
 
@@ -184,11 +184,11 @@ blocked and a revoked stage are `lock_messages.stageBlocked` and `lock_messages.
 
 ## In the editor
 
-![A cheaper-while block in the logic editor](/img/editor/logic-block.webp)
-
-![Blocked, hidden and revoke blocks on one stage, each showing whether it is in effect right now](/img/editor/logic-blocks.webp)
-
-![Picking the stage a logic block depends on](/img/editor/logic-stage-picker.webp)
+<Gallery items={[
+  {src: "/img/editor/logic-block.webp", alt: "A cheaper-while block in the logic editor", wide: true},
+  {src: "/img/editor/logic-blocks.webp", alt: "Blocked, hidden and revoke blocks on one stage, each showing whether it is in effect right now", wide: true},
+  {src: "/img/editor/logic-stage-picker.webp", alt: "Picking the stage a logic block depends on"},
+]} />
 
 **Logic**, the button next to Settings and Dependencies on the stage's screen. Each block is a
 card; **+ Block** adds one. A card shows live whether its condition holds for you right now, and

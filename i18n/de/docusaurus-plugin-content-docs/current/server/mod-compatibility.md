@@ -9,7 +9,7 @@ sidebar_position: 4
 History Stages erkennt eine Reihe verbreiteter Mods und passt sein Verhalten an, wenn sie da sind.
 **Nichts davon muss eingestellt werden**: Installier die Mod, und die Anbindung ist an.
 
-:::note[Auf Minecraft 26.2]
+:::info[Auf Minecraft 26.2]
 EMI, FTB Quests, FTB Teams, KubeJS, CraftTweaker und Accessories gibt es noch nicht für 26.2, also hat
 die 26.2-Beta keine ihrer Anbindungen. Sie kommen zurück, sobald diese Mods aktualisieren. JEI, Jade,
 Lootr, Spell Engine, Better Combat und Curios (NeoForge) funktionieren auf 26.2.

@@ -124,14 +124,14 @@ The section and the keys are named after JEI, but they drive EMI too.
 | `hideLockedItemsInJei` | `false` | Remove locked items from the JEI and EMI ingredient panels entirely instead of marking them with a lock overlay. |
 | `hideLockedRecipesInJei` | `false` | Hide locked recipes. JEI only catches vanilla recipe types by their output; EMI hides every recipe the lock overlay would mark. |
 | `lockedItemMultiStagePolicy` | `STRICT` | How items assigned to several stages behave. `STRICT` = locked while any assigned stage is still locked. `LENIENT` = unlocked as soon as any assigned stage is. |
-| `showLockOverlay` | `true` | Darken locked recipes in JEI and EMI and block hovering their slots. Off, a locked recipe looks like any other; hiding it is still `hideLockedRecipesInJei`. *Since 6.2.0.* |
-| `lockOverlayExemptions` | none | JEI and EMI categories the recipe lock leaves alone entirely: no overlay, hover works, nothing hidden. `create:mixing` names one category, `create` every category of that mod. For pages that only show where things come from. Just Enough Resources is always left alone. *Since 6.2.0.* |
+| `showLockOverlay` | `true` | Darken locked recipes in JEI and EMI and block hovering their slots. Off, a locked recipe looks like any other; hiding it is still `hideLockedRecipesInJei`. <Since v="6.2.0" /> |
+| `lockOverlayExemptions` | none | JEI and EMI categories the recipe lock leaves alone entirely: no overlay, hover works, nothing hidden. `create:mixing` names one category, `create` every category of that mod. For pages that only show where things come from. Just Enough Resources is always left alone. <Since v="6.2.0" /> |
 
 In the [config editor](/wiki/in-game-tools/in-game-editor#the-config-editor) `lockOverlayExemptions` is a picker over the categories JEI or EMI actually has, grouped by mod, with a **Whole mod** option per mod. Entries for mods that are not installed are kept when you save.
 
 ## `[slot_lock]`
 
-→ Explained on [Slots](/wiki/locking/items-and-recipes/slots#the-tooltip). *Since 6.2.0.*
+→ Explained on [Slots](/wiki/locking/items-and-recipes/slots#the-tooltip). <Since v="6.2.0" />
 
 The tooltip shown when a player hovers a locked slot in `overlay` mode.
 
@@ -168,9 +168,10 @@ The same five settings again, for per-player stages. They are nested under `[not
 
 ## `[lock_messages]`
 
-![Using a locked block](/img/ingame/message-block.webp)
-
-![Interacting with a locked creature](/img/ingame/message-creature.webp)
+<Gallery items={[
+  {src: "/img/ingame/message-block.webp", alt: "Using a locked block", wide: true},
+  {src: "/img/ingame/message-creature.webp", alt: "Interacting with a locked creature", wide: true},
+]} />
 
 → Related: [Hidden Display](/wiki/stage-file/hidden-display).
 

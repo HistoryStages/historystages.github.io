@@ -12,6 +12,31 @@ Standardmäßig blockiert jeder Eintrag in `items`, `tags` und `mods` **alle** I
 passenden Inhalt. `unlock_actions` grenzt das ein: Es listet die Interaktionen auf, die verfügbar
 bleiben, solange die Stage noch gesperrt ist.
 
+:::danger[Die Liste sagt, was frei bleibt]
+`unlock_actions` ist keine Liste dessen, was gesperrt ist, sondern dessen, was **nicht** gesperrt ist.
+Jede Aktion, die du weglässt, bleibt blockiert. Ein einfacher String-Eintrag oder ein Object ohne
+`unlock_actions` sperrt alles.
+:::
+
+## Einrichten {/* #in-the-editor */}
+
+<Tabs groupId="setup">
+<TabItem value="editor" label="Im Editor">
+
+![Der Dialog „Blockierte Aktionen“ für einen Eintrag](/img/editor/lock-actions.webp)
+
+Kein eigener Reiter, es hängt an einem Eintrag, der schon in der Liste steht. **Rechtsklick auf den
+Eintrag** und **Sperr-Aktionen** im Kontextmenü; das Popup, das sich öffnet, hat ein Kästchen pro
+Aktion, beschriftet wie in der Tabelle unten.
+
+Interaktions-Einträge von Kreaturen haben ihre eigene Version desselben Popups unter
+**Interaktions-Aktionen**, und Flüssigkeits-Zeilen nutzen das kürzere Flüssigkeits-Vokabular. Zeilen
+für [Verzauberungen und Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects#actions)
+haben ebenfalls eigene Listen.
+
+</TabItem>
+<TabItem value="file" label="In der Stage-Datei">
+
 ```json
 {
   "items": [
@@ -34,24 +59,10 @@ Die Diamantspitzhacke bleibt komplett gesperrt. Das Diamantschwert lässt sich a
 aber nicht schwingen, nicht zum Herstellen benutzen und nicht handeln. Eisenbarren aus dem Tag lassen
 sich aufheben und sonst nichts.
 
-:::danger[Die Liste sagt, was frei bleibt]
-`unlock_actions` ist keine Liste dessen, was gesperrt ist, sondern dessen, was **nicht** gesperrt ist.
-Jede Aktion, die du weglässt, bleibt blockiert. Ein einfacher String-Eintrag oder ein Object ohne
-`unlock_actions` sperrt alles.
-:::
+Nach einer Änderung von Hand führst du `/history reload` aus.
 
-## Im Editor {/* #in-the-editor */}
-
-![Der Dialog „Blockierte Aktionen“ für einen Eintrag](/img/editor/lock-actions.webp)
-
-Kein eigener Reiter, es hängt an einem Eintrag, der schon in der Liste steht. **Rechtsklick auf den
-Eintrag** und **Sperr-Aktionen** im Kontextmenü; das Popup, das sich öffnet, hat ein Kästchen pro
-Aktion, beschriftet wie in der Tabelle unten.
-
-Interaktions-Einträge von Kreaturen haben ihre eigene Version desselben Popups unter
-**Interaktions-Aktionen**, und Flüssigkeits-Zeilen nutzen das kürzere Flüssigkeits-Vokabular. Zeilen
-für [Verzauberungen und Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects#actions)
-haben ebenfalls eigene Listen.
+</TabItem>
+</Tabs>
 
 ## Die Aktionen {/* #the-actions */}
 
@@ -92,11 +103,8 @@ ein gesperrter Pfeil noch verschießen.
 
 ![Der Bereich Sperren in den Stage-Einstellungen: austauschbar und fixierte Aktionen](/img/editor/stage-locks-section.webp)
 
-:::info[Neu in 6.1.0]
-:::
-
 Dasselbe Kästchen bei vierzig Einträgen anzuhaken ist mühsam, und den einundvierzigsten vergisst man.
-Eine Stage kann eine Aktion stattdessen für alle ihre Einträge einer Art **fixieren**.
+Eine Stage kann eine Aktion stattdessen für alle ihre Einträge einer Art **fixieren**.<Since v="6.1.0" />
 
 **Stage-Einstellungen → Sperren** hat eine Zeile pro Art: **Item-Aktionen** (Items, Tags und Mods),
 **Fluid-Aktionen**, **Verzauberungs-Aktionen**, **Effekt-Aktionen**, **Interaktions-Aktionen** und, bei

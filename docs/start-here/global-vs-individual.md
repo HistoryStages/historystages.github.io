@@ -109,8 +109,8 @@ container click block is a separate switch, `lockContainerInteraction`. →
 
 ### Per-player recipe locks, and where they stop
 
-Since 6.0 the `recipes` field also works inside an individual stage, and so does an item entry whose
-`recipe` action is locked. Both are gated per player at the stations that know who is standing at
+The `recipes` field also works inside an individual stage, and so does an item entry whose
+`recipe` action is locked.<Since v="6.0" /> Both are gated per player at the stations that know who is standing at
 them:
 
 - Crafting table
@@ -129,8 +129,8 @@ the same crafting table and get different results.
 - The crafter block, hopper feeds, and mod autocrafters
 - Any mod station with its own menu whose recipe type has not been registered as per-player-gateable
 
-**Another mod can add to that list.** Since 6.0.0 a mod may declare one of its own recipe types
-per-player-gateable, and the editor then offers it like the built-in three. That is a promise about
+**Another mod can add to that list.** A mod may declare one of its own recipe types
+per-player-gateable, and the editor then offers it like the built-in three.<Since v="6.0.0" /> That is a promise about
 the mod's own station — that a player is standing at it and that our hooks see them — so the list
 above is the vanilla floor rather than the whole of it. → [Addon
 Development](/api/addon-development).
@@ -187,9 +187,10 @@ checker simply skips them rather than measuring them against whoever last opened
 
 ## Lose on Death
 
-![The Individual section: lose on death and share with team](/img/editor/stage-individual-section.webp)
-
-![Individual stages in the overview, with the player picker that unlock and lock act on](/img/editor/overview-individual.webp)
+<Gallery items={[
+  {src: "/img/editor/stage-individual-section.webp", alt: "The Individual section: lose on death and share with team", wide: true},
+  {src: "/img/editor/overview-individual.webp", alt: "Individual stages in the overview, with the player picker that unlock and lock act on", wide: true},
+]} />
 
 An individual stage can relock itself when its owner dies:
 

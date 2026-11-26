@@ -25,13 +25,12 @@ Operatoren trotzdem.
 
 ## Stages verwalten {/* #managing-stages */}
 
-![Die Editor-Übersicht: jede Stage mit ihrem Zustand und einem Knopf zum Freischalten oder Sperren](/img/editor/overview.webp)
-
-![Rechtsklick auf eine Stage: bearbeiten, duplizieren oder löschen](/img/editor/stage-menu.webp)
-
-![Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken](/img/editor/overview-individual.webp)
-
-![Organisieren: Stages anhaken und auf einen Ordner ziehen](/img/editor/organize.webp)
+<Gallery items={[
+  {src: "/img/editor/overview.webp", alt: "Die Editor-Übersicht: jede Stage mit ihrem Zustand und einem Knopf zum Freischalten oder Sperren", wide: true},
+  {src: "/img/editor/stage-menu.webp", alt: "Rechtsklick auf eine Stage: bearbeiten, duplizieren oder löschen", wide: true},
+  {src: "/img/editor/overview-individual.webp", alt: "Individuelle Stages in der Übersicht, mit der Spielerauswahl, auf die Freischalten und Sperren wirken", wide: true},
+  {src: "/img/editor/organize.webp", alt: "Organisieren: Stages anhaken und auf einen Ordner ziehen", wide: true},
+]} />
 
 Die **Stage-Übersicht** ist die Startseite: Stages anlegen, bearbeiten, kopieren und löschen. Eine
 neue Stage fragt gleich nach ihrem Anzeigenamen.
@@ -143,14 +142,17 @@ Um zu sehen, wie die ganze Kette zusammenhängt, öffne den
 Knoten und ihre Abhängigkeiten als Linien, und so fallen eine lange Kette oder eine Verbindung, die du
 nicht wolltest, auf einen Blick auf.
 
-:::note[Der Editor sieht mehr davon als Spieler]
+<details>
+<summary>Der Editor sieht mehr davon als Spieler</summary>
+
 Es ist ein Bildschirm mit zwei Eingängen. Aus dem Editor geöffnet, zeigt er **jede** Stage und
 ignoriert die Sichtbarkeits-Regeln in `graph.toml`. Aus dem Pausemenü geöffnet, wendet er sie an, also
 sehen Spieler nur, was das Modpack sie sehen lassen will.
 
 Dort werden auch das Layout des Graphs und die Gestaltung pro Stage gemacht: Die Knoten-Positionen und
 der Knopf **Neu anordnen** sitzen im Graph selbst, nicht in einem eigenen Werkzeug.
-:::
+
+</details>
 
 ## Warnungen beim Bauen {/* #warnings-while-you-build */}
 
@@ -168,11 +170,11 @@ nicht unterbrochen wird.
 
 ## Der Config-Editor {/* #the-config-editor */}
 
-![Der Config-Editor auf dem Reiter Gameplay](/img/editor/config-editor.webp)
-
-![Der Config-Editor auf dem Reiter Visual](/img/editor/config-visual.webp)
-
-![Der Config-Editor auf dem Reiter Graph](/img/editor/config-graph.webp)
+<Gallery items={[
+  {src: "/img/editor/config-editor.webp", alt: "Der Config-Editor auf dem Reiter Gameplay"},
+  {src: "/img/editor/config-visual.webp", alt: "Der Config-Editor auf dem Reiter Visual"},
+  {src: "/img/editor/config-graph.webp", alt: "Der Config-Editor auf dem Reiter Graph"},
+]} />
 
 Ein eigener Reiter für jede Einstellung in `visual.toml`, `gameplay.toml` und `graph.toml`, gruppiert in
 die Reiter Common, Client und Graph, mit einer Option zum Zurücksetzen auf Standard. Dazu gehören die
@@ -264,13 +266,12 @@ würde in die Stage-Datei geschrieben und dann nichts tun.
 
 ## Der Zonen-Editor {/* #the-zone-editor */}
 
-![Der Zonen-Editor mit drei Formen auf der Karte](/img/editor/zone-shapes.webp)
-
-![Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte](/img/editor/zone-effect.webp)
-
-![Zonen-Editor, Seite Schutz](/img/editor/zone-protection.webp)
-
-![Zonen-Editor, Seite Anzeige](/img/editor/zone-display.webp)
+<Gallery items={[
+  {src: "/img/editor/zone-shapes.webp", alt: "Der Zonen-Editor mit drei Formen auf der Karte", wide: true},
+  {src: "/img/editor/zone-effect.webp", alt: "Zonen-Editor, Seite Effekt: Nachricht, Schaden und Trankeffekte", wide: true},
+  {src: "/img/editor/zone-protection.webp", alt: "Zonen-Editor, Seite Schutz", wide: true},
+  {src: "/img/editor/zone-display.webp", alt: "Zonen-Editor, Seite Anzeige", wide: true},
+]} />
 
 Zonen sind die eine Sperr-Art ohne Registry zum Auswählen: Der Bereich muss gezeichnet werden. Der Zonen-Reiter listet die Zonen einer Stage mit einer einzeiligen Zusammenfassung dessen, was jede tut (`3 Formen · Schaden · Barriere · umgekehrt`), und **Bearbeiten** öffnet den eigenen Bildschirm der Zone.
 
@@ -292,13 +293,12 @@ Jeder Zonen-Bildschirm hat eine kleine Karte; ein Klick darauf öffnet die groß
 
 ## Der Spawn-Dialog {/* #the-spawn-rule-dialog */}
 
-![Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl](/img/editor/spawn-menu.webp)
-
-![Der SpawnControl-Dialog auf der Seite Quellen](/img/editor/spawn-rule.webp)
-
-![SpawnControl, Seite Ort](/img/editor/spawn-location.webp)
-
-![SpawnControl, Seite Zeit & Wetter](/img/editor/spawn-time.webp)
+<Gallery items={[
+  {src: "/img/editor/spawn-menu.webp", alt: "Rechtsklick auf einen Spawn-Eintrag öffnet SpawnControl", wide: true},
+  {src: "/img/editor/spawn-rule.webp", alt: "Der SpawnControl-Dialog auf der Seite Quellen"},
+  {src: "/img/editor/spawn-location.webp", alt: "SpawnControl, Seite Ort"},
+  {src: "/img/editor/spawn-time.webp", alt: "SpawnControl, Seite Zeit & Wetter"},
+]} />
 
 Ein Spawn-Sperr-Eintrag ist eine Regel statt eines Kästchens, und der Editor öffnet ihn als Dialog. Die **Phase** der Sperre sitzt oben, *solange gesperrt* oder *nach dem Freischalten*, und der Rest sind vier Reiter, jeder mit einem Zähler, wie viel davon eingestellt ist:
 
