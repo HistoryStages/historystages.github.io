@@ -129,5 +129,6 @@ Server passt.
   `config/historystages/logs/` auf dem Server an. Sie listet die Probleme auf, die in jeder Stage-Datei
   gefunden wurden, zum Beispiel IDs, die es nicht gibt.
 
+Weitere Anzeichen und ihre üblichen Ursachen stehen unter [Fehlersuche](/wiki/start-here/troubleshooting).
 Wenn du nicht weiterkommst, steht unter [Hilfe bekommen](/wiki/about/getting-help), wo du fragen kannst
 und was du mitbringen solltest.

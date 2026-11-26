@@ -10,6 +10,9 @@ Nothing here is needed to try History Stages out in singleplayer. It is the set 
 only come up once a pack is on a dedicated server: where the pack actually lives, what belongs in a
 backup, and what a reload does and does not touch.
 
+Setting up a server for the first time? → [Putting It on a Server](/wiki/start-here/server-setup)
+goes through it step by step.
+
 ## What lives where
 
 History Stages is installed on both sides, like any mod that adds blocks and screens. What is

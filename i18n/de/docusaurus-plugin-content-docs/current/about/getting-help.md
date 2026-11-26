@@ -70,6 +70,8 @@ Alle laufen auf deinem eigenen Client und brauchen nur deinen eigenen Operator-S
 
 ## Die üblichen Verdächtigen {/* #common-first-suspects */}
 
+Die längere Liste, sortiert nach dem, was du siehst, steht unter [Fehlersuche](/wiki/start-here/troubleshooting).
+
 **Eine von Hand bearbeitete Stage-Datei tut nichts.** `/history reload` muss laufen: Die Ordner werden
 beim Start und bei diesem Befehl gelesen, nicht bei jeder Änderung einer Datei.
 

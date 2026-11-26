@@ -127,4 +127,5 @@ kind of server.
   `config/historystages/logs/` on the server. It lists the problems it found in each stage file, such
   as ids that do not exist.
 
+More symptoms and their usual causes are on [Troubleshooting](/wiki/start-here/troubleshooting).
 If you are stuck, [Getting Help](/wiki/about/getting-help) says where to ask and what to bring along.

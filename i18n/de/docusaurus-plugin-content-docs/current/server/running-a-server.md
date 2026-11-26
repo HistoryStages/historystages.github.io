@@ -10,6 +10,9 @@ Nichts hiervon brauchst du, um History Stages im Einzelspieler auszuprobieren. E
 erst auftauchen, wenn ein Modpack auf einem dedizierten Server läuft: wo das Modpack eigentlich liegt,
 was in ein Backup gehört und was ein Reload anfasst und was nicht.
 
+Du richtest zum ersten Mal einen Server ein? →
+[Auf einen Server bringen](/wiki/start-here/server-setup) geht es Schritt für Schritt durch.
+
 ## Was wo liegt {/* #what-lives-where */}
 
 History Stages wird auf beiden Seiten installiert, wie jede Mod, die Blöcke und Bildschirme mitbringt.

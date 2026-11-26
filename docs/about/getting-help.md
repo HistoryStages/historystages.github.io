@@ -68,6 +68,8 @@ All of them run on your own client and need only your own operator status. →
 
 ## Common first suspects
 
+The longer list, sorted by what you see, is on [Troubleshooting](/wiki/start-here/troubleshooting).
+
 **A hand-edited stage file does nothing.** `/history reload` has to run — the folders are read at
 startup and on that command, not on every file change.
 
