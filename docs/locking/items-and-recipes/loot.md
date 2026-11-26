@@ -6,6 +6,8 @@ sidebar_position: 8
 
 # Loot
 
+<Scope global="yes" individual="yes" />
+
 Loot has no field of its own. A locked item is kept out of chest loot and mob drops by the **`loot`
 action**, which — like every other action — is on unless an entry narrows it away:
 

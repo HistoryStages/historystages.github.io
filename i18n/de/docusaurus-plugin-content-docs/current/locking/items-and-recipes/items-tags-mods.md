@@ -6,6 +6,8 @@ sidebar_position: 1
 
 # Items, Tags & Mods {/* #items-tags--mods */}
 
+<Scope global="yes" individual="yes" />
+
 Vier Felder sperren Items, von einer einzelnen ID bis zu einer ganzen Mod. Sobald ein Item passt,
 verhalten sich alle gleich; der Unterschied ist nur, wie weit das Netz ausgeworfen wird.
 
@@ -19,6 +21,8 @@ verhalten sich alle gleich; der Unterschied ist nur, wie weit das Netz ausgeworf
 ```
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Items-Reiter mit Kennzeichen für eingegrenzte Aktionen und NBT](/img/editor/items-tab.webp)
 
 Vier eigene Reiter an einer Stage: **Items**, **Tags**, **Mods** und **Ausnahmen**. Jeder hat eine
 Suchleiste über die echte Registry, einen Knopf zum Auswählen direkt aus deinem Inventar und einen

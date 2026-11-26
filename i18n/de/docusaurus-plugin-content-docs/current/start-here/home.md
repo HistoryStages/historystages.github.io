@@ -22,6 +22,21 @@ Die 26.2-Beta ist noch auf **6.1.x**. Die wählst du, wie jede ältere Version, 
 Versionsmenü aus. Details stehen unter [Versionen & Plattformen](/wiki/about/versions-and-platforms).
 :::
 
+## Wie alles zusammenhängt {/* #how-it-fits-together */}
+
+```mermaid
+flowchart LR
+  A["Du baust eine Stage<br/>im Editor oder als JSON"] --> B["Sie listet, was gesperrt bleibt:<br/>Items, Rezepte, Orte, Mobs"]
+  B --> C["Ein Spieler bekommt die<br/>Forschungsrolle der Stage"]
+  C --> D["Er erforscht sie<br/>an einem Forschungspodest"]
+  D --> E["Die Stage öffnet sich:<br/>alles auf ihrer Liste ist nutzbar"]
+```
+
+Forschung ist der übliche Weg, aber nicht der einzige: Eine Stage kann sich auch von selbst öffnen,
+wenn eine Bedingung erfüllt ist, oder per Befehl. → [Stage-Modi](/wiki/stage-file/stage-modes) ·
+[Forschungspodest](/wiki/in-game-tools/research/pedestal) ·
+[Forschungsrollen](/wiki/in-game-tools/research/scrolls)
+
 ## Zwei Arten von Stage {/* #two-kinds-of-stage */}
 
 |  | Freigeschaltet von | Gilt für | Typischer Einsatz |
@@ -46,12 +61,19 @@ warum.
 | [Unlock Actions](/wiki/locking/items-and-recipes/unlock-actions) | Eine einzelne Interaktion sperren statt aller: tragen ja, zuschlagen nein. |
 | [Rezepte](/wiki/locking/items-and-recipes/recipes) | Bestimmte Rezept-IDs, mit Schloss-Overlay in JEI und EMI. |
 | [Flüssigkeiten](/wiki/locking/items-and-recipes/fluids) | Die Flüssigkeit, nicht der Eimer. Ein Eintrag deckt jeden Tank und Eimer im Modpack ab. |
+| [Verzauberungen & Effekte](/wiki/locking/items-and-recipes/enchantments-and-effects) | Bücher, Ausrüstung und Tränke danach, was sie tragen, und die Stationen, die sie herstellen. |
+| [Tarnungen](/wiki/locking/items-and-recipes/disguises) | Ein gesperrtes Item oder ein Block, der wie etwas anderes aussieht, bis die Stage offen ist. |
 | [Loot](/wiki/locking/items-and-recipes/loot) | Gesperrte Items aus Truhen-Loot und Mob-Drops entfernen oder ersetzen. |
+| [Slots](/wiki/locking/items-and-recipes/slots) | Inventar- und Behälter-Slots, die zu bleiben, bis die Stage offen ist. |
 | [Dimensionen & Strukturen](/wiki/locking/world/dimensions-and-structures) | Den Zugang zu einer Dimension verweigern, eine Struktur abriegeln oder begrenzen, wie oft sie generiert. |
 | [Biome](/wiki/locking/world/biomes) | Ein Biom unbewohnbar machen, bis die Stage offen ist. |
+| [Pflanzen](/wiki/locking/world/plants) | Feldfrüchte und Setzlinge, die nicht wachsen, bis die Stage offen ist. |
 | [Zonen](/wiki/locking/world/zones) | Selbst gezeichnete Bereiche, jeder mit eigenen Regeln. |
 | [Kreaturen & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) | Angriffe, Züchten und Reiten verhindern oder eine komplette Spawn-Regel schreiben. |
 | [Händler-Angebote](/wiki/locking/creatures-and-trade/merchant-trades) | Ein einzelnes Angebot, einen ganzen Dorfbewohner-Beruf oder eine Händlerstufe überall sperren. |
+
+→ [Was sich sperren lässt](/wiki/locking) hat dieselbe Liste nach Art sortiert, dazu, was du vor
+der Wahl wissen solltest.
 
 ## Im Spiel bauen {/* #build-it-in-the-game */}
 
@@ -72,6 +94,10 @@ leichter benennen lässt. Jede Seite sagt dazu, wo du dasselbe im Editor findest
 → [Installation & deine erste Stage](/wiki/start-here/installation) ·
 [Wo die Stage-Dateien liegen](/wiki/start-here/where-stage-files-live) ·
 [Aufbau einer Stage-Datei](/wiki/stage-file/anatomy)
+
+Du richtest zum ersten Mal einen Multiplayer-Server ein? →
+[Auf einen Server bringen](/wiki/start-here/server-setup) führt Schritt für Schritt durch. Etwas
+verhält sich komisch? → [Fehlersuche](/wiki/start-here/troubleshooting)
 
 ## Spielern zeigen, wo sie stehen {/* #showing-players-where-they-are */}
 

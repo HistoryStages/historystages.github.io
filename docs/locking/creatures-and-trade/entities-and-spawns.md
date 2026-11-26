@@ -6,6 +6,8 @@ sidebar_position: 1
 
 # Entities & Spawns
 
+<Scope global="yes" individual="partly" note={'Individual: attack and interaction locks. Spawn rules need a global stage.'} />
+
 The `entities` object holds three independent lists. They answer three different questions, and
 since 6.0 none of them implies another:
 
@@ -26,6 +28,8 @@ since 6.0 none of them implies another:
 | [`spawnlock`](#spawnlock) | May it appear at all? | **global only** |
 
 ## In the editor
+
+![The Entities tab on its Spawn section](/img/editor/spawn-tab.webp)
 
 The three lists are three tabs of their own: **Attack**, **Interaction** and **Spawn**. The entity
 pickers work like the item picker, multi-select included.

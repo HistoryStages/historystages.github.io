@@ -6,6 +6,8 @@ sidebar_position: 4
 
 # Recipes
 
+<Scope global="yes" individual="partly" note="Individual: only at stations that know who is crafting. Furnaces, hoppers and autocrafters need a global stage." />
+
 There are two ways a recipe ends up gated, and they are worth keeping apart:
 
 1. **The item is locked.** Every recipe producing it disappears, because the `recipe` action is one
@@ -21,6 +23,8 @@ There are two ways a recipe ends up gated, and they are worth keeping apart:
 ```
 
 ## In the editor
+
+![The Recipes tab](/img/editor/recipes-tab.webp)
 
 The **Recipes** tab. Its picker is two columns: everything recipes produce on the left, that item's
 actual recipes as cards on the right, drawn in the recipe's real shape — which is the only way to

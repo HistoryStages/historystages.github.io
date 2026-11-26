@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import {translate} from '@docusaurus/Translate';
 import HomepageHero from '@site/src/components/HomepageHero';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import HomepagePopular from '@site/src/components/HomepagePopular';
+import HomepagePaths from '@site/src/components/HomepagePaths';
 import HomepageTrailer from '@site/src/components/HomepageTrailer';
 
 export default function Home() {
@@ -22,7 +22,9 @@ export default function Home() {
       )}>
       <HomepageHero />
       <main>
-        <HomepagePopular />
+        {/* The popular-pages list still serves the 404 page; on the front page the paths by
+            reader replace it, since both were columns of the same few links. */}
+        <HomepagePaths />
         <HomepageTrailer />
         <HomepageFeatures />
       </main>

@@ -6,6 +6,8 @@ sidebar_position: 9
 
 # Slots {/* #slots */}
 
+<Scope global="yes" individual="partly" note="Individuell: nur das eigene Inventar. Behälter-Slots brauchen eine globale Stage." />
+
 Seit 6.2.0 kann eine Stage **Slots** geschlossen halten: einen Teil des eigenen Inventars des Spielers
 oder ausgewählte Slots einer Truhe, eines Ofens oder einer Mod-Maschine. Ein Modpack, das Spieler mit
 einer Hotbar aus drei Slots starten lässt und den Rest Stage für Stage verteilt, braucht eine
@@ -121,6 +123,8 @@ Layout-Editor mit Live-Vorschau, unter **Slot Lock**.
 `hide`-Slots haben keinen Tooltip, denn es ist nichts mehr da, worüber man fahren könnte.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Slots-Reiter](/img/editor/slots-tab.webp)
 
 Der Reiter **Slots** an einer Stage. **Spieler-Inventar** steht oben; Behälter fügst du aus einer
 durchsuchbaren Liste aller Blöcke mit Bildschirm hinzu, nach Mod gruppiert, mit einem zweiten Reiter

@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # Biomes
 
+<Scope global="yes" individual="yes" />
+
 A biome lock does not stop a player walking in. It makes the place **unsurvivable** — effects,
 damage, a warning, and interactions refused — until the stage opens.
 
@@ -24,6 +26,8 @@ Entries are biome ids, or biome **tags** with a `#` prefix. Everything else abou
 server-wide rather than per entry.
 
 ## In the editor
+
+![The Biomes tab](/img/editor/biomes-tab.webp)
 
 The **Biomes** tab on a stage, with a searchable picker over every biome and biome tag the pack has
 loaded.

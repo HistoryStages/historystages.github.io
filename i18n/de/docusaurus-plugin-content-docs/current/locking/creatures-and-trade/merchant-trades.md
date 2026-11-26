@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # Händler-Angebote {/* #merchant-trades */}
 
+<Scope global="yes" individual="yes" />
+
 Das Object `trades` enthält drei Listen. Sie werden einzeln gefragt und stapeln sich: Ein Angebot
 bleibt nur, wenn keine der drei es sperrt.
 
@@ -28,6 +30,8 @@ bleibt nur, wenn keine der drei es sperrt.
 ```
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Handels-Reiter](/img/editor/trades-tab.webp)
 
 Der Reiter **Handel**. Seine Auswahl listet **echte Angebote** statt jedes Items im Spiel: Wähl einen
 Beruf, und du siehst, was dieser Händler tatsächlich handelt, auf welcher Stufe und zu welchem Preis.

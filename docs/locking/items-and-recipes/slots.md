@@ -6,6 +6,8 @@ sidebar_position: 9
 
 # Slots
 
+<Scope global="yes" individual="partly" note="Individual: only the player's own inventory. Container slots need a global stage." />
+
 Since 6.2.0 a stage can keep **slots** shut: part of the player's own inventory, or chosen slots of
 a chest, furnace or modded machine. A pack that starts players on a three-slot hotbar and hands out
 the rest stage by stage is one stage file per step.
@@ -117,6 +119,8 @@ for it with a live preview, under **Slot Lock**.
 `hide` slots have no tooltip — there is nothing left to hover.
 
 ## In the editor
+
+![The Slots tab](/img/editor/slots-tab.webp)
 
 The **Slots** tab on a stage. **Player inventory** sits at the top; containers are added from a
 searchable list of every block with a screen, grouped by mod, with a second tab for menu types.

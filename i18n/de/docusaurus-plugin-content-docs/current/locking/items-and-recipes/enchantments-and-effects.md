@@ -6,6 +6,8 @@ sidebar_position: 6
 
 # Verzauberungen & Effekte {/* #enchantments--effects */}
 
+<Scope global="yes" individual="partly" note="Individuell: Trankeffekte werden am Braustand nicht gesperrt." />
+
 :::info[Neu in 6.1.0]
 :::
 
@@ -115,6 +117,8 @@ Gifttränke sind gesperrt, Giftpfeile nicht. Der Braustand folgt derselben Wahl,
 Art ist auch am Zaubertisch und am Amboss verschont.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Reiter Verzauberungen & Effekte](/img/editor/enchantments-tab.webp)
 
 Der Reiter **Verzauberungen & Effekte**, mit einem Abschnitt für Verzauberungen und einem für
 Trank-Effekte. Jede Auswahl listet die echte Registry, also tauchen auch Einträge aus Mods auf.

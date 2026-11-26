@@ -6,6 +6,8 @@ sidebar_position: 8
 
 # Loot {/* #loot */}
 
+<Scope global="yes" individual="yes" />
+
 Loot hat kein eigenes Feld. Ein gesperrtes Item wird über die **Aktion `loot`** aus Truhen-Loot und
 Mob-Drops herausgehalten, und die ist, wie jede andere Aktion, an, solange ein Eintrag sie nicht
 weglässt:

@@ -483,5 +483,83 @@
   },
   "homepage.tagline": {
     "message": "Dokumentation für das Modpack-Framework History Stages"
+  },
+  "paths.pack.title": {
+    "message": "Ich baue ein Modpack"
+  },
+  "paths.pack.text": {
+    "message": "Stages, was sie sperren, und der Editor, in dem du sie baust."
+  },
+  "paths.pack.installation": {
+    "message": "Installation & deine erste Stage"
+  },
+  "paths.pack.global-vs-individual": {
+    "message": "Globale vs. individuelle Stages"
+  },
+  "paths.pack.locking": {
+    "message": "Was sich sperren lässt"
+  },
+  "paths.pack.editor": {
+    "message": "Editor im Spiel"
+  },
+  "paths.server.title": {
+    "message": "Ich betreibe einen Server"
+  },
+  "paths.server.text": {
+    "message": "Auf den Server bringen, die Befehle und die Einstellungsdateien."
+  },
+  "paths.server.setup": {
+    "message": "Auf einen Server bringen"
+  },
+  "paths.server.commands": {
+    "message": "Befehle & Rechte"
+  },
+  "paths.server.config": {
+    "message": "Config-Dateien"
+  },
+  "paths.server.troubleshooting": {
+    "message": "Fehlersuche"
+  },
+  "paths.player.title": {
+    "message": "Ich spiele ein Modpack damit"
+  },
+  "paths.player.text": {
+    "message": "Wie Stages erforscht werden, und die Karte von dem, was als Nächstes kommt."
+  },
+  "paths.player.pedestal": {
+    "message": "Forschungspodest"
+  },
+  "paths.player.scrolls": {
+    "message": "Forschungsrollen"
+  },
+  "paths.player.graph": {
+    "message": "Stufen-Graph"
+  },
+  "paths.addon.title": {
+    "message": "Ich schreibe Skripte oder ein Addon"
+  },
+  "paths.addon.text": {
+    "message": "Stages aus KubeJS, CraftTweaker oder einer anderen Mod lesen und ändern."
+  },
+  "paths.addon.scripting": {
+    "message": "Skripte"
+  },
+  "paths.addon.compat": {
+    "message": "Mod-Kompatibilität"
+  },
+  "paths.addon.api": {
+    "message": "Addon-Entwicklung"
+  },
+  "paths.heading": {
+    "message": "Wo willst du anfangen?"
+  },
+  "scope.worksIn": {
+    "message": "Funktioniert in"
+  },
+  "scope.global": {
+    "message": "Globalen Stages"
+  },
+  "scope.individual": {
+    "message": "Individuellen Stages"
   }
 }

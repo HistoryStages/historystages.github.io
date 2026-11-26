@@ -4,6 +4,8 @@ description: "Selbst gezeichnete Bereiche, jeder mit eigenen Regeln für Zutritt
 sidebar_position: 4
 ---
 
+<Scope global="yes" individual="partly" note={'Individuell: alles außer dem Schalter „keine Mob-Spawns“.'} />
+
 Eine Zone ist ein Bereich, den der Modpack-Autor selbst zeichnet, etwa ein Krater, eine ummauerte Stadt oder die andere Seite eines Flusses, statt etwas, wofür Minecraft schon einen Namen hat. Anders als bei Biom- und Struktur-Sperren, deren Verhalten einmal für den ganzen Server in der Config eingestellt wird, **hat jede Zone ihre eigenen Regeln**: Eine verweigert vielleicht nur Interaktionen, während die nächste brennt.
 
 ```json

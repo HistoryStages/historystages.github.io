@@ -6,11 +6,15 @@ sidebar_position: 1
 
 # Dimensionen & Strukturen {/* #dimensions--structures */}
 
+<Scope global="yes" individual="partly" note="Individuell: alles außer den Generierungs-Grenzen für Strukturen." />
+
 Zwei Wege, einen Ort unerreichbar zu machen: den Zutritt zu einer ganzen Dimension verweigern oder eine
 einzelne Struktur in der Welt abriegeln. Eine dritte Möglichkeit begrenzt, wie oft eine Struktur
 überhaupt generieren darf.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Dimensionen-Reiter](/img/editor/dimensions-tab.webp)
 
 Zwei Reiter: **Dimensionen** und **Strukturen**, jeder mit einer durchsuchbaren Auswahl. Die
 Struktur-Auswahl nimmt Struktur-Tags genauso wie IDs.

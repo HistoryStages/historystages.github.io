@@ -6,6 +6,8 @@ sidebar_position: 7
 
 # Tarnungen {/* #disguises */}
 
+<Scope global="yes" individual="yes" />
+
 :::info[Neu in 6.1.0]
 :::
 
@@ -96,6 +98,10 @@ Bekannte Konflikte:
   Render-Einstellungen des echten Blocks behält. Erz zu Stein ist kein Problem.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Die Tarnungs-Liste aus dem Zahnrad-Menü](/img/editor/disguises-list.webp)
+
+![Der Tarnungs-Dialog für einen einzelnen Eintrag, aus seinem Rechtsklick-Menü](/img/editor/disguise-dialog.webp)
 
 - **Rechtsklick auf eine Item- oder Tag-Zeile → Tarnung.** Der Dialog hat das Item, wie es aussehen
   soll, **Drops** (Echt / Wie Tarnung) und **Sperr-Hinweise zeigen**, dazu, welche Stages das Item

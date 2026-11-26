@@ -23,6 +23,8 @@ Operatoren trotzdem.
 
 ## Stages verwalten {/* #managing-stages */}
 
+![Die Editor-Übersicht: jede Stage mit ihrem Zustand und einem Knopf zum Freischalten oder Sperren](/img/editor/overview.webp)
+
 Die **Stage-Übersicht** ist die Startseite: Stages anlegen, bearbeiten, kopieren und löschen. Eine
 neue Stage fragt gleich nach ihrem Anzeigenamen.
 
@@ -66,6 +68,8 @@ Server wie der Befehl (Sync, Benachrichtigungen, Aufräumen der Items beim Wiede
 also genauso. Es erreicht nur Spieler, die in dem Moment online sind.
 
 ## Auswählen, was gesperrt wird {/* #picking-what-to-lock */}
+
+![Die Item-Auswahl, die die echte Registry liest](/img/editor/item-picker.webp)
 
 **Durchsuchbare Auswahllisten** für Items, Flüssigkeiten, Rezepte, Kreaturen, Dimensionen, Biome,
 Strukturen und Dorfbewohner-Angebote. Eine Such- und Filterleiste für alle, Durchblättern der ganzen
@@ -120,6 +124,8 @@ zu sperren, pro Item-, Tag- oder Mod-Eintrag. →
 
 ## Abhängigkeiten {/* #dependencies */}
 
+![Der Abhängigkeits-Editor mit einer UND-Gruppe](/img/editor/dependencies.webp)
+
 Der **Abhängigkeits-Editor** baut Voraussetzungen visuell: abgegebene Items und Item-Tags, getötete
 Kreaturen, XP-Level, Statistiken, Scoreboard-Ziele, andere Stages, angeordnet in
 [Gruppen](/wiki/stage-file/dependencies) mit eigener UND/ODER-Logik.
@@ -154,6 +160,8 @@ nicht unterbrochen wird.
 
 ## Der Config-Editor {/* #the-config-editor */}
 
+![Der Config-Editor auf dem Reiter Gameplay](/img/editor/config-editor.webp)
+
 Ein eigener Reiter für jede Einstellung in `visual.toml`, `gameplay.toml` und `graph.toml`, gruppiert in
 die Reiter Common, Client und Graph, mit einer Option zum Zurücksetzen auf Standard. Dazu gehören die
 Liste der [Forschungs-Booster](/wiki/in-game-tools/research/pedestal#boosters), das Layout des
@@ -166,6 +174,8 @@ Speichern braucht Berechtigungsstufe 2, dieselbe Schwelle wie der Editor selbst.
 [Config-Dateien](/wiki/server/config-files)
 
 ## Die Rezept-Auswahl {/* #the-recipe-picker */}
+
+![Die Rezept-Auswahl](/img/editor/recipe-picker.webp)
 
 Die Rezept-Auswahl ist ein Panel mit zwei Spalten. Links ein Raster mit allem, was Rezepte herstellen;
 ein Klick darauf füllt rechts die Rezepte dieses Items, gezeichnet als Karten in der echten Form des
@@ -241,6 +251,8 @@ Rezepte auf, ohne dass jemand da ist, also werden ihre Rezeptarten nicht angebot
 würde in die Stage-Datei geschrieben und dann nichts tun.
 
 ## Der Zonen-Editor {/* #the-zone-editor */}
+
+![Der Zonen-Editor mit drei Formen auf der Karte](/img/editor/zone-shapes.webp)
 
 Zonen sind die eine Sperr-Art ohne Registry zum Auswählen: Der Bereich muss gezeichnet werden. Der Zonen-Reiter listet die Zonen einer Stage mit einer einzeiligen Zusammenfassung dessen, was jede tut (`3 Formen · Schaden · Barriere · umgekehrt`), und **Bearbeiten** öffnet den eigenen Bildschirm der Zone.
 

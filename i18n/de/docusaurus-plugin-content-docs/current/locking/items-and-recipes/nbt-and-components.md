@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # NBT & Data Components {/* #nbt--data-components */}
 
+<Scope global="yes" individual="yes" />
+
 Ein einfacher `items`-Eintrag sperrt jeden Stack dieses Items. Ein Eintrag mit Kriterium sperrt nur die
 Stacks, die dazu passen: die verzauberten Bücher mit Schärfe, die Tränke mit einem bestimmten Effekt,
 das Mod-Item in einem bestimmten Zustand.
@@ -55,6 +57,8 @@ An einem [Forschungspodest](/wiki/in-game-tools/research/pedestal#handing-in-dep
 Item-Anforderung mit Varianten die Stacks aller Varianten zur selben Summe.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der NBT-Editor mit einem Verzauberungs-Kriterium](/img/editor/nbt-editor.webp)
 
 **Rechtsklick auf den Eintrag** in der Liste Items, Tags oder Ausnahmen und dann **NBT bearbeiten**.
 Kriterien werden als Karten gebaut, mit Vorlagen für die Felder, die Items oft tragen, einem

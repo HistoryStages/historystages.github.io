@@ -6,6 +6,8 @@ sidebar_position: 6
 
 # Enchantments & Effects
 
+<Scope global="yes" individual="partly" note="Individual: potion effects are not gated at the brewing stand." />
+
 :::info[New in 6.1.0]
 :::
 
@@ -114,6 +116,8 @@ Poison potions are locked, poison arrows are not. The brewing stand follows the 
 spared type is spared at the enchanting table and the anvil too.
 
 ## In the editor
+
+![The Enchants & Effects tab](/img/editor/enchantments-tab.webp)
 
 The **Enchants & Effects** tab, with one section for enchantments and one for potion effects. Each
 picker lists the live registry, so modded entries show up. Right-click a row for **Locked from

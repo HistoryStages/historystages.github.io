@@ -6,6 +6,8 @@ sidebar_position: 3
 
 # Unlock Actions
 
+<Scope global="yes" individual="yes" />
+
 By default, every entry in `items`, `tags` and `mods` blocks **all** interactions with the matching
 content. `unlock_actions` narrows that down: it lists the interactions that stay available while the
 stage is still locked.
@@ -38,6 +40,8 @@ locks everything.
 :::
 
 ## In the editor
+
+![The Blocked Actions dialog for one entry](/img/editor/lock-actions.webp)
 
 Not a tab of its own — it hangs off an entry that is already in the list. **Right-click the entry**
 and pick **Lock Actions** from the context menu; the popup that opens has one tick box per action,

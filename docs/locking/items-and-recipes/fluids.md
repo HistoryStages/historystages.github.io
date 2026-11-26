@@ -6,6 +6,8 @@ sidebar_position: 5
 
 # Fluids
 
+<Scope global="yes" individual="yes" />
+
 The `fluids` block gates a fluid by its registry id:
 
 ```json
@@ -26,6 +28,8 @@ vanilla bucket, every modded bucket, and every filled tank item in the pack — 
 appearing in the stage file.
 
 ## In the editor
+
+![The Fluids tab with recipe counts](/img/editor/fluids-tab.webp)
 
 The **Fluids** tab, with a picker over every fluid in the pack. Each row carries a
 `[Recipes: N]` badge saying how many recipes that entry would reach — worth a look before adding

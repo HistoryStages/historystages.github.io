@@ -47,6 +47,8 @@ Nothing is locked yet. The two stage folders are empty, and an empty folder mean
 
 ## Your first stage
 
+![The New Stage dialog](/img/editor/new-stage.webp)
+
 **Open the editor.** Pause menu, History Stages button, or `/history editor` — you need permission
 level 2. Press **New stage**, give it a display name, and you are looking at a stage with a tab per
 thing it can lock: Items, Tags, Mods, Recipes, Fluids, Dimensions, Structures, Biomes, Zones,
@@ -105,9 +107,12 @@ KubeJS, CraftTweaker, vanilla datapacks and FTB Quests.
 
 ## Where to go next
 
+- [Putting It on a Server](/wiki/start-here/server-setup) — the same steps for a multiplayer
+  server, written for a first modded server.
 - [Global vs Individual Stages](/wiki/start-here/global-vs-individual) — which of the two you want,
   and which locks only work in one of them. Read this before designing a pack.
 - [Anatomy of a Stage File](/wiki/stage-file/anatomy) — every field a stage file can hold.
 - [Where Stage Files Live](/wiki/start-here/where-stage-files-live) — folders, naming rules, and how
   to park a file without loading it.
 - [Complete Examples](/wiki/stage-file/complete-examples) — whole stage files to copy.
+- [Troubleshooting](/wiki/start-here/troubleshooting) — when something does not behave as expected.

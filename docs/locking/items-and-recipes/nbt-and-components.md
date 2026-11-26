@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # NBT & Data Components
 
+<Scope global="yes" individual="yes" />
+
 A plain `items` entry gates every stack of that item. An entry with a criterion gates only the
 stacks that match it — the enchanted books carrying Sharpness, the potions with a specific effect,
 the mod item in a particular state.
@@ -55,6 +57,8 @@ On a [research pedestal](/wiki/in-game-tools/research/pedestal#handing-in-depend
 an item requirement with variants counts stacks of every variant toward the same total.
 
 ## In the editor
+
+![The NBT editor with one enchantment criterion](/img/editor/nbt-editor.webp)
 
 **Right-click the entry** in the Items, Tags or Exceptions list and pick **Edit NBT**. Criteria are
 built as cards, with presets for the fields items commonly carry and a free-form dialog for anything

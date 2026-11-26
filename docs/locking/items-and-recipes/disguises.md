@@ -6,6 +6,8 @@ sidebar_position: 7
 
 # Disguises
 
+<Scope global="yes" individual="yes" />
+
 :::info[New in 6.1.0]
 :::
 
@@ -92,6 +94,10 @@ Known to clash:
   block's render settings. Ore to stone is fine.
 
 ## In the editor
+
+![The Disguises list from the gear menu](/img/editor/disguises-list.webp)
+
+![The disguise dialog for a single entry, from its right-click menu](/img/editor/disguise-dialog.webp)
 
 - **Right-click an item or tag row → Disguise.** The dialog has the item it should look like,
   **Drops** (Real / Like disguise) and **Show lock hints**, plus which stages lock the item and

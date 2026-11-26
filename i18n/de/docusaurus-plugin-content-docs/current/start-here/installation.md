@@ -48,6 +48,8 @@ bleibt, wie es ist.
 
 ## Deine erste Stage {/* #your-first-stage */}
 
+![Der Dialog „Neue Stage“](/img/editor/new-stage.webp)
+
 **Öffne den Editor.** Pausemenü, Knopf „History Stages“ oder `/history editor`. Du brauchst dafür
 Berechtigungsstufe 2. Drück auf **Neue Stage**, gib ihr einen Anzeigenamen, und schon siehst du eine
 Stage mit einem Reiter für alles, was sie sperren kann: Items, Tags, Mods, Rezepte, Flüssigkeiten,
@@ -106,9 +108,12 @@ CraftTweaker, Vanilla-Datapacks und FTB Quests.
 
 ## Wie es weitergeht {/* #where-to-go-next */}
 
+- [Auf einen Server bringen](/wiki/start-here/server-setup): dieselben Schritte für einen
+  Multiplayer-Server, geschrieben für den ersten Modserver.
 - [Globale vs. individuelle Stages](/wiki/start-here/global-vs-individual): welche der beiden du willst
   und welche Sperren nur in einer davon funktionieren. Lies das, bevor du ein Modpack planst.
 - [Aufbau einer Stage-Datei](/wiki/stage-file/anatomy): jedes Feld, das eine Stage-Datei haben kann.
 - [Wo die Stage-Dateien liegen](/wiki/start-here/where-stage-files-live): Ordner, Namensregeln und wie
   du eine Datei ablegst, ohne dass sie geladen wird.
 - [Komplette Beispiele](/wiki/stage-file/complete-examples): ganze Stage-Dateien zum Kopieren.
+- [Fehlersuche](/wiki/start-here/troubleshooting): wenn sich etwas nicht so verhält wie erwartet.

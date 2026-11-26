@@ -6,6 +6,8 @@ sidebar_position: 4
 
 # Rezepte {/* #recipes */}
 
+<Scope global="yes" individual="partly" note="Individuell: nur an Stationen, die wissen, wer craftet. Öfen, Trichter und Autocrafter brauchen eine globale Stage." />
+
 Ein Rezept kann auf zwei Wegen gesperrt werden, und es lohnt sich, sie auseinanderzuhalten:
 
 1. **Das Item ist gesperrt.** Jedes Rezept, das es herstellt, verschwindet, weil die Aktion `recipe`
@@ -23,6 +25,8 @@ Ein Rezept kann auf zwei Wegen gesperrt werden, und es lohnt sich, sie auseinand
 ```
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Rezepte-Reiter](/img/editor/recipes-tab.webp)
 
 Der Reiter **Rezepte**. Seine Auswahl hat zwei Spalten: links alles, was Rezepte herstellen, rechts die
 tatsächlichen Rezepte dieses Items als Karten, in der echten Form des Rezepts gezeichnet. Nur so lassen

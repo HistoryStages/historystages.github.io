@@ -6,6 +6,8 @@ sidebar_position: 5
 
 # Flüssigkeiten {/* #fluids */}
 
+<Scope global="yes" individual="yes" />
+
 Der Block `fluids` sperrt eine Flüssigkeit über ihre Registry-ID:
 
 ```json
@@ -26,6 +28,8 @@ jeden Mod-Eimer und jedes gefüllte Tank-Item im Modpack ab, ohne dass eine einz
 Stage-Datei steht.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Flüssigkeiten-Reiter mit Rezept-Zählern](/img/editor/fluids-tab.webp)
 
 Der Reiter **Fluide**, mit einer Auswahl über jede Flüssigkeit im Modpack. Jede Zeile trägt ein
 Abzeichen `[Recipes: N]`, das sagt, wie viele Rezepte dieser Eintrag erreichen würde. Ein Blick darauf

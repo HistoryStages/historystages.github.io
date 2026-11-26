@@ -1,0 +1,71 @@
+.paths {
+  padding: 3rem 0 0;
+  width: 100%;
+}
+
+.heading {
+  font-size: 1.35rem;
+  margin: 0 0 1.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* A gold rule down the left instead of a full frame: the screenshot cards further down are
+   framed boxes, and these must not read as more of them. */
+.path {
+  border-left: 3px solid var(--ifm-color-primary);
+  padding: 0.25rem 0 0.25rem 1rem;
+  min-width: 0;
+}
+
+.pathTitle {
+  font-size: 1.02rem;
+  margin: 0 0 0.35rem;
+}
+
+.pathText {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin: 0 0 0.7rem;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  color: var(--ifm-font-color-base);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  padding: 0.25rem 0;
+}
+
+.link::before {
+  content: '→ ';
+  color: var(--ifm-color-primary);
+}
+
+.link:hover {
+  color: var(--ifm-color-primary);
+}
+
+@media screen and (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1.25rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

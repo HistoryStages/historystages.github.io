@@ -23,6 +23,8 @@ when it is off.
 
 ## Managing stages
 
+![The editor overview: every stage with its state and an Unlock or Lock button](/img/editor/overview.webp)
+
 The **Stage Overview** is the front page: create, edit, duplicate and delete stages. A new stage
 asks for its display name up front.
 
@@ -63,6 +65,8 @@ command (sync, notifications, item cleanup on relock), so it behaves identically
 players who are online at that moment.
 
 ## Picking what to lock
+
+![The item picker, reading the live registry](/img/editor/item-picker.webp)
 
 **Searchable pickers** for items, fluids, recipes, entities, dimensions, biomes, structures and
 villager trades. One search and filter bar across all of them, browsing the full registry or
@@ -116,6 +120,8 @@ outright, per item, tag or mod entry. →
 
 ## Dependencies
 
+![The dependency editor with one AND group](/img/editor/dependencies.webp)
+
 The **Dependency Editor** builds prerequisites visually: deposited items and item tags, entity
 kills, XP levels, statistics, scoreboard objectives, other stages — arranged into
 [groups](/wiki/stage-file/dependencies) with their own AND/OR logic.
@@ -149,6 +155,8 @@ interrupted.
 
 ## The config editor
 
+![The config editor on its Gameplay tab](/img/editor/config-editor.webp)
+
 A tab of its own for every setting in `visual.toml`, `gameplay.toml` and `graph.toml`, grouped into
 Common, Client and Graph tabs with a reset-to-defaults option. That includes the
 [research booster](/wiki/in-game-tools/research/pedestal#boosters) list, the
@@ -161,6 +169,8 @@ Saving needs permission level 2, the same bar as the editor itself. →
 [Config Files](/wiki/server/config-files)
 
 ## The Recipe Picker
+
+![The recipe picker](/img/editor/recipe-picker.webp)
 
 The recipe picker is one panel with two columns. The left is a grid of everything recipes produce;
 clicking one fills the right with that item's recipes, drawn as cards in the recipe's real shape.
@@ -233,6 +243,8 @@ can answer. Furnaces, hoppers and autocrafters resolve recipes with nobody there
 types are not offered — an entry for them would be written to the stage file and then do nothing.
 
 ## The Zone Editor
+
+![The zone editor with three shapes on its map](/img/editor/zone-shapes.webp)
 
 Zones are the one lock type with no registry to pick from — the area has to be drawn. The zone tab lists a stage's zones with a one-line summary of what each does (`3 shapes · damage · barrier · inverted`), and **Edit** opens the zone's own screen.
 

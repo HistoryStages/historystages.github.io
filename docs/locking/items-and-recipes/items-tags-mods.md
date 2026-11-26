@@ -6,6 +6,8 @@ sidebar_position: 1
 
 # Items, Tags & Mods
 
+<Scope global="yes" individual="yes" />
+
 Four fields gate items, from one id to an entire mod. They all behave the same way once an item
 matches — the difference is only how wide the net is.
 
@@ -19,6 +21,8 @@ matches — the difference is only how wide the net is.
 ```
 
 ## In the editor
+
+![The Items tab, with action and NBT badges on narrowed entries](/img/editor/items-tab.webp)
 
 Four tabs of their own on a stage: **Items**, **Tags**, **Mods** and **Exceptions**. Each has a
 search bar over the live registry, a button to pick straight out of your own inventory, and a

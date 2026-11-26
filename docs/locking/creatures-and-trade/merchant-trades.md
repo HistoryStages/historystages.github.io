@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # Merchant Trades
 
+<Scope global="yes" individual="yes" />
+
 The `trades` object holds three lists. They are asked separately and they stack: an offer survives
 only if none of the three gates it.
 
@@ -28,6 +30,8 @@ only if none of the three gates it.
 ```
 
 ## In the editor
+
+![The Trades tab](/img/editor/trades-tab.webp)
 
 The **Trades** tab. Its picker lists **real offers** rather than every item in the game — pick a
 profession and you see what that merchant actually trades, at which level, for what price. Most of

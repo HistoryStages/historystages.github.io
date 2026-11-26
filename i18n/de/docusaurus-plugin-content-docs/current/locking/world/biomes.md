@@ -6,6 +6,8 @@ sidebar_position: 2
 
 # Biome {/* #biomes */}
 
+<Scope global="yes" individual="yes" />
+
 Eine Biom-Sperre hält einen Spieler nicht davon ab, hineinzulaufen. Sie macht den Ort
 **unbewohnbar**: Effekte, Schaden, eine Warnung und verweigerte Interaktionen, bis die Stage offen ist.
 
@@ -24,6 +26,8 @@ Einträge sind Biom-IDs oder Biom-**Tags** mit `#` davor. Alles andere am Verhal
 Server statt pro Eintrag.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Biome-Reiter](/img/editor/biomes-tab.webp)
 
 Der Reiter **Biome** an einer Stage, mit einer durchsuchbaren Auswahl über jedes Biom und jedes
 Biom-Tag, das das Modpack geladen hat.

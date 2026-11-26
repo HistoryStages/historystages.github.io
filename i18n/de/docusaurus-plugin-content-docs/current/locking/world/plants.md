@@ -6,6 +6,8 @@ sidebar_position: 3
 
 # Pflanzen {/* #plants */}
 
+<Scope global="yes" individual="no" />
+
 Seit 6.2.0 kann eine Stage **Pflanzen** am Wachsen hindern. Eine gesperrte Feldfrucht bleibt in dem
 Stadium, in dem sie gepflanzt wurde, Knochenmehl bewirkt nichts, und ein gesperrter Setzling wird nie
 zu einem Baum.
@@ -42,6 +44,8 @@ Mit [Jade](/wiki/server/mod-compatibility) zeigt ein Blick auf eine gesperrte Pf
 nicht wächst.
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Pflanzen-Reiter](/img/editor/plants-tab.webp)
 
 Der Reiter **Pflanzen** an einer Stage, mit einer durchsuchbaren Auswahl über jeden Block und jedes
 Block-Tag. Sperrst du eine ganze Mod, werden ihre Pflanzen als Schritt in derselben Popup-Kette

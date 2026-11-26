@@ -6,6 +6,8 @@ sidebar_position: 3
 
 # Unlock Actions {/* #unlock-actions */}
 
+<Scope global="yes" individual="yes" />
+
 Standardmäßig blockiert jeder Eintrag in `items`, `tags` und `mods` **alle** Interaktionen mit dem
 passenden Inhalt. `unlock_actions` grenzt das ein: Es listet die Interaktionen auf, die verfügbar
 bleiben, solange die Stage noch gesperrt ist.
@@ -39,6 +41,8 @@ Jede Aktion, die du weglässt, bleibt blockiert. Ein einfacher String-Eintrag od
 :::
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Dialog „Blockierte Aktionen“ für einen Eintrag](/img/editor/lock-actions.webp)
 
 Kein eigener Reiter, es hängt an einem Eintrag, der schon in der Liste steht. **Rechtsklick auf den
 Eintrag** und **Sperr-Aktionen** im Kontextmenü; das Popup, das sich öffnet, hat ein Kästchen pro

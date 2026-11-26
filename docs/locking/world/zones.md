@@ -4,6 +4,8 @@ description: "Areas you draw yourself, each with its own rules for entry, spawni
 sidebar_position: 4
 ---
 
+<Scope global="yes" individual="partly" note={'Individual: everything except the "no mob spawns" switch.'} />
+
 A zone is an area the pack author draws themselves — a crater, a walled-off city, the far side of a river — rather than something Minecraft already has a name for. Unlike biome and structure locks, whose behaviour is set once for the whole server in the config, **every zone carries its own rules**: one can merely refuse interaction while the next one burns.
 
 ```json

@@ -6,10 +6,14 @@ sidebar_position: 1
 
 # Dimensions & Structures
 
+<Scope global="yes" individual="partly" note="Individual: everything except the structure generation caps." />
+
 Two ways to put a place out of reach: refuse entry to a whole dimension, or wall off a single
 structure inside the world. A third option caps how often a structure is allowed to generate at all.
 
 ## In the editor
+
+![The Dims tab](/img/editor/dimensions-tab.webp)
 
 Two tabs: **Dimensions** and **Structures**, each with a searchable picker. The structure picker
 takes structure tags as well as ids.

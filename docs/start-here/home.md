@@ -21,6 +21,21 @@ The 26.2 beta is still on **6.1.x** — pick it, or any older build, in the vers
 [Versions & Platforms](/wiki/about/versions-and-platforms) has the details.
 :::
 
+## How it fits together
+
+```mermaid
+flowchart LR
+  A["You build a stage<br/>in the editor or as JSON"] --> B["It lists what stays locked:<br/>items, recipes, places, mobs"]
+  B --> C["A player gets the<br/>stage's Research Scroll"]
+  C --> D["They research it<br/>at a Research Pedestal"]
+  D --> E["The stage opens:<br/>everything on its list is usable"]
+```
+
+Research is the usual way in, not the only one: a stage can also open by itself when a condition is
+met, or by command. → [Stage Modes](/wiki/stage-file/stage-modes) ·
+[Research Pedestal](/wiki/in-game-tools/research/pedestal) ·
+[Research Scrolls](/wiki/in-game-tools/research/scrolls)
+
 ## Two kinds of stage
 
 |  | Unlocked by | Applies to | Typical use |
@@ -44,12 +59,19 @@ designing a pack. It carries the full matrix of which lock works in which mode, 
 | [Unlock Actions](/wiki/locking/items-and-recipes/unlock-actions) | Gate one interaction instead of all of them — carry it but do not swing it. |
 | [Recipes](/wiki/locking/items-and-recipes/recipes) | Specific recipe ids, with a lock overlay in JEI and EMI. |
 | [Fluids](/wiki/locking/items-and-recipes/fluids) | The fluid, not the bucket — one entry covers every tank and bucket in the pack. |
+| [Enchantments & Effects](/wiki/locking/items-and-recipes/enchantments-and-effects) | Books, gear and potions by what they carry, and the stations that make them. |
+| [Disguises](/wiki/locking/items-and-recipes/disguises) | A locked item or block that looks like something else until it opens. |
 | [Loot](/wiki/locking/items-and-recipes/loot) | Remove or replace locked items in chest loot and mob drops. |
+| [Slots](/wiki/locking/items-and-recipes/slots) | Inventory and container slots that stay shut until the stage opens. |
 | [Dimensions & Structures](/wiki/locking/world/dimensions-and-structures) | Refuse entry to a dimension, wall off a structure, or cap how often it generates. |
 | [Biomes](/wiki/locking/world/biomes) | Make a biome unsurvivable until the stage opens. |
+| [Plants](/wiki/locking/world/plants) | Crops and saplings that do not grow until the stage opens. |
 | [Zones](/wiki/locking/world/zones) | Areas you draw yourself, each with its own rules. |
 | [Entities & Spawns](/wiki/locking/creatures-and-trade/entities-and-spawns) | Stop attacks, stop breeding and mounting, or write a full spawn rule. |
 | [Merchant Trades](/wiki/locking/creatures-and-trade/merchant-trades) | Gate one offer, a whole villager profession, or a merchant level everywhere. |
+
+→ [What You Can Lock](/wiki/locking) has the same list sorted by kind, and what to know before
+picking one.
 
 ## Build it in the game
 
@@ -68,6 +90,10 @@ easier to name; each page says where in the editor the same thing lives.
 → [Installation & Your First Stage](/wiki/start-here/installation) ·
 [Where Stage Files Live](/wiki/start-here/where-stage-files-live) ·
 [Anatomy of a Stage File](/wiki/stage-file/anatomy)
+
+Setting up a multiplayer server for the first time? →
+[Putting It on a Server](/wiki/start-here/server-setup) walks through it step by step. Something
+behaves oddly? → [Troubleshooting](/wiki/start-here/troubleshooting)
 
 ## Showing players where they are
 

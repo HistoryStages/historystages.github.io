@@ -6,6 +6,8 @@ sidebar_position: 1
 
 # Kreaturen & Spawns {/* #entities--spawns */}
 
+<Scope global="yes" individual="partly" note={'Individuell: Angriffs- und Interaktionssperren. Spawn-Regeln brauchen eine globale Stage.'} />
+
 Das Object `entities` enthält drei unabhängige Listen. Sie beantworten drei verschiedene Fragen, und
 seit 6.0 bedeutet keine davon eine andere mit:
 
@@ -26,6 +28,8 @@ seit 6.0 bedeutet keine davon eine andere mit:
 | [`spawnlock`](#spawnlock) | Darf sie überhaupt erscheinen? | **nur global** |
 
 ## Im Editor {/* #in-the-editor */}
+
+![Der Kreaturen-Reiter im Bereich Spawn](/img/editor/spawn-tab.webp)
 
 Die drei Listen sind drei eigene Reiter: **Angriff**, **Interaktion** und **Spawn**. Die
 Kreaturen-Auswahl funktioniert wie die Item-Auswahl, Mehrfachauswahl eingeschlossen.
