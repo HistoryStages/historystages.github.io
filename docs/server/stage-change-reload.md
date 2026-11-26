@@ -117,8 +117,8 @@ anything to do with recipes is not.
 
 ## Which versions have this
 
-6.2.0 on NeoForge 1.21.1. Forge 1.20.1, Fabric 1.21.1 and 26.2 still work the old way until their
-6.2 port, and have none of these settings yet. → [Versions & Platforms](/wiki/about/versions-and-platforms)
+6.2.0 on NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1. The 26.2 beta still works the old way
+until its 6.2 port, and has none of these settings yet. → [Versions & Platforms](/wiki/about/versions-and-platforms)
 
 ## See also
 

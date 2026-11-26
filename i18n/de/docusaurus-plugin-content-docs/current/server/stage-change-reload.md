@@ -121,8 +121,8 @@ genannte Mod dort lädt. Maschinen-Definitionen, Spawn-Tabellen oder Quest-Daten
 
 ## Welche Versionen das haben {/* #which-versions-have-this */}
 
-6.2.0 auf NeoForge 1.21.1. Forge 1.20.1, Fabric 1.21.1 und 26.2 arbeiten bis zu ihrem 6.2-Port noch auf
-die alte Art und haben keine dieser Einstellungen. →
+6.2.0 auf NeoForge 1.21.1, Forge 1.20.1 und Fabric 1.21.1. Die 26.2-Beta arbeitet bis zu ihrem
+6.2-Port noch auf die alte Art und hat keine dieser Einstellungen. →
 [Versionen & Plattformen](/wiki/about/versions-and-platforms)
 
 ## Siehe auch {/* #see-also */}

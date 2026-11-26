@@ -63,7 +63,7 @@ const config = {
           lastVersion: 'current',
           versions: {
             current: {label: '6.2.x'},
-            // Still what Forge 1.20.1, Fabric 1.21.1 and the 26.2 beta run until their 6.2 port
+            // Still what the 26.2 beta runs until its 6.2 port
             // lands, so it stays findable in search engines, unlike the older archives.
             '6.1.x': {},
             // Archives stay out of search engines so nobody lands on a two-year-old page from Google.

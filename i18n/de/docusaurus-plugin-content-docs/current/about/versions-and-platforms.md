@@ -12,8 +12,8 @@ anderen folgen, wenn sie folgen.
 | Loader | Minecraft | Version |
 | :--- | :--- | :--- |
 | **NeoForge** | 1.21.1 | 6.2.x |
-| **Forge** | 1.20.1 | 6.1.x, mit den Unterschieden unten |
-| **Fabric** | 1.21.1 | 6.1.x, mit den Unterschieden unten |
+| **Forge** | 1.20.1 | 6.2.x, mit den Unterschieden unten |
+| **Fabric** | 1.21.1 | 6.2.x, mit den Unterschieden unten |
 | **NeoForge** und **Fabric** | 26.2 | 6.1.x, Beta, mit den Unterschieden unten |
 
 Die Versionen für 1.19.X werden nicht mehr aktualisiert.
@@ -25,8 +25,9 @@ nicht hier, wo sie still veralten würde; die Download-Seiten haben sie:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub-Releases](https://github.com/Flix100000/History-Stages/releases).
 
-Diese Seiten beschreiben 6.2.x. Du bist auf Forge, Fabric oder 26.2, oder auf einem älteren Build? Wähl
-deine Linie im Versionsmenü oben in der Leiste: 6.1.x für alles, was noch nicht NeoForge 1.21.1 ist.
+Diese Seiten beschreiben 6.2.x, die Linie von NeoForge 1.21.1, Forge 1.20.1 und Fabric 1.21.1. Du bist
+auf der 26.2-Beta oder auf einem älteren Build? Wähl deine Linie im Versionsmenü oben in der Leiste:
+6.1.x für 26.2.
 
 ## Was 6.2 hinzugefügt hat {/* #what-62-added */}
 
@@ -72,8 +73,8 @@ Die Zonen-Karte hat in 6.1 ihre 3D-Ansicht verloren. Auf jedem Loader ist sie je
 
 ## Was Forge 1.20.1 anders macht {/* #what-forge-1201-does-differently */}
 
-Die 1.20.1-Version ist auf 6.1.x und hat alle Funktionen von 6.1; 6.2 wurde noch nicht portiert. Drei Dinge verhalten sich anders, weil 1.20.1
-selbst es tut:
+Die 1.20.1-Version ist auf 6.2.x und hat alle Funktionen von 6.2. Vier Dinge verhalten sich anders,
+weil 1.20.1 selbst es tut:
 
 - **Eine gesperrte Flüssigkeit wird an den Vanilla-Kesseln für Wasser und Lava abgelehnt.** Ein Kessel
   aus einer Mod wird nicht erkannt, denn 1.20.1 hat keine Registry, in der man ihn nachschlagen könnte.
@@ -82,10 +83,12 @@ selbst es tut:
   Sperren selbst sind nicht betroffen.
 - **MixinExtras steckt im Jar**, weil Forge 1.20.1 es nicht mitbringt. Du musst nichts extra
   installieren.
+- **Der NBT-Editor für Kreaturen bietet keine Wolfs-Varianten an**, weil Wölfe erst in einer späteren
+  Minecraft-Version Varianten bekommen haben. Alle anderen Vorlagen sind da.
 
 ## Was Fabric 1.21.1 anders macht {/* #what-fabric-1211-does-differently */}
 
-Die Fabric-Version ist ebenfalls auf 6.1.x und hat alle Funktionen von 6.1. Gleiche Minecraft-Version wie NeoForge, also kommen die
+Die Fabric-Version ist ebenfalls auf 6.2.x und hat alle Funktionen von 6.2. Gleiche Minecraft-Version wie NeoForge, also kommen die
 Unterschiede vom Loader und davon, welche Mods es dafür gibt:
 
 - **Es gibt keine Skripte.** KubeJS hat keine Fabric-Version für 1.21.1 und CraftTweaker überhaupt
@@ -98,6 +101,11 @@ Unterschiede vom Loader und davon, welche Mods es dafür gibt:
 - **Einstellungen aus 5.2 werden nicht übernommen.** Die Fabric-Version 5.2 hat sie in einer
   `config.json` gespeichert, die 6.0 nicht liest. →
   [Von 5.x aktualisieren](/wiki/server/upgrading-from-5x#coming-from-fabric-52)
+- **Slot-Sperren erreichen andere Mods über die Fabric Transfer API.** Rohre, Maschinen und
+  „Give“-Helfer, die Items auf diesem Weg bewegen, werden an einem gesperrten Slot abgewiesen. Ein
+  Mod-Slot, der die Frage „darf das hier rein?“ ganz allein beantwortet, ohne den Slot zu fragen, auf
+  dem er aufbaut, ist nicht abgedeckt. → [Slots](/wiki/locking/items-and-recipes/slots)
+- **Der Drygmy-Fix für Ars Nouveau fehlt hier**, weil es Ars Nouveau für Fabric 1.21.1 nicht gibt.
 
 Eine Sache funktioniert hier besser als auf Forge 1.20.1: Eine gesperrte Flüssigkeit wird auch an
 Kesseln aus Mods abgelehnt, nicht nur an den Vanilla-Kesseln für Wasser und Lava.
@@ -125,7 +133,7 @@ Anbindungen, deren Mods es noch nicht für 26.2 gibt:
 ## Wie dieses Wiki versioniert ist {/* #how-this-wiki-is-versioned */}
 
 Das Versionsmenü schneidet nach **Mod-Version, nicht nach Minecraft-Version**. Es gibt neun Stände: den
-lebenden Baum 6.2.x und acht Archive, 6.1.x bis 5.0.x. 6.1.x ist auf Forge, Fabric und 26.2 noch die
+lebenden Baum 6.2.x und acht Archive, 6.1.x bis 5.0.x. 6.1.x ist auf der 26.2-Beta noch die
 aktuelle Linie, also sehen Suchmaschinen sie genauso wie den lebenden Baum; die älteren Archive werden
 von ihnen ferngehalten, sind aber im Versionsmenü und im Suchfeld weiter da.
 

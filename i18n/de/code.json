@@ -91,7 +91,7 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "Diese Seiten beschreiben History Stages {versionLabel}. NeoForge 1.21.1 läuft auf 6.2.x; Forge 1.20.1, Fabric 1.21.1 und die 26.2-Beta laufen auf 6.1.x, bis ihr 6.2-Port erscheint.",
+    "message": "Diese Seiten beschreiben History Stages {versionLabel}. NeoForge 1.21.1, Forge 1.20.1 und Fabric 1.21.1 laufen auf 6.2.x; die 26.2-Beta läuft auf 6.1.x, bis ihr 6.2-Port erscheint.",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
