@@ -1,4 +1,4 @@
-"""Builds static/img/social-card.png, the image link previews show (Discord, GitHub, ...).
+"""Builds static/img/social-card-v2.png, the image link previews show (Discord, GitHub, ...).
 
 It reuses the mod's own store-page look instead of a generic web banner: the four red bands,
 the gold fret frame and the 3D title lettering. The title banner, the frame corners and the
@@ -118,5 +118,5 @@ line2 = "Stages, locks, research and the editor"
 draw_text(line1, center_x(line1, 3), TOP + th + 34, 3, WHITE)
 draw_text(line2, center_x(line2, 3), TOP + th + 34 + 40, 3, CREAM)
 
-card.save(WIKI / "static" / "img" / "social-card.png", optimize=True)
+card.save(WIKI / "static" / "img" / "social-card-v2.png", optimize=True)
 print("written", card.size)

@@ -242,7 +242,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/social-card.png',
+      image: 'img/social-card-v2.png',
       // Proves to Google Search Console that we own the site. Removing it drops the access.
       metadata: [{name: 'google-site-verification', content: 'nQ8sRGIdYQWV-GJtRg3nxzdnUjUCMbqtB9YZAriP1xM'}],
       mermaid: {
