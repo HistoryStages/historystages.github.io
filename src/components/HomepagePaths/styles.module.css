@@ -1,24 +1,21 @@
 .paths {
-  padding: 3rem 0 0;
+  padding: 3.5rem 0 1.5rem;
   width: 100%;
 }
 
 .heading {
-  font-size: 1.35rem;
+  font-size: 1.7rem;
   margin: 0 0 1.25rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
-/* A gold rule down the left instead of a full frame: the screenshot cards further down are
-   framed boxes, and these must not read as more of them. */
+/* No frame and no rule: a heading, a sentence and three links read as a site's own index. */
 .path {
-  border-left: 3px solid var(--ifm-color-primary);
-  padding: 0.25rem 0 0.25rem 1rem;
   min-width: 0;
 }
 
@@ -46,11 +43,6 @@
   font-size: 0.92rem;
   line-height: 1.4;
   padding: 0.25rem 0;
-}
-
-.link::before {
-  content: '→ ';
-  color: var(--ifm-color-primary);
 }
 
 .link:hover {

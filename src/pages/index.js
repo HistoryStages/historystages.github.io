@@ -13,6 +13,7 @@ export default function Home() {
     // this and the description were still the template's placeholders, which is what a
     // link preview in Discord was showing.
     <Layout
+      wrapperClassName="homepage-scene"
       description={translate(
         {
           id: 'homepage.description',
@@ -25,8 +26,8 @@ export default function Home() {
         {/* The popular-pages list still serves the 404 page; on the front page the paths by
             reader replace it, since both were columns of the same few links. */}
         <HomepagePaths />
-        <HomepageTrailer />
         <HomepageFeatures />
+        <HomepageTrailer />
       </main>
     </Layout>
   );

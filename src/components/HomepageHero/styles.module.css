@@ -1,131 +1,96 @@
+/* Runs up under the navbar, which turns see-through on the front page only (custom.css). */
 .heroBanner {
   position: relative;
-  overflow: hidden;
-  padding: 5.5rem 0 5rem;
+  min-height: min(86vh, 760px);
+  margin-top: calc(-1 * var(--ifm-navbar-height));
+  padding: calc(var(--ifm-navbar-height) + 3rem) 1.25rem 5.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   text-align: center;
-  background: radial-gradient(120% 100% at 50% 30%, #3a1414 0%, #22110f 42%, #17100e 68%, #141312 100%);
-  color: #ede9e0;
-}
-
-/* A slow, faint drift of warmer light behind the icon — depth, not a spinner. */
-.glow {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  width: 640px;
-  height: 640px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(224, 165, 62, 0.28) 0%, rgba(224, 165, 62, 0) 65%);
-  filter: blur(4px);
-  pointer-events: none;
+  color: #e4e6ea;
+  background:
+    linear-gradient(180deg, rgba(18, 20, 24, 0.1) 0%, rgba(18, 20, 24, 0.25) 55%, #121418 100%),
+    var(--hero-image) center / cover no-repeat,
+    #121418;
 }
 
 .heroContent {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.iconWrap {
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-
-.heroIcon {
-  width: 96px;
-  height: 96px;
-  border-radius: 18px;
-  position: relative;
-  box-shadow:
-    0 0 0 1px rgba(224, 165, 62, 0.35),
-    0 12px 32px -8px rgba(0, 0, 0, 0.6),
-    0 0 46px rgba(224, 165, 62, 0.4);
-}
-
 .heroTitle {
-  color: #f7f2e7;
-  font-size: 3.1rem;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.8rem;
-  text-wrap: balance;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  line-height: 0;
+}
+
+.wordmark {
+  width: min(720px, 90vw);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+
+.claim {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 1.2rem 0 0.6rem;
+  color: #f1f2f4;
 }
 
 .heroSubtitle {
-  color: #cbbfa8;
-  font-size: 1.2rem;
-  max-width: 42ch;
-  margin: 0 auto 2rem;
+  color: #c8cdd5;
+  font-size: 1.15rem;
+  max-width: 46ch;
+  margin: 0 auto 1.8rem;
 }
 
 .buttons {
   display: flex;
+  gap: 0.75rem;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heroButton,
+.heroButtonOutline {
+  min-width: 170px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid #e0a53e;
 }
 
 .heroButton {
-  background: linear-gradient(180deg, #eeca86 0%, #d79a4b 100%);
-  border-color: #d79a4b;
-  color: #241a0a;
-  font-weight: 700;
-  box-shadow: 0 6px 18px -6px rgba(224, 165, 62, 0.55);
+  background: #e0a53e;
+  color: #1b1306;
 }
 
 .heroButton:hover {
-  background: linear-gradient(180deg, #f3d79c 0%, #e0a53e 100%);
-  border-color: #eeca86;
-  color: #241a0a;
+  background: #e8b862;
+  color: #1b1306;
 }
 
-/* Corner ornament, positioned and mirrored per corner from one drawn shape. */
-.bracket {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  color: #d79a4b;
-  opacity: 0.55;
-  z-index: 1;
+.heroButtonOutline {
+  background: rgba(18, 20, 24, 0.35);
+  color: #e0a53e;
 }
 
-.bracketTL {
-  top: 18px;
-  left: 18px;
-}
-
-.bracketTR {
-  top: 18px;
-  right: 18px;
-  transform: scaleX(-1);
-}
-
-.bracketBL {
-  bottom: 18px;
-  left: 18px;
-  transform: scaleY(-1);
-}
-
-.bracketBR {
-  bottom: 18px;
-  right: 18px;
-  transform: scale(-1, -1);
+.heroButtonOutline:hover {
+  background: rgba(224, 165, 62, 0.12);
+  color: #e0a53e;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 4rem 1.5rem;
+    min-height: 70vh;
+    padding-bottom: 3.5rem;
   }
-  .heroTitle {
-    font-size: 2.3rem;
-  }
-  .bracket {
-    width: 40px;
-    height: 40px;
-  }
-  .glow {
-    width: 420px;
-    height: 420px;
+  .claim {
+    font-size: 1.8rem;
   }
 }

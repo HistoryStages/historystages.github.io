@@ -30,12 +30,9 @@
   max-width: 880px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  background: #141312;
-  box-shadow:
-    0 0 0 1px rgba(224, 165, 62, 0.35),
-    0 14px 36px -12px rgba(0, 0, 0, 0.55);
+  background: #0d0f12;
 }
 
 .player,

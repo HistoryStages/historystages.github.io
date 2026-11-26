@@ -90,5 +90,9 @@
   "copyright": {
     "message": "Copyright © 2026 History Stages. Gebaut mit Docusaurus.<br />\n          Ein inoffizielles Fan-Projekt. Nicht verbunden mit Mojang Studios oder Microsoft.\n          Minecraft ist eine Marke von Mojang Synergies AB.",
     "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "History Stages",
+    "description": "The alt text of footer logo"
   }
 }

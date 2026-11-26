@@ -250,6 +250,13 @@ const config = {
   clientModules: [require.resolve('./src/clientModules/searchTerms.js')],
 
   themes: ['@docusaurus/theme-mermaid'],
+  // Manrope for everything, JetBrains Mono for code; loaded here so the first paint already has them.
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
+      type: 'text/css',
+    },
+  ],
   markdown: {
     mermaid: true,
     hooks: {
@@ -296,6 +303,7 @@ const config = {
             sidebarId: 'wikiSidebar',
             position: 'left',
             label: 'Wiki',
+            className: 'nav-icon nav-icon-wiki',
           },
           {
             type: 'docSidebar',
@@ -303,25 +311,13 @@ const config = {
             docsPluginId: 'api',
             position: 'left',
             label: 'API',
-          },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownItemsAfter: [
-              {
-                href: 'https://github.com/Flix100000/History-Stages/releases',
-                label: 'All releases',
-              },
-            ],
+            className: 'nav-icon nav-icon-api',
           },
           {
             type: 'dropdown',
             label: 'Download',
             position: 'left',
+            className: 'nav-icon nav-icon-download',
             items: [
               {
                 label: 'CurseForge',
@@ -334,6 +330,20 @@ const config = {
               {
                 label: 'GitHub Releases',
                 href: 'https://github.com/Flix100000/History-Stages/releases',
+              },
+            ],
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                href: 'https://github.com/Flix100000/History-Stages/releases',
+                label: 'All releases',
               },
             ],
           },
@@ -359,6 +369,12 @@ const config = {
       },
       footer: {
         style: 'dark',
+        logo: {
+          alt: 'History Stages',
+          src: 'img/wordmark.png',
+          width: 300,
+          height: 35,
+        },
         links: [
           {
             title: 'Wiki',

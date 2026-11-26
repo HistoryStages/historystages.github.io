@@ -553,13 +553,25 @@
   "paths.heading": {
     "message": "Wo willst du anfangen?"
   },
-  "scope.worksIn": {
-    "message": "Funktioniert in"
+  "scope.globalOnly": {
+    "message": "Funktioniert nur in {global} Stages."
   },
-  "scope.global": {
-    "message": "Globalen Stages"
+  "scope.individualOnly": {
+    "message": "Funktioniert nur in {individual} Stages."
   },
-  "scope.individual": {
-    "message": "Individuellen Stages"
+  "scope.partly": {
+    "message": "Funktioniert in {global} Stages und teilweise in {individual} Stages."
+  },
+  "scope.both": {
+    "message": "Funktioniert in {global} und {individual} Stages."
+  },
+  "homepage.hero.download": {
+    "message": "Download"
+  },
+  "homepage.hero.claim": {
+    "message": "Dein Modpack. Deine Geschichte."
+  },
+  "homepage.hero.subtitle": {
+    "message": "Fortschritt für Modpacks: Halte Items, Rezepte, Orte und Mobs zurück, bis Spieler sich den Weg dorthin erforschen."
   }
 }

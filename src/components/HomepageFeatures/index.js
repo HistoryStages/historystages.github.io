@@ -47,40 +47,28 @@ const FeatureList = [
     }),
     to: '/wiki/in-game-tools/research/scrolls#the-open-scroll-document',
   },
-  {
-    title: translate({id: 'features.addon-platform.title', message: 'Addon Platform'}),
-    icon: true,
-    description: translate({
-      id: 'features.addon-platform.description',
-      message:
-        'Other mods register their own lock categories, requirements, and editor tabs through mod-bus events — no fork, no mixin, same widgets the built-in tabs are made of.',
-    }),
-    to: '/api/addon-development',
-  },
 ];
 
-function Feature({title, image, icon, description, to}) {
-  const imageUrl = useBaseUrl(image ? `/img/screenshots/${image}` : '/img/icon.png');
+// One row per feature, picture and text side by side and alternating, rather than a grid of
+// cards: four boxes in a row read like a template, and the screenshots get room to be seen.
+// The addon platform has its own column under "Where do you want to start?".
+function Feature({title, image, description, to}) {
+  const imageUrl = useBaseUrl(`/img/screenshots/${image}`);
   return (
-    <Link to={to} className={styles.card}>
-      <div className={styles.cardMedia}>
-        <img
-          src={imageUrl}
-          alt=""
-          loading="lazy"
-          className={icon ? styles.cardIcon : styles.cardScreenshot}
-        />
-      </div>
-      <div className={styles.cardBody}>
-        <Heading as="h3" className={styles.cardTitle}>
+    <div className={styles.row}>
+      <Link to={to} className={styles.media}>
+        <img src={imageUrl} alt="" loading="lazy" />
+      </Link>
+      <div className={styles.text}>
+        <Heading as="h3" className={styles.title}>
           {title}
         </Heading>
-        <p className={styles.cardDescription}>{description}</p>
-        <span className={styles.cardLink}>
+        <p className={styles.description}>{description}</p>
+        <Link to={to} className={styles.more}>
           {translate({id: 'features.learnMore', message: 'Learn more →'})}
-        </span>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -88,11 +76,9 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className={styles.grid}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
     </section>
   );
