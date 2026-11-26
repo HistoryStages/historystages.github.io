@@ -54,6 +54,21 @@ const config = {
         docs: {
           routeBasePath: 'wiki',
           sidebarPath: './sidebars.js',
+          // A section's own landing page is its category link already; the folder listing under
+          // it would show the same page a second time.
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const landing = new Set([
+              'start-here/home',
+              'locking/index',
+              'server/config-files/index',
+              'server/scripting/index',
+            ]);
+            const strip = (items) =>
+              items
+                .filter((item) => !(item.type === 'doc' && landing.has(item.id)))
+                .map((item) => (item.type === 'category' ? {...item, items: strip(item.items)} : item));
+            return strip(await defaultSidebarItemsGenerator(args));
+          },
           editUrl: 'https://github.com/HistoryStages/historystages.github.io/edit/main/',
           // Needs the full history in CI (fetch-depth: 0), otherwise every page claims
           // to have been written on the day of the last deploy.
@@ -112,6 +127,11 @@ const config = {
       /** @type {import('@docusaurus/plugin-client-redirects').Options} */
       ({
         redirects: [
+          {
+            // Split into two groups; the old overview page goes to the first of them.
+            from: '/wiki/category/server--integration',
+            to: '/wiki/category/running-a-server',
+          },
           {from: '/wiki/general/intro', to: '/wiki/'},
           {from: '/wiki/general/getting-started', to: '/wiki/start-here/installation'},
           {
@@ -257,6 +277,14 @@ const config = {
       },
       colorMode: {
         respectPrefersColorScheme: true,
+      },
+      docs: {
+        sidebar: {
+          // Only the section being read stays open, so the sidebar does not grow into a wall
+          // of every page at once.
+          autoCollapseCategories: true,
+          hideable: true,
+        },
       },
       navbar: {
         title: 'History Stages',

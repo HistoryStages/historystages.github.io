@@ -83,18 +83,6 @@
     "message": "Wie eine Stage tatsächlich verdient wird: das Forschungspodest, an dem es passiert, die Forschungsrolle, die sie trägt, und wie Spieler überhaupt an beides kommen.",
     "description": "The generated-index page description for category 'Research' in sidebar 'wikiSidebar'"
   },
-  "sidebar.wikiSidebar.category.Server & Integration": {
-    "message": "Server & Anbindung",
-    "description": "The label for category 'Server & Integration' in sidebar 'wikiSidebar'"
-  },
-  "sidebar.wikiSidebar.category.Server & Integration.link.generated-index.title": {
-    "message": "Server & Anbindung",
-    "description": "The generated-index page title for category 'Server & Integration' in sidebar 'wikiSidebar'"
-  },
-  "sidebar.wikiSidebar.category.Server & Integration.link.generated-index.description": {
-    "message": "History Stages betreiben: Befehle, die drei Einstellungsdateien, ein Modpack von 5.x hochziehen, die Mods, die es erkennt, und was Skripte dürfen.",
-    "description": "The generated-index page description for category 'Server & Integration' in sidebar 'wikiSidebar'"
-  },
   "sidebar.wikiSidebar.category.Config Files": {
     "message": "Config-Dateien",
     "description": "The label for category 'Config Files' in sidebar 'wikiSidebar'"
@@ -114,5 +102,29 @@
   "sidebar.wikiSidebar.category.About History Stages.link.generated-index.description": {
     "message": "Welche Version wo läuft, wo es Hilfe gibt, was die Lizenz erlaubt und wer die Mod gebaut hat.",
     "description": "The generated-index page description for category 'About History Stages' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Running a Server": {
+    "message": "Einen Server betreiben",
+    "description": "The label for category 'Running a Server' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Running a Server.link.generated-index.title": {
+    "message": "Einen Server betreiben",
+    "description": "The generated-index page title for category 'Running a Server' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Running a Server.link.generated-index.description": {
+    "message": "Ein Modpack am Laufen halten: Befehle, die Einstellungsdateien, Reloads, sehr große Modpacks und ein Modpack von 5.x hochziehen.",
+    "description": "The generated-index page description for category 'Running a Server' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Other Mods & Scripts": {
+    "message": "Andere Mods & Skripte",
+    "description": "The label for category 'Other Mods & Scripts' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Other Mods & Scripts.link.generated-index.title": {
+    "message": "Andere Mods & Skripte",
+    "description": "The generated-index page title for category 'Other Mods & Scripts' in sidebar 'wikiSidebar'"
+  },
+  "sidebar.wikiSidebar.category.Other Mods & Scripts.link.generated-index.description": {
+    "message": "Die Mods, die History Stages erkennt, was jede Anbindung macht, und was KubeJS- und CraftTweaker-Skripte lesen und ändern dürfen.",
+    "description": "The generated-index page description for category 'Other Mods & Scripts' in sidebar 'wikiSidebar'"
   }
 }
