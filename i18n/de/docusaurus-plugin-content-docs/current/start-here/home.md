@@ -17,9 +17,8 @@ Von Haus aus ist nichts gesperrt. Ein installiertes History Stages ohne Stage-Da
 am Spiel.
 
 :::note[Welche Version ist das?]
-Diese Seiten beschreiben **6.2.x**, die Version für NeoForge 1.21.1, Forge 1.20.1 und Fabric 1.21.1.
-Die 26.2-Beta ist noch auf **6.1.x**. Die wählst du, wie jede ältere Version, oben in der Leiste im
-Versionsmenü aus. Details stehen unter [Versionen & Plattformen](/wiki/about/versions-and-platforms).
+Diese Seiten beschreiben **6.2.x**, die Version aller Loader, die 26.2-Beta eingeschlossen. Eine ältere
+Version wählst du oben in der Leiste im Versionsmenü aus. Details stehen unter [Versionen & Plattformen](/wiki/about/versions-and-platforms).
 :::
 
 ## Wie alles zusammenhängt {/* #how-it-fits-together */}

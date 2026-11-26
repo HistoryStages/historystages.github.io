@@ -78,11 +78,9 @@ const config = {
           lastVersion: 'current',
           versions: {
             current: {label: '6.2.x'},
-            // Still what the 26.2 beta runs until its 6.2 port
-            // lands, so it stays findable in search engines, unlike the older archives.
-            '6.1.x': {},
             // Archives stay out of search engines so nobody lands on a two-year-old page from Google.
-            // 6.0.x joined them once every loader was on 6.1.
+            // 6.0.x joined them once every loader was on 6.1, 6.1.x once 26.2 was on 6.2 as well.
+            '6.1.x': {noIndex: true},
             '6.0.x': {noIndex: true},
             '5.6.x': {noIndex: true},
             '5.5.x': {noIndex: true},

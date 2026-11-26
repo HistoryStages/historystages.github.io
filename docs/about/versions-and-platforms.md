@@ -14,7 +14,7 @@ follow when they follow.
 | **NeoForge** | 1.21.1 | 6.2.x |
 | **Forge** | 1.20.1 | 6.2.x — with the differences below |
 | **Fabric** | 1.21.1 | 6.2.x — with the differences below |
-| **NeoForge** and **Fabric** | 26.2 | 6.1.x — beta, with the differences below |
+| **NeoForge** and **Fabric** | 26.2 | 6.2.x — beta, with the differences below |
 
 The 1.19.X builds are no longer updated.
 
@@ -25,8 +25,8 @@ where it would quietly go stale; the download pages have it:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub Releases](https://github.com/Flix100000/History-Stages/releases).
 
-These pages describe 6.2.x, which NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1 are on. On the
-26.2 beta, or on an older build? Pick its line in the version picker in the top bar — 6.1.x for 26.2.
+These pages describe 6.2.x, which every loader is on, the 26.2 beta included. On an older build?
+Pick its line in the version picker in the top bar.
 
 ## What 6.2 added
 
@@ -109,7 +109,7 @@ well, not only at the vanilla water and lava ones.
 
 ## What 26.2 does differently
 
-26.2 is one build for NeoForge and Fabric. It is in beta and carries the 6.1 feature set, apart from
+26.2 is one build for NeoForge and Fabric. It is in beta and carries the 6.2 feature set, apart from
 the integrations whose mods have no 26.2 version yet:
 
 - **Architectury API is required** on both loaders, next to Lootr (and Fabric API on Fabric). →
@@ -118,7 +118,18 @@ the integrations whose mods have no 26.2 version yet:
   FastSuite fix. So there is no [team sharing](/wiki/start-here/global-vs-individual#sharing-with-a-team),
   no quest tasks or rewards and no [scripting](/wiki/server/scripting) on 26.2 for now. They come
   back once those mods update.
-- **JEI** exists for 26.2 only as a beta, and History Stages is built against that beta.
+- **JEI** exists for 26.2 only as a beta, and History Stages is built against that beta. The
+  [switch for the lock overlay](/wiki/server/config-files/visual-toml#jei_hiding) and the categories
+  left alone work for JEI; for EMI they come with EMI.
+- **Every wood is its own boat type.** Since 1.21.2 an oak boat is `minecraft:oak_boat`, a bamboo
+  raft `minecraft:bamboo_raft`, so you pick the woods you want directly and there is no Wood types
+  shortcut. A `minecraft:boat` or `minecraft:chest_boat` entry from a 1.21.1 stage file is read as the
+  boats of every wood, or of the woods its NBT filter named by `Type`. →
+  [Only some creatures of a type](/wiki/locking/creatures-and-trade/entities-and-spawns#only-some-creatures-of-a-type)
+- **Slot locks reach other mods through the loader's transfer API**, NeoForge's or Fabric's. On
+  NeoForge modded slots built on its item slot are covered as well; on Fabric a modded slot that
+  answers "may I put this here?" all by itself is not. → [Slots](/wiki/locking/items-and-recipes/slots)
+- **The Ars Nouveau Drygmy fix is not here**, because Ars Nouveau has no 26.2 build.
 - **Equip locks in accessory slots** work through Curios on NeoForge. On Fabric there is no
   accessory mod to hook into yet. → [Mod Compatibility](/wiki/server/mod-compatibility#curios-and-accessories)
 - **Trades are data-pack only in 26.2.** A merchant that uses its own screen instead of the normal
@@ -129,9 +140,8 @@ the integrations whose mods have no 26.2 version yet:
 ## How this wiki is versioned
 
 The version picker cuts by **mod version, not by Minecraft version**. Nine stands exist: the living
-6.2.x tree and eight archives, 6.1.x down to 5.0.x. 6.1.x is still the live line on the 26.2
-beta, so search engines see it as well as the living tree; the older archives are kept out of
-them but are still in the version picker and in the search box.
+6.2.x tree and eight archives, 6.1.x down to 5.0.x. The archives are kept out of search engines,
+but are still in the version picker and in the search box.
 
 It does not go back further than 5.0.x because the wiki itself only started in April 2026. 5.1 never
 got a documentation pass of its own and is covered by the 5.0.x stand.

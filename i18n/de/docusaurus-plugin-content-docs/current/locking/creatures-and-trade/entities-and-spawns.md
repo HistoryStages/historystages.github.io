@@ -118,6 +118,13 @@ Kreatur-Art tatsächlich speichert, und **Von einer Kreatur übernehmen**, was d
 anschaust oder neben der du stehst. Boote und Kistenboote bieten per Rechtsklick **Holzarten** als
 Abkürzung für den häufigsten Fall.
 
+:::note[Auf Minecraft 26.2]
+Dort ist jede Holzart ein eigener Boot-Typ (`minecraft:oak_boat`, `minecraft:bamboo_raft`, …). Du wählst
+die Holzarten also in der Liste aus, die Abkürzung **Holzarten** gibt es nicht. Ein Eintrag
+`minecraft:boat` wie der oben wird als `minecraft:oak_boat` und `minecraft:spruce_boat` gelesen; ohne
+`Type` wird er zu allen Holzarten.
+:::
+
 Spawn-Regeln nehmen keinen NBT-Filter.
 
 ## `spawnlock` {/* #spawnlock */}

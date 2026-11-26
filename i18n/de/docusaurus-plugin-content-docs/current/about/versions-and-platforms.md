@@ -14,7 +14,7 @@ anderen folgen, wenn sie folgen.
 | **NeoForge** | 1.21.1 | 6.2.x |
 | **Forge** | 1.20.1 | 6.2.x, mit den Unterschieden unten |
 | **Fabric** | 1.21.1 | 6.2.x, mit den Unterschieden unten |
-| **NeoForge** und **Fabric** | 26.2 | 6.1.x, Beta, mit den Unterschieden unten |
+| **NeoForge** und **Fabric** | 26.2 | 6.2.x, Beta, mit den Unterschieden unten |
 
 Die Versionen für 1.19.X werden nicht mehr aktualisiert.
 
@@ -25,9 +25,8 @@ nicht hier, wo sie still veralten würde; die Download-Seiten haben sie:
 [Modrinth](https://modrinth.com/mod/history-stages) ·
 [GitHub-Releases](https://github.com/Flix100000/History-Stages/releases).
 
-Diese Seiten beschreiben 6.2.x, die Linie von NeoForge 1.21.1, Forge 1.20.1 und Fabric 1.21.1. Du bist
-auf der 26.2-Beta oder auf einem älteren Build? Wähl deine Linie im Versionsmenü oben in der Leiste:
-6.1.x für 26.2.
+Diese Seiten beschreiben 6.2.x, die Linie aller Loader, die 26.2-Beta eingeschlossen. Du bist auf einem
+älteren Build? Wähl deine Linie im Versionsmenü oben in der Leiste.
 
 ## Was 6.2 hinzugefügt hat {/* #what-62-added */}
 
@@ -112,7 +111,7 @@ Kesseln aus Mods abgelehnt, nicht nur an den Vanilla-Kesseln für Wasser und Lav
 
 ## Was 26.2 anders macht {/* #what-262-does-differently */}
 
-26.2 ist ein Build für NeoForge und Fabric. Es ist in der Beta und hat alle Funktionen von 6.1, außer den
+26.2 ist ein Build für NeoForge und Fabric. Es ist in der Beta und hat alle Funktionen von 6.2, außer den
 Anbindungen, deren Mods es noch nicht für 26.2 gibt:
 
 - **Architectury API ist Pflicht** auf beiden Loadern, neben Lootr (und Fabric API auf Fabric). →
@@ -121,7 +120,20 @@ Anbindungen, deren Mods es noch nicht für 26.2 gibt:
   FastSuite. Auf 26.2 gibt es also vorerst kein [Teilen im Team](/wiki/start-here/global-vs-individual#sharing-with-a-team),
   keine Quest-Aufgaben oder -Belohnungen und keine [Skripte](/wiki/server/scripting). Sie kommen zurück,
   sobald diese Mods aktualisieren.
-- **JEI** gibt es für 26.2 nur als Beta, und History Stages ist gegen diese Beta gebaut.
+- **JEI** gibt es für 26.2 nur als Beta, und History Stages ist gegen diese Beta gebaut. Der
+  [Schalter für das Sperr-Overlay](/wiki/server/config-files/visual-toml#jei_hiding) und die
+  ausgenommenen Kategorien funktionieren für JEI; für EMI kommen sie mit EMI.
+- **Jede Holzart ist ein eigener Boot-Typ.** Seit 1.21.2 ist ein Eichenboot `minecraft:oak_boat`, ein
+  Bambusfloß `minecraft:bamboo_raft`. Du wählst die Holzarten also direkt aus, die Abkürzung
+  **Holzarten** gibt es nicht. Ein Eintrag `minecraft:boat` oder `minecraft:chest_boat` aus einer
+  Stage-Datei von 1.21.1 wird als die Boote aller Holzarten gelesen, oder der Holzarten, die sein
+  NBT-Filter über `Type` nennt. →
+  [Nur manche Kreaturen einer Art](/wiki/locking/creatures-and-trade/entities-and-spawns#only-some-creatures-of-a-type)
+- **Slot-Sperren erreichen andere Mods über die Transfer-API des Loaders**, die von NeoForge oder die
+  von Fabric. Auf NeoForge sind Mod-Slots auf Basis seines Item-Slots mit abgedeckt; auf Fabric ist ein
+  Mod-Slot, der „darf das hier rein?“ ganz allein beantwortet, nicht abgedeckt. →
+  [Slots](/wiki/locking/items-and-recipes/slots)
+- **Der Drygmy-Fix für Ars Nouveau fehlt hier**, weil es Ars Nouveau für 26.2 nicht gibt.
 - **Rüstungs-Sperren in Accessoire-Slots** funktionieren auf NeoForge über Curios. Auf Fabric gibt es
   noch keine Accessoire-Mod, an die man sich hängen könnte. →
   [Mod-Kompatibilität](/wiki/server/mod-compatibility#curios-and-accessories)
@@ -133,9 +145,8 @@ Anbindungen, deren Mods es noch nicht für 26.2 gibt:
 ## Wie dieses Wiki versioniert ist {/* #how-this-wiki-is-versioned */}
 
 Das Versionsmenü schneidet nach **Mod-Version, nicht nach Minecraft-Version**. Es gibt neun Stände: den
-lebenden Baum 6.2.x und acht Archive, 6.1.x bis 5.0.x. 6.1.x ist auf der 26.2-Beta noch die
-aktuelle Linie, also sehen Suchmaschinen sie genauso wie den lebenden Baum; die älteren Archive werden
-von ihnen ferngehalten, sind aber im Versionsmenü und im Suchfeld weiter da.
+lebenden Baum 6.2.x und acht Archive, 6.1.x bis 5.0.x. Die Archive werden von Suchmaschinen
+ferngehalten, sind aber im Versionsmenü und im Suchfeld weiter da.
 
 Weiter zurück als 5.0.x geht es nicht, weil das Wiki selbst erst im April 2026 angefangen hat. 5.1 hat
 nie eine eigene Dokumentation bekommen und ist durch den Stand 5.0.x abgedeckt.

@@ -116,6 +116,12 @@ no gravity, command tags, health, …), a list of the keys that creature type ac
 **Take from a creature**, which reads the one you are looking at or standing next to. Boats and
 chest boats right-click to **Wood types** as a shortcut for the most common case.
 
+:::note[On Minecraft 26.2]
+Every wood is its own boat type there (`minecraft:oak_boat`, `minecraft:bamboo_raft`, …), so you pick
+the woods in the list and there is no Wood types shortcut. A `minecraft:boat` entry like the one above
+is read as `minecraft:oak_boat` and `minecraft:spruce_boat`; without a `Type` it becomes every wood.
+:::
+
 Spawn rules take no NBT filter.
 
 ## `spawnlock`

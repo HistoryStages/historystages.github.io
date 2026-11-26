@@ -75,7 +75,7 @@ ordering="AFTER"
 side="BOTH"
 ```
 
-`[6.0,7.0)` is right for an addon that uses only what 6.0 had; one that uses anything added in 6.1 needs `[6.1,7.0)`, and one that uses anything added in 6.2 needs `[6.2,7.0)` — 6.2 is on NeoForge 1.21.1, Forge 1.20.1 and Fabric 1.21.1 for now, so such an addon does not load on 26.2 until it catches up. The API generation (`HistoryStagesAPI.API_VERSION`) usually matches the mod's major version, and goes up only when something under `api` is removed, renamed or changes signature. Should a 6.x release ever raise it, its changelog says so, and that is where your range has to end. The loader checks the range at load time, before any addon code runs, so a mismatch is refused with a loader error the player can read instead of a `NoSuchMethodError` at the first call.
+`[6.0,7.0)` is right for an addon that uses only what 6.0 had; one that uses anything added in 6.1 needs `[6.1,7.0)`, and one that uses anything added in 6.2 needs `[6.2,7.0)` — 6.2 is on every loader, the 26.2 beta included. The API generation (`HistoryStagesAPI.API_VERSION`) usually matches the mod's major version, and goes up only when something under `api` is removed, renamed or changes signature. Should a 6.x release ever raise it, its changelog says so, and that is where your range has to end. The loader checks the range at load time, before any addon code runs, so a mismatch is refused with a loader error the player can read instead of a `NoSuchMethodError` at the first call.
 
 `HistoryStagesAPI.API_VERSION` reports the same number — 6 — for a log line or a crash report. It is not a second gate, and there is deliberately no `requireAtLeast(...)` to call: by the time your code could run such a check, the loader has already made the decision.
 
