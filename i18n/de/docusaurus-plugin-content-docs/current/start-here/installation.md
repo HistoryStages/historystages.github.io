@@ -99,6 +99,8 @@ Egal wie du sie gebaut hast: `/history global unlock bronze_age` schaltet die St
 
 ## Spieler können noch nichts erforschen {/* #players-still-cannot-research-anything */}
 
+![Das Podest mit eingelegter Rolle, die Anforderungen noch nicht erfüllt](/img/ingame/pedestal-requirements.webp)
+
 History Stages bringt **keine Rezepte** für das Forschungspodest oder die Forschungsrollen mit. Das ist
 Absicht: Wie Spieler sich ihren Fortschritt verdienen, entscheidet das Modpack, nicht die Mod. Solange
 du keinen Weg einbaust, an sie zu kommen, geht es nur über `/give` oder den Kreativmodus.

@@ -81,6 +81,10 @@ For an individual stage relocked while its player is offline, the items drop at 
 
 ## The look
 
+![The inventory with locked items and the locked hotbar slots hidden](/img/ingame/inventory-locked.webp)
+
+![A chest whose bottom row is locked with the overlay mode](/img/ingame/chest-locked-row.webp)
+
 An `overlay` slot gets a tint and a symbol on top. All of it is optional; an entry without a `look`
 block gets a half-transparent black cover with a lock symbol.
 

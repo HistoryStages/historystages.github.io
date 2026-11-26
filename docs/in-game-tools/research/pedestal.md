@@ -32,6 +32,8 @@ flowchart TD
 
 ## Starting and pausing
 
+![Research running, with the time that is left](/img/ingame/pedestal-running.webp)
+
 Research does not begin on its own. A scroll sitting in a pedestal with everything in order still
 waits for the **Start** button; while a run is going the same button reads **Pause**, and pausing is
 always allowed.
@@ -41,6 +43,10 @@ simply stops advancing — that is also what happens if a dependency stops being
 the scroll is moved to a pedestal of the wrong tier.
 
 ## Handing in dependencies
+
+![The pedestal with a scroll in it and its requirements not yet met](/img/ingame/pedestal-requirements.webp)
+
+![Iron ingots handed in: every requirement is met](/img/ingame/pedestal-met.webp)
 
 When a stage has [dependencies](/wiki/stage-file/dependencies), the pedestal GUI expands to show a
 side panel listing every condition and whether it is met. Deposit-based conditions — items, item

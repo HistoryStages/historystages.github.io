@@ -52,6 +52,12 @@ can add its own further down, above Copy ID and Remove.
 
 ## What "locked" means
 
+![The tooltip of a locked item names the stage it needs](/img/ingame/tooltip-item.webp)
+
+![An iron ingot, locked through the c:ingots/iron tag](/img/ingame/tooltip-tag.webp)
+
+![Locked items carry a padlock in the hotbar, and the last three slots are locked away](/img/ingame/hotbar-locks.webp)
+
 By default a matched item is gated for **everything**: using it, attacking with it, wearing it,
 picking it up, placing it, breaking blocks with it, opening its GUI, appearing in loot, showing its
 recipes, and trading it. Narrowing that down to a single interaction is what

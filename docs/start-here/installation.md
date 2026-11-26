@@ -98,6 +98,8 @@ Whichever way you built it, `/history global unlock bronze_age` opens the stage 
 
 ## Players still cannot research anything
 
+![The pedestal with a scroll in it and its requirements not yet met](/img/ingame/pedestal-requirements.webp)
+
 History Stages ships **no recipes** for the Research Pedestal or the Research Scrolls. That is
 deliberate: how players earn the right to progress is a pack decision, not a mod decision. Until you
 add a way to obtain them, the only route is `/give` or creative mode.

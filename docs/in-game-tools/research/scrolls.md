@@ -30,6 +30,8 @@ it with its own `scroll_completion`:
 
 ## The scroll tooltip
 
+![A research scroll lists what its stage needs before it can be researched](/img/ingame/tooltip-scroll.webp)
+
 The tooltip is fully configurable under
 [`[scroll_tooltip]`](/wiki/server/config-files/visual-toml#scroll_tooltip) in **visual.toml**, and
 through a dedicated screen in the [Config Editor](/wiki/in-game-tools/in-game-editor).

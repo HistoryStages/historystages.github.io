@@ -20,6 +20,8 @@ Stages lädt ohne es nicht. → [Warum](/wiki/locking/items-and-recipes/loot#che
 
 ## Rezept-Browser: JEI und EMI {/* #recipe-viewers--jei-and-emi */}
 
+![Ein gesperrtes Rezept in JEI](/img/ingame/jei-locked-recipe.webp)
+
 Installier einen von beiden; beide bekommen das Schloss-Overlay, und beide können verstecken.
 
 Gesperrte Rezepte bekommen ein Schloss-Overlay, statt zu verschwinden, damit Spieler sehen, dass es
@@ -64,6 +66,8 @@ geteilt: Ein Spieler schaltet sie frei, die ganze Party hat sie. Ab 6.1.0, noch 
 [Mit einem Team teilen](/wiki/start-here/global-vs-individual#sharing-with-a-team)
 
 ## Jade {/* #jade */}
+
+![Jade nennt die Stage, die ein gesperrter Block braucht](/img/ingame/jade-locked-block.webp)
 
 Schaut ein Spieler auf einen Block, eine Kreatur, einen Rüstungsständer oder einen Rahmen, den History
 Stages gesperrt hat, nennt Jade die Stage, die er braucht. Ein

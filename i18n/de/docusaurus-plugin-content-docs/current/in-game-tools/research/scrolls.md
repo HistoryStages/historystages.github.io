@@ -29,6 +29,8 @@ entscheidet, und eine Stage kann das mit ihrem eigenen `scroll_completion` über
 
 ## Der Rollen-Tooltip {/* #the-scroll-tooltip */}
 
+![Eine Forschungsrolle listet, was ihre Stage vor der Forschung braucht](/img/ingame/tooltip-scroll.webp)
+
 Der Tooltip lässt sich unter [`[scroll_tooltip]`](/wiki/server/config-files/visual-toml#scroll_tooltip)
 in **visual.toml** komplett einstellen, und über einen eigenen Bildschirm im
 [Config-Editor](/wiki/in-game-tools/in-game-editor).

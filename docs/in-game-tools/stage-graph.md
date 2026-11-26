@@ -21,6 +21,10 @@ The screen title defaults to a translation key (`graph.historystages.title`) but
 
 ## Visibility Modes
 
+![The stage graph as a player sees it: only what is unlocked and what comes next](/img/ingame/graph-player-view.webp)
+
+![Clicking a stage shows what it needs and what it leads to](/img/ingame/graph-node-details.webp)
+
 `[visibility].mode` controls which stages a player sees, from least to most restrictive:
 
 | Mode | Behaviour |

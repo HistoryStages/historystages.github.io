@@ -33,6 +33,8 @@ flowchart TD
 
 ## Starten und pausieren {/* #starting-and-pausing */}
 
+![Die Forschung läuft, mit der verbleibenden Zeit](/img/ingame/pedestal-running.webp)
+
 Die Forschung beginnt nicht von selbst. Eine Rolle, die in einem Podest liegt und bei der alles passt,
 wartet trotzdem auf den Knopf **Start**; während ein Durchlauf läuft, heißt derselbe Knopf **Pause**,
 und Pausieren ist immer erlaubt.
@@ -42,6 +44,10 @@ Fortschritt bleibt, und der Durchlauf geht einfach nicht weiter. Genau das passi
 Abhängigkeit mittendrin nicht mehr erfüllt ist oder die Rolle in ein Podest der falschen Stufe kommt.
 
 ## Abhängigkeiten abgeben {/* #handing-in-dependencies */}
+
+![Das Podest mit eingelegter Rolle, die Anforderungen noch nicht erfüllt](/img/ingame/pedestal-requirements.webp)
+
+![Eisenbarren abgegeben: alle Anforderungen erfüllt](/img/ingame/pedestal-met.webp)
 
 Hat eine Stage [Abhängigkeiten](/wiki/stage-file/dependencies), erweitert sich die GUI des Podests um
 ein Seitenpanel, das jede Bedingung auflistet und ob sie erfüllt ist. Bedingungen, die man abgibt, also

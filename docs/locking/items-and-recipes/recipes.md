@@ -96,6 +96,8 @@ The master switch for per-player recipe gating is `lockRecipes` in
 
 ## What players see
 
+![A locked recipe in JEI](/img/ingame/jei-locked-recipe.webp)
+
 **In JEI and EMI**, a locked recipe gets a padlock overlay rather than vanishing — the point being
 that players can see progression exists. Two settings change that:
 

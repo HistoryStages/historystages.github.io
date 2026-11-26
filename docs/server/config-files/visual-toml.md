@@ -143,6 +143,8 @@ The tooltip shown when a player hovers a locked slot in `overlay` mode.
 
 ## `[notifications]`
 
+![The moment a stage opens: a toast in the corner and a line in chat](/img/ingame/unlock-toast.webp)
+
 | Setting | Default | Description |
 | :--- | :--- | :--- |
 | `broadcastChat` | `true` | Broadcast unlock messages to everyone on the server. |
@@ -165,6 +167,10 @@ The same five settings again, for per-player stages. They are nested under `[not
 | `useToasts` | `true` | Toast on an individual unlock. |
 
 ## `[lock_messages]`
+
+![Using a locked block](/img/ingame/message-block.webp)
+
+![Interacting with a locked creature](/img/ingame/message-creature.webp)
 
 → Related: [Hidden Display](/wiki/stage-file/hidden-display).
 

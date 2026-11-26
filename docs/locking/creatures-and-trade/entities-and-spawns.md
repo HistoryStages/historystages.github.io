@@ -66,6 +66,8 @@ under `mobUnknown` in [`[lock_messages]`](/wiki/server/config-files/visual-toml#
 
 ## `interactionlock`
 
+![Interacting with a locked creature](/img/ingame/message-creature.webp)
+
 Everything that is not combat: naming, leashing, shearing, milking, breeding, trading, mounting,
 equipping armour and saddles. Attacking and spawning are untouched.
 

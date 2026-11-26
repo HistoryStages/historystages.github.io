@@ -52,6 +52,12 @@ installiertes Addon kann weiter unten eigene ergänzen, über „ID kopieren“ 
 
 ## Was „gesperrt“ heißt {/* #what-locked-means */}
 
+![Der Tooltip eines gesperrten Items nennt die Stage, die es braucht](/img/ingame/tooltip-item.webp)
+
+![Ein Eisenbarren, gesperrt über den Tag c:ingots/iron](/img/ingame/tooltip-tag.webp)
+
+![Gesperrte Items tragen in der Hotbar ein Schloss, die letzten drei Slots sind ausgeblendet](/img/ingame/hotbar-locks.webp)
+
 Standardmäßig ist ein passendes Item für **alles** gesperrt: benutzen, damit angreifen, es tragen,
 aufheben, platzieren, damit Blöcke abbauen, seine GUI öffnen, im Loot auftauchen, seine Rezepte zeigen
 und damit handeln. Das auf eine einzelne Interaktion einzugrenzen, ist die Aufgabe von

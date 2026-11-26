@@ -118,6 +118,8 @@ Die drei Werkzeuge nebeneinander:
 
 ## Was der Spieler sieht {/* #what-the-player-sees */}
 
+![Ein Händler, dessen Angebote für diesen Spieler alle gesperrt sind](/img/ingame/merchant-locked.webp)
+
 Ein Händler, dessen Angebote **alle** gesperrt sind, öffnet sich mit einem Hinweis im Handelsfenster
 statt mit einer leeren Liste. Ohne ihn sieht ein ausgeräumter Händler genauso aus wie einer, der gerade
 nichts auf Lager hat, und das wirkt wie ein Fehler.

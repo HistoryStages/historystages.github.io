@@ -144,6 +144,8 @@ Der Tooltip, der erscheint, wenn ein Spieler über einen gesperrten Slot im Modu
 
 ## `[notifications]` {/* #notifications */}
 
+![Der Moment, in dem eine Stage aufgeht: ein Hinweis in der Ecke und eine Zeile im Chat](/img/ingame/unlock-toast.webp)
+
 | Einstellung | Standard | Beschreibung |
 | :--- | :--- | :--- |
 | `broadcastChat` | `true` | Freischalt-Nachrichten an alle auf dem Server senden. |
@@ -166,6 +168,10 @@ Dieselben fünf Einstellungen noch einmal, für Stages pro Spieler. Sie stehen u
 | `useToasts` | `true` | Toast bei einer individuellen Freischaltung. |
 
 ## `[lock_messages]` {/* #lock_messages */}
+
+![Einen gesperrten Block benutzen](/img/ingame/message-block.webp)
+
+![Mit einer gesperrten Kreatur interagieren](/img/ingame/message-creature.webp)
 
 → Siehe auch: [Verdeckte Anzeige](/wiki/stage-file/hidden-display).
 

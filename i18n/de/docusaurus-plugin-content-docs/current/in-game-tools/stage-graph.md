@@ -21,6 +21,10 @@ Der Titel des Bildschirms ist standardmäßig ein Übersetzungsschlüssel (`grap
 
 ## Sichtbarkeits-Modi {/* #visibility-modes */}
 
+![Der Stage-Graph aus Spielersicht: nur Freigeschaltetes und was als Nächstes kommt](/img/ingame/graph-player-view.webp)
+
+![Ein Klick auf eine Stage zeigt, was sie braucht und wohin sie führt](/img/ingame/graph-node-details.webp)
+
 `[visibility].mode` legt fest, welche Stages ein Spieler sieht, vom offensten zum strengsten:
 
 | Modus | Verhalten |

@@ -98,6 +98,8 @@ Der Hauptschalter für Rezept-Sperren pro Spieler ist `lockRecipes` in
 
 ## Was Spieler sehen {/* #what-players-see */}
 
+![Ein gesperrtes Rezept in JEI](/img/ingame/jei-locked-recipe.webp)
+
 **In JEI und EMI** bekommt ein gesperrtes Rezept ein Schloss-Overlay, statt zu verschwinden. Der Sinn
 ist, dass Spieler sehen, dass es Fortschritt gibt. Zwei Einstellungen ändern das:
 

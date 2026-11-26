@@ -117,6 +117,8 @@ The three tools, side by side:
 
 ## What the player sees
 
+![A merchant whose offers are all locked for this player](/img/ingame/merchant-locked.webp)
+
 A merchant whose offers are **all** gated opens with a notice in the trade window rather than an
 empty list — without it, an emptied merchant is indistinguishable from one that happens to have no
 stock, which reads as a bug.

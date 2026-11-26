@@ -83,6 +83,10 @@ nächsten Einloggen heraus.
 
 ## Das Aussehen {/* #the-look */}
 
+![Das Inventar mit gesperrten Items und ausgeblendeten Hotbar-Slots](/img/ingame/inventory-locked.webp)
+
+![Eine Truhe, deren untere Reihe im Overlay-Modus gesperrt ist](/img/ingame/chest-locked-row.webp)
+
 Ein `overlay`-Slot bekommt eine Tönung und ein Symbol darüber. Alles davon ist optional; ein Eintrag
 ohne `look`-Block bekommt eine halbtransparente schwarze Abdeckung mit Schloss-Symbol.
 

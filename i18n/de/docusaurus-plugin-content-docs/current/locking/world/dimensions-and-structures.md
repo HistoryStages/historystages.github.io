@@ -109,6 +109,8 @@ einzelnen Teile, aus denen sie zusammengesetzt wurde. →
 
 ### Worauf ein Spieler stößt {/* #what-a-player-runs-into */}
 
+![Das rote Kraftfeld um einen gesperrten Plünderer-Außenposten](/img/ingame/structure-force-field.webp)
+
 | Einstellung | Standard | |
 | :--- | :--- | :--- |
 | `messageEnabled` / `messageFormat` / `showInChat` | an | Eine Nachricht beim Betreten. `{stage}` und `{structure}` werden ersetzt. |

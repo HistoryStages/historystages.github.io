@@ -65,6 +65,8 @@ unter `mobUnknown` in [`[lock_messages]`](/wiki/server/config-files/visual-toml#
 
 ## `interactionlock` {/* #interactionlock */}
 
+![Mit einer gesperrten Kreatur interagieren](/img/ingame/message-creature.webp)
+
 Alles, was kein Kampf ist: benennen, anleinen, scheren, melken, züchten, handeln, reiten, Rüstung und
 Sättel anlegen. Angreifen und Spawnen bleiben unberührt.
 

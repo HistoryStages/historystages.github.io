@@ -21,6 +21,8 @@ and History Stages will not load without it. →
 
 ## Recipe viewers — JEI and EMI
 
+![A locked recipe in JEI](/img/ingame/jei-locked-recipe.webp)
+
 Install either; both get the padlock overlay and both can hide.
 
 Locked recipes get a padlock overlay rather than disappearing, so players can see that progression
@@ -64,6 +66,8 @@ unlocks it, the whole party has it. 6.1.0 and up, not on 26.2 yet. →
 [Sharing with a team](/wiki/start-here/global-vs-individual#sharing-with-a-team)
 
 ## Jade
+
+![Jade names the stage a locked block needs](/img/ingame/jade-locked-block.webp)
 
 When a player looks at a block, entity, armour stand or item frame that History Stages has locked,
 Jade names the stage it needs. A [disguised](/wiki/locking/items-and-recipes/disguises) block shows

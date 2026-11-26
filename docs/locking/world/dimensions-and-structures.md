@@ -106,6 +106,8 @@ was clustered from. → [Commands](/wiki/server/commands#debug-subcommands-clien
 
 ### What a player runs into
 
+![The red force field around a locked pillager outpost](/img/ingame/structure-force-field.webp)
+
 | Setting | Default | |
 | :--- | :--- | :--- |
 | `messageEnabled` / `messageFormat` / `showInChat` | on | A message on entry. `{stage}` and `{structure}` are replaced. |
